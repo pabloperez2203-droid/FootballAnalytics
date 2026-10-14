@@ -1,0 +1,761 @@
+INFO 2026-10-07 00:59:44,156 [_config.py:<module>:91]
+No custom team name replacements found. You can configure these in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/teamname_replacements.json.
+
+INFO 2026-10-07 00:59:44,162 [_config.py:<module>:189]
+No custom league dict found. You can configure additional leagues in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/league_dict.json.
+
+INFO 2026-10-07 01:00:24,838 [_config.py:<module>:91]
+No custom team name replacements found. You can configure these in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/teamname_replacements.json.
+
+INFO 2026-10-07 01:00:24,842 [_config.py:<module>:189]
+No custom league dict found. You can configure additional leagues in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/league_dict.json.
+
+INFO 2026-10-07 01:00:24,845 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 01:00:24,845 [libraries.py:load:435]
+Downloading required library version v1.13.1...
+
+INFO 2026-10-07 01:00:24,846 [libraries.py:download:314]
+System Info - Platform: darwin, Machine: arm64, File Ext : dylib.
+
+INFO 2026-10-07 01:00:25,636 [libraries.py:export_config:193]
+Saved release config to /Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/bin/release.json
+
+INFO 2026-10-07 01:00:25,639 [libraries.py:fetch_api:239]
+Fetched release data from GitHub API.
+
+INFO 2026-10-07 01:00:25,639 [libraries.py:download:328]
+Trying to download library from: https://github.com/bogdanfinn/tls-client/releases/download/v1.13.1/tls-client-darwin-arm64-1.13.1.dylib
+
+INFO 2026-10-07 01:00:26,816 [libraries.py:_load_library:397]
+Successfully loaded TLS library: /Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/bin/tls-client-darwin-arm64-1.13.1.dylib
+
+INFO 2026-10-07 01:00:26,819 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 01:00:26,821 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 01:00:26,822 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 01:00:26,823 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 01:00:26,824 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/FBref
+
+INFO 2026-10-07 01:00:27,490 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/FBref
+
+INFO 2026-10-07 01:00:27,524 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/FBref
+
+INFO 2026-10-07 01:00:27,561 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/FBref
+
+INFO 2026-10-07 01:00:27,594 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/FBref
+
+INFO 2026-10-07 01:00:27,624 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Sofascore
+
+INFO 2026-10-07 01:00:27,625 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Sofascore
+
+INFO 2026-10-07 01:00:27,625 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Sofascore
+
+INFO 2026-10-07 01:00:27,626 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Sofascore
+
+INFO 2026-10-07 01:00:27,626 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Sofascore
+
+INFO 2026-10-07 01:00:27,627 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/WhoScored
+
+INFO 2026-10-07 01:00:27,659 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/WhoScored
+
+INFO 2026-10-07 01:00:27,691 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/WhoScored
+
+INFO 2026-10-07 01:00:28,113 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/WhoScored
+
+INFO 2026-10-07 01:00:28,146 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/WhoScored
+
+INFO 2026-10-07 01:00:28,177 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/ESPN
+
+INFO 2026-10-07 01:00:28,178 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/ESPN
+
+INFO 2026-10-07 01:00:28,178 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/ESPN
+
+INFO 2026-10-07 01:00:28,178 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/ESPN
+
+INFO 2026-10-07 01:00:28,179 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/ESPN
+
+INFO 2026-10-07 01:00:28,180 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/MatchHistory
+
+INFO 2026-10-07 01:00:28,180 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/MatchHistory
+
+INFO 2026-10-07 01:00:28,181 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/MatchHistory
+
+INFO 2026-10-07 01:00:28,181 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/MatchHistory
+
+INFO 2026-10-07 01:00:28,182 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/MatchHistory
+
+INFO 2026-10-07 01:00:28,182 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/ClubElo
+
+INFO 2026-10-07 01:00:28,182 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/ClubElo
+
+INFO 2026-10-07 01:00:28,183 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/ClubElo
+
+INFO 2026-10-07 01:00:28,183 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/ClubElo
+
+INFO 2026-10-07 01:00:28,183 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/ClubElo
+
+INFO 2026-10-07 01:00:28,184 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 01:01:26,186 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Sofascore
+
+ERROR 2026-10-07 01:01:26,262 [_common.py:_download_and_save:527]
+Error while scraping https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football. Retrying... (attempt 1 of 5).
+Traceback (most recent call last):
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/soccerdata/_common.py", line 507, in _download_and_save
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/models/response.py", line 207, in raise_for_status
+    raise HTTPError(
+    ...<6 lines>...
+    )
+tls_requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football
+ERROR 2026-10-07 01:01:26,304 [_common.py:_download_and_save:527]
+Error while scraping https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football. Retrying... (attempt 2 of 5).
+Traceback (most recent call last):
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/soccerdata/_common.py", line 507, in _download_and_save
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/models/response.py", line 207, in raise_for_status
+    raise HTTPError(
+    ...<6 lines>...
+    )
+tls_requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football
+ERROR 2026-10-07 01:01:26,341 [_common.py:_download_and_save:527]
+Error while scraping https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football. Retrying... (attempt 3 of 5).
+Traceback (most recent call last):
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/soccerdata/_common.py", line 507, in _download_and_save
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/models/response.py", line 207, in raise_for_status
+    raise HTTPError(
+    ...<6 lines>...
+    )
+tls_requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football
+ERROR 2026-10-07 01:01:26,380 [_common.py:_download_and_save:527]
+Error while scraping https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football. Retrying... (attempt 4 of 5).
+Traceback (most recent call last):
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/soccerdata/_common.py", line 507, in _download_and_save
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/models/response.py", line 207, in raise_for_status
+    raise HTTPError(
+    ...<6 lines>...
+    )
+tls_requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football
+ERROR 2026-10-07 01:01:26,421 [_common.py:_download_and_save:527]
+Error while scraping https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football. Retrying... (attempt 5 of 5).
+Traceback (most recent call last):
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/soccerdata/_common.py", line 507, in _download_and_save
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/models/response.py", line 207, in raise_for_status
+    raise HTTPError(
+    ...<6 lines>...
+    )
+tls_requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football
+ERROR 2026-10-07 01:01:30,473 [_common.py:_download_and_save:527]
+Error while scraping https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football. Retrying... (attempt 1 of 5).
+Traceback (most recent call last):
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/soccerdata/_common.py", line 507, in _download_and_save
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/models/response.py", line 207, in raise_for_status
+    raise HTTPError(
+    ...<6 lines>...
+    )
+tls_requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football
+ERROR 2026-10-07 01:01:30,516 [_common.py:_download_and_save:527]
+Error while scraping https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football. Retrying... (attempt 2 of 5).
+Traceback (most recent call last):
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/soccerdata/_common.py", line 507, in _download_and_save
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/models/response.py", line 207, in raise_for_status
+    raise HTTPError(
+    ...<6 lines>...
+    )
+tls_requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football
+ERROR 2026-10-07 01:01:30,560 [_common.py:_download_and_save:527]
+Error while scraping https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football. Retrying... (attempt 3 of 5).
+Traceback (most recent call last):
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/soccerdata/_common.py", line 507, in _download_and_save
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/models/response.py", line 207, in raise_for_status
+    raise HTTPError(
+    ...<6 lines>...
+    )
+tls_requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football
+ERROR 2026-10-07 01:01:30,602 [_common.py:_download_and_save:527]
+Error while scraping https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football. Retrying... (attempt 4 of 5).
+Traceback (most recent call last):
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/soccerdata/_common.py", line 507, in _download_and_save
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/models/response.py", line 207, in raise_for_status
+    raise HTTPError(
+    ...<6 lines>...
+    )
+tls_requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football
+ERROR 2026-10-07 01:01:30,645 [_common.py:_download_and_save:527]
+Error while scraping https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football. Retrying... (attempt 5 of 5).
+Traceback (most recent call last):
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/soccerdata/_common.py", line 507, in _download_and_save
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/models/response.py", line 207, in raise_for_status
+    raise HTTPError(
+    ...<6 lines>...
+    )
+tls_requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football
+ERROR 2026-10-07 01:01:34,718 [_common.py:_download_and_save:527]
+Error while scraping https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football. Retrying... (attempt 1 of 5).
+Traceback (most recent call last):
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/soccerdata/_common.py", line 507, in _download_and_save
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/models/response.py", line 207, in raise_for_status
+    raise HTTPError(
+    ...<6 lines>...
+    )
+tls_requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football
+ERROR 2026-10-07 01:01:34,774 [_common.py:_download_and_save:527]
+Error while scraping https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football. Retrying... (attempt 2 of 5).
+Traceback (most recent call last):
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/soccerdata/_common.py", line 507, in _download_and_save
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/models/response.py", line 207, in raise_for_status
+    raise HTTPError(
+    ...<6 lines>...
+    )
+tls_requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football
+ERROR 2026-10-07 01:01:34,819 [_common.py:_download_and_save:527]
+Error while scraping https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football. Retrying... (attempt 3 of 5).
+Traceback (most recent call last):
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/soccerdata/_common.py", line 507, in _download_and_save
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/models/response.py", line 207, in raise_for_status
+    raise HTTPError(
+    ...<6 lines>...
+    )
+tls_requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football
+ERROR 2026-10-07 01:01:34,860 [_common.py:_download_and_save:527]
+Error while scraping https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football. Retrying... (attempt 4 of 5).
+Traceback (most recent call last):
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/soccerdata/_common.py", line 507, in _download_and_save
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/models/response.py", line 207, in raise_for_status
+    raise HTTPError(
+    ...<6 lines>...
+    )
+tls_requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football
+ERROR 2026-10-07 01:01:34,905 [_common.py:_download_and_save:527]
+Error while scraping https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football. Retrying... (attempt 5 of 5).
+Traceback (most recent call last):
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/soccerdata/_common.py", line 507, in _download_and_save
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/models/response.py", line 207, in raise_for_status
+    raise HTTPError(
+    ...<6 lines>...
+    )
+tls_requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football
+ERROR 2026-10-07 01:01:38,956 [_common.py:_download_and_save:527]
+Error while scraping https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football. Retrying... (attempt 1 of 5).
+Traceback (most recent call last):
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/soccerdata/_common.py", line 507, in _download_and_save
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/models/response.py", line 207, in raise_for_status
+    raise HTTPError(
+    ...<6 lines>...
+    )
+tls_requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football
+ERROR 2026-10-07 01:01:39,107 [_common.py:_download_and_save:527]
+Error while scraping https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football. Retrying... (attempt 2 of 5).
+Traceback (most recent call last):
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/soccerdata/_common.py", line 507, in _download_and_save
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/models/response.py", line 207, in raise_for_status
+    raise HTTPError(
+    ...<6 lines>...
+    )
+tls_requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football
+ERROR 2026-10-07 01:01:39,256 [_common.py:_download_and_save:527]
+Error while scraping https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football. Retrying... (attempt 3 of 5).
+Traceback (most recent call last):
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/soccerdata/_common.py", line 507, in _download_and_save
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/models/response.py", line 207, in raise_for_status
+    raise HTTPError(
+    ...<6 lines>...
+    )
+tls_requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football
+ERROR 2026-10-07 01:01:39,298 [_common.py:_download_and_save:527]
+Error while scraping https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football. Retrying... (attempt 4 of 5).
+Traceback (most recent call last):
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/soccerdata/_common.py", line 507, in _download_and_save
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/models/response.py", line 207, in raise_for_status
+    raise HTTPError(
+    ...<6 lines>...
+    )
+tls_requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football
+ERROR 2026-10-07 01:01:39,336 [_common.py:_download_and_save:527]
+Error while scraping https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football. Retrying... (attempt 5 of 5).
+Traceback (most recent call last):
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/soccerdata/_common.py", line 507, in _download_and_save
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/models/response.py", line 207, in raise_for_status
+    raise HTTPError(
+    ...<6 lines>...
+    )
+tls_requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.sofascore.com/api/v1/config/default-unique-tournaments/EN/football
+INFO 2026-10-07 01:22:11,443 [_config.py:<module>:91]
+No custom team name replacements found. You can configure these in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/teamname_replacements.json.
+
+INFO 2026-10-07 01:22:11,447 [_config.py:<module>:189]
+No custom league dict found. You can configure additional leagues in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/league_dict.json.
+
+INFO 2026-10-07 01:22:11,450 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 01:22:11,456 [libraries.py:_load_library:397]
+Successfully loaded TLS library: /Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/bin/tls-client-darwin-arm64-1.13.1.dylib
+
+INFO 2026-10-07 01:22:11,457 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 01:22:11,457 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 01:22:11,457 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 01:23:45,795 [_config.py:<module>:91]
+No custom team name replacements found. You can configure these in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/teamname_replacements.json.
+
+INFO 2026-10-07 01:23:45,799 [_config.py:<module>:189]
+No custom league dict found. You can configure additional leagues in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/league_dict.json.
+
+INFO 2026-10-07 01:23:45,802 [fetch_xg.py:main:191]
+============================================================
+
+INFO 2026-10-07 01:23:45,803 [fetch_xg.py:main:192]
+  ⚽ Descarga de xG — La Liga 2026-27
+
+INFO 2026-10-07 01:23:45,804 [fetch_xg.py:main:193]
+  📅 2026-10-07 01:23:45
+
+INFO 2026-10-07 01:23:45,804 [fetch_xg.py:main:194]
+  📦 soccerdata v1.9.1
+
+INFO 2026-10-07 01:23:45,804 [fetch_xg.py:main:195]
+============================================================
+
+INFO 2026-10-07 01:23:45,805 [fetch_xg.py:fetch_team_xg:55]
+
+🏟️  Obteniendo stats de equipo por partido...
+
+INFO 2026-10-07 01:23:45,805 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 01:23:45,812 [libraries.py:_load_library:397]
+Successfully loaded TLS library: /Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/bin/tls-client-darwin-arm64-1.13.1.dylib
+
+INFO 2026-10-07 01:23:47,107 [fetch_xg.py:fetch_team_xg:69]
+  ✅ 69 filas brutas
+
+INFO 2026-10-07 01:23:47,108 [fetch_xg.py:fetch_team_xg:70]
+  Columnas: ['league_id', 'season_id', 'game_id', 'date', 'home_team_id', 'away_team_id', 'home_team', 'away_team', 'away_team_code', 'home_team_code', 'away_points', 'away_expected_points', 'away_goals', 'away_xg', 'away_np_xg', 'away_np_xg_difference', 'away_ppda', 'away_deep_completions', 'home_points', 'home_expected_points', 'home_goals', 'home_xg', 'home_np_xg', 'home_np_xg_difference', 'home_ppda', 'home_deep_completions']
+
+INFO 2026-10-07 01:23:47,110 [fetch_xg.py:fetch_team_xg:77]
+  Columnas aplanadas: ['league', 'season', 'game', 'league_id', 'season_id', 'game_id', 'date', 'home_team_id', 'away_team_id', 'home_team', 'away_team', 'away_team_code', 'home_team_code', 'away_points', 'away_expected_points', 'away_goals', 'away_xg', 'away_np_xg', 'away_np_xg_difference', 'away_ppda', 'away_deep_completions', 'home_points', 'home_expected_points', 'home_goals', 'home_xg', 'home_np_xg', 'home_np_xg_difference', 'home_ppda', 'home_deep_completions']
+
+INFO 2026-10-07 01:23:47,111 [fetch_xg.py:fetch_team_xg:82]
+  Columnas xG: ['away_xg', 'away_np_xg', 'away_np_xg_difference', 'home_xg', 'home_np_xg', 'home_np_xg_difference']
+
+INFO 2026-10-07 01:23:47,111 [fetch_xg.py:fetch_team_xg:83]
+  Columnas goles: ['away_goals', 'home_goals']
+
+INFO 2026-10-07 01:23:47,112 [fetch_xg.py:aggregate_teams:99]
+  Columnas disponibles: ['league', 'season', 'game', 'league_id', 'season_id', 'game_id', 'date', 'home_team_id', 'away_team_id', 'home_team', 'away_team', 'away_team_code', 'home_team_code', 'away_points', 'away_expected_points', 'away_goals', 'away_xg', 'away_np_xg', 'away_np_xg_difference', 'away_ppda', 'away_deep_completions', 'home_points', 'home_expected_points', 'home_goals', 'home_xg', 'home_np_xg', 'home_np_xg_difference', 'home_ppda', 'home_deep_completions']
+
+ERROR 2026-10-07 01:23:47,113 [fetch_xg.py:aggregate_teams:109]
+  ❌ No se encontró columna de equipo
+
+INFO 2026-10-07 01:23:47,114 [fetch_xg.py:fetch_player_xg:130]
+
+⭐ Obteniendo stats de jugador por temporada...
+
+INFO 2026-10-07 01:23:47,115 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 01:23:48,004 [fetch_xg.py:fetch_player_xg:144]
+  ✅ 461 filas brutas
+
+INFO 2026-10-07 01:23:48,005 [fetch_xg.py:fetch_player_xg:145]
+  Columnas: ['league_id', 'season_id', 'team_id', 'player_id', 'position', 'matches', 'minutes', 'goals', 'xg', 'np_goals', 'np_xg', 'assists', 'xa', 'shots', 'key_passes', 'yellow_cards', 'red_cards', 'xg_chain', 'xg_buildup']
+
+INFO 2026-10-07 01:23:48,008 [fetch_xg.py:fetch_player_xg:148]
+  Columnas aplanadas: ['league', 'season', 'team', 'player', 'league_id', 'season_id', 'team_id', 'player_id', 'position', 'matches', 'minutes', 'goals', 'xg', 'np_goals', 'np_xg', 'assists', 'xa', 'shots', 'key_passes', 'yellow_cards', 'red_cards', 'xg_chain', 'xg_buildup']
+
+INFO 2026-10-07 01:23:48,009 [fetch_xg.py:fetch_player_xg:151]
+  Columnas xG/xA: ['xg', 'np_xg', 'xa', 'xg_chain', 'xg_buildup']
+
+INFO 2026-10-07 01:23:48,010 [fetch_xg.py:main:235]
+  📊 Diferencia jugador calculada (goals - xg)
+
+INFO 2026-10-07 01:23:48,011 [fetch_xg.py:main:239]
+
+💾 Guardando resultados...
+
+INFO 2026-10-07 01:23:48,018 [fetch_xg.py:save_results:183]
+  📁 /Users/perez/Project_FootData/football-analytics/backend/data/real/jugadores_2026-27.csv (461 filas)
+
+INFO 2026-10-07 01:23:48,020 [fetch_xg.py:save_results:187]
+  📁 /Users/perez/Project_FootData/football-analytics/backend/../src/data/jugadores_xg.json
+
+INFO 2026-10-07 01:23:48,021 [fetch_xg.py:main:243]
+
+============================================================
+
+INFO 2026-10-07 01:23:48,021 [fetch_xg.py:main:244]
+  RESUMEN
+
+INFO 2026-10-07 01:23:48,022 [fetch_xg.py:main:245]
+============================================================
+
+INFO 2026-10-07 01:23:48,022 [fetch_xg.py:main:255]
+  Equipos: ❌ Sin datos
+
+INFO 2026-10-07 01:23:48,023 [fetch_xg.py:main:258]
+
+  Jugadores: 461 jugadores, 26 columnas
+
+INFO 2026-10-07 01:24:03,520 [_config.py:<module>:91]
+No custom team name replacements found. You can configure these in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/teamname_replacements.json.
+
+INFO 2026-10-07 01:24:03,524 [_config.py:<module>:189]
+No custom league dict found. You can configure additional leagues in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/league_dict.json.
+
+INFO 2026-10-07 01:24:03,527 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 01:24:03,530 [libraries.py:_load_library:397]
+Successfully loaded TLS library: /Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/bin/tls-client-darwin-arm64-1.13.1.dylib
+
+INFO 2026-10-07 01:24:59,574 [_config.py:<module>:91]
+No custom team name replacements found. You can configure these in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/teamname_replacements.json.
+
+INFO 2026-10-07 01:24:59,577 [_config.py:<module>:189]
+No custom league dict found. You can configure additional leagues in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/league_dict.json.
+
+INFO 2026-10-07 01:24:59,579 [fetch_xg.py:main:220]
+============================================================
+
+INFO 2026-10-07 01:24:59,580 [fetch_xg.py:main:221]
+  ⚽ xG vs Goles — La Liga 2026-27 (Understat)
+
+INFO 2026-10-07 01:24:59,583 [fetch_xg.py:main:222]
+  📅 2026-10-07 01:24:59
+
+INFO 2026-10-07 01:24:59,583 [fetch_xg.py:main:223]
+============================================================
+
+INFO 2026-10-07 01:24:59,583 [fetch_xg.py:fetch_and_aggregate_teams:47]
+
+🏟️  Descargando stats de equipo por partido (Understat)...
+
+INFO 2026-10-07 01:24:59,583 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 01:24:59,586 [libraries.py:_load_library:397]
+Successfully loaded TLS library: /Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/bin/tls-client-darwin-arm64-1.13.1.dylib
+
+INFO 2026-10-07 01:25:00,379 [fetch_xg.py:fetch_and_aggregate_teams:66]
+  ✅ 69 partidos descargados
+
+INFO 2026-10-07 01:25:00,391 [fetch_xg.py:fetch_and_aggregate_teams:132]
+  📊 20 equipos agregados
+
+INFO 2026-10-07 01:25:00,392 [fetch_xg.py:fetch_players:142]
+
+⭐ Descargando stats de jugador (Understat)...
+
+INFO 2026-10-07 01:25:00,393 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 01:25:01,232 [fetch_xg.py:fetch_players:161]
+  ✅ 461 jugadores descargados
+
+INFO 2026-10-07 01:25:01,236 [fetch_xg.py:fetch_players:185]
+  📊 Columnas: ['league', 'season', 'team_name', 'player_name', 'league_id', 'season_id', 'team_id', 'player_id', 'position', 'matches', 'minutes', 'goals', 'xg', 'np_goals', 'np_xg', 'assists', 'xa', 'shots', 'key_passes', 'yellow_cards', 'red_cards', 'xg_chain', 'xg_buildup', 'diff_goals_xg', 'source', 'fetched_at', 'is_simulated']
+
+INFO 2026-10-07 01:25:01,238 [fetch_xg.py:save:194]
+
+💾 Guardando...
+
+INFO 2026-10-07 01:25:01,241 [fetch_xg.py:save:199]
+  📁 /Users/perez/Project_FootData/football-analytics/backend/data/real/equipos_2026-27.csv (20 filas)
+
+INFO 2026-10-07 01:25:01,242 [fetch_xg.py:save:203]
+  📁 /Users/perez/Project_FootData/football-analytics/backend/../src/data/equipos_xg.json
+
+INFO 2026-10-07 01:25:01,246 [fetch_xg.py:save:208]
+  📁 /Users/perez/Project_FootData/football-analytics/backend/data/real/jugadores_2026-27.csv (461 filas)
+
+INFO 2026-10-07 01:25:01,249 [fetch_xg.py:save:212]
+  📁 /Users/perez/Project_FootData/football-analytics/backend/../src/data/jugadores_xg.json
+
+INFO 2026-10-07 01:25:01,249 [fetch_xg.py:main:230]
+
+============================================================
+
+INFO 2026-10-07 01:25:01,250 [fetch_xg.py:main:232]
+  Equipos:   20 equipos × 19 cols
+
+INFO 2026-10-07 01:25:01,251 [fetch_xg.py:main:234]
+
+  Top 5 sobrerrendimiento (Goles - xG):
+ rank                team  goals_for  xg_for  diff_goals_xg
+    1             Sevilla         10     7.4            2.6
+    2     Atletico Madrid         16    13.7            2.3
+    3      Rayo Vallecano         11    9.12           1.88
+    4           Barcelona         31    29.4            1.6
+    5 Deportivo La Coruna         10     8.4            1.6
+
+INFO 2026-10-07 01:25:01,252 [fetch_xg.py:main:239]
+
+  Jugadores: 461 jugadores × 27 cols
+
+INFO 2026-10-07 01:25:01,255 [fetch_xg.py:main:242]
+
+  Top 5 goleadores:
+              player_name           team_name  goals    xg  diff_goals_xg
+                 Raphinha           Barcelona     12  9.06           2.94
+             Lamine Yamal           Barcelona      7  6.08           0.92
+           Sergio Camello      Rayo Vallecano      7  2.83           4.17
+     Kylian Mbappe-Lottin         Real Madrid      7  8.35          -1.35
+Pierre-Emerick Aubameyang Deportivo La Coruna      6  4.14           1.86
+
+INFO 2026-10-07 01:25:01,256 [fetch_xg.py:main:246]
+
+============================================================
+
+INFO 2026-10-07 14:03:52,215 [_config.py:<module>:91]
+No custom team name replacements found. You can configure these in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/teamname_replacements.json.
+
+INFO 2026-10-07 14:03:52,220 [_config.py:<module>:189]
+No custom league dict found. You can configure additional leagues in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/league_dict.json.
+
+INFO 2026-10-07 14:03:52,222 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 14:03:52,313 [libraries.py:_load_library:397]
+Successfully loaded TLS library: /Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/bin/tls-client-darwin-arm64-1.13.1.dylib
+
+INFO 2026-10-07 14:04:28,999 [_config.py:<module>:91]
+No custom team name replacements found. You can configure these in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/teamname_replacements.json.
+
+INFO 2026-10-07 14:04:29,002 [_config.py:<module>:189]
+No custom league dict found. You can configure additional leagues in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/league_dict.json.
+
+INFO 2026-10-07 14:04:29,004 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 14:04:29,006 [libraries.py:_load_library:397]
+Successfully loaded TLS library: /Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/bin/tls-client-darwin-arm64-1.13.1.dylib
+
+INFO 2026-10-07 14:04:50,283 [_config.py:<module>:91]
+No custom team name replacements found. You can configure these in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/teamname_replacements.json.
+
+INFO 2026-10-07 14:04:50,286 [_config.py:<module>:189]
+No custom league dict found. You can configure additional leagues in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/league_dict.json.
+
+INFO 2026-10-07 14:04:50,288 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 14:04:50,291 [libraries.py:_load_library:397]
+Successfully loaded TLS library: /Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/bin/tls-client-darwin-arm64-1.13.1.dylib
+
+INFO 2026-10-07 14:05:13,909 [_config.py:<module>:91]
+No custom team name replacements found. You can configure these in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/teamname_replacements.json.
+
+INFO 2026-10-07 14:05:13,912 [_config.py:<module>:189]
+No custom league dict found. You can configure additional leagues in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/league_dict.json.
+
+INFO 2026-10-07 14:05:13,914 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 14:05:13,917 [libraries.py:_load_library:397]
+Successfully loaded TLS library: /Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/bin/tls-client-darwin-arm64-1.13.1.dylib
+
+INFO 2026-10-07 14:34:15,427 [_config.py:<module>:91]
+No custom team name replacements found. You can configure these in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/teamname_replacements.json.
+
+INFO 2026-10-07 14:34:15,431 [_config.py:<module>:189]
+No custom league dict found. You can configure additional leagues in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/league_dict.json.
+
+INFO 2026-10-07 14:34:15,435 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 14:34:15,442 [libraries.py:_load_library:397]
+Successfully loaded TLS library: /Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/bin/tls-client-darwin-arm64-1.13.1.dylib
+
+INFO 2026-10-07 15:18:42,409 [_config.py:<module>:91]
+No custom team name replacements found. You can configure these in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/teamname_replacements.json.
+
+INFO 2026-10-07 15:18:42,413 [_config.py:<module>:189]
+No custom league dict found. You can configure additional leagues in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/league_dict.json.
+
+INFO 2026-10-07 15:18:42,417 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 15:18:42,423 [libraries.py:_load_library:397]
+Successfully loaded TLS library: /Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/bin/tls-client-darwin-arm64-1.13.1.dylib
+
+INFO 2026-10-07 15:31:06,946 [_config.py:<module>:91]
+No custom team name replacements found. You can configure these in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/teamname_replacements.json.
+
+INFO 2026-10-07 15:31:06,951 [_config.py:<module>:189]
+No custom league dict found. You can configure additional leagues in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/league_dict.json.
+
+INFO 2026-10-07 15:31:06,954 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 15:31:06,961 [libraries.py:_load_library:397]
+Successfully loaded TLS library: /Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/bin/tls-client-darwin-arm64-1.13.1.dylib
+
+INFO 2026-10-07 16:20:37,219 [_config.py:<module>:91]
+No custom team name replacements found. You can configure these in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/teamname_replacements.json.
+
+INFO 2026-10-07 16:20:37,223 [_config.py:<module>:189]
+No custom league dict found. You can configure additional leagues in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/league_dict.json.
+
+INFO 2026-10-07 16:20:37,226 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 16:20:37,231 [libraries.py:_load_library:397]
+Successfully loaded TLS library: /Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/bin/tls-client-darwin-arm64-1.13.1.dylib
+
+INFO 2026-10-07 16:26:08,424 [_config.py:<module>:91]
+No custom team name replacements found. You can configure these in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/teamname_replacements.json.
+
+INFO 2026-10-07 16:26:08,427 [_config.py:<module>:189]
+No custom league dict found. You can configure additional leagues in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/league_dict.json.
+
+INFO 2026-10-07 16:26:08,430 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 16:26:08,432 [libraries.py:_load_library:397]
+Successfully loaded TLS library: /Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/bin/tls-client-darwin-arm64-1.13.1.dylib
+
+INFO 2026-10-07 16:34:12,282 [_config.py:<module>:91]
+No custom team name replacements found. You can configure these in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/teamname_replacements.json.
+
+INFO 2026-10-07 16:34:12,287 [_config.py:<module>:189]
+No custom league dict found. You can configure additional leagues in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/league_dict.json.
+
+INFO 2026-10-07 16:34:12,290 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 16:34:12,296 [libraries.py:_load_library:397]
+Successfully loaded TLS library: /Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/bin/tls-client-darwin-arm64-1.13.1.dylib
+
+INFO 2026-10-07 16:37:12,952 [_config.py:<module>:91]
+No custom team name replacements found. You can configure these in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/teamname_replacements.json.
+
+INFO 2026-10-07 16:37:12,956 [_config.py:<module>:189]
+No custom league dict found. You can configure additional leagues in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/league_dict.json.
+
+INFO 2026-10-07 16:37:12,958 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 16:37:12,961 [libraries.py:_load_library:397]
+Successfully loaded TLS library: /Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/bin/tls-client-darwin-arm64-1.13.1.dylib
+
+INFO 2026-10-07 16:40:24,057 [_config.py:<module>:91]
+No custom team name replacements found. You can configure these in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/teamname_replacements.json.
+
+INFO 2026-10-07 16:40:24,061 [_config.py:<module>:189]
+No custom league dict found. You can configure additional leagues in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/league_dict.json.
+
+INFO 2026-10-07 16:40:24,064 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 16:40:24,067 [libraries.py:_load_library:397]
+Successfully loaded TLS library: /Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/bin/tls-client-darwin-arm64-1.13.1.dylib
+
+INFO 2026-10-07 21:45:38,001 [_config.py:<module>:91]
+No custom team name replacements found. You can configure these in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/teamname_replacements.json.
+
+INFO 2026-10-07 21:45:38,006 [_config.py:<module>:189]
+No custom league dict found. You can configure additional leagues in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/league_dict.json.
+
+INFO 2026-10-07 21:45:38,009 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 21:45:38,015 [libraries.py:_load_library:397]
+Successfully loaded TLS library: /Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/bin/tls-client-darwin-arm64-1.13.1.dylib
+
+INFO 2026-10-07 21:49:03,067 [_config.py:<module>:91]
+No custom team name replacements found. You can configure these in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/teamname_replacements.json.
+
+INFO 2026-10-07 21:49:03,070 [_config.py:<module>:189]
+No custom league dict found. You can configure additional leagues in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/league_dict.json.
+
+INFO 2026-10-07 21:49:03,072 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-07 21:49:03,075 [libraries.py:_load_library:397]
+Successfully loaded TLS library: /Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/bin/tls-client-darwin-arm64-1.13.1.dylib
+

@@ -1,0 +1,54 @@
+{
+  "is_simulated": true,
+  "match": {
+    "id": "m1",
+    "home_team": "Barcelona",
+    "home_short": "BAR",
+    "away_team": "Real Madrid",
+    "away_short": "RMA",
+    "home_score": 2,
+    "away_score": 1,
+    "home_xg": 1.8,
+    "away_xg": 1.1,
+    "date": "24 Oct 2026",
+    "stadium": "Spotify Camp Nou",
+    "matchday": 10,
+    "matches_in_matchday": [
+      {"id": "m1", "label": "BAR 2-1 RMA"},
+      {"id": "m2", "label": "ATM 0-0 SEV"},
+      {"id": "m3", "label": "BET 1-1 RSO"},
+      {"id": "m4", "label": "VIL 2-0 ATH"},
+      {"id": "m5", "label": "VAL 1-2 CEL"},
+      {"id": "m6", "label": "GIR 3-1 OSA"},
+      {"id": "m7", "label": "ALA 0-1 MALL"}
+    ]
+  },
+  "verdict": {
+    "win_probability": {"home": 65, "draw": 20, "away": 15},
+    "best_chance": "Min 85' - Kylian Mbappé (0.85 xG)",
+    "most_dangerous": "Robert Lewandowski (0.90 xG)",
+    "biggest_surprise": "Gol de Vinícius Jr (0.05 xG)"
+  },
+  "stats": {
+    "home": {"shots": 4, "xg": 1.8, "xg_per_shot": 0.45},
+    "away": {"shots": 3, "xg": 1.1, "xg_per_shot": 0.36}
+  },
+  "shots": [
+    {"id": "s1", "min": 12, "team": "away", "player": "Vinícius Jr", "xg": 0.05, "result": "Gol", "x": 85, "y": 30},
+    {"id": "s2", "min": 24, "team": "home", "player": "Raphinha", "xg": 0.15, "result": "Parada", "x": 15, "y": 60},
+    {"id": "s3", "min": 33, "team": "home", "player": "Pedri", "xg": 0.60, "result": "Fuera", "x": 20, "y": 40},
+    {"id": "s4", "min": 45, "team": "home", "player": "Robert Lewandowski", "xg": 0.40, "result": "Gol", "x": 8, "y": 50},
+    {"id": "s5", "min": 60, "team": "away", "player": "Jude Bellingham", "xg": 0.20, "result": "Fuera", "x": 80, "y": 45},
+    {"id": "s6", "min": 78, "team": "home", "player": "Lamine Yamal", "xg": 0.65, "result": "Gol", "x": 10, "y": 55},
+    {"id": "s7", "min": 85, "team": "away", "player": "Kylian Mbappé", "xg": 0.85, "result": "Parada", "x": 90, "y": 50}
+  ],
+  "players": [
+    {"id": "p1", "team": "home", "name": "Robert Lewandowski", "mins": 90, "shots": 1, "xg": 0.40, "goals": 1},
+    {"id": "p2", "team": "home", "name": "Lamine Yamal", "mins": 85, "shots": 1, "xg": 0.65, "goals": 1},
+    {"id": "p3", "team": "home", "name": "Pedri", "mins": 90, "shots": 1, "xg": 0.60, "goals": 0},
+    {"id": "p4", "team": "home", "name": "Raphinha", "mins": 70, "shots": 1, "xg": 0.15, "goals": 0},
+    {"id": "p5", "team": "away", "name": "Kylian Mbappé", "mins": 90, "shots": 1, "xg": 0.85, "goals": 0},
+    {"id": "p6", "team": "away", "name": "Vinícius Jr", "mins": 90, "shots": 1, "xg": 0.05, "goals": 1},
+    {"id": "p7", "team": "away", "name": "Jude Bellingham", "mins": 90, "shots": 1, "xg": 0.20, "goals": 0}
+  ]
+}

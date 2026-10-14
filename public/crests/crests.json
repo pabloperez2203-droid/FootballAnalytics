@@ -1,0 +1,202 @@
+[
+  {
+    "equipo": "Alaves",
+    "slug": "alaves",
+    "archivo": "/crests/alaves.svg",
+    "fuente": "football-data.org",
+    "url_origen": "https://crests.football-data.org/263.svg",
+    "requiere_atribucion": true,
+    "terminos": "Uso gratuito para proyectos no comerciales o informativos. Requiere enlace de atribuci\u00f3n.",
+    "is_placeholder": false
+  },
+  {
+    "equipo": "Athletic Club",
+    "slug": "athletic-club",
+    "archivo": "/crests/athletic-club.svg",
+    "fuente": "football-data.org",
+    "url_origen": "https://crests.football-data.org/77.svg",
+    "requiere_atribucion": true,
+    "terminos": "Uso gratuito para proyectos no comerciales o informativos. Requiere enlace de atribuci\u00f3n.",
+    "is_placeholder": false
+  },
+  {
+    "equipo": "Atletico Madrid",
+    "slug": "atletico-madrid",
+    "archivo": "/crests/atletico-madrid.svg",
+    "fuente": "football-data.org",
+    "url_origen": "https://crests.football-data.org/78.svg",
+    "requiere_atribucion": true,
+    "terminos": "Uso gratuito para proyectos no comerciales o informativos. Requiere enlace de atribuci\u00f3n.",
+    "is_placeholder": false
+  },
+  {
+    "equipo": "Barcelona",
+    "slug": "barcelona",
+    "archivo": "/crests/barcelona.svg",
+    "fuente": "football-data.org",
+    "url_origen": "https://crests.football-data.org/81.svg",
+    "requiere_atribucion": true,
+    "terminos": "Uso gratuito para proyectos no comerciales o informativos. Requiere enlace de atribuci\u00f3n.",
+    "is_placeholder": false
+  },
+  {
+    "equipo": "Celta Vigo",
+    "slug": "celta-vigo",
+    "archivo": "/crests/celta-vigo.svg",
+    "fuente": "football-data.org",
+    "url_origen": "https://crests.football-data.org/558.svg",
+    "requiere_atribucion": true,
+    "terminos": "Uso gratuito para proyectos no comerciales o informativos. Requiere enlace de atribuci\u00f3n.",
+    "is_placeholder": false
+  },
+  {
+    "equipo": "Deportivo La Coruna",
+    "slug": "deportivo-la-coruna",
+    "archivo": "/crests/deportivo-la-coruna.png",
+    "fuente": "football-data.org",
+    "url_origen": "https://crests.football-data.org/560.png",
+    "requiere_atribucion": true,
+    "terminos": "Uso gratuito para proyectos no comerciales o informativos. Requiere enlace de atribuci\u00f3n.",
+    "is_placeholder": false
+  },
+  {
+    "equipo": "Elche",
+    "slug": "elche",
+    "archivo": "/crests/elche.svg",
+    "fuente": "football-data.org",
+    "url_origen": "https://crests.football-data.org/285.svg",
+    "requiere_atribucion": true,
+    "terminos": "Uso gratuito para proyectos no comerciales o informativos. Requiere enlace de atribuci\u00f3n.",
+    "is_placeholder": false
+  },
+  {
+    "equipo": "Espanyol",
+    "slug": "espanyol",
+    "archivo": "/crests/espanyol.png",
+    "fuente": "football-data.org",
+    "url_origen": "https://crests.football-data.org/80.png",
+    "requiere_atribucion": true,
+    "terminos": "Uso gratuito para proyectos no comerciales o informativos. Requiere enlace de atribuci\u00f3n.",
+    "is_placeholder": false
+  },
+  {
+    "equipo": "Getafe",
+    "slug": "getafe",
+    "archivo": "/crests/getafe.svg",
+    "fuente": "football-data.org",
+    "url_origen": "https://crests.football-data.org/82.svg",
+    "requiere_atribucion": true,
+    "terminos": "Uso gratuito para proyectos no comerciales o informativos. Requiere enlace de atribuci\u00f3n.",
+    "is_placeholder": false
+  },
+  {
+    "equipo": "Levante",
+    "slug": "levante",
+    "archivo": "/crests/levante.svg",
+    "fuente": "football-data.org",
+    "url_origen": "https://crests.football-data.org/88.svg",
+    "requiere_atribucion": true,
+    "terminos": "Uso gratuito para proyectos no comerciales o informativos. Requiere enlace de atribuci\u00f3n.",
+    "is_placeholder": false
+  },
+  {
+    "equipo": "Malaga",
+    "slug": "malaga",
+    "archivo": "/crests/malaga.png",
+    "fuente": "football-data.org",
+    "url_origen": "https://crests.football-data.org/84.png",
+    "requiere_atribucion": true,
+    "terminos": "Uso gratuito para proyectos no comerciales o informativos. Requiere enlace de atribuci\u00f3n.",
+    "is_placeholder": false
+  },
+  {
+    "equipo": "Osasuna",
+    "slug": "osasuna",
+    "archivo": "/crests/osasuna.svg",
+    "fuente": "football-data.org",
+    "url_origen": "https://crests.football-data.org/79.svg",
+    "requiere_atribucion": true,
+    "terminos": "Uso gratuito para proyectos no comerciales o informativos. Requiere enlace de atribuci\u00f3n.",
+    "is_placeholder": false
+  },
+  {
+    "equipo": "Racing Santander",
+    "slug": "racing-santander",
+    "archivo": "/crests/racing-santander.png",
+    "fuente": "football-data.org",
+    "url_origen": "https://crests.football-data.org/5335.png",
+    "requiere_atribucion": true,
+    "terminos": "Uso gratuito para proyectos no comerciales o informativos. Requiere enlace de atribuci\u00f3n.",
+    "is_placeholder": false
+  },
+  {
+    "equipo": "Rayo Vallecano",
+    "slug": "rayo-vallecano",
+    "archivo": "/crests/rayo-vallecano.svg",
+    "fuente": "football-data.org",
+    "url_origen": "https://crests.football-data.org/87.svg",
+    "requiere_atribucion": true,
+    "terminos": "Uso gratuito para proyectos no comerciales o informativos. Requiere enlace de atribuci\u00f3n.",
+    "is_placeholder": false
+  },
+  {
+    "equipo": "Real Betis",
+    "slug": "real-betis",
+    "archivo": "/crests/real-betis.svg",
+    "fuente": "football-data.org",
+    "url_origen": "https://crests.football-data.org/90.svg",
+    "requiere_atribucion": true,
+    "terminos": "Uso gratuito para proyectos no comerciales o informativos. Requiere enlace de atribuci\u00f3n.",
+    "is_placeholder": false
+  },
+  {
+    "equipo": "Real Madrid",
+    "slug": "real-madrid",
+    "archivo": "/crests/real-madrid.svg",
+    "fuente": "football-data.org",
+    "url_origen": "https://crests.football-data.org/86.svg",
+    "requiere_atribucion": true,
+    "terminos": "Uso gratuito para proyectos no comerciales o informativos. Requiere enlace de atribuci\u00f3n.",
+    "is_placeholder": false
+  },
+  {
+    "equipo": "Real Sociedad",
+    "slug": "real-sociedad",
+    "archivo": "/crests/real-sociedad.svg",
+    "fuente": "football-data.org",
+    "url_origen": "https://crests.football-data.org/92.svg",
+    "requiere_atribucion": true,
+    "terminos": "Uso gratuito para proyectos no comerciales o informativos. Requiere enlace de atribuci\u00f3n.",
+    "is_placeholder": false
+  },
+  {
+    "equipo": "Sevilla",
+    "slug": "sevilla",
+    "archivo": "/crests/sevilla.svg",
+    "fuente": "football-data.org",
+    "url_origen": "https://crests.football-data.org/559.svg",
+    "requiere_atribucion": true,
+    "terminos": "Uso gratuito para proyectos no comerciales o informativos. Requiere enlace de atribuci\u00f3n.",
+    "is_placeholder": false
+  },
+  {
+    "equipo": "Valencia",
+    "slug": "valencia",
+    "archivo": "/crests/valencia.svg",
+    "fuente": "football-data.org",
+    "url_origen": "https://crests.football-data.org/95.svg",
+    "requiere_atribucion": true,
+    "terminos": "Uso gratuito para proyectos no comerciales o informativos. Requiere enlace de atribuci\u00f3n.",
+    "is_placeholder": false
+  },
+  {
+    "equipo": "Villarreal",
+    "slug": "villarreal",
+    "archivo": "/crests/villarreal.svg",
+    "fuente": "football-data.org",
+    "url_origen": "https://crests.football-data.org/94.svg",
+    "requiere_atribucion": true,
+    "terminos": "Uso gratuito para proyectos no comerciales o informativos. Requiere enlace de atribuci\u00f3n.",
+    "is_placeholder": false
+  }
+]

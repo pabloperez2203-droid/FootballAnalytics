@@ -1,0 +1,66 @@
+{
+  "30780": [
+    "Home xG mismatch: 1.01908 != 1.2957924585789442",
+    "Away xG mismatch: 2.56122 != 2.639756875112653"
+  ],
+  "30788": [
+    "Away xG mismatch: 1.89653 != 1.9613464400172234"
+  ],
+  "30792": [
+    "Home xG mismatch: 3.0376 != 3.3539709988981485"
+  ],
+  "30793": [
+    "Home xG mismatch: 2.91657 != 3.295259218662977"
+  ],
+  "30795": [
+    "Home goals mismatch: 4 != 3 (shots) + 0 (OG)"
+  ],
+  "30796": [
+    "Home goals mismatch: 3 != 1 (shots) + 0 (OG)"
+  ],
+  "30798": [
+    "Away xG mismatch: 1.09043 != 1.323374836705625"
+  ],
+  "30799": [
+    "Home xG mismatch: 2.9576 != 3.0204675272107124",
+    "Home goals mismatch: 5 != 4 (shots) + 0 (OG)"
+  ],
+  "30801": [
+    "Away xG mismatch: 3.38283 != 3.6518734879791737"
+  ],
+  "30804": [
+    "Away goals mismatch: 3 != 6 (shots) + 0 (OG)"
+  ],
+  "30808": [
+    "Home xG mismatch: 1.81745 != 1.9349426571279764"
+  ],
+  "30810": [
+    "Home xG mismatch: 2.87045 != 2.9284394960850477"
+  ],
+  "30815": [
+    "Away xG mismatch: 2.27148 != 2.655855662189424"
+  ],
+  "30814": [
+    "Home xG mismatch: 2.67442 != 2.7925829561427236"
+  ],
+  "30819": [
+    "Home xG mismatch: 1.67293 != 1.7534181419759989",
+    "Away xG mismatch: 4.07311 != 4.157214650884271"
+  ],
+  "30825": [
+    "Away xG mismatch: 3.46121 != 3.5601284578442574",
+    "Away goals mismatch: 3 != 2 (shots) + 0 (OG)"
+  ],
+  "30822": [
+    "Home xG mismatch: 5.14269 != 5.668193899095058"
+  ],
+  "30826": [
+    "Home goals mismatch: 7 != 6 (shots) + 0 (OG)"
+  ],
+  "30834": [
+    "Home goals mismatch: 1 != 0 (shots) + 0 (OG)"
+  ],
+  "30838": [
+    "Home goals mismatch: 2 != 1 (shots) + 0 (OG)"
+  ]
+}

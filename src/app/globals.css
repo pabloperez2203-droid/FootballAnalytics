@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #07090b;
+  --panel: #0f1214;
+  --panel2: #13171a;
+  --line: #1e2428;
+  --txt: #e8ecee;
+  --mut: #7d878d;
+  --em: #10b981;
+  --or: #f97316;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-panel2: var(--panel2);
+  --color-line: var(--line);
+  --color-txt: var(--txt);
+  --color-mut: var(--mut);
+  --color-em: var(--em);
+  --color-or: var(--or);
+}
+
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+  scrollbar-gutter: stable;
+}
+
+body {
+  background: var(--bg);
+  color: var(--txt);
+  font-variant-numeric: tabular-nums;
+  margin: 0;
+}
+
+/* ── Tarjetas ── */
+.card {
+  background-color: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 22px;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:not(.kpi) {
+  background-image: linear-gradient(180deg, var(--panel2), var(--panel));
+}
+
+.kpi:hover {
+  transform: translateY(-3px);
+  border-color: #2f3a40;
+}
+
+/* ── Glow / Resplandor ── */
+.glow {
+  position: relative;
+  border-color: rgba(16, 185, 129, 0.24);
+  box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.10), 0 0 90px -12px rgba(16, 185, 129, 0.22);
+}
+
+.glow::before {
+  content: "";
+  position: absolute;
+  right: 8%;
+  top: 18%;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(closest-side, rgba(16, 185, 129, 0.20), transparent);
+  filter: blur(36px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Textos ── */
+.lbl {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mut);
+}
+
+/* ── Navbar ── */
+.topbar {
+  background: rgba(7, 9, 11, 0.85);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+.nav-bar {
+  bottom: -14px;
+}
+
+@media (max-width: 767px) {
+  .nav-bar {
+    bottom: -8px;
+  }
+}
+
+/* ── Interacciones SVG (Scatter) ── */
+.pt {
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.pt circle {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.22s cubic-bezier(0.3, 1.4, 0.5, 1), filter 0.22s;
+}
+
+.pt:hover circle,
+.pt.on circle {
+  transform: scale(1.5);
+  filter: brightness(1.3);
+}
+
+.pt text {
+  transition: font-weight 0.2s, fill 0.2s;
+}
+
+.pt:hover text,
+.pt.on text {
+  font-weight: 600;
+  fill: #fff;
+}
+
+.dim .pt:not(.on) {
+  opacity: 0.25;
+}
+
+/* ── Tabla y Filas (Hover state sync con Scatter) ── */
+.row {
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+
+.row td {
+  transition: box-shadow 0.2s, padding 0.2s;
+}
+
+.row:hover,
+.row.on {
+  background: rgba(16, 185, 129, 0.08);
+}
+
+.row:hover td:first-child,
+.row.on td:first-child {
+  box-shadow: inset 3px 0 0 var(--em);
+  padding-left: 10px;
+}
+
+.row[data-t="gir"]:hover,
+.row[data-t="gir"].on {
+  background: rgba(249, 115, 22, 0.08);
+}
+
+.row[data-t="gir"]:hover td:first-child,
+.row[data-t="gir"].on td:first-child {
+  box-shadow: inset 3px 0 0 var(--or);
+}
