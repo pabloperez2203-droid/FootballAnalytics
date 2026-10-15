@@ -432,18 +432,6 @@
     "needs_review": false
   },
   {
-    "id": "30807",
-    "matchday": 4,
-    "date": "2026-09-06 16:30:00",
-    "home_team": "Alaves",
-    "away_team": "Osasuna",
-    "home_score": 5,
-    "away_score": 2,
-    "home_xg": 1.60188,
-    "away_xg": 1.64406,
-    "needs_review": false
-  },
-  {
     "id": "30806",
     "matchday": 4,
     "date": "2026-09-06 16:30:00",
@@ -453,6 +441,18 @@
     "away_score": 0,
     "home_xg": 1.72661,
     "away_xg": 1.19172,
+    "needs_review": false
+  },
+  {
+    "id": "30807",
+    "matchday": 4,
+    "date": "2026-09-06 16:30:00",
+    "home_team": "Alaves",
+    "away_team": "Osasuna",
+    "home_score": 5,
+    "away_score": 2,
+    "home_xg": 1.60188,
+    "away_xg": 1.64406,
     "needs_review": false
   },
   {
@@ -648,18 +648,6 @@
     "needs_review": true
   },
   {
-    "id": "30822",
-    "matchday": 6,
-    "date": "2026-09-16 17:00:00",
-    "home_team": "Atletico Madrid",
-    "away_team": "Osasuna",
-    "home_score": 4,
-    "away_score": 0,
-    "home_xg": 5.14269,
-    "away_xg": 0.717926,
-    "needs_review": true
-  },
-  {
     "id": "30824",
     "matchday": 6,
     "date": "2026-09-16 17:00:00",
@@ -670,6 +658,18 @@
     "home_xg": 0.192171,
     "away_xg": 0.853244,
     "needs_review": false
+  },
+  {
+    "id": "30822",
+    "matchday": 6,
+    "date": "2026-09-16 17:00:00",
+    "home_team": "Atletico Madrid",
+    "away_team": "Osasuna",
+    "home_score": 4,
+    "away_score": 0,
+    "home_xg": 5.14269,
+    "away_xg": 0.717926,
+    "needs_review": true
   },
   {
     "id": "30826",
@@ -825,6 +825,114 @@
     "away_score": 3,
     "home_xg": 1.52762,
     "away_xg": 2.33411,
+    "needs_review": true
+  },
+  {
+    "id": "30845",
+    "matchday": 8,
+    "date": "2026-10-09 19:00:00",
+    "home_team": "Malaga",
+    "away_team": "Espanyol",
+    "home_score": 1,
+    "away_score": 1,
+    "home_xg": 0.685224,
+    "away_xg": 1.37967,
+    "needs_review": false
+  },
+  {
+    "id": "30840",
+    "matchday": 8,
+    "date": "2026-10-10 14:15:00",
+    "home_team": "Alaves",
+    "away_team": "Atletico Madrid",
+    "home_score": 1,
+    "away_score": 2,
+    "home_xg": 1.00614,
+    "away_xg": 2.00235,
+    "needs_review": false
+  },
+  {
+    "id": "30843",
+    "matchday": 8,
+    "date": "2026-10-10 16:30:00",
+    "home_team": "Barcelona",
+    "away_team": "Getafe",
+    "home_score": 3,
+    "away_score": 0,
+    "home_xg": 2.91336,
+    "away_xg": 0.140408,
+    "needs_review": false
+  },
+  {
+    "id": "30848",
+    "matchday": 8,
+    "date": "2026-10-10 19:00:00",
+    "home_team": "Real Madrid",
+    "away_team": "Villarreal",
+    "home_score": 1,
+    "away_score": 0,
+    "home_xg": 1.42593,
+    "away_xg": 0.526468,
+    "needs_review": false
+  },
+  {
+    "id": "30842",
+    "matchday": 8,
+    "date": "2026-10-11 12:00:00",
+    "home_team": "Elche",
+    "away_team": "Celta Vigo",
+    "home_score": 0,
+    "away_score": 0,
+    "home_xg": 0.726146,
+    "away_xg": 0.425067,
+    "needs_review": false
+  },
+  {
+    "id": "30849",
+    "matchday": 8,
+    "date": "2026-10-11 14:15:00",
+    "home_team": "Real Sociedad",
+    "away_team": "Deportivo La Coruna",
+    "home_score": 3,
+    "away_score": 2,
+    "home_xg": 1.32961,
+    "away_xg": 2.33695,
+    "needs_review": false
+  },
+  {
+    "id": "30841",
+    "matchday": 8,
+    "date": "2026-10-11 16:30:00",
+    "home_team": "Real Betis",
+    "away_team": "Osasuna",
+    "home_score": 5,
+    "away_score": 2,
+    "home_xg": 2.65567,
+    "away_xg": 1.14555,
+    "needs_review": false
+  },
+  {
+    "id": "30846",
+    "matchday": 8,
+    "date": "2026-10-11 19:00:00",
+    "home_team": "Racing Santander",
+    "away_team": "Valencia",
+    "home_score": 2,
+    "away_score": 2,
+    "home_xg": 1.39797,
+    "away_xg": 1.75004,
+    "needs_review": false
+  },
+  {
+    "id": "30844",
+    "matchday": 8,
+    "date": "2026-10-12 19:00:00",
+    "home_team": "Levante",
+    "away_team": "Sevilla",
+    "home_score": 3,
+    "away_score": 3,
+    "home_xg": 2.00633,
+    "away_xg": 3.19601,
     "needs_review": true
   }
 ]

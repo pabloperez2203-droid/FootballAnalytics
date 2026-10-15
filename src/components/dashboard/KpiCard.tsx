@@ -22,30 +22,32 @@ export default function KpiCard({
   valueClassName = "",
 }: KpiCardProps) {
   return (
-    <article className={`card kpi flex flex-col justify-between ${className}`} style={style}>
-      <div className="flex items-center justify-between">
-        <span className="lbl">{title}</span>
+    <article
+      className={`glass-card rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-0.5 ${className}`}
+      style={style}
+    >
+      <div className="flex items-center justify-between gap-2">
+        <span className="lbl font-semibold">{title}</span>
         {delta && (
           <span
-            className="text-xs px-2 py-1 rounded-full"
-            style={
+            className={`text-xs font-mono px-2.5 py-0.5 rounded-full font-semibold border ${
               deltaType === "pos"
-                ? { background: "rgba(16,185,129,.12)", color: "var(--em)" }
+                ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/25"
                 : deltaType === "neg"
-                ? { background: "rgba(249,115,22,.12)", color: "var(--or)" }
-                : {}
-            }
+                ? "bg-orange-500/10 text-orange-400 border-orange-500/25"
+                : "bg-white/5 text-slate-400 border-white/10"
+            }`}
           >
             {deltaType === "pos" ? "▲" : deltaType === "neg" ? "▼" : ""} {delta}
           </span>
         )}
       </div>
       <div className="mt-5">
-        <div className={`text-3xl md:text-5xl font-semibold tracking-tight ${valueClassName}`}>
+        <div className={`text-3xl md:text-5xl font-mono font-bold tracking-tight tabular-nums ${valueClassName}`}>
           {value}
         </div>
         {subtitle && (
-          <div className="text-sm mt-2" style={{ color: "var(--mut)" }}>
+          <div className="text-sm mt-2 font-normal text-slate-400">
             {subtitle}
           </div>
         )}

@@ -759,3 +759,75 @@ Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/d
 INFO 2026-10-07 21:49:03,075 [libraries.py:_load_library:397]
 Successfully loaded TLS library: /Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/bin/tls-client-darwin-arm64-1.13.1.dylib
 
+INFO 2026-10-14 19:12:32,174 [_config.py:<module>:91]
+No custom team name replacements found. You can configure these in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/teamname_replacements.json.
+
+INFO 2026-10-14 19:12:32,180 [_config.py:<module>:189]
+No custom league dict found. You can configure additional leagues in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/league_dict.json.
+
+INFO 2026-10-14 19:12:32,182 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-14 19:12:32,184 [libraries.py:_load_library:397]
+Successfully loaded TLS library: /Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/bin/tls-client-darwin-arm64-1.13.1.dylib
+
+INFO 2026-10-14 19:12:46,458 [_config.py:<module>:91]
+No custom team name replacements found. You can configure these in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/teamname_replacements.json.
+
+INFO 2026-10-14 19:12:46,461 [_config.py:<module>:189]
+No custom league dict found. You can configure additional leagues in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/league_dict.json.
+
+INFO 2026-10-14 19:12:46,463 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-14 19:12:46,466 [libraries.py:_load_library:397]
+Successfully loaded TLS library: /Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/bin/tls-client-darwin-arm64-1.13.1.dylib
+
+INFO 2026-10-14 19:12:56,480 [_config.py:<module>:91]
+No custom team name replacements found. You can configure these in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/teamname_replacements.json.
+
+INFO 2026-10-14 19:12:56,483 [_config.py:<module>:189]
+No custom league dict found. You can configure additional leagues in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/league_dict.json.
+
+INFO 2026-10-14 19:12:56,485 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-14 19:12:56,487 [libraries.py:_load_library:397]
+Successfully loaded TLS library: /Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/bin/tls-client-darwin-arm64-1.13.1.dylib
+
+INFO 2026-10-14 19:13:50,450 [_config.py:<module>:91]
+No custom team name replacements found. You can configure these in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/teamname_replacements.json.
+
+INFO 2026-10-14 19:13:50,453 [_config.py:<module>:189]
+No custom league dict found. You can configure additional leagues in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/league_dict.json.
+
+INFO 2026-10-14 19:13:50,455 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-14 19:13:50,457 [libraries.py:_load_library:397]
+Successfully loaded TLS library: /Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/bin/tls-client-darwin-arm64-1.13.1.dylib
+
+INFO 2026-10-14 19:21:11,856 [_config.py:<module>:91]
+No custom team name replacements found. You can configure these in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/teamname_replacements.json.
+
+INFO 2026-10-14 19:21:11,861 [_config.py:<module>:189]
+No custom league dict found. You can configure additional leagues in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/league_dict.json.
+
+INFO 2026-10-14 19:21:11,864 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-14 19:21:11,869 [libraries.py:_load_library:397]
+Successfully loaded TLS library: /Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/bin/tls-client-darwin-arm64-1.13.1.dylib
+
+INFO 2026-10-14 19:21:44,579 [_config.py:<module>:91]
+No custom team name replacements found. You can configure these in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/teamname_replacements.json.
+
+INFO 2026-10-14 19:21:44,582 [_config.py:<module>:189]
+No custom league dict found. You can configure additional leagues in /Users/perez/Project_FootData/football-analytics/backend/data/cache/config/league_dict.json.
+
+INFO 2026-10-14 19:21:44,584 [_common.py:__init__:250]
+Saving cached data to /Users/perez/Project_FootData/football-analytics/backend/data/cache/data/Understat
+
+INFO 2026-10-14 19:21:44,587 [libraries.py:_load_library:397]
+Successfully loaded TLS library: /Users/perez/Project_FootData/football-analytics/backend/venv_soccerdata/lib/python3.14/site-packages/tls_requests/bin/tls-client-darwin-arm64-1.13.1.dylib
+

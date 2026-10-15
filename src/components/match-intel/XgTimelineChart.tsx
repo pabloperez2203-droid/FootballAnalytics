@@ -1,7 +1,14 @@
 "use client";
 import React, { useState } from 'react';
 
-export default function XgTimelineChart({ shots, matchData }: { shots: any[], matchData: any }) {
+interface XgTimelineChartProps {
+  shots: any[];
+  matchData: any;
+  hoveredShotId?: string | number | null;
+  onHoverShot?: (id: string | number | null) => void;
+}
+
+export default function XgTimelineChart({ shots, matchData, hoveredShotId, onHoverShot }: XgTimelineChartProps) {
   const [hoverId, setHoverId] = useState<string | null>(null);
   
   // Sort shots by minute
@@ -10,7 +17,7 @@ export default function XgTimelineChart({ shots, matchData }: { shots: any[], ma
   // Calculate cumulative xG
   let cumHome = 0;
   let cumAway = 0;
-  const dataPoints = [{ min: 0, home: 0, away: 0, shot: null }];
+  const dataPoints: { min: number; home: number; away: number; shot: any }[] = [{ min: 0, home: 0, away: 0, shot: null }];
   
   sortedShots.forEach(s => {
       if (s.team === 'home') cumHome += s.xg;
@@ -24,10 +31,10 @@ export default function XgTimelineChart({ shots, matchData }: { shots: any[], ma
   const getY = (xg: number) => 180 - (xg / max_xg) * 160;
 
   return (
-    <div className="card glow h-full flex flex-col">
+    <div className="glass-card rounded-2xl p-6 h-full flex flex-col transition-all duration-300 hover:-translate-y-0.5">
       <div className="flex items-center gap-4 mb-4">
-        <div className="lbl">xG Acumulado por minuto</div>
-        <div className="flex items-center gap-3 text-xs font-medium text-slate-400">
+        <div className="lbl font-semibold">xG Acumulado por minuto</div>
+        <div className="flex items-center gap-3 text-xs font-medium text-slate-400 font-mono">
           <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full" style={{background: 'var(--em)'}}></span>{matchData.home_team}</div>
           <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full" style={{background: 'var(--or)'}}></span>{matchData.away_team}</div>
         </div>
@@ -50,26 +57,64 @@ export default function XgTimelineChart({ shots, matchData }: { shots: any[], ma
            </g>
 
            {/* Lines */}
-           <path d={`M${dataPoints.map(p => `${getX(p.min)},${getY(p.home)}`).join(' L')}`} fill="none" stroke="var(--em)" strokeWidth="2" />
-           <path d={`M${dataPoints.map(p => `${getX(p.min)},${getY(p.away)}`).join(' L')}`} fill="none" stroke="var(--or)" strokeWidth="2" />
+           <path d={`M${dataPoints.map(p => `${getX(p.min)},${getY(p.home)}`).join(' L')}`} fill="none" stroke="var(--em)" strokeWidth="2.5" />
+           <path d={`M${dataPoints.map(p => `${getX(p.min)},${getY(p.away)}`).join(' L')}`} fill="none" stroke="var(--or)" strokeWidth="2.5" />
 
            {/* Points */}
-           {dataPoints.filter(p => p.shot).map((p, i) => {
-              const isGoal = p.shot.result === 'Gol';
-              const teamColor = p.shot.team === 'home' ? 'var(--em)' : 'var(--or)';
-              const y = p.shot.team === 'home' ? getY(p.home) : getY(p.away);
-              const isActive = hoverId === p.shot.id;
+           {dataPoints.map((p, i) => {
+              if (!p.shot) return null;
+              const shot = p.shot;
+              const isGoal = shot.result === 'Gol';
+              const teamColor = shot.team === 'home' ? 'var(--em)' : 'var(--or)';
+              const y = shot.team === 'home' ? getY(p.home) : getY(p.away);
+              const isActive = (hoveredShotId != null && String(hoveredShotId) === String(shot.id)) || hoverId === shot.id;
               return (
-                 <g key={i} onMouseEnter={() => setHoverId(p.shot.id)} onMouseLeave={() => setHoverId(null)}>
-                    {isActive && <circle cx={getX(p.min)} cy={y} r="12" fill={teamColor} opacity="0.2"/>}
-                    <circle cx={getX(p.min)} cy={y} r={isGoal ? 5 : 3} fill={isGoal ? teamColor : '#1a2024'} stroke={teamColor} strokeWidth={isGoal ? 0 : 2} className="cursor-pointer" />
+                 <g
+                    key={i}
+                    className="cursor-pointer"
+                    onMouseEnter={() => {
+                      setHoverId(shot.id);
+                      onHoverShot?.(shot.id);
+                    }}
+                    onMouseLeave={() => {
+                      setHoverId(null);
+                      onHoverShot?.(null);
+                    }}
+                 >
                     {isActive && (
-                       <text x={getX(p.min)} y={y - 15} fill="#fff" fontSize="10" textAnchor="middle" className="pointer-events-none">
-                         {p.shot.player} ({p.shot.xg.toFixed(2)})
-                       </text>
+                      <>
+                        <circle cx={getX(p.min)} cy={y} r="16" fill={teamColor} opacity="0.25" className="animate-ping"/>
+                        <circle cx={getX(p.min)} cy={y} r="12" fill={teamColor} opacity="0.35"/>
+                      </>
+                    )}
+                    <circle
+                      cx={getX(p.min)}
+                      cy={y}
+                      r={isActive ? (isGoal ? 7 : 5) : (isGoal ? 5 : 3)}
+                      fill={isGoal ? teamColor : '#1a2024'}
+                      stroke={teamColor}
+                      strokeWidth={isGoal ? 0 : 2}
+                      className="transition-all duration-200"
+                    />
+                    {isActive && (
+                       <g className="pointer-events-none">
+                         <rect
+                           x={getX(p.min) - 50}
+                           y={y - 28}
+                           width={100}
+                           height={18}
+                           rx={4}
+                           fill="#0b0e10"
+                           stroke="rgba(255,255,255,0.2)"
+                           strokeWidth={1}
+                         />
+                         <text x={getX(p.min)} y={y - 15} fill="#fff" fontSize="9" fontWeight="600" textAnchor="middle" className="font-mono">
+                           {shot.player.split(' ').pop()} ({shot.xg.toFixed(2)})
+                         </text>
+                       </g>
                     )}
                  </g>
-              )
+              );
            })}
         </svg>
       </div>

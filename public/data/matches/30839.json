@@ -21,9 +21,9 @@
       "draw": 25,
       "away": 25
     },
-    "best_chance": "Estimaci\u00f3n (solo xG)",
-    "most_dangerous": "Estimaci\u00f3n (solo xG)",
-    "biggest_surprise": "Estimaci\u00f3n (solo xG)"
+    "best_chance": "Estimación (solo xG)",
+    "most_dangerous": "Estimación (solo xG)",
+    "biggest_surprise": "Estimación (solo xG)"
   },
   "stats": {
     "home": {
@@ -42,7 +42,7 @@
       "id": "696814",
       "min": 41,
       "team": "away",
-      "player": "Iv\u00e1n Romero",
+      "player": "Iván Romero",
       "xg": 0.062,
       "result": "Gol",
       "x": 14.4,
@@ -72,7 +72,7 @@
       "id": "696823",
       "min": 83,
       "team": "away",
-      "player": "Roger Brugu\u00e9",
+      "player": "Roger Brugué",
       "xg": 0.511,
       "result": "Missed Shot",
       "x": 5.4,
@@ -82,7 +82,7 @@
       "id": "696804",
       "min": 16,
       "team": "away",
-      "player": "Thiago Fern\u00e1ndez",
+      "player": "Thiago Fernández",
       "xg": 0.232,
       "result": "Missed Shot",
       "x": 13.1,
@@ -142,7 +142,7 @@
       "id": "696800",
       "min": 3,
       "team": "home",
-      "player": "Ayoze P\u00e9rez",
+      "player": "Ayoze Pérez",
       "xg": 0.569,
       "result": "Bloqueado",
       "x": 95.2,
@@ -152,7 +152,7 @@
       "id": "696801",
       "min": 14,
       "team": "home",
-      "player": "Ayoze P\u00e9rez",
+      "player": "Ayoze Pérez",
       "xg": 0.604,
       "result": "Missed Shot",
       "x": 94.3,
@@ -162,7 +162,7 @@
       "id": "696806",
       "min": 20,
       "team": "home",
-      "player": "Ayoze P\u00e9rez",
+      "player": "Ayoze Pérez",
       "xg": 0.366,
       "result": "Parada",
       "x": 85.5,
@@ -172,7 +172,7 @@
       "id": "696812",
       "min": 38,
       "team": "home",
-      "player": "Ayoze P\u00e9rez",
+      "player": "Ayoze Pérez",
       "xg": 0.537,
       "result": "Bloqueado",
       "x": 92.4,
@@ -182,7 +182,7 @@
       "id": "696813",
       "min": 40,
       "team": "home",
-      "player": "Ayoze P\u00e9rez",
+      "player": "Ayoze Pérez",
       "xg": 0.398,
       "result": "Gol",
       "x": 86.1,
@@ -313,13 +313,14 @@
     {
       "id": "10319",
       "team": "away",
-      "name": "Adri\u00e1n De la Fuente",
+      "name": "Adrián De la Fuente",
       "mins": 90,
       "shots": 0,
       "xg": 0.0,
       "goals": 0,
       "position": "DC",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/952528.png"
     },
     {
       "id": "3237",
@@ -330,7 +331,8 @@
       "xg": 0.0,
       "goals": 0,
       "position": "DC",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/210683.png"
     },
     {
       "id": "13035",
@@ -341,7 +343,8 @@
       "xg": 0.0,
       "goals": 0,
       "position": "Sub",
-      "is_starter": false
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1481503.png"
     },
     {
       "id": "14701",
@@ -352,7 +355,8 @@
       "xg": 0.0,
       "goals": 0,
       "position": "MC",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1332540.png"
     },
     {
       "id": "14917",
@@ -363,18 +367,20 @@
       "xg": 0.0,
       "goals": 0,
       "position": "Sub",
-      "is_starter": false
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1780239.png"
     },
     {
       "id": "9275",
       "team": "away",
-      "name": "Iv\u00e1n Romero",
+      "name": "Iván Romero",
       "mins": 65,
       "shots": 1,
       "xg": 0.06,
       "goals": 1,
       "position": "FW",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1209441.png"
     },
     {
       "id": "257",
@@ -385,7 +391,8 @@
       "xg": 0.09,
       "goals": 0,
       "position": "DR",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/443966.png"
     },
     {
       "id": "9466",
@@ -396,18 +403,20 @@
       "xg": 0.0,
       "goals": 0,
       "position": "MC",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1131957.png"
     },
     {
       "id": "7605",
       "team": "away",
-      "name": "Manuel S\u00e1nchez",
+      "name": "Manuel Sánchez",
       "mins": 90,
       "shots": 0,
       "xg": 0.0,
       "goals": 0,
       "position": "DL",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1052330.png"
     },
     {
       "id": "2385",
@@ -418,7 +427,8 @@
       "xg": 0.0,
       "goals": 0,
       "position": "GK",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/185644.png"
     },
     {
       "id": "8764",
@@ -429,7 +439,8 @@
       "xg": 0.0,
       "goals": 0,
       "position": "MC",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/914401.png"
     },
     {
       "id": "14342",
@@ -440,40 +451,44 @@
       "xg": 0.0,
       "goals": 0,
       "position": "Sub",
-      "is_starter": false
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1302821.png"
     },
     {
       "id": "13767",
       "team": "away",
-      "name": "Roger Brugu\u00e9",
+      "name": "Roger Brugué",
       "mins": 90,
       "shots": 1,
       "xg": 0.51,
       "goals": 0,
       "position": "FWR",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1286471.png"
     },
     {
       "id": "14393",
       "team": "away",
-      "name": "Thiago Fern\u00e1ndez",
+      "name": "Thiago Fernández",
       "mins": 65,
       "shots": 1,
       "xg": 0.23,
       "goals": 0,
       "position": "FWL",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1460063.png"
     },
     {
       "id": "8500",
       "team": "away",
-      "name": "V\u00edctor Garc\u00eda",
+      "name": "Víctor García",
       "mins": 25,
       "shots": 0,
       "xg": 0.0,
       "goals": 0,
       "position": "Sub",
-      "is_starter": false
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/977618.png"
     },
     {
       "id": "14983",
@@ -484,7 +499,8 @@
       "xg": 0.04,
       "goals": 0,
       "position": "Sub",
-      "is_starter": false
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1836083.png"
     },
     {
       "id": "12160",
@@ -495,7 +511,8 @@
       "xg": 0.63,
       "goals": 1,
       "position": "AMC",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1184694.png"
     },
     {
       "id": "14396",
@@ -506,29 +523,32 @@
       "xg": 0.08,
       "goals": 0,
       "position": "DR",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1338696.png"
     },
     {
       "id": "770",
       "team": "home",
-      "name": "Ayoze P\u00e9rez",
+      "name": "Ayoze Pérez",
       "mins": 69,
       "shots": 5,
       "xg": 2.47,
       "goals": 1,
       "position": "FW",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/479020.png"
     },
     {
       "id": "14221",
       "team": "home",
-      "name": "Carlos Maci\u00e0",
+      "name": "Carlos Macià",
       "mins": 1,
       "shots": 0,
       "xg": 0.0,
       "goals": 0,
       "position": "Sub",
-      "is_starter": false
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1841906.png"
     },
     {
       "id": "8187",
@@ -539,7 +559,8 @@
       "xg": 0.67,
       "goals": 1,
       "position": "Sub",
-      "is_starter": false
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1117069.png"
     },
     {
       "id": "2120",
@@ -550,7 +571,8 @@
       "xg": 0.16,
       "goals": 0,
       "position": "Sub",
-      "is_starter": false
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/246438.png"
     },
     {
       "id": "10121",
@@ -561,7 +583,8 @@
       "xg": 0.05,
       "goals": 0,
       "position": "AMR",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1311915.png"
     },
     {
       "id": "14936",
@@ -572,7 +595,8 @@
       "xg": 0.11,
       "goals": 0,
       "position": "DMC",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1216798.png"
     },
     {
       "id": "5656",
@@ -583,7 +607,8 @@
       "xg": 0.0,
       "goals": 0,
       "position": "Sub",
-      "is_starter": false
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/575735.png"
     },
     {
       "id": "8696",
@@ -594,7 +619,8 @@
       "xg": 0.0,
       "goals": 0,
       "position": "DMC",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/844544.png"
     },
     {
       "id": "12914",
@@ -605,18 +631,20 @@
       "xg": 0.0,
       "goals": 0,
       "position": "DC",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1531887.png"
     },
     {
       "id": "5241",
       "team": "home",
-      "name": "P\u00e9ter Gul\u00e1csi",
+      "name": "Péter Gulácsi",
       "mins": 90,
       "shots": 0,
       "xg": 0.0,
       "goals": 0,
       "position": "GK",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/151001.png"
     },
     {
       "id": "11383",
@@ -627,18 +655,20 @@
       "xg": 0.0,
       "goals": 0,
       "position": "DC",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1343750.png"
     },
     {
       "id": "13003",
       "team": "home",
-      "name": "Santiago Mouri\u00f1o",
+      "name": "Santiago Mouriño",
       "mins": 8,
       "shots": 0,
       "xg": 0.0,
       "goals": 0,
       "position": "Sub",
-      "is_starter": false
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1407468.png"
     },
     {
       "id": "11744",
@@ -649,7 +679,8 @@
       "xg": 0.02,
       "goals": 0,
       "position": "DL",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1059657.png"
     },
     {
       "id": "12322",
@@ -660,7 +691,8 @@
       "xg": 0.09,
       "goals": 0,
       "position": "AML",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1026135.png"
     }
   ],
   "rosters": {
@@ -675,7 +707,7 @@
         "player_id": "5241",
         "team_id": "154",
         "position": "GK",
-        "player": "P\u00e9ter Gul\u00e1csi",
+        "player": "Péter Gulácsi",
         "h_a": "h",
         "yellow_card": "0",
         "red_card": "0",
@@ -686,7 +718,8 @@
         "xA": "0",
         "xGChain": "0.5626158118247986",
         "xGBuildup": "0.5626158118247986",
-        "positionOrder": "1"
+        "positionOrder": "1",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/151001.png"
       },
       "803940": {
         "id": "803940",
@@ -709,7 +742,8 @@
         "xA": "0.03928004950284958",
         "xGChain": "1.1983866691589355",
         "xGBuildup": "1.0912601947784424",
-        "positionOrder": "2"
+        "positionOrder": "2",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1338696.png"
       },
       "803942": {
         "id": "803942",
@@ -732,7 +766,8 @@
         "xA": "0",
         "xGChain": "1.1406257152557373",
         "xGBuildup": "1.1406257152557373",
-        "positionOrder": "3"
+        "positionOrder": "3",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1531887.png"
       },
       "803941": {
         "id": "803941",
@@ -755,7 +790,8 @@
         "xA": "0.0911618322134018",
         "xGChain": "1.4844598770141602",
         "xGBuildup": "1.3932980298995972",
-        "positionOrder": "3"
+        "positionOrder": "3",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1343750.png"
       },
       "803943": {
         "id": "803943",
@@ -778,7 +814,8 @@
         "xA": "0.5370966196060181",
         "xGChain": "0.9421671628952026",
         "xGBuildup": "0.40507054328918457",
-        "positionOrder": "4"
+        "positionOrder": "4",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1059657.png"
       },
       "803945": {
         "id": "803945",
@@ -801,7 +838,8 @@
         "xA": "0",
         "xGChain": "2.384673595428467",
         "xGBuildup": "2.384673595428467",
-        "positionOrder": "7"
+        "positionOrder": "7",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/844544.png"
       },
       "803944": {
         "id": "803944",
@@ -824,7 +862,8 @@
         "xA": "0",
         "xGChain": "0.8002778887748718",
         "xGBuildup": "0.7704849243164062",
-        "positionOrder": "7"
+        "positionOrder": "7",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1216798.png"
       },
       "803946": {
         "id": "803946",
@@ -847,7 +886,8 @@
         "xA": "1.1719261407852173",
         "xGChain": "1.3820853233337402",
         "xGBuildup": "0.15651822090148926",
-        "positionOrder": "11"
+        "positionOrder": "11",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1311915.png"
       },
       "803947": {
         "id": "803947",
@@ -870,7 +910,8 @@
         "xA": "1.6257293224334717",
         "xGChain": "3.396907091140747",
         "xGBuildup": "1.2483748197555542",
-        "positionOrder": "12"
+        "positionOrder": "12",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1184694.png"
       },
       "803948": {
         "id": "803948",
@@ -893,7 +934,8 @@
         "xA": "0.074910968542099",
         "xGChain": "1.9428774118423462",
         "xGBuildup": "1.7906299829483032",
-        "positionOrder": "13"
+        "positionOrder": "13",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1026135.png"
       },
       "803949": {
         "id": "803949",
@@ -905,7 +947,7 @@
         "player_id": "770",
         "team_id": "154",
         "position": "FW",
-        "player": "Ayoze P\u00e9rez",
+        "player": "Ayoze Pérez",
         "h_a": "h",
         "yellow_card": "0",
         "red_card": "0",
@@ -916,7 +958,8 @@
         "xA": "0.05364096537232399",
         "xGChain": "2.5277066230773926",
         "xGBuildup": "0",
-        "positionOrder": "15"
+        "positionOrder": "15",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/479020.png"
       },
       "803951": {
         "id": "803951",
@@ -939,7 +982,8 @@
         "xA": "0",
         "xGChain": "0.6382073163986206",
         "xGBuildup": "0.47972995042800903",
-        "positionOrder": "17"
+        "positionOrder": "17",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/246438.png"
       },
       "803954": {
         "id": "803954",
@@ -951,7 +995,7 @@
         "player_id": "14221",
         "team_id": "154",
         "position": "Sub",
-        "player": "Carlos Maci\u00e0",
+        "player": "Carlos Macià",
         "h_a": "h",
         "yellow_card": "0",
         "red_card": "0",
@@ -962,7 +1006,8 @@
         "xA": "0",
         "xGChain": "0",
         "xGBuildup": "0",
-        "positionOrder": "17"
+        "positionOrder": "17",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1841906.png"
       },
       "803952": {
         "id": "803952",
@@ -974,7 +1019,7 @@
         "player_id": "13003",
         "team_id": "154",
         "position": "Sub",
-        "player": "Santiago Mouri\u00f1o",
+        "player": "Santiago Mouriño",
         "h_a": "h",
         "yellow_card": "0",
         "red_card": "0",
@@ -985,7 +1030,8 @@
         "xA": "0",
         "xGChain": "0.06731554865837097",
         "xGBuildup": "0.06731554865837097",
-        "positionOrder": "17"
+        "positionOrder": "17",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1407468.png"
       },
       "803950": {
         "id": "803950",
@@ -1008,7 +1054,8 @@
         "xA": "0",
         "xGChain": "0.6746413111686707",
         "xGBuildup": "0",
-        "positionOrder": "17"
+        "positionOrder": "17",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1117069.png"
       },
       "803953": {
         "id": "803953",
@@ -1031,7 +1078,8 @@
         "xA": "0",
         "xGChain": "0.06731554865837097",
         "xGBuildup": "0.06731554865837097",
-        "positionOrder": "17"
+        "positionOrder": "17",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/575735.png"
       }
     },
     "a": {
@@ -1056,7 +1104,8 @@
         "xA": "0",
         "xGChain": "0.042716134339571",
         "xGBuildup": "0.042716134339571",
-        "positionOrder": "1"
+        "positionOrder": "1",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/185644.png"
       },
       "803956": {
         "id": "803956",
@@ -1079,7 +1128,8 @@
         "xA": "0.06217539310455322",
         "xGChain": "0.1990087926387787",
         "xGBuildup": "0.10489153116941452",
-        "positionOrder": "2"
+        "positionOrder": "2",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/443966.png"
       },
       "803957": {
         "id": "803957",
@@ -1102,7 +1152,8 @@
         "xA": "0",
         "xGChain": "0.06217539310455322",
         "xGBuildup": "0.06217539310455322",
-        "positionOrder": "3"
+        "positionOrder": "3",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/210683.png"
       },
       "803958": {
         "id": "803958",
@@ -1114,7 +1165,7 @@
         "player_id": "10319",
         "team_id": "151",
         "position": "DC",
-        "player": "Adri\u00e1n De la Fuente",
+        "player": "Adrián De la Fuente",
         "h_a": "a",
         "yellow_card": "0",
         "red_card": "0",
@@ -1125,7 +1176,8 @@
         "xA": "0",
         "xGChain": "0.10489153116941452",
         "xGBuildup": "0.10489153116941452",
-        "positionOrder": "3"
+        "positionOrder": "3",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/952528.png"
       },
       "803959": {
         "id": "803959",
@@ -1137,7 +1189,7 @@
         "player_id": "7605",
         "team_id": "151",
         "position": "DL",
-        "player": "Manuel S\u00e1nchez",
+        "player": "Manuel Sánchez",
         "h_a": "a",
         "yellow_card": "0",
         "red_card": "0",
@@ -1148,7 +1200,8 @@
         "xA": "0",
         "xGChain": "0.06217539310455322",
         "xGBuildup": "0.06217539310455322",
-        "positionOrder": "4"
+        "positionOrder": "4",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1052330.png"
       },
       "803962": {
         "id": "803962",
@@ -1171,7 +1224,8 @@
         "xA": "0.7427836656570435",
         "xGChain": "0.23172567784786224",
         "xGBuildup": "0",
-        "positionOrder": "9"
+        "positionOrder": "9",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1131957.png"
       },
       "803960": {
         "id": "803960",
@@ -1194,7 +1248,8 @@
         "xA": "0",
         "xGChain": "0.06217539310455322",
         "xGBuildup": "0.06217539310455322",
-        "positionOrder": "9"
+        "positionOrder": "9",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1332540.png"
       },
       "803961": {
         "id": "803961",
@@ -1217,7 +1272,8 @@
         "xA": "0",
         "xGChain": "0.06217539310455322",
         "xGBuildup": "0.06217539310455322",
-        "positionOrder": "9"
+        "positionOrder": "9",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/914401.png"
       },
       "803963": {
         "id": "803963",
@@ -1229,7 +1285,7 @@
         "player_id": "13767",
         "team_id": "151",
         "position": "FWR",
-        "player": "Roger Brugu\u00e9",
+        "player": "Roger Brugué",
         "h_a": "a",
         "yellow_card": "0",
         "red_card": "0",
@@ -1240,7 +1296,8 @@
         "xA": "0",
         "xGChain": "0",
         "xGBuildup": "0",
-        "positionOrder": "14"
+        "positionOrder": "14",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1286471.png"
       },
       "803964": {
         "id": "803964",
@@ -1252,7 +1309,7 @@
         "player_id": "9275",
         "team_id": "151",
         "position": "FW",
-        "player": "Iv\u00e1n Romero",
+        "player": "Iván Romero",
         "h_a": "a",
         "yellow_card": "0",
         "red_card": "0",
@@ -1263,7 +1320,8 @@
         "xA": "0",
         "xGChain": "0.06217539310455322",
         "xGBuildup": "0",
-        "positionOrder": "15"
+        "positionOrder": "15",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1209441.png"
       },
       "803965": {
         "id": "803965",
@@ -1275,7 +1333,7 @@
         "player_id": "14393",
         "team_id": "151",
         "position": "FWL",
-        "player": "Thiago Fern\u00e1ndez",
+        "player": "Thiago Fernández",
         "h_a": "a",
         "yellow_card": "0",
         "red_card": "0",
@@ -1286,7 +1344,8 @@
         "xA": "0",
         "xGChain": "0.23172567784786224",
         "xGBuildup": "0",
-        "positionOrder": "16"
+        "positionOrder": "16",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1460063.png"
       },
       "803968": {
         "id": "803968",
@@ -1309,7 +1368,8 @@
         "xA": "0",
         "xGChain": "0.042716134339571",
         "xGBuildup": "0.042716134339571",
-        "positionOrder": "17"
+        "positionOrder": "17",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1481503.png"
       },
       "803966": {
         "id": "803966",
@@ -1332,7 +1392,8 @@
         "xA": "0",
         "xGChain": "0",
         "xGBuildup": "0",
-        "positionOrder": "17"
+        "positionOrder": "17",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1302821.png"
       },
       "803969": {
         "id": "803969",
@@ -1355,7 +1416,8 @@
         "xA": "0",
         "xGChain": "0.042716134339571",
         "xGBuildup": "0",
-        "positionOrder": "17"
+        "positionOrder": "17",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1836083.png"
       },
       "803967": {
         "id": "803967",
@@ -1367,7 +1429,7 @@
         "player_id": "8500",
         "team_id": "151",
         "position": "Sub",
-        "player": "V\u00edctor Garc\u00eda",
+        "player": "Víctor García",
         "h_a": "a",
         "yellow_card": "0",
         "red_card": "0",
@@ -1378,7 +1440,8 @@
         "xA": "0.042716134339571",
         "xGChain": "0.042716134339571",
         "xGBuildup": "0",
-        "positionOrder": "17"
+        "positionOrder": "17",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/977618.png"
       },
       "803970": {
         "id": "803970",
@@ -1401,7 +1464,8 @@
         "xA": "0",
         "xGChain": "0",
         "xGBuildup": "0",
-        "positionOrder": "17"
+        "positionOrder": "17",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1780239.png"
       }
     }
   }

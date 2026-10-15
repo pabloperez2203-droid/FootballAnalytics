@@ -1,0 +1,4170 @@
+{
+  "Barcelona": [
+    {
+      "id": 1167220,
+      "name": "Joan García",
+      "normalized_name": "joan garcia",
+      "role": "Keeper",
+      "shirtNumber": 1,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1167220.png"
+    },
+    {
+      "id": 169718,
+      "name": "Wojciech Szczęsny",
+      "normalized_name": "wojciech szczesny",
+      "role": "Keeper",
+      "shirtNumber": 13,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/169718.png"
+    },
+    {
+      "id": 383971,
+      "name": "Dominik Livaković",
+      "normalized_name": "dominik livakovic",
+      "role": "Keeper",
+      "shirtNumber": 25,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/383971.png"
+    },
+    {
+      "id": 361757,
+      "name": "João Cancelo",
+      "normalized_name": "joao cancelo",
+      "role": "Defender",
+      "shirtNumber": 2,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/361757.png"
+    },
+    {
+      "id": 1254166,
+      "name": "Alejandro Balde",
+      "normalized_name": "alejandro balde",
+      "role": "Defender",
+      "shirtNumber": 3,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1254166.png"
+    },
+    {
+      "id": 1532137,
+      "name": "Pau Cubarsí",
+      "normalized_name": "pau cubarsi",
+      "role": "Defender",
+      "shirtNumber": 5,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1532137.png"
+    },
+    {
+      "id": 1815149,
+      "name": "Xavi Espart",
+      "normalized_name": "xavi espart",
+      "role": "Defender",
+      "shirtNumber": 12,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1815149.png"
+    },
+    {
+      "id": 449232,
+      "name": "Andreas Christensen",
+      "normalized_name": "andreas christensen",
+      "role": "Defender",
+      "shirtNumber": 15,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/449232.png"
+    },
+    {
+      "id": 1598982,
+      "name": "Gerard Martín",
+      "normalized_name": "gerard martin",
+      "role": "Defender",
+      "shirtNumber": 18,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1598982.png"
+    },
+    {
+      "id": 705450,
+      "name": "Jules Koundé",
+      "normalized_name": "jules kounde",
+      "role": "Defender",
+      "shirtNumber": 23,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/705450.png"
+    },
+    {
+      "id": 940573,
+      "name": "Eric García",
+      "normalized_name": "eric garcia",
+      "role": "Defender",
+      "shirtNumber": 24,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/940573.png"
+    },
+    {
+      "id": 1821727,
+      "name": "Brian Fariñas",
+      "normalized_name": "brian farinas",
+      "role": "Midfielder",
+      "shirtNumber": 4,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1821727.png"
+    },
+    {
+      "id": 1279040,
+      "name": "Gavi",
+      "normalized_name": "gavi",
+      "role": "Midfielder",
+      "shirtNumber": 6,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1279040.png"
+    },
+    {
+      "id": 1404415,
+      "name": "Fermín López",
+      "normalized_name": "fermin lopez",
+      "role": "Midfielder",
+      "shirtNumber": 7,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1404415.png"
+    },
+    {
+      "id": 1083323,
+      "name": "Pedri",
+      "normalized_name": "pedri",
+      "role": "Midfielder",
+      "shirtNumber": 8,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1083323.png"
+    },
+    {
+      "id": 675088,
+      "name": "Rodri",
+      "normalized_name": "rodri",
+      "role": "Midfielder",
+      "shirtNumber": 16,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/675088.png"
+    },
+    {
+      "id": 614834,
+      "name": "Dani Olmo",
+      "normalized_name": "dani olmo",
+      "role": "Midfielder",
+      "shirtNumber": 20,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/614834.png"
+    },
+    {
+      "id": 638622,
+      "name": "Frenkie de Jong",
+      "normalized_name": "frenkie de jong",
+      "role": "Midfielder",
+      "shirtNumber": 21,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/638622.png"
+    },
+    {
+      "id": 1573126,
+      "name": "Marc Bernal",
+      "normalized_name": "marc bernal",
+      "role": "Midfielder",
+      "shirtNumber": 22,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1573126.png"
+    },
+    {
+      "id": 576165,
+      "name": "Gabriel Jesus",
+      "normalized_name": "gabriel jesus",
+      "role": "Attacker",
+      "shirtNumber": 9,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/576165.png"
+    },
+    {
+      "id": 1467236,
+      "name": "Lamine Yamal",
+      "normalized_name": "lamine yamal",
+      "role": "Attacker",
+      "shirtNumber": 10,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1467236.png"
+    },
+    {
+      "id": 696679,
+      "name": "Raphinha",
+      "normalized_name": "raphinha",
+      "role": "Attacker",
+      "shirtNumber": 11,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/696679.png"
+    },
+    {
+      "id": 959594,
+      "name": "Karim Adeyemi",
+      "normalized_name": "karim adeyemi",
+      "role": "Attacker",
+      "shirtNumber": 14,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/959594.png"
+    },
+    {
+      "id": 906937,
+      "name": "Anthony Gordon",
+      "normalized_name": "anthony gordon",
+      "role": "Attacker",
+      "shirtNumber": 17,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/906937.png"
+    },
+    {
+      "id": 1315475,
+      "name": "Roony Bardghji",
+      "normalized_name": "roony bardghji",
+      "role": "Attacker",
+      "shirtNumber": 19,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1315475.png"
+    },
+    {
+      "id": 1656591,
+      "name": "Jesse Bisiwu",
+      "normalized_name": "jesse bisiwu",
+      "role": "Attacker",
+      "shirtNumber": 27,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1656591.png"
+    },
+    {
+      "id": 1708842,
+      "name": "Hamza Abdelkarim",
+      "normalized_name": "hamza abdelkarim",
+      "role": "Attacker",
+      "shirtNumber": 29,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1708842.png"
+    }
+  ],
+  "Atletico Madrid": [
+    {
+      "id": 389050,
+      "name": "Juan Musso",
+      "normalized_name": "juan musso",
+      "role": "Keeper",
+      "shirtNumber": 1,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/389050.png"
+    },
+    {
+      "id": 177126,
+      "name": "Jan Oblak",
+      "normalized_name": "jan oblak",
+      "role": "Keeper",
+      "shirtNumber": 13,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/177126.png"
+    },
+    {
+      "id": 1553402,
+      "name": "Salvi Esquivel",
+      "normalized_name": "salvi esquivel",
+      "role": "Keeper",
+      "shirtNumber": 25,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1553402.png"
+    },
+    {
+      "id": 602563,
+      "name": "Marcos Llorente",
+      "normalized_name": "marcos llorente",
+      "role": "Defender",
+      "shirtNumber": 14,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/602563.png"
+    },
+    {
+      "id": 727897,
+      "name": "Dávid Hancko",
+      "normalized_name": "david hancko",
+      "role": "Defender",
+      "shirtNumber": 17,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/727897.png"
+    },
+    {
+      "id": 1323897,
+      "name": "Marc Pubill",
+      "normalized_name": "marc pubill",
+      "role": "Defender",
+      "shirtNumber": 18,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1323897.png"
+    },
+    {
+      "id": 789066,
+      "name": "Cristian Romero",
+      "normalized_name": "cristian romero",
+      "role": "Defender",
+      "shirtNumber": 21,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/789066.png"
+    },
+    {
+      "id": 609516,
+      "name": "Robin Le Normand",
+      "normalized_name": "robin le normand",
+      "role": "Defender",
+      "shirtNumber": 24,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/609516.png"
+    },
+    {
+      "id": 1531100,
+      "name": "Dani Martínez",
+      "normalized_name": "dani martinez",
+      "role": "Defender",
+      "shirtNumber": 30,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1531100.png"
+    },
+    {
+      "id": 1254394,
+      "name": "Obed Vargas",
+      "normalized_name": "obed vargas",
+      "role": "Midfielder",
+      "shirtNumber": 3,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1254394.png"
+    },
+    {
+      "id": 1419969,
+      "name": "Rodrigo Mendoza",
+      "normalized_name": "rodrigo mendoza",
+      "role": "Midfielder",
+      "shirtNumber": 4,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1419969.png"
+    },
+    {
+      "id": 1173678,
+      "name": "Johnny Cardoso",
+      "normalized_name": "johnny cardoso",
+      "role": "Midfielder",
+      "shirtNumber": 5,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1173678.png"
+    },
+    {
+      "id": 184533,
+      "name": "Koke",
+      "normalized_name": "koke",
+      "role": "Midfielder",
+      "shirtNumber": 6,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/184533.png"
+    },
+    {
+      "id": 1338192,
+      "name": "Pablo Barrios",
+      "normalized_name": "pablo barrios",
+      "role": "Midfielder",
+      "shirtNumber": 8,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1338192.png"
+    },
+    {
+      "id": 942372,
+      "name": "Álex Baena",
+      "normalized_name": "alex baena",
+      "role": "Midfielder",
+      "shirtNumber": 10,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/942372.png"
+    },
+    {
+      "id": 690516,
+      "name": "Ademola Lookman",
+      "normalized_name": "ademola lookman",
+      "role": "Midfielder",
+      "shirtNumber": 11,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/690516.png"
+    },
+    {
+      "id": 1226147,
+      "name": "Giuliano Simeone",
+      "normalized_name": "giuliano simeone",
+      "role": "Midfielder",
+      "shirtNumber": 20,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1226147.png"
+    },
+    {
+      "id": 288406,
+      "name": "Alejandro Grimaldo",
+      "normalized_name": "alejandro grimaldo",
+      "role": "Midfielder",
+      "shirtNumber": 22,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/288406.png"
+    },
+    {
+      "id": 950199,
+      "name": "Morten Hjulmand",
+      "normalized_name": "morten hjulmand",
+      "role": "Midfielder",
+      "shirtNumber": 23,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/950199.png"
+    },
+    {
+      "id": 940976,
+      "name": "Kang-In Lee",
+      "normalized_name": "kang in lee",
+      "role": "Attacker",
+      "shirtNumber": 7,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/940976.png"
+    },
+    {
+      "id": 440330,
+      "name": "Alexander Sørloth",
+      "normalized_name": "alexander sørloth",
+      "role": "Attacker",
+      "shirtNumber": 9,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/440330.png"
+    },
+    {
+      "id": 939569,
+      "name": "Jonathan David",
+      "normalized_name": "jonathan david",
+      "role": "Attacker",
+      "shirtNumber": 15,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/939569.png"
+    },
+    {
+      "id": 1297989,
+      "name": "Arnau Ortiz",
+      "normalized_name": "arnau ortiz",
+      "role": "Attacker",
+      "shirtNumber": 16,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1297989.png"
+    },
+    {
+      "id": 974753,
+      "name": "Julián Álvarez",
+      "normalized_name": "julian alvarez",
+      "role": "Attacker",
+      "shirtNumber": 19,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/974753.png"
+    }
+  ],
+  "Real Betis": [
+    {
+      "id": 999171,
+      "name": "Álvaro Vallés",
+      "normalized_name": "alvaro valles",
+      "role": "Keeper",
+      "shirtNumber": 1,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/999171.png"
+    },
+    {
+      "id": 1022354,
+      "name": "Diego Conde",
+      "normalized_name": "diego conde",
+      "role": "Keeper",
+      "shirtNumber": 13,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1022354.png"
+    },
+    {
+      "id": 427438,
+      "name": "Héctor Bellerín",
+      "normalized_name": "hector bellerin",
+      "role": "Defender",
+      "shirtNumber": 2,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/427438.png"
+    },
+    {
+      "id": 420568,
+      "name": "Diego Llorente",
+      "normalized_name": "diego llorente",
+      "role": "Defender",
+      "shirtNumber": 3,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/420568.png"
+    },
+    {
+      "id": 1188375,
+      "name": "Natan",
+      "normalized_name": "natan",
+      "role": "Defender",
+      "shirtNumber": 4,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1188375.png"
+    },
+    {
+      "id": 195305,
+      "name": "Marc Bartra",
+      "normalized_name": "marc bartra",
+      "role": "Defender",
+      "shirtNumber": 5,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/195305.png"
+    },
+    {
+      "id": 750028,
+      "name": "Fran García",
+      "normalized_name": "fran garcia",
+      "role": "Defender",
+      "shirtNumber": 11,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/750028.png"
+    },
+    {
+      "id": 1580522,
+      "name": "Ángel Ortiz",
+      "normalized_name": "angel ortiz",
+      "role": "Defender",
+      "shirtNumber": 12,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1580522.png"
+    },
+    {
+      "id": 1338016,
+      "name": "Valentín Gómez",
+      "normalized_name": "valentin gomez",
+      "role": "Defender",
+      "shirtNumber": 16,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1338016.png"
+    },
+    {
+      "id": 743192,
+      "name": "Júnior Firpo",
+      "normalized_name": "junior firpo",
+      "role": "Defender",
+      "shirtNumber": 23,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/743192.png"
+    },
+    {
+      "id": 676533,
+      "name": "Aitor Ruibal",
+      "normalized_name": "aitor ruibal",
+      "role": "Defender",
+      "shirtNumber": 24,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/676533.png"
+    },
+    {
+      "id": 1436133,
+      "name": "Facundo Bernal",
+      "normalized_name": "facundo bernal",
+      "role": "Midfielder",
+      "shirtNumber": 6,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1436133.png"
+    },
+    {
+      "id": 683450,
+      "name": "Pablo Fornals",
+      "normalized_name": "pablo fornals",
+      "role": "Midfielder",
+      "shirtNumber": 8,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/683450.png"
+    },
+    {
+      "id": 1082930,
+      "name": "Iker Losada",
+      "normalized_name": "iker losada",
+      "role": "Midfielder",
+      "shirtNumber": 14,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1082930.png"
+    },
+    {
+      "id": 895954,
+      "name": "Álvaro Fidalgo",
+      "normalized_name": "alvaro fidalgo",
+      "role": "Midfielder",
+      "shirtNumber": 15,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/895954.png"
+    },
+    {
+      "id": 1315711,
+      "name": "Nelson Deossa",
+      "normalized_name": "nelson deossa",
+      "role": "Midfielder",
+      "shirtNumber": 18,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1315711.png"
+    },
+    {
+      "id": 604126,
+      "name": "Giovani Lo Celso",
+      "normalized_name": "giovani lo celso",
+      "role": "Midfielder",
+      "shirtNumber": 20,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/604126.png"
+    },
+    {
+      "id": 640220,
+      "name": "Marc Roca",
+      "normalized_name": "marc roca",
+      "role": "Midfielder",
+      "shirtNumber": 21,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/640220.png"
+    },
+    {
+      "id": 191315,
+      "name": "Isco",
+      "normalized_name": "isco",
+      "role": "Midfielder",
+      "shirtNumber": 22,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/191315.png"
+    },
+    {
+      "id": 531629,
+      "name": "Dani Ceballos",
+      "normalized_name": "dani ceballos",
+      "role": "Midfielder",
+      "shirtNumber": 25,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/531629.png"
+    },
+    {
+      "id": 1726794,
+      "name": "Dylan Vanney",
+      "normalized_name": "dylan vanney",
+      "role": "Attacker",
+      "shirtNumber": null,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1726794.png"
+    },
+    {
+      "id": 967622,
+      "name": "Antony",
+      "normalized_name": "antony",
+      "role": "Attacker",
+      "shirtNumber": 7,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/967622.png"
+    },
+    {
+      "id": 852071,
+      "name": "Juan Hernández",
+      "normalized_name": "juan hernandez",
+      "role": "Attacker",
+      "shirtNumber": 9,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/852071.png"
+    },
+    {
+      "id": 1209399,
+      "name": "Abdessamad Ezzalzouli",
+      "normalized_name": "abdessamad ezzalzouli",
+      "role": "Attacker",
+      "shirtNumber": 10,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1209399.png"
+    },
+    {
+      "id": 1072200,
+      "name": "Rodrigo Riquelme",
+      "normalized_name": "rodrigo riquelme",
+      "role": "Attacker",
+      "shirtNumber": 17,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1072200.png"
+    },
+    {
+      "id": 942365,
+      "name": "Troy Parrott",
+      "normalized_name": "troy parrott",
+      "role": "Attacker",
+      "shirtNumber": 19,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/942365.png"
+    }
+  ],
+  "Real Madrid": [
+    {
+      "id": 170323,
+      "name": "Thibaut Courtois",
+      "normalized_name": "thibaut courtois",
+      "role": "Keeper",
+      "shirtNumber": 1,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/170323.png"
+    },
+    {
+      "id": 800882,
+      "name": "Andriy Lunin",
+      "normalized_name": "andriy lunin",
+      "role": "Keeper",
+      "shirtNumber": 13,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/800882.png"
+    },
+    {
+      "id": 1580528,
+      "name": "Raúl Asencio",
+      "normalized_name": "raul asencio",
+      "role": "Defender",
+      "shirtNumber": 2,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1580528.png"
+    },
+    {
+      "id": 844415,
+      "name": "Éder Militao",
+      "normalized_name": "eder militao",
+      "role": "Defender",
+      "shirtNumber": 3,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/844415.png"
+    },
+    {
+      "id": 1367619,
+      "name": "Dean Huijsen",
+      "normalized_name": "dean huijsen",
+      "role": "Defender",
+      "shirtNumber": 4,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1367619.png"
+    },
+    {
+      "id": 760712,
+      "name": "Trent Alexander-Arnold",
+      "normalized_name": "trent alexander arnold",
+      "role": "Defender",
+      "shirtNumber": 12,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/760712.png"
+    },
+    {
+      "id": 820140,
+      "name": "Ibrahima Konaté",
+      "normalized_name": "ibrahima konate",
+      "role": "Defender",
+      "shirtNumber": 16,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/820140.png"
+    },
+    {
+      "id": 873289,
+      "name": "Marc Cucurella",
+      "normalized_name": "marc cucurella",
+      "role": "Defender",
+      "shirtNumber": 17,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/873289.png"
+    },
+    {
+      "id": 1190025,
+      "name": "Alvaro Carreras",
+      "normalized_name": "alvaro carreras",
+      "role": "Defender",
+      "shirtNumber": 18,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1190025.png"
+    },
+    {
+      "id": 276738,
+      "name": "Antonio Rüdiger",
+      "normalized_name": "antonio rudiger",
+      "role": "Defender",
+      "shirtNumber": 22,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/276738.png"
+    },
+    {
+      "id": 623537,
+      "name": "Ferland Mendy",
+      "normalized_name": "ferland mendy",
+      "role": "Defender",
+      "shirtNumber": 23,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/623537.png"
+    },
+    {
+      "id": 593118,
+      "name": "Denzel Dumfries",
+      "normalized_name": "denzel dumfries",
+      "role": "Defender",
+      "shirtNumber": 24,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/593118.png"
+    },
+    {
+      "id": 1077894,
+      "name": "Jude Bellingham",
+      "normalized_name": "jude bellingham",
+      "role": "Midfielder",
+      "shirtNumber": 5,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1077894.png"
+    },
+    {
+      "id": 1015185,
+      "name": "Eduardo Camavinga",
+      "normalized_name": "eduardo camavinga",
+      "role": "Midfielder",
+      "shirtNumber": 6,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1015185.png"
+    },
+    {
+      "id": 743533,
+      "name": "Federico Valverde",
+      "normalized_name": "federico valverde",
+      "role": "Midfielder",
+      "shirtNumber": 8,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/743533.png"
+    },
+    {
+      "id": 914458,
+      "name": "Aurélien Tchouaméni",
+      "normalized_name": "aurelien tchouameni",
+      "role": "Midfielder",
+      "shirtNumber": 14,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/914458.png"
+    },
+    {
+      "id": 1253890,
+      "name": "Arda Güler",
+      "normalized_name": "arda guler",
+      "role": "Midfielder",
+      "shirtNumber": 15,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1253890.png"
+    },
+    {
+      "id": 488139,
+      "name": "Bernardo Silva",
+      "normalized_name": "bernardo silva",
+      "role": "Midfielder",
+      "shirtNumber": 20,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/488139.png"
+    },
+    {
+      "id": 1796908,
+      "name": "Thiago Pitarch",
+      "normalized_name": "thiago pitarch",
+      "role": "Midfielder",
+      "shirtNumber": 27,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1796908.png"
+    },
+    {
+      "id": 846033,
+      "name": "Vinícius Júnior",
+      "normalized_name": "vinicius junior",
+      "role": "Attacker",
+      "shirtNumber": 7,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/846033.png"
+    },
+    {
+      "id": 1406729,
+      "name": "Endrick",
+      "normalized_name": "endrick",
+      "role": "Attacker",
+      "shirtNumber": 9,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1406729.png"
+    },
+    {
+      "id": 701154,
+      "name": "Kylian Mbappé",
+      "normalized_name": "kylian mbappe",
+      "role": "Attacker",
+      "shirtNumber": 10,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/701154.png"
+    },
+    {
+      "id": 895362,
+      "name": "Rodrygo",
+      "normalized_name": "rodrygo",
+      "role": "Attacker",
+      "shirtNumber": 11,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/895362.png"
+    },
+    {
+      "id": 1610744,
+      "name": "Carlos Espí",
+      "normalized_name": "carlos espi",
+      "role": "Attacker",
+      "shirtNumber": 19,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1610744.png"
+    },
+    {
+      "id": 750027,
+      "name": "Brahim Díaz",
+      "normalized_name": "brahim diaz",
+      "role": "Attacker",
+      "shirtNumber": 21,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/750027.png"
+    },
+    {
+      "id": 1735453,
+      "name": "Yan Diomande",
+      "normalized_name": "yan diomande",
+      "role": "Attacker",
+      "shirtNumber": 25,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1735453.png"
+    }
+  ],
+  "Sevilla": [
+    {
+      "id": 304355,
+      "name": "Odysseas Vlachodimos",
+      "normalized_name": "odysseas vlachodimos",
+      "role": "Keeper",
+      "shirtNumber": 1,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/304355.png"
+    },
+    {
+      "id": 1484851,
+      "name": "Fran González",
+      "normalized_name": "fran gonzalez",
+      "role": "Keeper",
+      "shirtNumber": 13,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1484851.png"
+    },
+    {
+      "id": 1102289,
+      "name": "Juan Iglesias",
+      "normalized_name": "juan iglesias",
+      "role": "Defender",
+      "shirtNumber": 2,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1102289.png"
+    },
+    {
+      "id": 1447089,
+      "name": "Julio Díaz",
+      "normalized_name": "julio diaz",
+      "role": "Defender",
+      "shirtNumber": 3,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1447089.png"
+    },
+    {
+      "id": 1327489,
+      "name": "Kike Salas",
+      "normalized_name": "kike salas",
+      "role": "Defender",
+      "shirtNumber": 4,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1327489.png"
+    },
+    {
+      "id": 1334767,
+      "name": "Andrés Lopez",
+      "normalized_name": "andres lopez",
+      "role": "Defender",
+      "shirtNumber": 5,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1334767.png"
+    },
+    {
+      "id": 1244272,
+      "name": "Arouna Sangante",
+      "normalized_name": "arouna sangante",
+      "role": "Defender",
+      "shirtNumber": 12,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1244272.png"
+    },
+    {
+      "id": 361751,
+      "name": "Fábio Cardoso",
+      "normalized_name": "fabio cardoso",
+      "role": "Defender",
+      "shirtNumber": 15,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/361751.png"
+    },
+    {
+      "id": 659490,
+      "name": "Gabriel Suazo",
+      "normalized_name": "gabriel suazo",
+      "role": "Defender",
+      "shirtNumber": 17,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/659490.png"
+    },
+    {
+      "id": 1281461,
+      "name": "José Ángel Carmona",
+      "normalized_name": "jose angel carmona",
+      "role": "Defender",
+      "shirtNumber": 22,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1281461.png"
+    },
+    {
+      "id": 753593,
+      "name": "Marcão",
+      "normalized_name": "marcao",
+      "role": "Defender",
+      "shirtNumber": 23,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/753593.png"
+    },
+    {
+      "id": 971790,
+      "name": "Lucien Agoumé",
+      "normalized_name": "lucien agoume",
+      "role": "Midfielder",
+      "shirtNumber": 6,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/971790.png"
+    },
+    {
+      "id": 953958,
+      "name": "Giorgi Kochorashvili",
+      "normalized_name": "giorgi kochorashvili",
+      "role": "Midfielder",
+      "shirtNumber": 8,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/953958.png"
+    },
+    {
+      "id": 1132607,
+      "name": "Peque Fernández",
+      "normalized_name": "peque fernandez",
+      "role": "Midfielder",
+      "shirtNumber": 10,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1132607.png"
+    },
+    {
+      "id": 1428849,
+      "name": "Manu Bueno",
+      "normalized_name": "manu bueno",
+      "role": "Midfielder",
+      "shirtNumber": 14,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1428849.png"
+    },
+    {
+      "id": 678192,
+      "name": "Jon Guridi",
+      "normalized_name": "jon guridi",
+      "role": "Midfielder",
+      "shirtNumber": 18,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/678192.png"
+    },
+    {
+      "id": 954621,
+      "name": "Youssouf Fofana",
+      "normalized_name": "youssouf fofana",
+      "role": "Midfielder",
+      "shirtNumber": 24,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/954621.png"
+    },
+    {
+      "id": 1783498,
+      "name": "Nico Guillen",
+      "normalized_name": "nico guillen",
+      "role": "Midfielder",
+      "shirtNumber": 27,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1783498.png"
+    },
+    {
+      "id": 926643,
+      "name": "Alfon González",
+      "normalized_name": "alfon gonzalez",
+      "role": "Attacker",
+      "shirtNumber": 7,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/926643.png"
+    },
+    {
+      "id": 1399218,
+      "name": "Robbie Ure",
+      "normalized_name": "robbie ure",
+      "role": "Attacker",
+      "shirtNumber": 9,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1399218.png"
+    },
+    {
+      "id": 860752,
+      "name": "Rubén Vargas",
+      "normalized_name": "ruben vargas",
+      "role": "Attacker",
+      "shirtNumber": 11,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/860752.png"
+    },
+    {
+      "id": 1130991,
+      "name": "Isaac Romero",
+      "normalized_name": "isaac romero",
+      "role": "Attacker",
+      "shirtNumber": 16,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1130991.png"
+    },
+    {
+      "id": 1398377,
+      "name": "Lucas Stassin",
+      "normalized_name": "lucas stassin",
+      "role": "Attacker",
+      "shirtNumber": 19,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1398377.png"
+    },
+    {
+      "id": 942358,
+      "name": "Félix Correia",
+      "normalized_name": "felix correia",
+      "role": "Attacker",
+      "shirtNumber": 20,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/942358.png"
+    },
+    {
+      "id": 837270,
+      "name": "Chidera Ejuke",
+      "normalized_name": "chidera ejuke",
+      "role": "Attacker",
+      "shirtNumber": 21,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/837270.png"
+    },
+    {
+      "id": 1797904,
+      "name": "Miguel Sierra",
+      "normalized_name": "miguel sierra",
+      "role": "Attacker",
+      "shirtNumber": 30,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1797904.png"
+    }
+  ],
+  "Real Sociedad": [
+    {
+      "id": 616539,
+      "name": "Alex Remiro",
+      "normalized_name": "alex remiro",
+      "role": "Keeper",
+      "shirtNumber": 1,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/616539.png"
+    },
+    {
+      "id": 1217043,
+      "name": "Unai Marrero",
+      "normalized_name": "unai marrero",
+      "role": "Keeper",
+      "shirtNumber": 13,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1217043.png"
+    },
+    {
+      "id": 1249284,
+      "name": "Jon Aramburu",
+      "normalized_name": "jon aramburu",
+      "role": "Defender",
+      "shirtNumber": 2,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1249284.png"
+    },
+    {
+      "id": 999159,
+      "name": "Aihen Muñoz",
+      "normalized_name": "aihen munoz",
+      "role": "Defender",
+      "shirtNumber": 3,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/999159.png"
+    },
+    {
+      "id": 698653,
+      "name": "Igor Zubeldia",
+      "normalized_name": "igor zubeldia",
+      "role": "Defender",
+      "shirtNumber": 5,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/698653.png"
+    },
+    {
+      "id": 1523234,
+      "name": "Jon Martín",
+      "normalized_name": "jon martin",
+      "role": "Defender",
+      "shirtNumber": 6,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1523234.png"
+    },
+    {
+      "id": 1112072,
+      "name": "Jon Pacheco",
+      "normalized_name": "jon pacheco",
+      "role": "Defender",
+      "shirtNumber": 16,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1112072.png"
+    },
+    {
+      "id": 844477,
+      "name": "Sergio Gómez",
+      "normalized_name": "sergio gomez",
+      "role": "Defender",
+      "shirtNumber": 17,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/844477.png"
+    },
+    {
+      "id": 1426170,
+      "name": "Mamadou Sarr",
+      "normalized_name": "mamadou sarr",
+      "role": "Defender",
+      "shirtNumber": 19,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1426170.png"
+    },
+    {
+      "id": 636570,
+      "name": "Álvaro Odriozola",
+      "normalized_name": "alvaro odriozola",
+      "role": "Defender",
+      "shirtNumber": 20,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/636570.png"
+    },
+    {
+      "id": 1490110,
+      "name": "Héctor Fort",
+      "normalized_name": "hector fort",
+      "role": "Defender",
+      "shirtNumber": 22,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1490110.png"
+    },
+    {
+      "id": 1697334,
+      "name": "Luken Beitia",
+      "normalized_name": "luken beitia",
+      "role": "Defender",
+      "shirtNumber": 34,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1697334.png"
+    },
+    {
+      "id": 1323827,
+      "name": "Jon Gorrotxategi",
+      "normalized_name": "jon gorrotxategi",
+      "role": "Midfielder",
+      "shirtNumber": 4,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1323827.png"
+    },
+    {
+      "id": 1210647,
+      "name": "Beñat Turrientes",
+      "normalized_name": "benat turrientes",
+      "role": "Midfielder",
+      "shirtNumber": 8,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1210647.png"
+    },
+    {
+      "id": 708890,
+      "name": "Carlos Soler",
+      "normalized_name": "carlos soler",
+      "role": "Midfielder",
+      "shirtNumber": 18,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/708890.png"
+    },
+    {
+      "id": 730901,
+      "name": "Yangel Herrera",
+      "normalized_name": "yangel herrera",
+      "role": "Midfielder",
+      "shirtNumber": 21,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/730901.png"
+    },
+    {
+      "id": 959597,
+      "name": "Luka Sučić",
+      "normalized_name": "luka sucic",
+      "role": "Midfielder",
+      "shirtNumber": 24,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/959597.png"
+    },
+    {
+      "id": 1002618,
+      "name": "Ander Barrenetxea",
+      "normalized_name": "ander barrenetxea",
+      "role": "Attacker",
+      "shirtNumber": 7,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1002618.png"
+    },
+    {
+      "id": 1097229,
+      "name": "Orri Óskarsson",
+      "normalized_name": "orri oskarsson",
+      "role": "Attacker",
+      "shirtNumber": 9,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1097229.png"
+    },
+    {
+      "id": 678234,
+      "name": "Mikel Oyarzabal",
+      "normalized_name": "mikel oyarzabal",
+      "role": "Attacker",
+      "shirtNumber": 10,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/678234.png"
+    },
+    {
+      "id": 536455,
+      "name": "Gonçalo Guedes",
+      "normalized_name": "goncalo guedes",
+      "role": "Attacker",
+      "shirtNumber": 11,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/536455.png"
+    },
+    {
+      "id": 1724551,
+      "name": "Job Ochieng",
+      "normalized_name": "job ochieng",
+      "role": "Attacker",
+      "shirtNumber": 12,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1724551.png"
+    },
+    {
+      "id": 848289,
+      "name": "Takefusa Kubo",
+      "normalized_name": "takefusa kubo",
+      "role": "Attacker",
+      "shirtNumber": 14,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/848289.png"
+    },
+    {
+      "id": 1293912,
+      "name": "Pablo Marín",
+      "normalized_name": "pablo marin",
+      "role": "Attacker",
+      "shirtNumber": 15,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1293912.png"
+    },
+    {
+      "id": 1175610,
+      "name": "Arsen Zakharyan",
+      "normalized_name": "arsen zakharyan",
+      "role": "Attacker",
+      "shirtNumber": 23,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1175610.png"
+    },
+    {
+      "id": 1721611,
+      "name": "Álex Marchal",
+      "normalized_name": "alex marchal",
+      "role": "Attacker",
+      "shirtNumber": 29,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1721611.png"
+    },
+    {
+      "id": 1436231,
+      "name": "Arkaitz Mariezkurrena",
+      "normalized_name": "arkaitz mariezkurrena",
+      "role": "Attacker",
+      "shirtNumber": 34,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1436231.png"
+    }
+  ],
+  "Alaves": [
+    {
+      "id": 530468,
+      "name": "Antonio Sivera",
+      "normalized_name": "antonio sivera",
+      "role": "Keeper",
+      "shirtNumber": 1,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/530468.png"
+    },
+    {
+      "id": 1136937,
+      "name": "Adrián Rodriguez",
+      "normalized_name": "adrian rodriguez",
+      "role": "Keeper",
+      "shirtNumber": 13,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1136937.png"
+    },
+    {
+      "id": 1249665,
+      "name": "Nicolás Valentini",
+      "normalized_name": "nicolas valentini",
+      "role": "Defender",
+      "shirtNumber": 2,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1249665.png"
+    },
+    {
+      "id": 1403692,
+      "name": "Youssef Enríquez",
+      "normalized_name": "youssef enriquez",
+      "role": "Defender",
+      "shirtNumber": 3,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1403692.png"
+    },
+    {
+      "id": 845067,
+      "name": "Facundo Garcés",
+      "normalized_name": "facundo garces",
+      "role": "Defender",
+      "shirtNumber": 5,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/845067.png"
+    },
+    {
+      "id": 1175969,
+      "name": "Hugo Novoa",
+      "normalized_name": "hugo novoa",
+      "role": "Defender",
+      "shirtNumber": 12,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1175969.png"
+    },
+    {
+      "id": 860314,
+      "name": "Nahuel Tenaglia",
+      "normalized_name": "nahuel tenaglia",
+      "role": "Defender",
+      "shirtNumber": 14,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/860314.png"
+    },
+    {
+      "id": 1056461,
+      "name": "Ville Koski",
+      "normalized_name": "ville koski",
+      "role": "Defender",
+      "shirtNumber": 16,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1056461.png"
+    },
+    {
+      "id": 360918,
+      "name": "Jonny Otto",
+      "normalized_name": "jonny otto",
+      "role": "Defender",
+      "shirtNumber": 17,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/360918.png"
+    },
+    {
+      "id": 799914,
+      "name": "Carlos Protesoni",
+      "normalized_name": "carlos protesoni",
+      "role": "Defender",
+      "shirtNumber": 23,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/799914.png"
+    },
+    {
+      "id": 282281,
+      "name": "Denis Suárez",
+      "normalized_name": "denis suarez",
+      "role": "Midfielder",
+      "shirtNumber": 4,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/282281.png"
+    },
+    {
+      "id": 873827,
+      "name": "Ander Guevara",
+      "normalized_name": "ander guevara",
+      "role": "Midfielder",
+      "shirtNumber": 6,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/873827.png"
+    },
+    {
+      "id": 1563022,
+      "name": "Ángel Pérez",
+      "normalized_name": "angel perez",
+      "role": "Midfielder",
+      "shirtNumber": 7,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1563022.png"
+    },
+    {
+      "id": 845998,
+      "name": "Antonio Blanco",
+      "normalized_name": "antonio blanco",
+      "role": "Midfielder",
+      "shirtNumber": 8,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/845998.png"
+    },
+    {
+      "id": 637756,
+      "name": "Carles Aleñá",
+      "normalized_name": "carles alena",
+      "role": "Midfielder",
+      "shirtNumber": 10,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/637756.png"
+    },
+    {
+      "id": 1426189,
+      "name": "Mikel Rodríguez",
+      "normalized_name": "mikel rodriguez",
+      "role": "Midfielder",
+      "shirtNumber": 18,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1426189.png"
+    },
+    {
+      "id": 1238154,
+      "name": "Pablo Ibánez",
+      "normalized_name": "pablo ibanez",
+      "role": "Midfielder",
+      "shirtNumber": 19,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1238154.png"
+    },
+    {
+      "id": 1200941,
+      "name": "Abderrahman Rebbach",
+      "normalized_name": "abderrahman rebbach",
+      "role": "Midfielder",
+      "shirtNumber": 21,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1200941.png"
+    },
+    {
+      "id": 1431307,
+      "name": "Selu Diallo",
+      "normalized_name": "selu diallo",
+      "role": "Midfielder",
+      "shirtNumber": 24,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1431307.png"
+    },
+    {
+      "id": 518525,
+      "name": "Mariano Díaz",
+      "normalized_name": "mariano diaz",
+      "role": "Attacker",
+      "shirtNumber": 9,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/518525.png"
+    },
+    {
+      "id": 640123,
+      "name": "Toni Martínez",
+      "normalized_name": "toni martinez",
+      "role": "Attacker",
+      "shirtNumber": 11,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/640123.png"
+    },
+    {
+      "id": 561164,
+      "name": "Lucas Boyé",
+      "normalized_name": "lucas boye",
+      "role": "Attacker",
+      "shirtNumber": 15,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/561164.png"
+    },
+    {
+      "id": 1553663,
+      "name": "Aitor Mañas",
+      "normalized_name": "aitor manas",
+      "role": "Attacker",
+      "shirtNumber": 20,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1553663.png"
+    },
+    {
+      "id": 1184663,
+      "name": "Miguel Rodríguez",
+      "normalized_name": "miguel rodriguez",
+      "role": "Attacker",
+      "shirtNumber": 22,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1184663.png"
+    },
+    {
+      "id": 1678688,
+      "name": "Lander Pinillos",
+      "normalized_name": "lander pinillos",
+      "role": "Attacker",
+      "shirtNumber": 28,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1678688.png"
+    }
+  ],
+  "Deportivo La Coruna": [
+    {
+      "id": 416409,
+      "name": "Germán Parreno",
+      "normalized_name": "german parreno",
+      "role": "Keeper",
+      "shirtNumber": 1,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/416409.png"
+    },
+    {
+      "id": 1187702,
+      "name": "Leo Román",
+      "normalized_name": "leo roman",
+      "role": "Keeper",
+      "shirtNumber": 13,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1187702.png"
+    },
+    {
+      "id": 796781,
+      "name": "Álvaro Fernández",
+      "normalized_name": "alvaro fernandez",
+      "role": "Keeper",
+      "shirtNumber": 25,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/796781.png"
+    },
+    {
+      "id": 1256478,
+      "name": "Adrià Altimira",
+      "normalized_name": "adria altimira",
+      "role": "Defender",
+      "shirtNumber": 2,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1256478.png"
+    },
+    {
+      "id": 1120002,
+      "name": "Arnau Comas",
+      "normalized_name": "arnau comas",
+      "role": "Defender",
+      "shirtNumber": 3,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1120002.png"
+    },
+    {
+      "id": 1332025,
+      "name": "Lucas Noubi",
+      "normalized_name": "lucas noubi",
+      "role": "Defender",
+      "shirtNumber": 4,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1332025.png"
+    },
+    {
+      "id": 1372810,
+      "name": "Dani Barcia",
+      "normalized_name": "dani barcia",
+      "role": "Defender",
+      "shirtNumber": 5,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1372810.png"
+    },
+    {
+      "id": 1077977,
+      "name": "Giacomo Quagliata",
+      "normalized_name": "giacomo quagliata",
+      "role": "Defender",
+      "shirtNumber": 12,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1077977.png"
+    },
+    {
+      "id": 800891,
+      "name": "Miguel Loureiro",
+      "normalized_name": "miguel loureiro",
+      "role": "Defender",
+      "shirtNumber": 15,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/800891.png"
+    },
+    {
+      "id": 603537,
+      "name": "Angeliño",
+      "normalized_name": "angelino",
+      "role": "Defender",
+      "shirtNumber": 17,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/603537.png"
+    },
+    {
+      "id": 474589,
+      "name": "José Giménez",
+      "normalized_name": "jose gimenez",
+      "role": "Defender",
+      "shirtNumber": 20,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/474589.png"
+    },
+    {
+      "id": 1711969,
+      "name": "Bright Ede",
+      "normalized_name": "bright ede",
+      "role": "Defender",
+      "shirtNumber": 22,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1711969.png"
+    },
+    {
+      "id": 260659,
+      "name": "Ximo Navarro",
+      "normalized_name": "ximo navarro",
+      "role": "Defender",
+      "shirtNumber": 23,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/260659.png"
+    },
+    {
+      "id": 1384883,
+      "name": "Marc Casadó",
+      "normalized_name": "marc casado",
+      "role": "Midfielder",
+      "shirtNumber": 6,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1384883.png"
+    },
+    {
+      "id": 988178,
+      "name": "Diego Villares",
+      "normalized_name": "diego villares",
+      "role": "Midfielder",
+      "shirtNumber": 8,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/988178.png"
+    },
+    {
+      "id": 1368655,
+      "name": "David Mella",
+      "normalized_name": "david mella",
+      "role": "Midfielder",
+      "shirtNumber": 11,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1368655.png"
+    },
+    {
+      "id": 970566,
+      "name": "Riki Rodríguez",
+      "normalized_name": "riki rodriguez",
+      "role": "Midfielder",
+      "shirtNumber": 14,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/970566.png"
+    },
+    {
+      "id": 1425989,
+      "name": "Lorenzo Amatucci",
+      "normalized_name": "lorenzo amatucci",
+      "role": "Midfielder",
+      "shirtNumber": 16,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1425989.png"
+    },
+    {
+      "id": 1204447,
+      "name": "Luismi Cruz",
+      "normalized_name": "luismi cruz",
+      "role": "Midfielder",
+      "shirtNumber": 19,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1204447.png"
+    },
+    {
+      "id": 1050828,
+      "name": "Mario Soriano",
+      "normalized_name": "mario soriano",
+      "role": "Midfielder",
+      "shirtNumber": 21,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1050828.png"
+    },
+    {
+      "id": 1821442,
+      "name": "Noé",
+      "normalized_name": "noe",
+      "role": "Midfielder",
+      "shirtNumber": 37,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1821442.png"
+    },
+    {
+      "id": 150565,
+      "name": "Pierre-Emerick Aubameyang",
+      "normalized_name": "pierre emerick aubameyang",
+      "role": "Attacker",
+      "shirtNumber": 7,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/150565.png"
+    },
+    {
+      "id": 1029029,
+      "name": "Zakaria Eddahchouri",
+      "normalized_name": "zakaria eddahchouri",
+      "role": "Attacker",
+      "shirtNumber": 9,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1029029.png"
+    },
+    {
+      "id": 1319204,
+      "name": "Yeremay Hernández",
+      "normalized_name": "yeremay hernandez",
+      "role": "Attacker",
+      "shirtNumber": 10,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1319204.png"
+    },
+    {
+      "id": 1621150,
+      "name": "Jonathan Asp",
+      "normalized_name": "jonathan asp",
+      "role": "Attacker",
+      "shirtNumber": 18,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1621150.png"
+    },
+    {
+      "id": 493647,
+      "name": "Adama Traoré",
+      "normalized_name": "adama traore",
+      "role": "Attacker",
+      "shirtNumber": 24,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/493647.png"
+    },
+    {
+      "id": 1690831,
+      "name": "Bil Nsongo",
+      "normalized_name": "bil nsongo",
+      "role": "Attacker",
+      "shirtNumber": 32,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1690831.png"
+    }
+  ],
+  "Celta Vigo": [
+    {
+      "id": 866967,
+      "name": "Altay Bayındır",
+      "normalized_name": "altay bayındır",
+      "role": "Keeper",
+      "shirtNumber": 1,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/866967.png"
+    },
+    {
+      "id": 681213,
+      "name": "Ionuț Radu",
+      "normalized_name": "ionut radu",
+      "role": "Keeper",
+      "shirtNumber": 13,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/681213.png"
+    },
+    {
+      "id": 786630,
+      "name": "Iván Villar",
+      "normalized_name": "ivan villar",
+      "role": "Keeper",
+      "shirtNumber": 25,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/786630.png"
+    },
+    {
+      "id": 497662,
+      "name": "Carl Starfelt",
+      "normalized_name": "carl starfelt",
+      "role": "Defender",
+      "shirtNumber": 2,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/497662.png"
+    },
+    {
+      "id": 196169,
+      "name": "Marcos Alonso",
+      "normalized_name": "marcos alonso",
+      "role": "Defender",
+      "shirtNumber": 3,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/196169.png"
+    },
+    {
+      "id": 1555492,
+      "name": "Abdoulaye Faye",
+      "normalized_name": "abdoulaye faye",
+      "role": "Defender",
+      "shirtNumber": 4,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1555492.png"
+    },
+    {
+      "id": 1132355,
+      "name": "Álvaro Núñez",
+      "normalized_name": "alvaro nunez",
+      "role": "Defender",
+      "shirtNumber": 15,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1132355.png"
+    },
+    {
+      "id": 1578176,
+      "name": "Yoel Lago",
+      "normalized_name": "yoel lago",
+      "role": "Defender",
+      "shirtNumber": 18,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1578176.png"
+    },
+    {
+      "id": 1435439,
+      "name": "Javi Rodríguez",
+      "normalized_name": "javi rodriguez",
+      "role": "Defender",
+      "shirtNumber": 20,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1435439.png"
+    },
+    {
+      "id": 1020026,
+      "name": "Sebastián Cáceres",
+      "normalized_name": "sebastian caceres",
+      "role": "Defender",
+      "shirtNumber": 21,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1020026.png"
+    },
+    {
+      "id": 695062,
+      "name": "Javi Galán",
+      "normalized_name": "javi galan",
+      "role": "Defender",
+      "shirtNumber": 22,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/695062.png"
+    },
+    {
+      "id": 1106742,
+      "name": "Sergio Carreira",
+      "normalized_name": "sergio carreira",
+      "role": "Midfielder",
+      "shirtNumber": 5,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1106742.png"
+    },
+    {
+      "id": 1109046,
+      "name": "Ilaix Moriba",
+      "normalized_name": "ilaix moriba",
+      "role": "Midfielder",
+      "shirtNumber": 6,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1109046.png"
+    },
+    {
+      "id": 1359911,
+      "name": "Miguel Román",
+      "normalized_name": "miguel roman",
+      "role": "Midfielder",
+      "shirtNumber": 8,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1359911.png"
+    },
+    {
+      "id": 671686,
+      "name": "Aleix Febas",
+      "normalized_name": "aleix febas",
+      "role": "Midfielder",
+      "shirtNumber": 14,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/671686.png"
+    },
+    {
+      "id": 1310440,
+      "name": "Javi Rueda",
+      "normalized_name": "javi rueda",
+      "role": "Midfielder",
+      "shirtNumber": 17,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1310440.png"
+    },
+    {
+      "id": 1379196,
+      "name": "Jones El-Abdellaoui",
+      "normalized_name": "jones el abdellaoui",
+      "role": "Midfielder",
+      "shirtNumber": 39,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1379196.png"
+    },
+    {
+      "id": 609505,
+      "name": "Borja Iglesias",
+      "normalized_name": "borja iglesias",
+      "role": "Attacker",
+      "shirtNumber": 7,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/609505.png"
+    },
+    {
+      "id": 1102732,
+      "name": "Ferrán Jutglà",
+      "normalized_name": "ferran jutgla",
+      "role": "Attacker",
+      "shirtNumber": 9,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1102732.png"
+    },
+    {
+      "id": 174472,
+      "name": "Iago Aspas",
+      "normalized_name": "iago aspas",
+      "role": "Attacker",
+      "shirtNumber": 10,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/174472.png"
+    },
+    {
+      "id": 1322858,
+      "name": "Pablo Durán",
+      "normalized_name": "pablo duran",
+      "role": "Attacker",
+      "shirtNumber": 11,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1322858.png"
+    },
+    {
+      "id": 1226783,
+      "name": "Hugo González",
+      "normalized_name": "hugo gonzalez",
+      "role": "Attacker",
+      "shirtNumber": 16,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1226783.png"
+    },
+    {
+      "id": 1272740,
+      "name": "Williot Swedberg",
+      "normalized_name": "williot swedberg",
+      "role": "Attacker",
+      "shirtNumber": 19,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1272740.png"
+    },
+    {
+      "id": 1308414,
+      "name": "Hugo Álvarez",
+      "normalized_name": "hugo alvarez",
+      "role": "Attacker",
+      "shirtNumber": 23,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1308414.png"
+    },
+    {
+      "id": 1184693,
+      "name": "Couhaib Driouech",
+      "normalized_name": "couhaib driouech",
+      "role": "Attacker",
+      "shirtNumber": 24,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1184693.png"
+    }
+  ],
+  "Athletic Club": [
+    {
+      "id": 660625,
+      "name": "Unai Simón",
+      "normalized_name": "unai simon",
+      "role": "Keeper",
+      "shirtNumber": 1,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/660625.png"
+    },
+    {
+      "id": 1401997,
+      "name": "Álex Padilla",
+      "normalized_name": "alex padilla",
+      "role": "Keeper",
+      "shirtNumber": 13,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1401997.png"
+    },
+    {
+      "id": 1425770,
+      "name": "Unai Eguiluz",
+      "normalized_name": "unai eguiluz",
+      "role": "Defender",
+      "shirtNumber": null,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1425770.png"
+    },
+    {
+      "id": 940743,
+      "name": "Daniel Vivian",
+      "normalized_name": "daniel vivian",
+      "role": "Defender",
+      "shirtNumber": 3,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/940743.png"
+    },
+    {
+      "id": 1191407,
+      "name": "Aitor Paredes",
+      "normalized_name": "aitor paredes",
+      "role": "Defender",
+      "shirtNumber": 4,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1191407.png"
+    },
+    {
+      "id": 639450,
+      "name": "Yeray Álvarez",
+      "normalized_name": "yeray alvarez",
+      "role": "Defender",
+      "shirtNumber": 5,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/639450.png"
+    },
+    {
+      "id": 1037537,
+      "name": "Jesús Areso",
+      "normalized_name": "jesus areso",
+      "role": "Defender",
+      "shirtNumber": 12,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1037537.png"
+    },
+    {
+      "id": 411617,
+      "name": "Aymeric Laporte",
+      "normalized_name": "aymeric laporte",
+      "role": "Defender",
+      "shirtNumber": 14,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/411617.png"
+    },
+    {
+      "id": 1427819,
+      "name": "Hugo Rincón",
+      "normalized_name": "hugo rincon",
+      "role": "Defender",
+      "shirtNumber": 15,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1427819.png"
+    },
+    {
+      "id": 80295,
+      "name": "Yuri Berchiche",
+      "normalized_name": "yuri berchiche",
+      "role": "Defender",
+      "shirtNumber": 17,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/80295.png"
+    },
+    {
+      "id": 1327006,
+      "name": "Johaneko Louis-Jean",
+      "normalized_name": "johaneko louis jean",
+      "role": "Defender",
+      "shirtNumber": 31,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1327006.png"
+    },
+    {
+      "id": 1229176,
+      "name": "Beñat Prados",
+      "normalized_name": "benat prados",
+      "role": "Midfielder",
+      "shirtNumber": 6,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1229176.png"
+    },
+    {
+      "id": 950545,
+      "name": "Oihan Sancet",
+      "normalized_name": "oihan sancet",
+      "role": "Midfielder",
+      "shirtNumber": 8,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/950545.png"
+    },
+    {
+      "id": 282462,
+      "name": "Íñigo Ruíz de Galarreta",
+      "normalized_name": "inigo ruiz de galarreta",
+      "role": "Midfielder",
+      "shirtNumber": 16,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/282462.png"
+    },
+    {
+      "id": 1553099,
+      "name": "Mikel Jauregizar",
+      "normalized_name": "mikel jauregizar",
+      "role": "Midfielder",
+      "shirtNumber": 18,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1553099.png"
+    },
+    {
+      "id": 1425769,
+      "name": "Alejandro Rego",
+      "normalized_name": "alejandro rego",
+      "role": "Midfielder",
+      "shirtNumber": 20,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1425769.png"
+    },
+    {
+      "id": 1425173,
+      "name": "Beñat Gerenabarrena",
+      "normalized_name": "benat gerenabarrena",
+      "role": "Midfielder",
+      "shirtNumber": 24,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1425173.png"
+    },
+    {
+      "id": 1355668,
+      "name": "Álvaro Djaló",
+      "normalized_name": "alvaro djalo",
+      "role": "Midfielder",
+      "shirtNumber": 25,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1355668.png"
+    },
+    {
+      "id": 1585726,
+      "name": "Peio Canales",
+      "normalized_name": "peio canales",
+      "role": "Midfielder",
+      "shirtNumber": 28,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1585726.png"
+    },
+    {
+      "id": 574629,
+      "name": "Alex Berenguer",
+      "normalized_name": "alex berenguer",
+      "role": "Attacker",
+      "shirtNumber": 7,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/574629.png"
+    },
+    {
+      "id": 604105,
+      "name": "Iñaki Williams",
+      "normalized_name": "inaki williams",
+      "role": "Attacker",
+      "shirtNumber": 9,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/604105.png"
+    },
+    {
+      "id": 1202110,
+      "name": "Nico Williams",
+      "normalized_name": "nico williams",
+      "role": "Attacker",
+      "shirtNumber": 10,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1202110.png"
+    },
+    {
+      "id": 711231,
+      "name": "Gorka Guruzeta",
+      "normalized_name": "gorka guruzeta",
+      "role": "Attacker",
+      "shirtNumber": 11,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/711231.png"
+    },
+    {
+      "id": 1425206,
+      "name": "Maroan Sannadi",
+      "normalized_name": "maroan sannadi",
+      "role": "Attacker",
+      "shirtNumber": 21,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1425206.png"
+    },
+    {
+      "id": 1203614,
+      "name": "Nico Serrano",
+      "normalized_name": "nico serrano",
+      "role": "Attacker",
+      "shirtNumber": 22,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1203614.png"
+    },
+    {
+      "id": 1011117,
+      "name": "Robert Navarro",
+      "normalized_name": "robert navarro",
+      "role": "Attacker",
+      "shirtNumber": 23,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1011117.png"
+    }
+  ],
+  "Villarreal": [
+    {
+      "id": 1187044,
+      "name": "Luíz Júnior",
+      "normalized_name": "luiz junior",
+      "role": "Keeper",
+      "shirtNumber": 1,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1187044.png"
+    },
+    {
+      "id": 151001,
+      "name": "Péter Gulácsi",
+      "normalized_name": "peter gulacsi",
+      "role": "Keeper",
+      "shirtNumber": 25,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/151001.png"
+    },
+    {
+      "id": 922877,
+      "name": "Logan Costa",
+      "normalized_name": "logan costa",
+      "role": "Defender",
+      "shirtNumber": 2,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/922877.png"
+    },
+    {
+      "id": 1338696,
+      "name": "Alex Freeman",
+      "normalized_name": "alex freeman",
+      "role": "Defender",
+      "shirtNumber": 3,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1338696.png"
+    },
+    {
+      "id": 1531887,
+      "name": "Pau Navarro",
+      "normalized_name": "pau navarro",
+      "role": "Defender",
+      "shirtNumber": 6,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1531887.png"
+    },
+    {
+      "id": 833219,
+      "name": "Juan Foyth",
+      "normalized_name": "juan foyth",
+      "role": "Defender",
+      "shirtNumber": 8,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/833219.png"
+    },
+    {
+      "id": 1343750,
+      "name": "Renato Veiga",
+      "normalized_name": "renato veiga",
+      "role": "Defender",
+      "shirtNumber": 12,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1343750.png"
+    },
+    {
+      "id": 1407468,
+      "name": "Santiago Mouriño",
+      "normalized_name": "santiago mourino",
+      "role": "Defender",
+      "shirtNumber": 15,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1407468.png"
+    },
+    {
+      "id": 1395964,
+      "name": "Carlos Romero",
+      "normalized_name": "carlos romero",
+      "role": "Defender",
+      "shirtNumber": 20,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1395964.png"
+    },
+    {
+      "id": 1059657,
+      "name": "Sergi Cardona",
+      "normalized_name": "sergi cardona",
+      "role": "Defender",
+      "shirtNumber": 23,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1059657.png"
+    },
+    {
+      "id": 1695966,
+      "name": "Alassane Diatta",
+      "normalized_name": "alassane diatta",
+      "role": "Midfielder",
+      "shirtNumber": 5,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1695966.png"
+    },
+    {
+      "id": 1184694,
+      "name": "Alberto Moleiro",
+      "normalized_name": "alberto moleiro",
+      "role": "Midfielder",
+      "shirtNumber": 10,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1184694.png"
+    },
+    {
+      "id": 671865,
+      "name": "Santi Comesaña",
+      "normalized_name": "santi comesana",
+      "role": "Midfielder",
+      "shirtNumber": 14,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/671865.png"
+    },
+    {
+      "id": 1841906,
+      "name": "Carlos Maciá",
+      "normalized_name": "carlos macia",
+      "role": "Midfielder",
+      "shirtNumber": 16,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1841906.png"
+    },
+    {
+      "id": 1026135,
+      "name": "Tajon Buchanan",
+      "normalized_name": "tajon buchanan",
+      "role": "Midfielder",
+      "shirtNumber": 17,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1026135.png"
+    },
+    {
+      "id": 844544,
+      "name": "Pape Gueye",
+      "normalized_name": "pape gueye",
+      "role": "Midfielder",
+      "shirtNumber": 18,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/844544.png"
+    },
+    {
+      "id": 575735,
+      "name": "Nicolas Pépé",
+      "normalized_name": "nicolas pepe",
+      "role": "Midfielder",
+      "shirtNumber": 19,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/575735.png"
+    },
+    {
+      "id": 1216798,
+      "name": "Nathan Saliba",
+      "normalized_name": "nathan saliba",
+      "role": "Midfielder",
+      "shirtNumber": 24,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1216798.png"
+    },
+    {
+      "id": 246438,
+      "name": "Gerard Moreno",
+      "normalized_name": "gerard moreno",
+      "role": "Attacker",
+      "shirtNumber": 7,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/246438.png"
+    },
+    {
+      "id": 1117069,
+      "name": "Georges Mikautadze",
+      "normalized_name": "georges mikautadze",
+      "role": "Attacker",
+      "shirtNumber": 9,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1117069.png"
+    },
+    {
+      "id": 1311915,
+      "name": "Ilias Akhomach",
+      "normalized_name": "ilias akhomach",
+      "role": "Attacker",
+      "shirtNumber": 11,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1311915.png"
+    },
+    {
+      "id": 1338740,
+      "name": "Tani Oluwaseyi",
+      "normalized_name": "tani oluwaseyi",
+      "role": "Attacker",
+      "shirtNumber": 21,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1338740.png"
+    },
+    {
+      "id": 479020,
+      "name": "Ayoze Pérez",
+      "normalized_name": "ayoze perez",
+      "role": "Attacker",
+      "shirtNumber": 22,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/479020.png"
+    }
+  ],
+  "Espanyol": [
+    {
+      "id": 1184772,
+      "name": "Ángel Fortuno",
+      "normalized_name": "angel fortuno",
+      "role": "Keeper",
+      "shirtNumber": 1,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1184772.png"
+    },
+    {
+      "id": 280818,
+      "name": "Marko Dmitrović",
+      "normalized_name": "marko dmitrovic",
+      "role": "Keeper",
+      "shirtNumber": 13,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/280818.png"
+    },
+    {
+      "id": 839893,
+      "name": "Andoni Gorosabel",
+      "normalized_name": "andoni gorosabel",
+      "role": "Defender",
+      "shirtNumber": 2,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/839893.png"
+    },
+    {
+      "id": 1393669,
+      "name": "Quilindschy Hartman",
+      "normalized_name": "quilindschy hartman",
+      "role": "Defender",
+      "shirtNumber": 3,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1393669.png"
+    },
+    {
+      "id": 1279557,
+      "name": "Clemens Riedel",
+      "normalized_name": "clemens riedel",
+      "role": "Defender",
+      "shirtNumber": 5,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1279557.png"
+    },
+    {
+      "id": 169586,
+      "name": "Leandro Cabrera",
+      "normalized_name": "leandro cabrera",
+      "role": "Defender",
+      "shirtNumber": 6,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/169586.png"
+    },
+    {
+      "id": 805352,
+      "name": "Unai Núñez",
+      "normalized_name": "unai nunez",
+      "role": "Defender",
+      "shirtNumber": 14,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/805352.png"
+    },
+    {
+      "id": 955204,
+      "name": "Vanja Drkušić",
+      "normalized_name": "vanja drkusic",
+      "role": "Defender",
+      "shirtNumber": 16,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/955204.png"
+    },
+    {
+      "id": 1727689,
+      "name": "Roger Hinojo",
+      "normalized_name": "roger hinojo",
+      "role": "Defender",
+      "shirtNumber": 21,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1727689.png"
+    },
+    {
+      "id": 1208708,
+      "name": "Omar El Hilali",
+      "normalized_name": "omar el hilali",
+      "role": "Defender",
+      "shirtNumber": 23,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1208708.png"
+    },
+    {
+      "id": 1187767,
+      "name": "Urko González",
+      "normalized_name": "urko gonzalez",
+      "role": "Midfielder",
+      "shirtNumber": 4,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1187767.png"
+    },
+    {
+      "id": 837089,
+      "name": "Edu Expósito",
+      "normalized_name": "edu exposito",
+      "role": "Midfielder",
+      "shirtNumber": 8,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/837089.png"
+    },
+    {
+      "id": 750031,
+      "name": "Pol Lozano",
+      "normalized_name": "pol lozano",
+      "role": "Midfielder",
+      "shirtNumber": 10,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/750031.png"
+    },
+    {
+      "id": 1184777,
+      "name": "Jofre Carreras",
+      "normalized_name": "jofre carreras",
+      "role": "Midfielder",
+      "shirtNumber": 17,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1184777.png"
+    },
+    {
+      "id": 1503655,
+      "name": "Gabriel Moscardo",
+      "normalized_name": "gabriel moscardo",
+      "role": "Midfielder",
+      "shirtNumber": 20,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1503655.png"
+    },
+    {
+      "id": 1609364,
+      "name": "Rafel Bauzà",
+      "normalized_name": "rafel bauza",
+      "role": "Midfielder",
+      "shirtNumber": 26,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1609364.png"
+    },
+    {
+      "id": 846966,
+      "name": "Javi Puado",
+      "normalized_name": "javi puado",
+      "role": "Attacker",
+      "shirtNumber": 7,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/846966.png"
+    },
+    {
+      "id": 1252373,
+      "name": "Roberto Fernández",
+      "normalized_name": "roberto fernandez",
+      "role": "Attacker",
+      "shirtNumber": 9,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1252373.png"
+    },
+    {
+      "id": 593129,
+      "name": "Pere Milla",
+      "normalized_name": "pere milla",
+      "role": "Attacker",
+      "shirtNumber": 11,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/593129.png"
+    },
+    {
+      "id": 1202525,
+      "name": "Bryan Zaragoza",
+      "normalized_name": "bryan zaragoza",
+      "role": "Attacker",
+      "shirtNumber": 15,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1202525.png"
+    },
+    {
+      "id": 1407741,
+      "name": "Marcos Fernández",
+      "normalized_name": "marcos fernandez",
+      "role": "Attacker",
+      "shirtNumber": 18,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1407741.png"
+    },
+    {
+      "id": 183353,
+      "name": "Kike García",
+      "normalized_name": "kike garcia",
+      "role": "Attacker",
+      "shirtNumber": 19,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/183353.png"
+    },
+    {
+      "id": 1300457,
+      "name": "Álex Calatrava",
+      "normalized_name": "alex calatrava",
+      "role": "Attacker",
+      "shirtNumber": 22,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1300457.png"
+    },
+    {
+      "id": 1181101,
+      "name": "Tyrhys Dolan",
+      "normalized_name": "tyrhys dolan",
+      "role": "Attacker",
+      "shirtNumber": 24,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1181101.png"
+    },
+    {
+      "id": 1427828,
+      "name": "Javi Hernández",
+      "normalized_name": "javi hernandez",
+      "role": "Attacker",
+      "shirtNumber": 28,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1427828.png"
+    }
+  ],
+  "Rayo Vallecano": [
+    {
+      "id": 1041445,
+      "name": "Dani Cárdenas",
+      "normalized_name": "dani cardenas",
+      "role": "Keeper",
+      "shirtNumber": 1,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1041445.png"
+    },
+    {
+      "id": 621415,
+      "name": "Augusto Batalla",
+      "normalized_name": "augusto batalla",
+      "role": "Keeper",
+      "shirtNumber": 13,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/621415.png"
+    },
+    {
+      "id": 602845,
+      "name": "Emil Audero",
+      "normalized_name": "emil audero",
+      "role": "Keeper",
+      "shirtNumber": 25,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/602845.png"
+    },
+    {
+      "id": 970578,
+      "name": "Andrei Rațiu",
+      "normalized_name": "andrei ratiu",
+      "role": "Defender",
+      "shirtNumber": 2,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/970578.png"
+    },
+    {
+      "id": 872362,
+      "name": "Marash Kumbulla",
+      "normalized_name": "marash kumbulla",
+      "role": "Defender",
+      "shirtNumber": 3,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/872362.png"
+    },
+    {
+      "id": 672840,
+      "name": "Luiz Felipe",
+      "normalized_name": "luiz felipe",
+      "role": "Defender",
+      "shirtNumber": 5,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/672840.png"
+    },
+    {
+      "id": 939427,
+      "name": "Mujaid Sadick",
+      "normalized_name": "mujaid sadick",
+      "role": "Defender",
+      "shirtNumber": 15,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/939427.png"
+    },
+    {
+      "id": 927646,
+      "name": "Adrià Pedrosa",
+      "normalized_name": "adria pedrosa",
+      "role": "Defender",
+      "shirtNumber": 17,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/927646.png"
+    },
+    {
+      "id": 264885,
+      "name": "Iván Balliu",
+      "normalized_name": "ivan balliu",
+      "role": "Defender",
+      "shirtNumber": 20,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/264885.png"
+    },
+    {
+      "id": 1411818,
+      "name": "Pelayo Fernández",
+      "normalized_name": "pelayo fernandez",
+      "role": "Defender",
+      "shirtNumber": 22,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1411818.png"
+    },
+    {
+      "id": 184521,
+      "name": "Florian Lejeune",
+      "normalized_name": "florian lejeune",
+      "role": "Defender",
+      "shirtNumber": 24,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/184521.png"
+    },
+    {
+      "id": 1255090,
+      "name": "Jozhua Vertrouwd",
+      "normalized_name": "jozhua vertrouwd",
+      "role": "Defender",
+      "shirtNumber": 33,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1255090.png"
+    },
+    {
+      "id": 715069,
+      "name": "Pedro Díaz",
+      "normalized_name": "pedro diaz",
+      "role": "Midfielder",
+      "shirtNumber": 4,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/715069.png"
+    },
+    {
+      "id": 872396,
+      "name": "Pathé Ciss",
+      "normalized_name": "pathe ciss",
+      "role": "Midfielder",
+      "shirtNumber": 6,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/872396.png"
+    },
+    {
+      "id": 638010,
+      "name": "Isi Palazón",
+      "normalized_name": "isi palazon",
+      "role": "Midfielder",
+      "shirtNumber": 7,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/638010.png"
+    },
+    {
+      "id": 571615,
+      "name": "Unai López",
+      "normalized_name": "unai lopez",
+      "role": "Midfielder",
+      "shirtNumber": 8,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/571615.png"
+    },
+    {
+      "id": 956622,
+      "name": "Óscar Valentín",
+      "normalized_name": "oscar valentin",
+      "role": "Midfielder",
+      "shirtNumber": 23,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/956622.png"
+    },
+    {
+      "id": 1889232,
+      "name": "Gnangoro Bouare",
+      "normalized_name": "gnangoro bouare",
+      "role": "Midfielder",
+      "shirtNumber": 36,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1889232.png"
+    },
+    {
+      "id": 359196,
+      "name": "Raúl de Tomás",
+      "normalized_name": "raul de tomas",
+      "role": "Attacker",
+      "shirtNumber": null,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/359196.png"
+    },
+    {
+      "id": 924300,
+      "name": "Alemão",
+      "normalized_name": "alemao",
+      "role": "Attacker",
+      "shirtNumber": 9,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/924300.png"
+    },
+    {
+      "id": 980422,
+      "name": "Sergio Camello",
+      "normalized_name": "sergio camello",
+      "role": "Attacker",
+      "shirtNumber": 10,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/980422.png"
+    },
+    {
+      "id": 915264,
+      "name": "Randy Nteka",
+      "normalized_name": "randy nteka",
+      "role": "Attacker",
+      "shirtNumber": 11,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/915264.png"
+    },
+    {
+      "id": 939061,
+      "name": "Giorgi Tsitaishvili",
+      "normalized_name": "giorgi tsitaishvili",
+      "role": "Attacker",
+      "shirtNumber": 14,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/939061.png"
+    },
+    {
+      "id": 474658,
+      "name": "Álvaro Garcia",
+      "normalized_name": "alvaro garcia",
+      "role": "Attacker",
+      "shirtNumber": 18,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/474658.png"
+    },
+    {
+      "id": 797901,
+      "name": "Jorge de Frutos",
+      "normalized_name": "jorge de frutos",
+      "role": "Attacker",
+      "shirtNumber": 19,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/797901.png"
+    },
+    {
+      "id": 1284430,
+      "name": "Fran Pérez",
+      "normalized_name": "fran perez",
+      "role": "Attacker",
+      "shirtNumber": 21,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1284430.png"
+    },
+    {
+      "id": 1553404,
+      "name": "Rayane Belaid",
+      "normalized_name": "rayane belaid",
+      "role": "Attacker",
+      "shirtNumber": 37,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1553404.png"
+    }
+  ],
+  "Getafe": [
+    {
+      "id": 1178641,
+      "name": "Jirí Letácek",
+      "normalized_name": "jiri letacek",
+      "role": "Keeper",
+      "shirtNumber": 1,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1178641.png"
+    },
+    {
+      "id": 581919,
+      "name": "David Soria",
+      "normalized_name": "david soria",
+      "role": "Keeper",
+      "shirtNumber": 13,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/581919.png"
+    },
+    {
+      "id": 421365,
+      "name": "Djené",
+      "normalized_name": "djene",
+      "role": "Defender",
+      "shirtNumber": 2,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/421365.png"
+    },
+    {
+      "id": 1676086,
+      "name": "Davinchi",
+      "normalized_name": "davinchi",
+      "role": "Defender",
+      "shirtNumber": 3,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1676086.png"
+    },
+    {
+      "id": 1179368,
+      "name": "Saba Sazonov",
+      "normalized_name": "saba sazonov",
+      "role": "Defender",
+      "shirtNumber": 4,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1179368.png"
+    },
+    {
+      "id": 956921,
+      "name": "Abdelkabir Abqar",
+      "normalized_name": "abdelkabir abqar",
+      "role": "Defender",
+      "shirtNumber": 5,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/956921.png"
+    },
+    {
+      "id": 178753,
+      "name": "Nemanja Gudelj",
+      "normalized_name": "nemanja gudelj",
+      "role": "Defender",
+      "shirtNumber": 8,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/178753.png"
+    },
+    {
+      "id": 1414777,
+      "name": "Sebastián Boselli",
+      "normalized_name": "sebastian boselli",
+      "role": "Defender",
+      "shirtNumber": 15,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1414777.png"
+    },
+    {
+      "id": 175311,
+      "name": "Kiko",
+      "normalized_name": "kiko",
+      "role": "Defender",
+      "shirtNumber": 17,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/175311.png"
+    },
+    {
+      "id": 474673,
+      "name": "Johan Mojica",
+      "normalized_name": "johan mojica",
+      "role": "Defender",
+      "shirtNumber": 22,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/474673.png"
+    },
+    {
+      "id": 1118199,
+      "name": "Zaid Abner Romero",
+      "normalized_name": "zaid abner romero",
+      "role": "Defender",
+      "shirtNumber": 24,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1118199.png"
+    },
+    {
+      "id": 1792368,
+      "name": "Jean Ives Valou",
+      "normalized_name": "jean ives valou",
+      "role": "Defender",
+      "shirtNumber": 26,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1792368.png"
+    },
+    {
+      "id": 1321605,
+      "name": "Mario Martín",
+      "normalized_name": "mario martin",
+      "role": "Midfielder",
+      "shirtNumber": 6,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1321605.png"
+    },
+    {
+      "id": 1202587,
+      "name": "Ramón Terrats",
+      "normalized_name": "ramon terrats",
+      "role": "Midfielder",
+      "shirtNumber": 11,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1202587.png"
+    },
+    {
+      "id": 1183650,
+      "name": "Francho Serrano",
+      "normalized_name": "francho serrano",
+      "role": "Midfielder",
+      "shirtNumber": 16,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1183650.png"
+    },
+    {
+      "id": 1430406,
+      "name": "Andrés García",
+      "normalized_name": "andres garcia",
+      "role": "Midfielder",
+      "shirtNumber": 21,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1430406.png"
+    },
+    {
+      "id": 765693,
+      "name": "Orel Mangala",
+      "normalized_name": "orel mangala",
+      "role": "Midfielder",
+      "shirtNumber": 23,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/765693.png"
+    },
+    {
+      "id": 1637438,
+      "name": "Alberto Risco",
+      "normalized_name": "alberto risco",
+      "role": "Midfielder",
+      "shirtNumber": 28,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1637438.png"
+    },
+    {
+      "id": 191873,
+      "name": "Juanmi",
+      "normalized_name": "juanmi",
+      "role": "Attacker",
+      "shirtNumber": 7,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/191873.png"
+    },
+    {
+      "id": 635772,
+      "name": "Borja Mayoral",
+      "normalized_name": "borja mayoral",
+      "role": "Attacker",
+      "shirtNumber": 9,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/635772.png"
+    },
+    {
+      "id": 1197039,
+      "name": "Martín Satriano",
+      "normalized_name": "martin satriano",
+      "role": "Attacker",
+      "shirtNumber": 10,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1197039.png"
+    },
+    {
+      "id": 1580704,
+      "name": "Christantus Uche",
+      "normalized_name": "christantus uche",
+      "role": "Attacker",
+      "shirtNumber": 18,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1580704.png"
+    },
+    {
+      "id": 464486,
+      "name": "Enes Ünal",
+      "normalized_name": "enes unal",
+      "role": "Attacker",
+      "shirtNumber": 19,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/464486.png"
+    },
+    {
+      "id": 1203946,
+      "name": "Iván Azon",
+      "normalized_name": "ivan azon",
+      "role": "Attacker",
+      "shirtNumber": 20,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1203946.png"
+    }
+  ],
+  "Racing Santander": [
+    {
+      "id": 1441736,
+      "name": "Simon Eriksson",
+      "normalized_name": "simon eriksson",
+      "role": "Keeper",
+      "shirtNumber": 1,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1441736.png"
+    },
+    {
+      "id": 1280020,
+      "name": "Julen Agirrezabala",
+      "normalized_name": "julen agirrezabala",
+      "role": "Keeper",
+      "shirtNumber": 13,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1280020.png"
+    },
+    {
+      "id": 1199649,
+      "name": "Álvaro Mantilla",
+      "normalized_name": "alvaro mantilla",
+      "role": "Defender",
+      "shirtNumber": 2,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1199649.png"
+    },
+    {
+      "id": 863169,
+      "name": "Manu",
+      "normalized_name": "manu",
+      "role": "Defender",
+      "shirtNumber": 4,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/863169.png"
+    },
+    {
+      "id": 982734,
+      "name": "Pablo Ramón",
+      "normalized_name": "pablo ramon",
+      "role": "Defender",
+      "shirtNumber": 5,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/982734.png"
+    },
+    {
+      "id": 1212179,
+      "name": "Facundo González",
+      "normalized_name": "facundo gonzalez",
+      "role": "Defender",
+      "shirtNumber": 16,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1212179.png"
+    },
+    {
+      "id": 1670161,
+      "name": "Jorge Salinas",
+      "normalized_name": "jorge salinas",
+      "role": "Defender",
+      "shirtNumber": 17,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1670161.png"
+    },
+    {
+      "id": 1644302,
+      "name": "Pedro Felipe",
+      "normalized_name": "pedro felipe",
+      "role": "Defender",
+      "shirtNumber": 22,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1644302.png"
+    },
+    {
+      "id": 1329406,
+      "name": "Jeanuël Belocian",
+      "normalized_name": "jeanuel belocian",
+      "role": "Defender",
+      "shirtNumber": 24,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1329406.png"
+    },
+    {
+      "id": 684981,
+      "name": "Aarón Martín",
+      "normalized_name": "aaron martin",
+      "role": "Midfielder",
+      "shirtNumber": 3,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/684981.png"
+    },
+    {
+      "id": 1168852,
+      "name": "Íñigo Sainz-Maza",
+      "normalized_name": "inigo sainz maza",
+      "role": "Midfielder",
+      "shirtNumber": 6,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1168852.png"
+    },
+    {
+      "id": 777028,
+      "name": "André Almeida",
+      "normalized_name": "andre almeida",
+      "role": "Midfielder",
+      "shirtNumber": 8,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/777028.png"
+    },
+    {
+      "id": 1363232,
+      "name": "Maguette Gueye",
+      "normalized_name": "maguette gueye",
+      "role": "Midfielder",
+      "shirtNumber": 14,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1363232.png"
+    },
+    {
+      "id": 1396089,
+      "name": "Matteo Prati",
+      "normalized_name": "matteo prati",
+      "role": "Midfielder",
+      "shirtNumber": 18,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1396089.png"
+    },
+    {
+      "id": 150649,
+      "name": "Sergio Canales",
+      "normalized_name": "sergio canales",
+      "role": "Midfielder",
+      "shirtNumber": 20,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/150649.png"
+    },
+    {
+      "id": 967871,
+      "name": "Iván Martin",
+      "normalized_name": "ivan martin",
+      "role": "Midfielder",
+      "shirtNumber": 23,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/967871.png"
+    },
+    {
+      "id": 1065640,
+      "name": "Giorgi Guliashvili",
+      "normalized_name": "giorgi guliashvili",
+      "role": "Attacker",
+      "shirtNumber": 7,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1065640.png"
+    },
+    {
+      "id": 1225417,
+      "name": "Juan Carlos Arana",
+      "normalized_name": "juan carlos arana",
+      "role": "Attacker",
+      "shirtNumber": 9,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1225417.png"
+    },
+    {
+      "id": 889229,
+      "name": "Iñigo Vicente",
+      "normalized_name": "inigo vicente",
+      "role": "Attacker",
+      "shirtNumber": 10,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/889229.png"
+    },
+    {
+      "id": 899195,
+      "name": "Andrés Martin",
+      "normalized_name": "andres martin",
+      "role": "Attacker",
+      "shirtNumber": 11,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/899195.png"
+    },
+    {
+      "id": 670031,
+      "name": "Asier Villalibre",
+      "normalized_name": "asier villalibre",
+      "role": "Attacker",
+      "shirtNumber": 12,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/670031.png"
+    },
+    {
+      "id": 1662379,
+      "name": "Pablo García",
+      "normalized_name": "pablo garcia",
+      "role": "Attacker",
+      "shirtNumber": 15,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1662379.png"
+    },
+    {
+      "id": 1586390,
+      "name": "Iker Luque",
+      "normalized_name": "iker luque",
+      "role": "Attacker",
+      "shirtNumber": 19,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1586390.png"
+    },
+    {
+      "id": 1640985,
+      "name": "Yassir Zabiri",
+      "normalized_name": "yassir zabiri",
+      "role": "Attacker",
+      "shirtNumber": 21,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1640985.png"
+    }
+  ],
+  "Osasuna": [
+    {
+      "id": 683762,
+      "name": "Sergio Herrera",
+      "normalized_name": "sergio herrera",
+      "role": "Keeper",
+      "shirtNumber": 1,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/683762.png"
+    },
+    {
+      "id": 213471,
+      "name": "Aitor Fernández",
+      "normalized_name": "aitor fernandez",
+      "role": "Keeper",
+      "shirtNumber": 13,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/213471.png"
+    },
+    {
+      "id": 1098365,
+      "name": "Jorge Herrando",
+      "normalized_name": "jorge herrando",
+      "role": "Defender",
+      "shirtNumber": 5,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1098365.png"
+    },
+    {
+      "id": 488718,
+      "name": "Diego Rico",
+      "normalized_name": "diego rico",
+      "role": "Defender",
+      "shirtNumber": 15,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/488718.png"
+    },
+    {
+      "id": 763970,
+      "name": "Valentin Rosier",
+      "normalized_name": "valentin rosier",
+      "role": "Defender",
+      "shirtNumber": 19,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/763970.png"
+    },
+    {
+      "id": 1187734,
+      "name": "Flavien Boyomo",
+      "normalized_name": "flavien boyomo",
+      "role": "Defender",
+      "shirtNumber": 22,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1187734.png"
+    },
+    {
+      "id": 1323398,
+      "name": "Abel Bretones",
+      "normalized_name": "abel bretones",
+      "role": "Defender",
+      "shirtNumber": 23,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1323398.png"
+    },
+    {
+      "id": 814663,
+      "name": "Alejandro Catena",
+      "normalized_name": "alejandro catena",
+      "role": "Defender",
+      "shirtNumber": 24,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/814663.png"
+    },
+    {
+      "id": 1614872,
+      "name": "Iñigo Arguibide",
+      "normalized_name": "inigo arguibide",
+      "role": "Defender",
+      "shirtNumber": 27,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1614872.png"
+    },
+    {
+      "id": 1431121,
+      "name": "Asier Osambela",
+      "normalized_name": "asier osambela",
+      "role": "Defender",
+      "shirtNumber": 29,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1431121.png"
+    },
+    {
+      "id": 1682298,
+      "name": "Unai Santos",
+      "normalized_name": "unai santos",
+      "role": "Defender",
+      "shirtNumber": 35,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1682298.png"
+    },
+    {
+      "id": 1603025,
+      "name": "Rockson Yeboah",
+      "normalized_name": "rockson yeboah",
+      "role": "Defender",
+      "shirtNumber": 48,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1603025.png"
+    },
+    {
+      "id": 303879,
+      "name": "Lucas Torró",
+      "normalized_name": "lucas torro",
+      "role": "Midfielder",
+      "shirtNumber": 6,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/303879.png"
+    },
+    {
+      "id": 921825,
+      "name": "Jon Moncayola",
+      "normalized_name": "jon moncayola",
+      "role": "Midfielder",
+      "shirtNumber": 7,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/921825.png"
+    },
+    {
+      "id": 1323863,
+      "name": "Iker Muñoz",
+      "normalized_name": "iker munoz",
+      "role": "Midfielder",
+      "shirtNumber": 8,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1323863.png"
+    },
+    {
+      "id": 1054786,
+      "name": "Aimar Oroz",
+      "normalized_name": "aimar oroz",
+      "role": "Midfielder",
+      "shirtNumber": 10,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1054786.png"
+    },
+    {
+      "id": 262592,
+      "name": "Moi Gómez",
+      "normalized_name": "moi gomez",
+      "role": "Midfielder",
+      "shirtNumber": 16,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/262592.png"
+    },
+    {
+      "id": 1094778,
+      "name": "Raúl García",
+      "normalized_name": "raul garcia",
+      "role": "Attacker",
+      "shirtNumber": 9,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1094778.png"
+    },
+    {
+      "id": 574624,
+      "name": "Enrique Barja",
+      "normalized_name": "enrique barja",
+      "role": "Attacker",
+      "shirtNumber": 11,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/574624.png"
+    },
+    {
+      "id": 384413,
+      "name": "Rubén Garcia",
+      "normalized_name": "ruben garcia",
+      "role": "Attacker",
+      "shirtNumber": 14,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/384413.png"
+    },
+    {
+      "id": 251269,
+      "name": "Ante Budimir",
+      "normalized_name": "ante budimir",
+      "role": "Attacker",
+      "shirtNumber": 17,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/251269.png"
+    },
+    {
+      "id": 1169596,
+      "name": "Raúl Moro",
+      "normalized_name": "raul moro",
+      "role": "Attacker",
+      "shirtNumber": 18,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1169596.png"
+    },
+    {
+      "id": 696263,
+      "name": "Romain Del Castillo",
+      "normalized_name": "romain del castillo",
+      "role": "Attacker",
+      "shirtNumber": 20,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/696263.png"
+    },
+    {
+      "id": 1242139,
+      "name": "Jonathan Dubasin",
+      "normalized_name": "jonathan dubasin",
+      "role": "Attacker",
+      "shirtNumber": 21,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1242139.png"
+    }
+  ],
+  "Levante": [
+    {
+      "id": 1237455,
+      "name": "Pablo Campos",
+      "normalized_name": "pablo campos",
+      "role": "Keeper",
+      "shirtNumber": 1,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1237455.png"
+    },
+    {
+      "id": 185644,
+      "name": "Mathew Ryan",
+      "normalized_name": "mathew ryan",
+      "role": "Keeper",
+      "shirtNumber": 13,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/185644.png"
+    },
+    {
+      "id": 210683,
+      "name": "Aïssa Mandi",
+      "normalized_name": "aissa mandi",
+      "role": "Defender",
+      "shirtNumber": 2,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/210683.png"
+    },
+    {
+      "id": 1780239,
+      "name": "Ifeanyi Ndukwe",
+      "normalized_name": "ifeanyi ndukwe",
+      "role": "Defender",
+      "shirtNumber": 3,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1780239.png"
+    },
+    {
+      "id": 952528,
+      "name": "Adrián De La Fuente",
+      "normalized_name": "adrian de la fuente",
+      "role": "Defender",
+      "shirtNumber": 4,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/952528.png"
+    },
+    {
+      "id": 1617146,
+      "name": "Jorge Cabello",
+      "normalized_name": "jorge cabello",
+      "role": "Defender",
+      "shirtNumber": 14,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1617146.png"
+    },
+    {
+      "id": 1695701,
+      "name": "Axel Tape",
+      "normalized_name": "axel tape",
+      "role": "Defender",
+      "shirtNumber": 16,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1695701.png"
+    },
+    {
+      "id": 443966,
+      "name": "Jeremy Toljan",
+      "normalized_name": "jeremy toljan",
+      "role": "Defender",
+      "shirtNumber": 22,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/443966.png"
+    },
+    {
+      "id": 1052330,
+      "name": "Manuel Sánchez",
+      "normalized_name": "manuel sanchez",
+      "role": "Defender",
+      "shirtNumber": 23,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1052330.png"
+    },
+    {
+      "id": 1800611,
+      "name": "Nacho Pérez",
+      "normalized_name": "nacho perez",
+      "role": "Defender",
+      "shirtNumber": 29,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1800611.png"
+    },
+    {
+      "id": 2141146,
+      "name": "Marc Santos",
+      "normalized_name": "marc santos",
+      "role": "Defender",
+      "shirtNumber": 33,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/2141146.png"
+    },
+    {
+      "id": 1254218,
+      "name": "Hugo Sotelo",
+      "normalized_name": "hugo sotelo",
+      "role": "Midfielder",
+      "shirtNumber": 5,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1254218.png"
+    },
+    {
+      "id": 1481503,
+      "name": "Dani Requena",
+      "normalized_name": "dani requena",
+      "role": "Midfielder",
+      "shirtNumber": 6,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1481503.png"
+    },
+    {
+      "id": 1286471,
+      "name": "Roger Brugué",
+      "normalized_name": "roger brugue",
+      "role": "Midfielder",
+      "shirtNumber": 7,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1286471.png"
+    },
+    {
+      "id": 1131957,
+      "name": "Jon Olasagasti",
+      "normalized_name": "jon olasagasti",
+      "role": "Midfielder",
+      "shirtNumber": 8,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1131957.png"
+    },
+    {
+      "id": 1332540,
+      "name": "Enzo Bardeli",
+      "normalized_name": "enzo bardeli",
+      "role": "Midfielder",
+      "shirtNumber": 18,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1332540.png"
+    },
+    {
+      "id": 914401,
+      "name": "Oriol Rey",
+      "normalized_name": "oriol rey",
+      "role": "Midfielder",
+      "shirtNumber": 20,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/914401.png"
+    },
+    {
+      "id": 1748952,
+      "name": "Jorge de Asís",
+      "normalized_name": "jorge de asis",
+      "role": "Attacker",
+      "shirtNumber": null,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1748952.png"
+    },
+    {
+      "id": 1209441,
+      "name": "Iván Romero",
+      "normalized_name": "ivan romero",
+      "role": "Attacker",
+      "shirtNumber": 9,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1209441.png"
+    },
+    {
+      "id": 1302821,
+      "name": "Petar Ratkov",
+      "normalized_name": "petar ratkov",
+      "role": "Attacker",
+      "shirtNumber": 10,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1302821.png"
+    },
+    {
+      "id": 1836083,
+      "name": "Yanis Musuayi",
+      "normalized_name": "yanis musuayi",
+      "role": "Attacker",
+      "shirtNumber": 11,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1836083.png"
+    },
+    {
+      "id": 977618,
+      "name": "Víctor García",
+      "normalized_name": "victor garcia",
+      "role": "Attacker",
+      "shirtNumber": 17,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/977618.png"
+    },
+    {
+      "id": 1392779,
+      "name": "Etta Eyong",
+      "normalized_name": "etta eyong",
+      "role": "Attacker",
+      "shirtNumber": 21,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1392779.png"
+    },
+    {
+      "id": 1460063,
+      "name": "Thiago Fernández",
+      "normalized_name": "thiago fernandez",
+      "role": "Attacker",
+      "shirtNumber": 24,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1460063.png"
+    },
+    {
+      "id": 1649293,
+      "name": "Paco Cortés",
+      "normalized_name": "paco cortes",
+      "role": "Attacker",
+      "shirtNumber": 27,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1649293.png"
+    }
+  ],
+  "Elche": [
+    {
+      "id": 592412,
+      "name": "Matías Dituro",
+      "normalized_name": "matias dituro",
+      "role": "Keeper",
+      "shirtNumber": 1,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/592412.png"
+    },
+    {
+      "id": 1311126,
+      "name": "Alejandro Iturbe",
+      "normalized_name": "alejandro iturbe",
+      "role": "Keeper",
+      "shirtNumber": 13,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1311126.png"
+    },
+    {
+      "id": 1583872,
+      "name": "Buba Sangaré",
+      "normalized_name": "buba sangare",
+      "role": "Defender",
+      "shirtNumber": 2,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1583872.png"
+    },
+    {
+      "id": 1337914,
+      "name": "Roy Revivo",
+      "normalized_name": "roy revivo",
+      "role": "Defender",
+      "shirtNumber": 3,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1337914.png"
+    },
+    {
+      "id": 884383,
+      "name": "Bambo Diaby",
+      "normalized_name": "bambo diaby",
+      "role": "Defender",
+      "shirtNumber": 4,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/884383.png"
+    },
+    {
+      "id": 1277343,
+      "name": "Federico Redondo",
+      "normalized_name": "federico redondo",
+      "role": "Defender",
+      "shirtNumber": 5,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1277343.png"
+    },
+    {
+      "id": 291635,
+      "name": "Pedro Bigas",
+      "normalized_name": "pedro bigas",
+      "role": "Defender",
+      "shirtNumber": 6,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/291635.png"
+    },
+    {
+      "id": 1206583,
+      "name": "Kevin Lomónaco",
+      "normalized_name": "kevin lomonaco",
+      "role": "Defender",
+      "shirtNumber": 15,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1206583.png"
+    },
+    {
+      "id": 1330035,
+      "name": "Rubén Sánchez",
+      "normalized_name": "ruben sanchez",
+      "role": "Defender",
+      "shirtNumber": 22,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1330035.png"
+    },
+    {
+      "id": 1192393,
+      "name": "Víctor Chust",
+      "normalized_name": "victor chust",
+      "role": "Defender",
+      "shirtNumber": 23,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1192393.png"
+    },
+    {
+      "id": 1670276,
+      "name": "Matia Barzić",
+      "normalized_name": "matia barzic",
+      "role": "Defender",
+      "shirtNumber": 26,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1670276.png"
+    },
+    {
+      "id": 1392232,
+      "name": "Marc Aguado",
+      "normalized_name": "marc aguado",
+      "role": "Midfielder",
+      "shirtNumber": 8,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1392232.png"
+    },
+    {
+      "id": 1336566,
+      "name": "Facundo Buonanotte",
+      "normalized_name": "facundo buonanotte",
+      "role": "Midfielder",
+      "shirtNumber": 10,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1336566.png"
+    },
+    {
+      "id": 1102708,
+      "name": "Germán Valera",
+      "normalized_name": "german valera",
+      "role": "Midfielder",
+      "shirtNumber": 11,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1102708.png"
+    },
+    {
+      "id": 881773,
+      "name": "Gonzalo Villar",
+      "normalized_name": "gonzalo villar",
+      "role": "Midfielder",
+      "shirtNumber": 12,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/881773.png"
+    },
+    {
+      "id": 1226189,
+      "name": "Martim Neto",
+      "normalized_name": "martim neto",
+      "role": "Midfielder",
+      "shirtNumber": 16,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1226189.png"
+    },
+    {
+      "id": 468931,
+      "name": "Thomas Lemar",
+      "normalized_name": "thomas lemar",
+      "role": "Midfielder",
+      "shirtNumber": 18,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/468931.png"
+    },
+    {
+      "id": 654091,
+      "name": "Grady Diangana",
+      "normalized_name": "grady diangana",
+      "role": "Midfielder",
+      "shirtNumber": 19,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/654091.png"
+    },
+    {
+      "id": 801213,
+      "name": "Tete Morente",
+      "normalized_name": "tete morente",
+      "role": "Midfielder",
+      "shirtNumber": 20,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/801213.png"
+    },
+    {
+      "id": 1670281,
+      "name": "Ali Houary",
+      "normalized_name": "ali houary",
+      "role": "Midfielder",
+      "shirtNumber": 29,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1670281.png"
+    },
+    {
+      "id": 1732412,
+      "name": "Javi Morcillo",
+      "normalized_name": "javi morcillo",
+      "role": "Midfielder",
+      "shirtNumber": 47,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1732412.png"
+    },
+    {
+      "id": 1137497,
+      "name": "Yago Santiago",
+      "normalized_name": "yago santiago",
+      "role": "Attacker",
+      "shirtNumber": 7,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1137497.png"
+    },
+    {
+      "id": 493216,
+      "name": "Ezequiel Ponce",
+      "normalized_name": "ezequiel ponce",
+      "role": "Attacker",
+      "shirtNumber": 9,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/493216.png"
+    },
+    {
+      "id": 1127224,
+      "name": "Fer Niño",
+      "normalized_name": "fer nino",
+      "role": "Attacker",
+      "shirtNumber": 14,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1127224.png"
+    },
+    {
+      "id": 623982,
+      "name": "Josan",
+      "normalized_name": "josan",
+      "role": "Attacker",
+      "shirtNumber": 17,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/623982.png"
+    },
+    {
+      "id": 1280756,
+      "name": "Lucas Cepeda",
+      "normalized_name": "lucas cepeda",
+      "role": "Attacker",
+      "shirtNumber": 21,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1280756.png"
+    },
+    {
+      "id": 1343195,
+      "name": "Abiel Osorio",
+      "normalized_name": "abiel osorio",
+      "role": "Attacker",
+      "shirtNumber": 24,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1343195.png"
+    },
+    {
+      "id": 1577912,
+      "name": "Adam Boayar",
+      "normalized_name": "adam boayar",
+      "role": "Attacker",
+      "shirtNumber": 32,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1577912.png"
+    }
+  ],
+  "Valencia": [
+    {
+      "id": 254241,
+      "name": "Stole Dimitrievski",
+      "normalized_name": "stole dimitrievski",
+      "role": "Keeper",
+      "shirtNumber": 1,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/254241.png"
+    },
+    {
+      "id": 913464,
+      "name": "Cristian Rivero",
+      "normalized_name": "cristian rivero",
+      "role": "Keeper",
+      "shirtNumber": 13,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/913464.png"
+    },
+    {
+      "id": 1348497,
+      "name": "Kayne van Oevelen",
+      "normalized_name": "kayne van oevelen",
+      "role": "Keeper",
+      "shirtNumber": 25,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1348497.png"
+    },
+    {
+      "id": 896402,
+      "name": "José Copete",
+      "normalized_name": "jose copete",
+      "role": "Defender",
+      "shirtNumber": 3,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/896402.png"
+    },
+    {
+      "id": 561198,
+      "name": "Mouctar Diakhaby",
+      "normalized_name": "mouctar diakhaby",
+      "role": "Defender",
+      "shirtNumber": 4,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/561198.png"
+    },
+    {
+      "id": 1311985,
+      "name": "César Tárrega",
+      "normalized_name": "cesar tarrega",
+      "role": "Defender",
+      "shirtNumber": 5,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1311985.png"
+    },
+    {
+      "id": 969711,
+      "name": "Justin De Haas",
+      "normalized_name": "justin de haas",
+      "role": "Defender",
+      "shirtNumber": 12,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/969711.png"
+    },
+    {
+      "id": 391058,
+      "name": "José Gayà",
+      "normalized_name": "jose gaya",
+      "role": "Defender",
+      "shirtNumber": 14,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/391058.png"
+    },
+    {
+      "id": 261609,
+      "name": "Dimitri Foulquier",
+      "normalized_name": "dimitri foulquier",
+      "role": "Defender",
+      "shirtNumber": 20,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/261609.png"
+    },
+    {
+      "id": 1220187,
+      "name": "Jesus Vázquez",
+      "normalized_name": "jesus vazquez",
+      "role": "Defender",
+      "shirtNumber": 21,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1220187.png"
+    },
+    {
+      "id": 1194892,
+      "name": "Arnau Martínez",
+      "normalized_name": "arnau martinez",
+      "role": "Defender",
+      "shirtNumber": 22,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1194892.png"
+    },
+    {
+      "id": 673356,
+      "name": "Pablo Maffeo",
+      "normalized_name": "pablo maffeo",
+      "role": "Defender",
+      "shirtNumber": 24,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/673356.png"
+    },
+    {
+      "id": 1637860,
+      "name": "Iker Córdoba",
+      "normalized_name": "iker cordoba",
+      "role": "Defender",
+      "shirtNumber": 36,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1637860.png"
+    },
+    {
+      "id": 586768,
+      "name": "Guido Rodríguez",
+      "normalized_name": "guido rodriguez",
+      "role": "Midfielder",
+      "shirtNumber": 2,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/586768.png"
+    },
+    {
+      "id": 704151,
+      "name": "Arnaut Danjuma",
+      "normalized_name": "arnaut danjuma",
+      "role": "Midfielder",
+      "shirtNumber": 7,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/704151.png"
+    },
+    {
+      "id": 1284429,
+      "name": "Javier Guerra",
+      "normalized_name": "javier guerra",
+      "role": "Midfielder",
+      "shirtNumber": 8,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1284429.png"
+    },
+    {
+      "id": 963964,
+      "name": "Harvey Elliott",
+      "normalized_name": "harvey elliott",
+      "role": "Midfielder",
+      "shirtNumber": 10,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/963964.png"
+    },
+    {
+      "id": 638070,
+      "name": "Luis Rioja",
+      "normalized_name": "luis rioja",
+      "role": "Midfielder",
+      "shirtNumber": 11,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/638070.png"
+    },
+    {
+      "id": 723148,
+      "name": "Aliou Dieng",
+      "normalized_name": "aliou dieng",
+      "role": "Midfielder",
+      "shirtNumber": 15,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/723148.png"
+    },
+    {
+      "id": 673689,
+      "name": "Pepelu",
+      "normalized_name": "pepelu",
+      "role": "Midfielder",
+      "shirtNumber": 18,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/673689.png"
+    },
+    {
+      "id": 784246,
+      "name": "Dani Raba",
+      "normalized_name": "dani raba",
+      "role": "Midfielder",
+      "shirtNumber": 19,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/784246.png"
+    },
+    {
+      "id": 800615,
+      "name": "Filip Ugrinic",
+      "normalized_name": "filip ugrinic",
+      "role": "Midfielder",
+      "shirtNumber": 23,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/800615.png"
+    },
+    {
+      "id": 1600732,
+      "name": "David Otorbi",
+      "normalized_name": "david otorbi",
+      "role": "Midfielder",
+      "shirtNumber": 27,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1600732.png"
+    },
+    {
+      "id": 1905203,
+      "name": "Aaron Mayol",
+      "normalized_name": "aaron mayol",
+      "role": "Midfielder",
+      "shirtNumber": 33,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1905203.png"
+    },
+    {
+      "id": 1611149,
+      "name": "Ryunosuke Sato",
+      "normalized_name": "ryunosuke sato",
+      "role": "Midfielder",
+      "shirtNumber": 39,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1611149.png"
+    },
+    {
+      "id": 673937,
+      "name": "Sergi Canós",
+      "normalized_name": "sergi canos",
+      "role": "Attacker",
+      "shirtNumber": null,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/673937.png"
+    },
+    {
+      "id": 590494,
+      "name": "Umar Sadiq",
+      "normalized_name": "umar sadiq",
+      "role": "Attacker",
+      "shirtNumber": 6,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/590494.png"
+    },
+    {
+      "id": 929838,
+      "name": "Hugo Duro",
+      "normalized_name": "hugo duro",
+      "role": "Attacker",
+      "shirtNumber": 9,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/929838.png"
+    },
+    {
+      "id": 1284434,
+      "name": "Diego López",
+      "normalized_name": "diego lopez",
+      "role": "Attacker",
+      "shirtNumber": 16,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1284434.png"
+    }
+  ],
+  "Malaga": [
+    {
+      "id": 616538,
+      "name": "Alfonso Herrero",
+      "normalized_name": "alfonso herrero",
+      "role": "Keeper",
+      "shirtNumber": 1,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/616538.png"
+    },
+    {
+      "id": 1426161,
+      "name": "Carlos López",
+      "normalized_name": "carlos lopez",
+      "role": "Keeper",
+      "shirtNumber": 13,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1426161.png"
+    },
+    {
+      "id": 1668274,
+      "name": "Carlos Puga",
+      "normalized_name": "carlos puga",
+      "role": "Defender",
+      "shirtNumber": 3,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1668274.png"
+    },
+    {
+      "id": 516803,
+      "name": "Einar Galilea",
+      "normalized_name": "einar galilea",
+      "role": "Defender",
+      "shirtNumber": 4,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/516803.png"
+    },
+    {
+      "id": 1256463,
+      "name": "Álex Pastor",
+      "normalized_name": "alex pastor",
+      "role": "Defender",
+      "shirtNumber": 5,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1256463.png"
+    },
+    {
+      "id": 1187478,
+      "name": "José Salinas",
+      "normalized_name": "jose salinas",
+      "role": "Defender",
+      "shirtNumber": 12,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1187478.png"
+    },
+    {
+      "id": 1408529,
+      "name": "Diego Murillo",
+      "normalized_name": "diego murillo",
+      "role": "Defender",
+      "shirtNumber": 16,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1408529.png"
+    },
+    {
+      "id": 1411496,
+      "name": "Dani Sánchez",
+      "normalized_name": "dani sanchez",
+      "role": "Defender",
+      "shirtNumber": 18,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1411496.png"
+    },
+    {
+      "id": 839232,
+      "name": "Fernando Calero",
+      "normalized_name": "fernando calero",
+      "role": "Defender",
+      "shirtNumber": 20,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/839232.png"
+    },
+    {
+      "id": 873838,
+      "name": "Juan Berrocal",
+      "normalized_name": "juan berrocal",
+      "role": "Defender",
+      "shirtNumber": 25,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/873838.png"
+    },
+    {
+      "id": 1717331,
+      "name": "Rafita",
+      "normalized_name": "rafita",
+      "role": "Defender",
+      "shirtNumber": 31,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1717331.png"
+    },
+    {
+      "id": 1573563,
+      "name": "Adam Aznou",
+      "normalized_name": "adam aznou",
+      "role": "Defender",
+      "shirtNumber": 39,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1573563.png"
+    },
+    {
+      "id": 801120,
+      "name": "Jens-Lys Cajuste",
+      "normalized_name": "jens lys cajuste",
+      "role": "Midfielder",
+      "shirtNumber": 2,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/801120.png"
+    },
+    {
+      "id": 1082957,
+      "name": "Ramón Enríquez",
+      "normalized_name": "ramon enriquez",
+      "role": "Midfielder",
+      "shirtNumber": 6,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1082957.png"
+    },
+    {
+      "id": 1220748,
+      "name": "Haitam Abaida",
+      "normalized_name": "haitam abaida",
+      "role": "Midfielder",
+      "shirtNumber": 7,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1220748.png"
+    },
+    {
+      "id": 1209421,
+      "name": "Carlos Dotor",
+      "normalized_name": "carlos dotor",
+      "role": "Midfielder",
+      "shirtNumber": 8,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1209421.png"
+    },
+    {
+      "id": 1108863,
+      "name": "David Larrubia",
+      "normalized_name": "david larrubia",
+      "role": "Midfielder",
+      "shirtNumber": 10,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1108863.png"
+    },
+    {
+      "id": 951739,
+      "name": "Joaquín Muñoz",
+      "normalized_name": "joaquin munoz",
+      "role": "Midfielder",
+      "shirtNumber": 11,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/951739.png"
+    },
+    {
+      "id": 1434474,
+      "name": "Rafa Rodríguez",
+      "normalized_name": "rafa rodriguez",
+      "role": "Midfielder",
+      "shirtNumber": 14,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1434474.png"
+    },
+    {
+      "id": 923298,
+      "name": "Pablo Martínez",
+      "normalized_name": "pablo martinez",
+      "role": "Midfielder",
+      "shirtNumber": 18,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/923298.png"
+    },
+    {
+      "id": 1317624,
+      "name": "Dani Lorenzo",
+      "normalized_name": "dani lorenzo",
+      "role": "Midfielder",
+      "shirtNumber": 22,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1317624.png"
+    },
+    {
+      "id": 1669619,
+      "name": "Izan Merino",
+      "normalized_name": "izan merino",
+      "role": "Midfielder",
+      "shirtNumber": 23,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1669619.png"
+    },
+    {
+      "id": 1669621,
+      "name": "Aarón Ochoa",
+      "normalized_name": "aaron ochoa",
+      "role": "Midfielder",
+      "shirtNumber": 35,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1669621.png"
+    },
+    {
+      "id": 1669622,
+      "name": "Chupe",
+      "normalized_name": "chupe",
+      "role": "Attacker",
+      "shirtNumber": 9,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1669622.png"
+    },
+    {
+      "id": 722830,
+      "name": "Eneko Jauregi",
+      "normalized_name": "eneko jauregi",
+      "role": "Attacker",
+      "shirtNumber": 17,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/722830.png"
+    },
+    {
+      "id": 940608,
+      "name": "Juan Cruz",
+      "normalized_name": "juan cruz",
+      "role": "Attacker",
+      "shirtNumber": 19,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/940608.png"
+    },
+    {
+      "id": 1403695,
+      "name": "Adrián Nino",
+      "normalized_name": "adrian nino",
+      "role": "Attacker",
+      "shirtNumber": 21,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1403695.png"
+    },
+    {
+      "id": 1098594,
+      "name": "Julen Lobete",
+      "normalized_name": "julen lobete",
+      "role": "Attacker",
+      "shirtNumber": 24,
+      "photo_url": "https://images.fotmob.com/image_resources/playerimages/1098594.png"
+    }
+  ]
+}

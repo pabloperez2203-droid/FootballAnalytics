@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
-import { Inter, Geist_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 
 // ─── Tipografía ───────────────────────────────────────────────────────────────
-const inter = Inter({
+const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
-const geistMono = Geist_Mono({
+const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -35,14 +36,14 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${inter.variable} ${geistMono.variable} h-full`}
+      className={`${plusJakartaSans.variable} ${jetbrainsMono.variable} font-sans h-full`}
     >
-      <body className="min-h-full flex flex-col bg-bg text-txt antialiased">
-        {/* Navbar fija — altura 52px, definida en .navbar de globals.css */}
+      <body className="min-h-full flex flex-col bg-bg text-txt antialiased font-sans">
+        {/* Navbar */}
         <Navbar />
 
-        {/* Contenido principal — padding-top compensa la navbar fija */}
-        <main className="flex flex-col flex-1 pt-[52px]">
+        {/* Contenido principal */}
+        <main className="flex flex-col flex-1">
           {children}
         </main>
       </body>

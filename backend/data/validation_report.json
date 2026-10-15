@@ -62,5 +62,8 @@
   ],
   "30838": [
     "Home goals mismatch: 2 != 1 (shots) + 0 (OG)"
+  ],
+  "30844": [
+    "Home xG mismatch: 2.00633 != 2.3580178106203675"
   ]
 }

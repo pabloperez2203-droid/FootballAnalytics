@@ -31,6 +31,7 @@ interface Player {
   xGBuildup: string;
   yellow_card: string;
   red_card: string;
+  photo?: string;
 }
 
 const PlayerAvatar = ({ 
@@ -48,47 +49,87 @@ const PlayerAvatar = ({
   isDimmed: boolean,
   onToggle: () => void, 
 }) => {
+  const [imgError, setImgError] = useState(false);
   const isHome = team === 'home';
   const color = isHome ? 'var(--em)' : 'var(--or)';
   const initials = player.player.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
   const lastName = player.player.split(' ').pop();
 
+  useEffect(() => {
+    setImgError(false);
+  }, [photoUrl]);
+
+  const hasValidPhoto = Boolean(photoUrl && !imgError);
+
   return (
     <button 
       onClick={onToggle}
-      className={`flex flex-col items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 rounded-lg p-0.5 relative transition-all duration-300 ${isDimmed ? 'opacity-20 grayscale-[50%]' : 'opacity-100'}`}
+      className={`flex flex-col items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 p-0.5 relative transition-all duration-300 ${isDimmed ? 'opacity-20 grayscale-[50%]' : 'opacity-100'}`}
       aria-label={`${player.player}, ${player.position}`}
+      style={{ minHeight: 0 }}
     >
+      {hasValidPhoto ? (
+        /* Cara recortada directamente sobre el campo, sin círculo ni marco redondo */
+        <div 
+          className={`relative z-10 transition-all duration-300 ${isOpen ? 'scale-125 -translate-y-1' : 'group-hover:scale-115 group-hover:-translate-y-0.5'}`}
+        >
+          <img 
+            src={photoUrl} 
+            alt={player.player} 
+            onError={() => setImgError(true)}
+            className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 object-contain object-bottom pointer-events-none select-none" 
+            style={{
+              filter: isOpen 
+                ? `drop-shadow(0 0 10px ${color}) drop-shadow(0 4px 6px rgba(0,0,0,0.9))` 
+                : `drop-shadow(0 3px 5px rgba(0,0,0,0.85))`
+            }}
+          />
+        </div>
+      ) : (
+        /* Fallback solo si no hay foto disponible */
+        <div 
+          className={`w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center font-bold text-[9px] sm:text-[10px] md:text-xs text-white shadow-lg z-10 transition-all duration-300 shrink-0 ${isOpen ? 'scale-125 ring-2 ring-white/50' : 'group-hover:scale-110'} bg-[#13181b]/95 border`}
+          style={{ 
+            borderColor: color, 
+            boxShadow: isOpen ? `0 0 15px ${color}80` : ''
+          }}
+        >
+          <span style={{ color }}>{initials}</span>
+        </div>
+      )}
+
+      {/* Etiqueta con el apellido */}
       <div 
-        className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-bold text-[10px] sm:text-xs text-white shadow-lg z-10 transition-all duration-300 ${isOpen ? 'scale-125 ring-2 ring-white/50 border-none' : 'border-2 group-hover:scale-110'} overflow-hidden bg-[#13181b]`}
-        style={{ 
-          borderColor: isOpen ? 'transparent' : color, 
-          backgroundColor: isOpen ? color : '#13181b',
-          boxShadow: isOpen ? `0 0 15px ${color}80` : ''
+        className={`mt-0.5 px-1.5 py-0.5 rounded text-[8px] sm:text-[9px] md:text-[10px] font-medium max-w-[64px] truncate text-center leading-tight transition-all duration-300 z-10 ${
+          isOpen 
+            ? 'bg-slate-900 text-white border shadow-md' 
+            : 'bg-black/75 text-slate-200 border border-white/10 group-hover:bg-black/90 group-hover:text-white'
+        }`}
+        style={{
+          borderColor: isOpen ? color : undefined
         }}
       >
-        {photoUrl ? (
-          <img src={photoUrl} alt={player.player} className="w-full h-full object-cover object-top scale-110" />
-        ) : (
-          <span>{initials}</span>
-        )}
-      </div>
-      <div className="mt-1 bg-black/60 px-1.5 py-0.5 rounded text-[8px] sm:text-[9px] font-medium max-w-[60px] truncate text-center leading-tight transition-opacity duration-300">
         {lastName}
       </div>
     </button>
   );
 };
 
-export default function MatchLineups({ rosters, matchData }: { rosters: any, matchData: any }) {
+export default function MatchLineups({ rosters, matchData, playersStats }: { rosters: any, matchData: any, playersStats?: any }) {
   const [openPlayerId, setOpenPlayerId] = useState<string | null>(null);
   const [photos, setPhotos] = useState<Record<string, any>>({});
 
   useEffect(() => {
-    fetch('/data/players_photos.json')
+    // Load consolidated player photos with fallback
+    fetch('/data/player_photos.json')
       .then(res => res.json())
       .then(data => setPhotos(data))
-      .catch(err => console.error("Could not load player photos", err));
+      .catch(() => {
+        fetch('/data/players_photos.json')
+          .then(res => res.json())
+          .then(data => setPhotos(data))
+          .catch(err => console.error("Could not load player photos", err));
+      });
   }, []);
 
   if (!rosters || !rosters.h || !rosters.a) {
@@ -99,7 +140,16 @@ export default function MatchLineups({ rosters, matchData }: { rosters: any, mat
     );
   }
 
-  const parseRoster = (r: any) => Object.values(r).map((p: any) => p as Player);
+  // Parse roster and deduplicate by player name to handle corrupted data
+  const parseRoster = (r: any) => {
+    const players = Object.values(r).map((p: any) => p as Player);
+    const seen = new Set<string>();
+    return players.filter(p => {
+      if (seen.has(p.player)) return false;
+      seen.add(p.player);
+      return true;
+    });
+  };
   const homePlayers = parseRoster(rosters.h);
   const awayPlayers = parseRoster(rosters.a);
   const allPlayers = [...homePlayers, ...awayPlayers];
@@ -115,29 +165,67 @@ export default function MatchLineups({ rosters, matchData }: { rosters: any, mat
   const homeStarters = homePlayers.filter(p => p.position !== 'Sub');
   const awayStarters = awayPlayers.filter(p => p.position !== 'Sub');
 
-  const groupLines = (players: Player[], isAway: boolean) => {
+  interface PositionedPlayer {
+    player: Player;
+    team: 'home' | 'away';
+    x: number;
+    y: number;
+  }
+
+  const computePositions = (starters: Player[], isAway: boolean): PositionedPlayer[] => {
+    const team: 'home' | 'away' = isAway ? 'away' : 'home';
+    const gks = starters.filter(p => p.position === 'GK');
+    const outfield = starters.filter(p => p.position !== 'GK');
+
+    const result: PositionedPlayer[] = [];
+
+    // 1. Goalkeeper: Fixed position (Home: 7%, Away: 93%)
+    const gkX = isAway ? 93 : 7;
+    gks.forEach((gk, idx) => {
+      const y = gks.length === 1 ? 50 : ((idx + 1) / (gks.length + 1)) * 100;
+      result.push({ player: gk, team, x: gkX, y });
+    });
+
+    // 2. Outfield players: Equitably distributed within bounded range
     const groups: { [key: number]: Player[] } = {};
-    players.forEach(p => {
+    outfield.forEach(p => {
       const d = getDepth(p.position);
       if (!groups[d]) groups[d] = [];
       groups[d].push(p);
     });
 
-    let sortedKeys = Object.keys(groups).map(Number).sort((a, b) => isAway ? b - a : a - b);
+    const depthKeys = Object.keys(groups).map(Number).sort((a, b) => a - b);
+    const numLines = depthKeys.length;
 
-    return sortedKeys.map(k => {
-      let line = groups[k];
-      line.sort((a, b) => {
+    depthKeys.forEach((d, lineIdx) => {
+      // Home: 18% (defenders) to 45% (forwards)
+      // Away: 82% (defenders) to 55% (forwards)
+      let lineX: number;
+      if (!isAway) {
+        lineX = numLines <= 1 ? 31.5 : 18 + (lineIdx / (numLines - 1)) * (45 - 18);
+      } else {
+        lineX = numLines <= 1 ? 68.5 : 82 - (lineIdx / (numLines - 1)) * (82 - 55);
+      }
+
+      const linePlayers = [...groups[d]].sort((a, b) => {
         const orderA = Number(a.positionOrder) || 0;
         const orderB = Number(b.positionOrder) || 0;
         return isAway ? orderB - orderA : orderA - orderB;
       });
-      return line;
+
+      const count = linePlayers.length;
+      linePlayers.forEach((player, pIdx) => {
+        const y = count === 1 ? 50 : ((pIdx + 1) / (count + 1)) * 100;
+        result.push({ player, team, x: lineX, y });
+      });
     });
+
+    return result;
   };
 
-  const homeLines = groupLines(homeStarters, false);
-  const awayLines = groupLines(awayStarters, true);
+  const homePositioned = computePositions(homeStarters, false);
+  const awayPositioned = computePositions(awayStarters, true);
+  const allPositioned = [...homePositioned, ...awayPositioned];
 
   const calculateMinuteIn = (players: Player[]) => {
     const minMap: Record<string, number> = {};
@@ -217,12 +305,14 @@ export default function MatchLineups({ rosters, matchData }: { rosters: any, mat
       <div className="lbl mb-4 px-1">Alineaciones</div>
 
       {/* Horizontal Pitch */}
-      <div className={`relative w-full aspect-[4/3] border-2 border-slate-700/50 rounded-lg mb-4 flex-1 min-h-0 transition-colors duration-500 ${isAnyOpen ? 'bg-[#050709]' : 'bg-[#0d1114]'}`}>
+      <div className={`relative w-full border-2 border-slate-700/50 rounded-lg mb-4 transition-colors duration-500 ${isAnyOpen ? 'bg-[#050709]' : 'bg-[#0d1114]'}`}
+        style={{ aspectRatio: '16 / 10' }}
+      >
         
-        {/* Inner container with overflow-hidden for lines and players */}
-        <div className="absolute inset-0 overflow-hidden rounded-[6px] flex flex-row">
+        {/* Inner container */}
+        <div className="absolute inset-0 rounded-[6px]">
           {/* Pitch Lines Background */}
-          <div className={`absolute inset-0 pointer-events-none flex flex-row justify-center transition-opacity duration-500 ${isAnyOpen ? 'opacity-10' : 'opacity-100'}`}>
+          <div className={`absolute inset-0 pointer-events-none transition-opacity duration-500 ${isAnyOpen ? 'opacity-10' : 'opacity-100'}`}>
             <div className="absolute top-0 bottom-0 left-1/2 w-px bg-slate-700/40 -translate-x-1/2"></div>
             <div className="absolute top-1/2 left-1/2 w-24 h-24 sm:w-28 sm:h-28 border border-slate-700/40 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
             <div className="absolute top-1/2 left-1/2 w-1.5 h-1.5 bg-slate-700/50 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
@@ -234,42 +324,34 @@ export default function MatchLineups({ rosters, matchData }: { rosters: any, mat
             <div className="absolute top-1/2 right-0 w-[6%] h-[20%] border border-r-0 border-slate-700/40 -translate-y-1/2"></div>
           </div>
 
-          {/* Home Half (Left) */}
-          <div className="w-1/2 h-full flex flex-row items-center justify-evenly px-1 sm:px-2 relative z-10 py-5">
-            {homeLines.map((line, i) => (
-              <div key={`h-line-${i}`} className="flex flex-col h-full justify-evenly">
-                {line.map(p => (
-                  <PlayerAvatar
-                    key={p.id}
-                    player={p}
-                    team="home"
-                    photoUrl={photos[p.player_id]?.ruta_local}
-                    isOpen={openPlayerId === p.player_id}
-                    isDimmed={isAnyOpen && openPlayerId !== p.player_id}
-                    onToggle={() => setOpenPlayerId(openPlayerId === p.player_id ? null : p.player_id)}
-                  />
-                ))}
-              </div>
-            ))}
-          </div>
+          {/* Absolute Positioned Players */}
+          <div className="absolute inset-0 z-10 pointer-events-none">
+            {allPositioned.map(({ player, team, x, y }) => {
+              const teamActual = team === 'home' ? matchData.home_team : matchData.away_team;
+              const photoUrl = player.photo || 
+                photos[`${teamActual}|${player.player}`] || 
+                photos[player.player] || 
+                photos[player.player_id]?.ruta_local || 
+                photos[player.player_id]?.url ||
+                (photos._by_id && photos._by_id[player.player_id]?.url);
 
-          {/* Away Half (Right) */}
-          <div className="w-1/2 h-full flex flex-row items-center justify-evenly px-1 sm:px-2 relative z-10 py-5">
-            {awayLines.map((line, i) => (
-              <div key={`a-line-${i}`} className="flex flex-col h-full justify-evenly">
-                {line.map(p => (
+              return (
+                <div
+                  key={player.id}
+                  className="absolute -translate-x-1/2 -translate-y-1/2 pointer-events-auto"
+                  style={{ left: `${x}%`, top: `${y}%` }}
+                >
                   <PlayerAvatar
-                    key={p.id}
-                    player={p}
-                    team="away"
-                    photoUrl={photos[p.player_id]?.ruta_local}
-                    isOpen={openPlayerId === p.player_id}
-                    isDimmed={isAnyOpen && openPlayerId !== p.player_id}
-                    onToggle={() => setOpenPlayerId(openPlayerId === p.player_id ? null : p.player_id)}
+                    player={player}
+                    team={team}
+                    photoUrl={photoUrl}
+                    isOpen={openPlayerId === player.player_id}
+                    isDimmed={isAnyOpen && openPlayerId !== player.player_id}
+                    onToggle={() => setOpenPlayerId(openPlayerId === player.player_id ? null : player.player_id)}
                   />
-                ))}
-              </div>
-            ))}
+                </div>
+              );
+            })}
           </div>
         </div>
 
@@ -282,33 +364,56 @@ export default function MatchLineups({ rosters, matchData }: { rosters: any, mat
         )}
 
         {/* Centered Popup */}
-        {openPlayer && openPlayerTeam && (
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-[280px]">
-            <div 
-              className="bg-[#0d1114] rounded-xl shadow-2xl animate-fade-in pointer-events-auto"
-              style={{
-                border: `1px solid ${openPlayerTeam === 'home' ? 'var(--em)' : 'var(--or)'}60`,
-                boxShadow: `0 20px 40px -5px rgba(0,0,0,0.8), 0 0 25px ${openPlayerTeam === 'home' ? 'var(--em)' : 'var(--or)'}30`
-              }}
-            >
-               {/* Header */}
-               <div className="p-3 border-b border-slate-800 flex items-start justify-between relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[var(--color)] to-transparent opacity-10 pointer-events-none rounded-bl-full" style={{'--color': openPlayerTeam === 'home' ? 'var(--em)' : 'var(--or)'} as any}></div>
-                  
-                  <div className="flex items-center gap-3 relative z-10">
-                     <div className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm text-white border border-slate-700 bg-slate-900 shrink-0">
-                        {openPlayer.player.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase()}
-                     </div>
-                     <div>
-                        <h4 className="font-bold text-sm text-white leading-tight mb-0.5 pr-4">{openPlayer.player}</h4>
-                        <div className="flex items-center text-[9px] text-slate-400">
-                           <span className="w-1.5 h-1.5 rounded-full mr-1.5" style={{background: openPlayerTeam === 'home' ? 'var(--em)' : 'var(--or)'}}></span>
-                           {openPlayerTeam === 'home' ? matchData.home_team : matchData.away_team} • {openPlayer.position} • {openPlayer.time}'
-                        </div>
-                     </div>
-                  </div>
-                  <button onClick={() => setOpenPlayerId(null)} className="text-slate-500 hover:text-white absolute top-3 right-3 text-lg leading-none z-20">×</button>
-               </div>
+        {openPlayer && openPlayerTeam && (() => {
+          const openTeamName = openPlayerTeam === 'home' ? matchData.home_team : matchData.away_team;
+          const openPhoto = openPlayer.photo || 
+            photos[`${openTeamName}|${openPlayer.player}`] || 
+            photos[openPlayer.player] || 
+            photos[openPlayer.player_id]?.ruta_local || 
+            photos[openPlayer.player_id]?.url ||
+            (photos._by_id && photos._by_id[openPlayer.player_id]?.url);
+
+          return (
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-[280px]">
+              <div 
+                className="bg-[#0d1114] rounded-xl shadow-2xl animate-fade-in pointer-events-auto"
+                style={{
+                  border: `1px solid ${openPlayerTeam === 'home' ? 'var(--em)' : 'var(--or)'}60`,
+                  boxShadow: `0 20px 40px -5px rgba(0,0,0,0.8), 0 0 25px ${openPlayerTeam === 'home' ? 'var(--em)' : 'var(--or)'}30`
+                }}
+              >
+                 {/* Header */}
+                 <div className="p-3 border-b border-slate-800 flex items-start justify-between relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[var(--color)] to-transparent opacity-10 pointer-events-none rounded-bl-full" style={{'--color': openPlayerTeam === 'home' ? 'var(--em)' : 'var(--or)'} as any}></div>
+                    
+                    <div className="flex items-center gap-3 relative z-10">
+                       <div className="w-12 h-12 flex items-center justify-center shrink-0">
+                          {openPhoto ? (
+                            <img 
+                              src={openPhoto} 
+                              alt={openPlayer.player} 
+                              className="w-full h-full object-contain object-bottom" 
+                              style={{ filter: `drop-shadow(0 2px 8px ${openPlayerTeam === 'home' ? 'var(--em)' : 'var(--or)'}80)` }}
+                            />
+                          ) : (
+                            <div 
+                              className="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-xs text-white bg-slate-900 border"
+                              style={{ borderColor: openPlayerTeam === 'home' ? 'var(--em)' : 'var(--or)' }}
+                            >
+                              {openPlayer.player.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase()}
+                            </div>
+                          )}
+                       </div>
+                       <div>
+                          <h4 className="font-bold text-sm text-white leading-tight mb-0.5 pr-4">{openPlayer.player}</h4>
+                          <div className="flex items-center text-[9px] text-slate-400">
+                             <span className="w-1.5 h-1.5 rounded-full mr-1.5" style={{background: openPlayerTeam === 'home' ? 'var(--em)' : 'var(--or)'}}></span>
+                             {openPlayerTeam === 'home' ? matchData.home_team : matchData.away_team} • {openPlayer.position} • {openPlayer.time}'
+                          </div>
+                       </div>
+                    </div>
+                    <button onClick={() => setOpenPlayerId(null)} className="text-slate-500 hover:text-white absolute top-3 right-3 text-lg leading-none z-20">×</button>
+                 </div>
 
                {/* Top Stats */}
                <div className="p-3 grid grid-cols-3 gap-2">
@@ -354,7 +459,7 @@ export default function MatchLineups({ rosters, matchData }: { rosters: any, mat
                </div>
             </div>
           </div>
-        )}
+        )})()}
       </div>
       
       {/* ── Substitutions ── */}

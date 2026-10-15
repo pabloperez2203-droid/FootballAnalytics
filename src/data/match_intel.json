@@ -1,24 +1,19 @@
 {
   "is_simulated": false,
   "match": {
-    "id": "30770",
-    "home_team": "Alaves",
-    "home_short": "ALA",
-    "away_team": "Getafe",
-    "away_short": "GET",
+    "id": "30844",
+    "home_team": "Levante",
+    "home_short": "LEV",
+    "away_team": "Sevilla",
+    "away_short": "SEV",
     "home_score": 3,
-    "away_score": 0,
-    "home_xg": 2.28581,
-    "away_xg": 0.259705,
-    "date": "2026-08-15 17:30:00",
+    "away_score": 3,
+    "home_xg": 2.00633,
+    "away_xg": 3.19601,
+    "date": "2026-10-12 19:00:00",
     "stadium": "N/A",
-    "matchday": 1,
-    "matches_in_matchday": [
-      {
-        "id": "30770",
-        "label": "ALA 3.0-0.0 GET"
-      }
-    ]
+    "matchday": 8,
+    "needs_review": true
   },
   "verdict": {
     "win_probability": {
@@ -26,552 +21,780 @@
       "draw": 25,
       "away": 25
     },
-    "best_chance": "Min 56' - Denis Suárez (0.584 xG)",
-    "most_dangerous": "Mikel Rodríguez (0.65 xG)",
-    "biggest_surprise": "N/A"
+    "best_chance": "Estimación (solo xG)",
+    "most_dangerous": "Estimación (solo xG)",
+    "biggest_surprise": "Estimación (solo xG)"
   },
   "stats": {
     "home": {
-      "shots": 18,
-      "xg": 2.29,
-      "xg_per_shot": 0.13
+      "shots": 20,
+      "xg": 2.36,
+      "xg_per_shot": 0.12
     },
     "away": {
-      "shots": 6,
-      "xg": 0.26,
-      "xg_per_shot": 0.04
+      "shots": 18,
+      "xg": 3.2,
+      "xg_per_shot": 0.18
     }
   },
   "shots": [
     {
-      "id": "688269",
+      "id": "698494",
+      "min": 27,
+      "team": "home",
+      "player": "Adrián De la Fuente",
+      "xg": 0.015,
+      "result": "Parada",
+      "x": 68.6,
+      "y": 51.0
+    },
+    {
+      "id": "698499",
+      "min": 37,
+      "team": "home",
+      "player": "Adrián De la Fuente",
+      "xg": 0.053,
+      "result": "Missed Shot",
+      "x": 92.4,
+      "y": 59.7
+    },
+    {
+      "id": "698522",
+      "min": 91,
+      "team": "home",
+      "player": "Adrián De la Fuente",
+      "xg": 0.048,
+      "result": "Gol",
+      "x": 81.2,
+      "y": 51.4
+    },
+    {
+      "id": "698524",
+      "min": 99,
+      "team": "home",
+      "player": "Adrián De la Fuente",
+      "xg": 0.025,
+      "result": "Parada",
+      "x": 80.6,
+      "y": 68.2
+    },
+    {
+      "id": "698526",
+      "min": 99,
+      "team": "home",
+      "player": "Ifeanyi Ndukwe",
+      "xg": 0.52,
+      "result": "Gol",
+      "x": 92.0,
+      "y": 48.4
+    },
+    {
+      "id": "698510",
+      "min": 56,
+      "team": "home",
+      "player": "Iván Romero",
+      "xg": 0.075,
+      "result": "Gol",
+      "x": 95.6,
+      "y": 34.8
+    },
+    {
+      "id": "698514",
+      "min": 69,
+      "team": "home",
+      "player": "Iván Romero",
+      "xg": 0.028,
+      "result": "Parada",
+      "x": 76.6,
+      "y": 45.9
+    },
+    {
+      "id": "698497",
+      "min": 33,
+      "team": "home",
+      "player": "Jeremy Toljan",
+      "xg": 0.025,
+      "result": "Bloqueado",
+      "x": 84.6,
+      "y": 42.1
+    },
+    {
+      "id": "698490",
+      "min": 5,
+      "team": "home",
+      "player": "Jon Ander Olasagasti",
+      "xg": 0.007,
+      "result": "Missed Shot",
+      "x": 53.7,
+      "y": 44.8
+    },
+    {
+      "id": "698507",
       "min": 48,
       "team": "home",
-      "player": "Abderrahmane Rebbach",
-      "xg": 0.021,
+      "player": "Jon Ander Olasagasti",
+      "xg": 0.049,
+      "result": "Bloqueado",
+      "x": 78.3,
+      "y": 23.2
+    },
+    {
+      "id": "698521",
+      "min": 91,
+      "team": "home",
+      "player": "Nacho Pérez",
+      "xg": 0.026,
+      "result": "Missed Shot",
+      "x": 77.4,
+      "y": 40.9
+    },
+    {
+      "id": "698525",
+      "min": 99,
+      "team": "home",
+      "player": "Nacho Pérez",
+      "xg": 0.62,
       "result": "Parada",
-      "x": 74.9,
+      "x": 94.9,
+      "y": 49.0
+    },
+    {
+      "id": "698511",
+      "min": 59,
+      "team": "home",
+      "player": "Petar Ratkov",
+      "xg": 0.087,
+      "result": "Bloqueado",
+      "x": 87.8,
+      "y": 43.8
+    },
+    {
+      "id": "698492",
+      "min": 15,
+      "team": "home",
+      "player": "Roger Brugué",
+      "xg": 0.381,
+      "result": "Missed Shot",
+      "x": 95.8,
+      "y": 58.2
+    },
+    {
+      "id": "698495",
+      "min": 27,
+      "team": "home",
+      "player": "Roger Brugué",
+      "xg": 0.088,
+      "result": "Missed Shot",
+      "x": 95.6,
+      "y": 41.2
+    },
+    {
+      "id": "698517",
+      "min": 79,
+      "team": "home",
+      "player": "Roger Brugué",
+      "xg": 0.076,
+      "result": "Parada",
+      "x": 95.0,
+      "y": 45.7
+    },
+    {
+      "id": "698518",
+      "min": 79,
+      "team": "home",
+      "player": "Roger Brugué",
+      "xg": 0.116,
+      "result": "Missed Shot",
+      "x": 94.6,
+      "y": 39.9
+    },
+    {
+      "id": "698512",
+      "min": 60,
+      "team": "home",
+      "player": "Thiago Fernández",
+      "xg": 0.029,
+      "result": "Missed Shot",
+      "x": 88.8,
+      "y": 52.7
+    },
+    {
+      "id": "698519",
+      "min": 83,
+      "team": "home",
+      "player": "Thiago Fernández",
+      "xg": 0.045,
+      "result": "Bloqueado",
+      "x": 80.5,
+      "y": 50.3
+    },
+    {
+      "id": "698496",
+      "min": 32,
+      "team": "home",
+      "player": "Víctor García",
+      "xg": 0.046,
+      "result": "Bloqueado",
+      "x": 85.0,
+      "y": 44.8
+    },
+    {
+      "id": "698489",
+      "min": 4,
+      "team": "away",
+      "player": "Felix Correia",
+      "xg": 0.332,
+      "result": "Missed Shot",
+      "x": 13.8,
+      "y": 41.5
+    },
+    {
+      "id": "698509",
+      "min": 53,
+      "team": "away",
+      "player": "Felix Correia",
+      "xg": 0.668,
+      "result": "Gol",
+      "x": 3.7,
+      "y": 51.0
+    },
+    {
+      "id": "698516",
+      "min": 74,
+      "team": "away",
+      "player": "Isaac Romero",
+      "xg": 0.065,
+      "result": "Bloqueado",
+      "x": 6.4,
+      "y": 55.0
+    },
+    {
+      "id": "698523",
+      "min": 94,
+      "team": "away",
+      "player": "Isaac Romero",
+      "xg": 0.024,
+      "result": "Gol",
+      "x": 24.4,
+      "y": 38.9
+    },
+    {
+      "id": "698501",
+      "min": 41,
+      "team": "away",
+      "player": "Juan Iglesias",
+      "xg": 0.018,
+      "result": "Parada",
+      "x": 30.6,
+      "y": 63.1
+    },
+    {
+      "id": "698515",
+      "min": 71,
+      "team": "away",
+      "player": "Juan Iglesias",
+      "xg": 0.08,
+      "result": "Missed Shot",
+      "x": 10.3,
       "y": 67.3
     },
     {
-      "id": "688274",
-      "min": 57,
-      "team": "home",
-      "player": "Antonio Blanco",
-      "xg": 0.032,
-      "result": "Missed Shot",
-      "x": 82.4,
-      "y": 36.0
-    },
-    {
-      "id": "688275",
-      "min": 69,
-      "team": "home",
-      "player": "Antonio Blanco",
+      "id": "698505",
+      "min": 46,
+      "team": "away",
+      "player": "Lucien Agoume",
       "xg": 0.044,
-      "result": "Missed Shot",
-      "x": 85.8,
-      "y": 35.6
-    },
-    {
-      "id": "688280",
-      "min": 79,
-      "team": "home",
-      "player": "Antonio Blanco",
-      "xg": 0.022,
-      "result": "Missed Shot",
-      "x": 75.0,
-      "y": 34.6
-    },
-    {
-      "id": "688266",
-      "min": 19,
-      "team": "home",
-      "player": "Antonio Martínez",
-      "xg": 0.079,
-      "result": "Missed Shot",
-      "x": 85.2,
+      "result": "Bloqueado",
+      "x": 21.8,
       "y": 54.6
     },
     {
-      "id": "688267",
-      "min": 31,
-      "team": "home",
-      "player": "Antonio Martínez",
-      "xg": 0.051,
-      "result": "Missed Shot",
-      "x": 86.2,
-      "y": 46.0
-    },
-    {
-      "id": "688271",
-      "min": 48,
-      "team": "home",
-      "player": "Antonio Martínez",
-      "xg": 0.044,
-      "result": "Missed Shot",
-      "x": 86.2,
-      "y": 44.5
-    },
-    {
-      "id": "688288",
-      "min": 98,
-      "team": "home",
-      "player": "Carles Aleñá",
-      "xg": 0.022,
-      "result": "Parada",
-      "x": 73.8,
-      "y": 34.2
-    },
-    {
-      "id": "688273",
-      "min": 56,
-      "team": "home",
-      "player": "Denis Suárez",
-      "xg": 0.584,
-      "result": "Parada",
-      "x": 91.0,
-      "y": 44.5
-    },
-    {
-      "id": "688276",
-      "min": 70,
-      "team": "home",
-      "player": "Mariano",
-      "xg": 0.045,
-      "result": "Parada",
-      "x": 89.2,
-      "y": 50.5
-    },
-    {
-      "id": "688278",
-      "min": 77,
-      "team": "home",
-      "player": "Mariano",
-      "xg": 0.085,
-      "result": "Bloqueado",
-      "x": 77.5,
-      "y": 39.5
-    },
-    {
-      "id": "688285",
-      "min": 90,
-      "team": "home",
-      "player": "Mariano",
-      "xg": 0.084,
-      "result": "Gol",
-      "x": 79.2,
-      "y": 61.7
-    },
-    {
-      "id": "688282",
-      "min": 84,
-      "team": "home",
-      "player": "Mikel Rodríguez",
-      "xg": 0.521,
-      "result": "Missed Shot",
-      "x": 85.5,
-      "y": 43.1
-    },
-    {
-      "id": "688286",
-      "min": 93,
-      "team": "home",
-      "player": "Mikel Rodríguez",
-      "xg": 0.134,
-      "result": "Gol",
-      "x": 88.5,
-      "y": 56.9
-    },
-    {
-      "id": "688265",
-      "min": 10,
-      "team": "home",
-      "player": "Nahuel Tenaglia",
-      "xg": 0.029,
-      "result": "Bloqueado",
-      "x": 90.8,
-      "y": 43.0
-    },
-    {
-      "id": "688277",
-      "min": 72,
-      "team": "home",
-      "player": "Nahuel Tenaglia",
-      "xg": 0.419,
-      "result": "Gol",
-      "x": 92.7,
-      "y": 47.2
-    },
-    {
-      "id": "688287",
-      "min": 97,
-      "team": "home",
-      "player": "Nahuel Tenaglia",
-      "xg": 0.018,
-      "result": "Bloqueado",
-      "x": 75.2,
-      "y": 56.2
-    },
-    {
-      "id": "688270",
-      "min": 48,
-      "team": "home",
-      "player": "Ángel Pérez",
-      "xg": 0.052,
-      "result": "Parada",
-      "x": 90.5,
-      "y": 31.5
-    },
-    {
-      "id": "688284",
-      "min": 88,
+      "id": "698493",
+      "min": 16,
       "team": "away",
-      "player": "Alberto Risco",
-      "xg": 0.015,
+      "player": "Miguel Sierra",
+      "xg": 0.027,
       "result": "Bloqueado",
-      "x": 27.7,
-      "y": 46.8
-    },
-    {
-      "id": "688281",
-      "min": 81,
-      "team": "away",
-      "player": "Enes Ünal",
-      "xg": 0.062,
-      "result": "Missed Shot",
-      "x": 8.0,
-      "y": 48.7
-    },
-    {
-      "id": "688268",
-      "min": 44,
-      "team": "away",
-      "player": "Martín Satriano",
-      "xg": 0.044,
-      "result": "Parada",
-      "x": 20.8,
-      "y": 49.1
-    },
-    {
-      "id": "688283",
-      "min": 86,
-      "team": "away",
-      "player": "Orel Mangala",
-      "xg": 0.062,
-      "result": "Bloqueado",
-      "x": 15.6,
+      "x": 13.8,
       "y": 48.3
     },
     {
-      "id": "688272",
-      "min": 51,
+      "id": "698504",
+      "min": 44,
       "team": "away",
-      "player": "Ramón Terrats",
-      "xg": 0.048,
-      "result": "Missed Shot",
-      "x": 1.1,
+      "player": "Miguel Sierra",
+      "xg": 0.086,
+      "result": "Bloqueado",
+      "x": 12.6,
+      "y": 60.4
+    },
+    {
+      "id": "698508",
+      "min": 49,
+      "team": "away",
+      "player": "Miguel Sierra",
+      "xg": 0.084,
+      "result": "Palo",
+      "x": 7.7,
       "y": 67.7
     },
     {
-      "id": "688279",
-      "min": 78,
+      "id": "698491",
+      "min": 12,
       "team": "away",
-      "player": "Ramón Terrats",
-      "xg": 0.029,
+      "player": "Robbie Ure",
+      "xg": 0.498,
+      "result": "Gol",
+      "x": 7.5,
+      "y": 54.3
+    },
+    {
+      "id": "698502",
+      "min": 42,
+      "team": "away",
+      "player": "Robbie Ure",
+      "xg": 0.068,
+      "result": "Missed Shot",
+      "x": 8.8,
+      "y": 68.7
+    },
+    {
+      "id": "698503",
+      "min": 43,
+      "team": "away",
+      "player": "Robbie Ure",
+      "xg": 0.142,
+      "result": "Missed Shot",
+      "x": 8.7,
+      "y": 53.1
+    },
+    {
+      "id": "698506",
+      "min": 46,
+      "team": "away",
+      "player": "Robbie Ure",
+      "xg": 0.052,
+      "result": "Missed Shot",
+      "x": 13.0,
+      "y": 30.6
+    },
+    {
+      "id": "698513",
+      "min": 64,
+      "team": "away",
+      "player": "Robbie Ure",
+      "xg": 0.334,
+      "result": "Missed Shot",
+      "x": 13.1,
+      "y": 33.6
+    },
+    {
+      "id": "698498",
+      "min": 33,
+      "team": "away",
+      "player": "Youssouf Fofana",
+      "xg": 0.53,
       "result": "Parada",
-      "x": 19.9,
-      "y": 64.9
+      "x": 7.8,
+      "y": 59.5
+    },
+    {
+      "id": "698500",
+      "min": 39,
+      "team": "away",
+      "player": "Youssouf Fofana",
+      "xg": 0.049,
+      "result": "Missed Shot",
+      "x": 23.2,
+      "y": 25.8
+    },
+    {
+      "id": "698520",
+      "min": 85,
+      "team": "away",
+      "player": "Youssouf Fofana",
+      "xg": 0.095,
+      "result": "Bloqueado",
+      "x": 15.1,
+      "y": 54.4
     }
   ],
   "players": [
     {
-      "id": "11825",
+      "id": "10319",
       "team": "home",
-      "name": "Abderrahmane Rebbach",
+      "name": "Adrián De la Fuente",
+      "mins": 90,
+      "shots": 4,
+      "xg": 0.14,
+      "goals": 1,
+      "position": "DC",
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/952528.png"
+    },
+    {
+      "id": "13035",
+      "team": "home",
+      "name": "Daniel Requena",
+      "mins": 21,
+      "shots": 0,
+      "xg": 0.0,
+      "goals": 0,
+      "position": "Sub",
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1481503.png"
+    },
+    {
+      "id": "14917",
+      "team": "home",
+      "name": "Ifeanyi Ndukwe",
       "mins": 90,
       "shots": 1,
-      "xg": 0.02,
-      "goals": 0
+      "xg": 0.52,
+      "goals": 1,
+      "position": "DC",
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1780239.png"
     },
     {
-      "id": "14222",
+      "id": "9275",
       "team": "home",
-      "name": "Aitor Mañas",
-      "mins": 60,
-      "shots": 0,
-      "xg": 0.0,
-      "goals": 0
-    },
-    {
-      "id": "6126",
-      "team": "home",
-      "name": "Ander Guevara",
-      "mins": 1,
-      "shots": 0,
-      "xg": 0.0,
-      "goals": 0
-    },
-    {
-      "id": "9280",
-      "team": "home",
-      "name": "Antonio Blanco",
+      "name": "Iván Romero",
       "mins": 90,
-      "shots": 3,
+      "shots": 2,
       "xg": 0.1,
-      "goals": 0
+      "goals": 1,
+      "position": "FW",
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1209441.png"
     },
     {
-      "id": "6400",
+      "id": "257",
       "team": "home",
-      "name": "Antonio Martínez",
+      "name": "Jeremy Toljan",
       "mins": 90,
-      "shots": 3,
-      "xg": 0.17,
-      "goals": 0
-    },
-    {
-      "id": "6075",
-      "team": "home",
-      "name": "Antonio Sivera",
-      "mins": 90,
-      "shots": 0,
-      "xg": 0.0,
-      "goals": 0
-    },
-    {
-      "id": "5058",
-      "team": "home",
-      "name": "Carles Aleñá",
-      "mins": 1,
       "shots": 1,
       "xg": 0.02,
-      "goals": 0
+      "goals": 0,
+      "position": "DR",
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/443966.png"
     },
     {
-      "id": "2308",
+      "id": "9466",
       "team": "home",
-      "name": "Denis Suárez",
-      "mins": 60,
-      "shots": 1,
-      "xg": 0.58,
-      "goals": 0
+      "name": "Jon Ander Olasagasti",
+      "mins": 90,
+      "shots": 2,
+      "xg": 0.06,
+      "goals": 0,
+      "position": "MC",
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1131957.png"
     },
     {
-      "id": "2280",
+      "id": "7605",
       "team": "home",
-      "name": "Jonny",
+      "name": "Manuel Sánchez",
       "mins": 90,
       "shots": 0,
       "xg": 0.0,
-      "goals": 0
+      "goals": 0,
+      "position": "DL",
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1052330.png"
     },
     {
-      "id": "5110",
+      "id": "2385",
       "team": "home",
-      "name": "Mariano",
-      "mins": 30,
-      "shots": 3,
-      "xg": 0.21,
-      "goals": 1
+      "name": "Mat Ryan",
+      "mins": 90,
+      "shots": 0,
+      "xg": 0.0,
+      "goals": 0,
+      "position": "GK",
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/185644.png"
     },
     {
-      "id": "14681",
+      "id": "13772",
       "team": "home",
-      "name": "Mikel Rodríguez",
-      "mins": 30,
+      "name": "Nacho Pérez",
+      "mins": 1,
       "shots": 2,
       "xg": 0.65,
-      "goals": 1
+      "goals": 0,
+      "position": "Sub",
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1800611.png"
     },
     {
-      "id": "10364",
+      "id": "8764",
       "team": "home",
-      "name": "Nahuel Tenaglia",
-      "mins": 90,
-      "shots": 3,
-      "xg": 0.47,
-      "goals": 1
-    },
-    {
-      "id": "10857",
-      "team": "home",
-      "name": "Pablo Ibáñez",
-      "mins": 90,
-      "shots": 0,
-      "xg": 0.0,
-      "goals": 0
-    },
-    {
-      "id": "14519",
-      "team": "home",
-      "name": "Ville Koski",
-      "mins": 90,
-      "shots": 0,
-      "xg": 0.0,
-      "goals": 0
-    },
-    {
-      "id": "13278",
-      "team": "home",
-      "name": "Youssef Lekhedim",
-      "mins": 22,
-      "shots": 0,
-      "xg": 0.0,
-      "goals": 0
-    },
-    {
-      "id": "14392",
-      "team": "home",
-      "name": "Ángel Pérez",
-      "mins": 68,
-      "shots": 1,
-      "xg": 0.05,
-      "goals": 0
-    },
-    {
-      "id": "9297",
-      "team": "away",
-      "name": "Abdelkabir Abqar",
-      "mins": 90,
-      "shots": 0,
-      "xg": 0.0,
-      "goals": 0
-    },
-    {
-      "id": "12566",
-      "team": "away",
-      "name": "Alberto Risco",
-      "mins": 21,
-      "shots": 1,
-      "xg": 0.01,
-      "goals": 0
-    },
-    {
-      "id": "13392",
-      "team": "away",
-      "name": "Andrés García",
-      "mins": 84,
-      "shots": 0,
-      "xg": 0.0,
-      "goals": 0
-    },
-    {
-      "id": "2415",
-      "team": "away",
-      "name": "David Soria",
-      "mins": 90,
-      "shots": 0,
-      "xg": 0.0,
-      "goals": 0
-    },
-    {
-      "id": "13788",
-      "team": "away",
-      "name": "Davinchi",
-      "mins": 49,
-      "shots": 0,
-      "xg": 0.0,
-      "goals": 0
-    },
-    {
-      "id": "6151",
-      "team": "away",
-      "name": "Djené Dakonam",
-      "mins": 84,
-      "shots": 0,
-      "xg": 0.0,
-      "goals": 0
-    },
-    {
-      "id": "6219",
-      "team": "away",
-      "name": "Enes Ünal",
-      "mins": 41,
-      "shots": 1,
-      "xg": 0.06,
-      "goals": 0
-    },
-    {
-      "id": "13696",
-      "team": "away",
-      "name": "Jean Valou",
-      "mins": 14,
-      "shots": 0,
-      "xg": 0.0,
-      "goals": 0
-    },
-    {
-      "id": "5043",
-      "team": "away",
-      "name": "Kiko Femenía",
-      "mins": 41,
-      "shots": 0,
-      "xg": 0.0,
-      "goals": 0
-    },
-    {
-      "id": "11349",
-      "team": "away",
-      "name": "Mario Martín",
+      "name": "Oriol Rey",
       "mins": 69,
       "shots": 0,
       "xg": 0.0,
-      "goals": 0
+      "goals": 0,
+      "position": "MC",
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/914401.png"
     },
     {
-      "id": "9001",
-      "team": "away",
-      "name": "Martín Satriano",
-      "mins": 76,
+      "id": "13770",
+      "team": "home",
+      "name": "Paco Cortés",
+      "mins": 1,
+      "shots": 0,
+      "xg": 0.0,
+      "goals": 0,
+      "position": "Sub",
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1649293.png"
+    },
+    {
+      "id": "14342",
+      "team": "home",
+      "name": "Petar Ratkov",
+      "mins": 33,
       "shots": 1,
-      "xg": 0.04,
-      "goals": 0
+      "xg": 0.09,
+      "goals": 0,
+      "position": "Sub",
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1302821.png"
     },
     {
-      "id": "6088",
-      "team": "away",
-      "name": "Orel Mangala",
+      "id": "13767",
+      "team": "home",
+      "name": "Roger Brugué",
       "mins": 90,
-      "shots": 1,
-      "xg": 0.06,
-      "goals": 0
+      "shots": 4,
+      "xg": 0.66,
+      "goals": 0,
+      "position": "ML",
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1286471.png"
     },
     {
-      "id": "10947",
+      "id": "14393",
+      "team": "home",
+      "name": "Thiago Fernández",
+      "mins": 33,
+      "shots": 2,
+      "xg": 0.07,
+      "goals": 0,
+      "position": "Sub",
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1460063.png"
+    },
+    {
+      "id": "8500",
+      "team": "home",
+      "name": "Víctor García",
+      "mins": 57,
+      "shots": 1,
+      "xg": 0.05,
+      "goals": 0,
+      "position": "MR",
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/977618.png"
+    },
+    {
+      "id": "14983",
+      "team": "home",
+      "name": "Yanis Musuayi",
+      "mins": 57,
+      "shots": 0,
+      "xg": 0.0,
+      "goals": 0,
+      "position": "FW",
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1836083.png"
+    },
+    {
+      "id": "9241",
       "team": "away",
-      "name": "Ramón Terrats",
+      "name": "Alfon",
+      "mins": 21,
+      "shots": 0,
+      "xg": 0.0,
+      "goals": 0,
+      "position": "Sub",
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/926643.png"
+    },
+    {
+      "id": "13600",
+      "team": "away",
+      "name": "Andrés Castrín",
+      "mins": 90,
+      "shots": 0,
+      "xg": 0.0,
+      "goals": 0,
+      "position": "DC",
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1334767.png"
+    },
+    {
+      "id": "9444",
+      "team": "away",
+      "name": "Felix Correia",
+      "mins": 73,
+      "shots": 2,
+      "xg": 1.0,
+      "goals": 1,
+      "position": "AML",
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/942358.png"
+    },
+    {
+      "id": "11343",
+      "team": "away",
+      "name": "Gabriel Suazo",
+      "mins": 90,
+      "shots": 0,
+      "xg": 0.0,
+      "goals": 0,
+      "position": "DL",
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/659490.png"
+    },
+    {
+      "id": "8425",
+      "team": "away",
+      "name": "Giorgi Kochorashvili",
+      "mins": 89,
+      "shots": 0,
+      "xg": 0.0,
+      "goals": 0,
+      "position": "DMC",
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/953958.png"
+    },
+    {
+      "id": "12305",
+      "team": "away",
+      "name": "Isaac Romero",
+      "mins": 21,
+      "shots": 2,
+      "xg": 0.09,
+      "goals": 1,
+      "position": "Sub",
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1130991.png"
+    },
+    {
+      "id": "5179",
+      "team": "away",
+      "name": "Jon Guridi",
+      "mins": 1,
+      "shots": 0,
+      "xg": 0.0,
+      "goals": 0,
+      "position": "Sub",
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/678192.png"
+    },
+    {
+      "id": "9218",
+      "team": "away",
+      "name": "Juan Iglesias",
       "mins": 90,
       "shots": 2,
-      "xg": 0.08,
-      "goals": 0
+      "xg": 0.1,
+      "goals": 0,
+      "position": "DR",
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1102289.png"
     },
     {
-      "id": "9381",
+      "id": "14323",
       "team": "away",
-      "name": "Saba Sazonov",
-      "mins": 6,
+      "name": "Julio Díaz",
+      "mins": 17,
       "shots": 0,
       "xg": 0.0,
-      "goals": 0
+      "goals": 0,
+      "position": "Sub",
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1447089.png"
     },
     {
-      "id": "14389",
+      "id": "10334",
       "team": "away",
-      "name": "Sebastián Boselli",
-      "mins": 6,
-      "shots": 0,
-      "xg": 0.0,
-      "goals": 0
-    },
-    {
-      "id": "14387",
-      "team": "away",
-      "name": "Zaid Romero",
+      "name": "Kike Salas",
       "mins": 90,
       "shots": 0,
       "xg": 0.0,
-      "goals": 0
+      "goals": 0,
+      "position": "DC",
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1327489.png"
+    },
+    {
+      "id": "8165",
+      "team": "away",
+      "name": "Lucien Agoume",
+      "mins": 90,
+      "shots": 1,
+      "xg": 0.04,
+      "goals": 0,
+      "position": "DMC",
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/971790.png"
+    },
+    {
+      "id": "13823",
+      "team": "away",
+      "name": "Miguel Sierra",
+      "mins": 69,
+      "shots": 3,
+      "xg": 0.2,
+      "goals": 0,
+      "position": "AMR",
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1797904.png"
+    },
+    {
+      "id": "375",
+      "team": "away",
+      "name": "Odisseas Vlachodimos",
+      "mins": 90,
+      "shots": 0,
+      "xg": 0.0,
+      "goals": 0,
+      "position": "GK",
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/304355.png"
+    },
+    {
+      "id": "14683",
+      "team": "away",
+      "name": "Robbie Ure",
+      "mins": 69,
+      "shots": 5,
+      "xg": 1.09,
+      "goals": 1,
+      "position": "FW",
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1399218.png"
+    },
+    {
+      "id": "6945",
+      "team": "away",
+      "name": "Youssouf Fofana",
+      "mins": 90,
+      "shots": 3,
+      "xg": 0.67,
+      "goals": 0,
+      "position": "AMC",
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/954621.png"
     }
-  ]
+  ],
+  "rosters": {
+    "h": {},
+    "a": {}
+  }
 }

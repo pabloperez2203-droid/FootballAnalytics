@@ -62,13 +62,13 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="topbar sticky top-0 z-30 border-b border-[var(--line)]">
+    <header className="backdrop-blur-md bg-slate-950/80 sticky top-0 z-50 border-b border-white/10 transition-colors">
       <PageContainer className="h-16 flex items-center gap-4 lg:gap-8">
         
         {/* Logo */}
-        <Link href="/dashboard" className="flex items-center gap-3 shrink-0">
+        <Link href="/" className="flex items-center gap-3 shrink-0 group">
           <span
-            className="w-9 h-9 rounded-xl grid place-items-center"
+            className="w-9 h-9 rounded-xl grid place-items-center transition-all duration-300 group-hover:scale-105 group-hover:border-emerald-500/50 shadow-lg shadow-emerald-500/10"
             style={{
               background: "rgba(16,185,129,.12)",
               border: "1px solid rgba(16,185,129,.35)",
@@ -79,8 +79,8 @@ export default function Navbar() {
             </svg>
           </span>
           <span>
-            <span className="block font-semibold tracking-tight text-lg leading-none">xG Lab</span>
-            <span className="lbl hidden lg:block mt-1" style={{ letterSpacing: ".1em" }}>
+            <span className="block font-bold tracking-tight text-lg leading-none text-white group-hover:text-emerald-400 transition-colors">xG Lab</span>
+            <span className="lbl hidden lg:block mt-1 font-mono text-[10px] text-slate-400" style={{ letterSpacing: ".1em" }}>
               Eficiencia ofensiva
             </span>
           </span>
@@ -88,21 +88,27 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <nav aria-label="Principal" className="hidden md:block">
-          <ul className="flex items-center gap-1">
+          <ul className="flex items-center gap-1.5">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
               return (
                 <li key={item.href} className="shrink-0">
                   <Link
                     href={item.href}
-                    className={`relative flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-colors ${isActive ? "bg-white/[0.06] text-white" : "text-[var(--mut)] hover:bg-white/[0.04] hover:text-white"}`}
+                    className={`relative flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all duration-200 ${
+                      isActive
+                        ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/25 shadow-[0_0_15px_-3px_rgba(16,185,129,0.2)]"
+                        : "text-slate-400 hover:text-white hover:bg-white/[0.05] border border-transparent"
+                    }`}
                     aria-current={isActive ? "page" : undefined}
                   >
-                    {isActive && <i className="nav-bar absolute left-3 right-3 h-0.5 rounded-full" style={{ background: "var(--em)" }}></i>}
-                    <span style={{ color: isActive ? "var(--em)" : undefined }}>
+                    <span className={isActive ? "text-emerald-400" : "text-slate-400"}>
                       {item.icon}
                     </span>
-                    {item.label}
+                    <span>{item.label}</span>
+                    {isActive && (
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_#10b981]" />
+                    )}
                   </Link>
                 </li>
               );
@@ -111,49 +117,52 @@ export default function Navbar() {
         </nav>
 
         {/* Right side controls */}
-        <div className="ml-auto flex items-center gap-2">
+        <div className="ml-auto flex items-center gap-2.5">
           <button
-            className="flex items-center gap-2 px-3 md:px-4 py-2 rounded-xl text-sm whitespace-nowrap"
-            style={{ background: "var(--panel)", border: "1px solid var(--line)" }}
+            className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-medium whitespace-nowrap bg-white/[0.04] border border-white/10 hover:border-white/20 transition-all text-slate-300 shadow-sm"
           >
-            <span className="w-2 h-2 rounded-full" style={{ background: "var(--em)" }}></span>
-            LaLiga EA Sports
+            <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_6px_#10b981]"></span>
+            <span>LaLiga EA Sports</span>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7d878d" strokeWidth="2.5">
               <path d="M6 9l6 6 6-6" />
             </svg>
           </button>
-          <button
-            className="hidden sm:block px-4 py-2 rounded-xl text-sm"
-            style={{ background: "var(--panel)", border: "1px solid var(--line)", color: "var(--mut)" }}
+          <span
+            className="hidden sm:inline-block px-3 py-1.5 rounded-xl text-xs font-mono text-slate-400 bg-white/[0.03] border border-white/5"
           >
             2026-27
-          </button>
+          </span>
           <div
-            className="w-9 h-9 rounded-full grid place-items-center text-xs font-medium"
-            style={{ background: "#1a2024", border: "1px solid var(--line)" }}
+            className="w-9 h-9 rounded-xl grid place-items-center text-xs font-mono font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 shadow-sm"
           >
-            PP
+            xG
           </div>
         </div>
       </PageContainer>
 
       {/* Mobile Navigation */}
-      <nav aria-label="Principal móvil" className="md:hidden px-4 pb-2 overflow-x-auto">
-        <ul className="flex items-center gap-1">
+      <nav aria-label="Principal móvil" className="md:hidden px-4 pb-2.5 overflow-x-auto border-t border-white/5 pt-2">
+        <ul className="flex items-center gap-1.5">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
             return (
               <li key={item.href} className="shrink-0">
                 <Link
                   href={item.href}
-                  className={`relative flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-colors ${isActive ? "bg-white/[0.06] text-white" : "text-[var(--mut)] hover:bg-white/[0.04] hover:text-white"}`}
+                  className={`relative flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-medium whitespace-nowrap transition-all duration-200 ${
+                    isActive
+                      ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/25"
+                      : "text-slate-400 hover:text-white hover:bg-white/[0.05] border border-transparent"
+                  }`}
                   aria-current={isActive ? "page" : undefined}
                 >
-                  {isActive && <i className="nav-bar absolute left-3 right-3 h-0.5 rounded-full" style={{ background: "var(--em)" }}></i>}
-                  <span style={{ color: isActive ? "var(--em)" : undefined }}>
+                  <span className={isActive ? "text-emerald-400" : "text-slate-400"}>
                     {item.icon}
                   </span>
-                  {item.label}
+                  <span>{item.label}</span>
+                  {isActive && (
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                  )}
                 </Link>
               </li>
             );

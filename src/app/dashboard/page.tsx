@@ -60,6 +60,7 @@ export default function DashboardPage() {
       data = teamsData.map(t => ({
         id: t.team,
         label: t.team,
+        team: t.team,
         subLabel: "",
         xg: t.xg_for,
         goals: t.goals_for,
@@ -125,18 +126,18 @@ export default function DashboardPage() {
         <EfficiencyTable data={tableData} activeTeam={activeTeam} onHoverTeam={setActiveTeam} />
 
         {/* ── Pichichi ── */}
-        <section className="card md:col-span-4 flex flex-col">
+        <section className="glass-card md:col-span-4 flex flex-col p-6 rounded-2xl transition-all duration-300 hover:-translate-y-0.5">
           <div className="flex items-center justify-between mb-2">
             <div>
               <div className="lbl flex items-center gap-2">
                 Pichichi
               </div>
-              <div className="font-semibold mt-1">
+              <div className="font-bold text-white text-base mt-1">
                 {kpis.pichichi ? kpis.pichichi.player_name : "N/A"}
               </div>
             </div>
             {kpis.pichichi && (
-              <div className="w-12 h-12 rounded-full bg-slate-800 border-2 border-emerald-500/30 flex items-center justify-center text-xs text-slate-400 overflow-hidden">
+              <div className="w-12 h-12 rounded-xl bg-slate-800/80 border border-emerald-500/30 flex items-center justify-center text-xs font-mono font-bold text-emerald-400 overflow-hidden shadow-inner">
                 {kpis.pichichi.player_name.substring(0, 2).toUpperCase()}
               </div>
             )}
@@ -159,23 +160,23 @@ export default function DashboardPage() {
                 return (
                   <div key={stat.label}>
                     <div className="flex justify-between text-xs mb-1">
-                      <span style={{ color: "var(--mut)" }}>{stat.label}</span>
-                      <span className="font-medium">{formattedVal}</span>
+                      <span className="text-slate-400">{stat.label}</span>
+                      <span className="font-mono font-semibold text-slate-200">{formattedVal}</span>
                     </div>
-                    <div className="h-1.5 rounded-full" style={{ background: "#1a2024" }}>
+                    <div className="h-1.5 rounded-full bg-white/10">
                       <div
                         className="h-full rounded-full transition-all duration-700"
                         style={{
                           width: `${Math.min(100, (Math.abs(valNum) / stat.max) * 100)}%`,
                           background: stat.color,
-                          opacity: 0.8,
+                          opacity: 0.85,
                         }}
                       />
                     </div>
                   </div>
                 );
               })}
-              <div className="flex gap-3 text-xs mt-3 pt-3" style={{ borderTop: "1px solid var(--line)", color: "var(--mut)" }}>
+              <div className="flex gap-3 text-xs mt-3 pt-3 font-mono border-t border-white/10 text-slate-400">
                 <span>{kpis.pichichi.team_name}</span>
                 <span>·</span>
                 <span>{kpis.pichichi.matches || 0} partidos</span>
@@ -187,30 +188,30 @@ export default function DashboardPage() {
         </section>
 
         {/* ── Conversión ── */}
-        <section className="card md:col-span-4 flex flex-col justify-between" style={{ background: "linear-gradient(to bottom right, rgba(16, 185, 129, 0.05), transparent)" }}>
+        <section className="glass-card md:col-span-4 flex flex-col justify-between p-6 rounded-2xl transition-all duration-300 hover:-translate-y-0.5 bg-gradient-to-br from-emerald-500/[0.07] to-transparent">
           <div>
             <div className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">Conversión</div>
-            <div className="text-3xl md:text-4xl font-semibold tracking-tight mt-3">
+            <div className="text-3xl md:text-4xl font-mono font-bold tracking-tight text-white mt-3 tabular-nums">
               {kpis.pichichiConversion}%
             </div>
           </div>
-          <div className="text-sm font-medium mt-4 text-[var(--mut)] flex flex-wrap items-center justify-between gap-2">
-            <span className="text-[var(--em)]">▲ {kpis.pichichi ? kpis.pichichi.player_name.split(' ').pop() : ''}</span>
-            <span className="text-xs opacity-70">Liga media: {kpis.leagueAvgConv}%</span>
+          <div className="text-sm font-medium mt-4 flex flex-wrap items-center justify-between gap-2">
+            <span className="text-emerald-400 font-mono text-xs font-semibold">▲ {kpis.pichichi ? kpis.pichichi.player_name.split(' ').pop() : ''}</span>
+            <span className="text-xs font-mono text-slate-400">Liga media: {kpis.leagueAvgConv}%</span>
           </div>
         </section>
 
         {/* ── xG por tiro ── */}
-        <section className="card md:col-span-4 flex flex-col justify-between" style={{ background: "linear-gradient(to bottom right, rgba(249, 115, 22, 0.05), transparent)" }}>
+        <section className="glass-card md:col-span-4 flex flex-col justify-between p-6 rounded-2xl transition-all duration-300 hover:-translate-y-0.5 bg-gradient-to-br from-orange-500/[0.07] to-transparent">
           <div>
             <div className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">xG por tiro</div>
-            <div className="text-3xl md:text-4xl font-semibold tracking-tight mt-3">
+            <div className="text-3xl md:text-4xl font-mono font-bold tracking-tight text-white mt-3 tabular-nums">
               {kpis.pichichiXgPerShot}
             </div>
           </div>
-          <div className="text-sm font-medium mt-4 text-[var(--mut)] flex flex-wrap items-center justify-between gap-2">
-            <span className="text-[var(--or)]">▼ {kpis.pichichi ? kpis.pichichi.player_name.split(' ').pop() : ''}</span>
-            <span className="text-xs opacity-70">Liga media: {kpis.leagueAvgXgPerShot}</span>
+          <div className="text-sm font-medium mt-4 flex flex-wrap items-center justify-between gap-2">
+            <span className="text-orange-400 font-mono text-xs font-semibold">▼ {kpis.pichichi ? kpis.pichichi.player_name.split(' ').pop() : ''}</span>
+            <span className="text-xs font-mono text-slate-400">Liga media: {kpis.leagueAvgXgPerShot}</span>
           </div>
         </section>
 

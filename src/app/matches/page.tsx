@@ -22,6 +22,7 @@ export default function MatchIntelPage() {
   const [selectedMatchId, setSelectedMatchId] = useState<string | null>(null);
   const [matchData, setMatchData] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(!USE_SIMULATED_DATA);
+  const [hoveredShotId, setHoveredShotId] = useState<string | number | null>(null);
 
   useEffect(() => {
     if (USE_SIMULATED_DATA) {
@@ -35,8 +36,14 @@ export default function MatchIntelPage() {
       .then(data => {
         setIndexData(data);
         if (data.length > 0) {
-          // Select last match by default
-          setSelectedMatchId(data[data.length - 1].id);
+          const urlParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
+          const paramId = urlParams?.get('id');
+          if (paramId && data.some((m: any) => m.id === paramId)) {
+            setSelectedMatchId(paramId);
+          } else {
+            // Select last match by default
+            setSelectedMatchId(data[data.length - 1].id);
+          }
         }
       })
       .catch(err => console.error("Error fetching index:", err));
@@ -111,7 +118,12 @@ export default function MatchIntelPage() {
       {/* 3. Fila principal */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
         <div className="md:col-span-2">
-          <XgTimelineChart shots={matchData.shots} matchData={matchData.match} />
+          <XgTimelineChart
+            shots={matchData.shots}
+            matchData={matchData.match}
+            hoveredShotId={hoveredShotId}
+            onHoverShot={setHoveredShotId}
+          />
         </div>
         <div className="md:col-span-1">
           <VerdictPanel verdict={matchData.verdict} />
@@ -121,7 +133,12 @@ export default function MatchIntelPage() {
       {/* 4. Fila de detalle */}
       <div className="grid grid-cols-1 md:grid-cols-[1.3fr_1fr] gap-4 mb-4">
         <div>
-          <ShotMap shots={matchData.shots} matchData={matchData.match} />
+          <ShotMap
+            shots={matchData.shots}
+            matchData={matchData.match}
+            hoveredShotId={hoveredShotId}
+            onHoverShot={setHoveredShotId}
+          />
         </div>
         <div>
           <StatsComparison stats={matchData.stats} />
@@ -135,13 +152,24 @@ export default function MatchIntelPage() {
         </div>
         <div className="relative h-full min-h-[400px] md:min-h-0">
           <div className="md:absolute md:inset-0 h-full">
-            <ShotTimelineTable shots={matchData.shots} />
+            <ShotTimelineTable
+              shots={matchData.shots}
+              hoveredShotId={hoveredShotId}
+              onHoverShot={setHoveredShotId}
+            />
           </div>
         </div>
       </div>
 
       {/* 6. Espacio para mis análisis */}
-      <CustomAnalysisSlots />
+      <CustomAnalysisSlots
+        shots={matchData.shots}
+        homeTeam={matchData.match.home_team}
+        awayTeam={matchData.match.away_team}
+        homeScore={matchData.match.home_score}
+        awayScore={matchData.match.away_score}
+        stats={matchData.stats}
+      />
     </PageContainer>
   );
 }

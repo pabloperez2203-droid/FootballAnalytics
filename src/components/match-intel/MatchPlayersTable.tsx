@@ -1,4 +1,39 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
+
+function PlayerAvatarItem({ name, photo, isHome }: { name: string; photo?: string; isHome: boolean }) {
+  const [imgError, setImgError] = useState(false);
+  const color = isHome ? 'var(--em)' : 'var(--or)';
+  const initials = name
+    .split(' ')
+    .filter(Boolean)
+    .map(n => n[0])
+    .join('')
+    .substring(0, 2)
+    .toUpperCase();
+
+  return (
+    <div className="flex items-center gap-2 min-w-0">
+      <div 
+        className="w-6 h-6 rounded-full flex items-center justify-center font-bold text-[9px] text-white overflow-hidden bg-slate-900 border shrink-0"
+        style={{ borderColor: `${color}80` }}
+      >
+        {photo && !imgError ? (
+          <img
+            src={photo}
+            alt={name}
+            onError={() => setImgError(true)}
+            className="w-full h-full object-cover object-top scale-110"
+          />
+        ) : (
+          <span style={{ color }}>{initials}</span>
+        )}
+      </div>
+      <span className="truncate font-medium text-slate-200">{name}</span>
+    </div>
+  );
+}
 
 export default function MatchPlayersTable({ players }: { players: any[] }) {
   return (
@@ -19,15 +54,18 @@ export default function MatchPlayersTable({ players }: { players: any[] }) {
               {players.sort((a,b) => b.xg - a.xg).map((p, i) => (
                  <tr key={i} className="border-b border-[var(--line)] last:border-0 hover:bg-slate-800/30">
                     <td className="py-2 px-3">
-                       <div className="flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full" style={{ background: p.team === 'home' ? 'var(--em)' : 'var(--or)' }}></span>
-                          {p.name}
-                       </div>
+                       <PlayerAvatarItem
+                         name={p.name}
+                         photo={p.photo}
+                         isHome={p.team === 'home'}
+                       />
                     </td>
-                    <td className="py-2 px-3 text-center text-slate-400">{p.mins}'</td>
-                    <td className="py-2 px-3 text-center">{p.shots}</td>
-                    <td className="py-2 px-3 text-center font-mono text-slate-200">{p.xg.toFixed(2)}</td>
-                    <td className="py-2 px-3 text-center font-semibold">{p.goals > 0 ? <span className="text-emerald-400">{p.goals}</span> : p.goals}</td>
+                    <td className="py-2 px-3 text-center text-slate-400 font-mono text-xs">{p.mins}'</td>
+                    <td className="py-2 px-3 text-center font-mono text-xs">{p.shots}</td>
+                    <td className="py-2 px-3 text-center font-mono text-xs text-slate-200">{p.xg.toFixed(2)}</td>
+                    <td className="py-2 px-3 text-center font-semibold font-mono text-xs">
+                      {p.goals > 0 ? <span className="text-emerald-400 font-bold">{p.goals}</span> : p.goals}
+                    </td>
                  </tr>
               ))}
            </tbody>

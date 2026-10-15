@@ -21,9 +21,9 @@
       "draw": 25,
       "away": 25
     },
-    "best_chance": "Estimaci\u00f3n (solo xG)",
-    "most_dangerous": "Estimaci\u00f3n (solo xG)",
-    "biggest_surprise": "Estimaci\u00f3n (solo xG)"
+    "best_chance": "Estimación (solo xG)",
+    "most_dangerous": "Estimación (solo xG)",
+    "biggest_surprise": "Estimación (solo xG)"
   },
   "stats": {
     "home": {
@@ -42,7 +42,7 @@
       "id": "689521",
       "min": 9,
       "team": "home",
-      "player": "Andr\u00e9s Garc\u00eda",
+      "player": "Andrés García",
       "xg": 0.029,
       "result": "Missed Shot",
       "x": 85.0,
@@ -52,7 +52,7 @@
       "id": "689523",
       "min": 12,
       "team": "home",
-      "player": "Andr\u00e9s Garc\u00eda",
+      "player": "Andrés García",
       "xg": 0.017,
       "result": "Missed Shot",
       "x": 78.4,
@@ -62,7 +62,7 @@
       "id": "689522",
       "min": 9,
       "team": "home",
-      "player": "Enes \u00dcnal",
+      "player": "Enes Ünal",
       "xg": 0.04,
       "result": "Bloqueado",
       "x": 83.4,
@@ -72,7 +72,7 @@
       "id": "689533",
       "min": 61,
       "team": "home",
-      "player": "Enes \u00dcnal",
+      "player": "Enes Ünal",
       "xg": 0.057,
       "result": "Missed Shot",
       "x": 81.8,
@@ -82,7 +82,7 @@
       "id": "689538",
       "min": 80,
       "team": "home",
-      "player": "Enes \u00dcnal",
+      "player": "Enes Ünal",
       "xg": 0.647,
       "result": "Gol",
       "x": 96.2,
@@ -92,7 +92,7 @@
       "id": "689527",
       "min": 26,
       "team": "home",
-      "player": "Mart\u00edn Satriano",
+      "player": "Martín Satriano",
       "xg": 0.033,
       "result": "Missed Shot",
       "x": 80.8,
@@ -102,7 +102,7 @@
       "id": "689529",
       "min": 52,
       "team": "home",
-      "player": "Mart\u00edn Satriano",
+      "player": "Martín Satriano",
       "xg": 0.03,
       "result": "Bloqueado",
       "x": 89.9,
@@ -122,7 +122,7 @@
       "id": "689528",
       "min": 29,
       "team": "home",
-      "player": "Ram\u00f3n Terrats",
+      "player": "Ramón Terrats",
       "xg": 0.018,
       "result": "Missed Shot",
       "x": 69.7,
@@ -132,7 +132,7 @@
       "id": "689530",
       "min": 52,
       "team": "home",
-      "player": "Ram\u00f3n Terrats",
+      "player": "Ramón Terrats",
       "xg": 0.015,
       "result": "Missed Shot",
       "x": 72.3,
@@ -142,7 +142,7 @@
       "id": "689532",
       "min": 60,
       "team": "home",
-      "player": "Ram\u00f3n Terrats",
+      "player": "Ramón Terrats",
       "xg": 0.061,
       "result": "Missed Shot",
       "x": 87.5,
@@ -152,7 +152,7 @@
       "id": "689534",
       "min": 66,
       "team": "home",
-      "player": "Ram\u00f3n Terrats",
+      "player": "Ramón Terrats",
       "xg": 0.024,
       "result": "Missed Shot",
       "x": 80.3,
@@ -162,7 +162,7 @@
       "id": "689531",
       "min": 58,
       "team": "away",
-      "player": "Andr\u00e9s Mart\u00edn",
+      "player": "Andrés Martín",
       "xg": 0.223,
       "result": "Parada",
       "x": 15.7,
@@ -172,7 +172,7 @@
       "id": "689535",
       "min": 67,
       "team": "away",
-      "player": "Andr\u00e9s Mart\u00edn",
+      "player": "Andrés Martín",
       "xg": 0.078,
       "result": "Missed Shot",
       "x": 15.7,
@@ -182,7 +182,7 @@
       "id": "689537",
       "min": 76,
       "team": "away",
-      "player": "Andr\u00e9s Mart\u00edn",
+      "player": "Andrés Martín",
       "xg": 0.743,
       "result": "Parada",
       "x": 11.5,
@@ -192,7 +192,7 @@
       "id": "689536",
       "min": 70,
       "team": "away",
-      "player": "I\u00f1igo Vicente",
+      "player": "Iñigo Vicente",
       "xg": 0.027,
       "result": "Missed Shot",
       "x": 17.9,
@@ -229,7 +229,8 @@
       "xg": 0.0,
       "goals": 0,
       "position": "Sub",
-      "is_starter": false
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/956921.png"
     },
     {
       "id": "12566",
@@ -240,18 +241,20 @@
       "xg": 0.0,
       "goals": 0,
       "position": "Sub",
-      "is_starter": false
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1637438.png"
     },
     {
       "id": "13392",
       "team": "home",
-      "name": "Andr\u00e9s Garc\u00eda",
+      "name": "Andrés García",
       "mins": 87,
       "shots": 2,
       "xg": 0.05,
       "goals": 0,
       "position": "DMR",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1430406.png"
     },
     {
       "id": "2252",
@@ -262,7 +265,8 @@
       "xg": 0.0,
       "goals": 0,
       "position": "Sub",
-      "is_starter": false
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/635772.png"
     },
     {
       "id": "2415",
@@ -273,29 +277,32 @@
       "xg": 0.0,
       "goals": 0,
       "position": "GK",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/581919.png"
     },
     {
       "id": "6151",
       "team": "home",
-      "name": "Djen\u00e9 Dakonam",
+      "name": "Djené Dakonam",
       "mins": 90,
       "shots": 0,
       "xg": 0.0,
       "goals": 0,
       "position": "DC",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/421365.png"
     },
     {
       "id": "6219",
       "team": "home",
-      "name": "Enes \u00dcnal",
+      "name": "Enes Ünal",
       "mins": 90,
       "shots": 3,
       "xg": 0.74,
       "goals": 1,
       "position": "FW",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/464486.png"
     },
     {
       "id": "14893",
@@ -306,7 +313,8 @@
       "xg": 0.0,
       "goals": 0,
       "position": "MC",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1183650.png"
     },
     {
       "id": "6242",
@@ -317,18 +325,20 @@
       "xg": 0.0,
       "goals": 0,
       "position": "DML",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/474673.png"
     },
     {
       "id": "9001",
       "team": "home",
-      "name": "Mart\u00edn Satriano",
+      "name": "Martín Satriano",
       "mins": 90,
       "shots": 2,
       "xg": 0.06,
       "goals": 0,
       "position": "FW",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1197039.png"
     },
     {
       "id": "6088",
@@ -339,18 +349,20 @@
       "xg": 0.01,
       "goals": 0,
       "position": "MC",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/765693.png"
     },
     {
       "id": "10947",
       "team": "home",
-      "name": "Ram\u00f3n Terrats",
+      "name": "Ramón Terrats",
       "mins": 90,
       "shots": 4,
       "xg": 0.12,
       "goals": 0,
       "position": "MC",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1202587.png"
     },
     {
       "id": "9381",
@@ -361,18 +373,20 @@
       "xg": 0.0,
       "goals": 0,
       "position": "DC",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1179368.png"
     },
     {
       "id": "14389",
       "team": "home",
-      "name": "Sebasti\u00e1n Boselli",
+      "name": "Sebastián Boselli",
       "mins": 3,
       "shots": 0,
       "xg": 0.0,
       "goals": 0,
       "position": "Sub",
-      "is_starter": false
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1414777.png"
     },
     {
       "id": "14387",
@@ -383,18 +397,20 @@
       "xg": 0.0,
       "goals": 0,
       "position": "DC",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1118199.png"
     },
     {
       "id": "9814",
       "team": "away",
-      "name": "Andr\u00e9s Mart\u00edn",
+      "name": "Andrés Martín",
       "mins": 90,
       "shots": 3,
       "xg": 1.04,
       "goals": 0,
       "position": "AMR",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/899195.png"
     },
     {
       "id": "5173",
@@ -405,18 +421,20 @@
       "xg": 0.0,
       "goals": 0,
       "position": "FW",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/670031.png"
     },
     {
       "id": "14691",
       "team": "away",
-      "name": "Facu Gonz\u00e1lez",
+      "name": "Facu González",
       "mins": 1,
       "shots": 0,
       "xg": 0.0,
       "goals": 0,
       "position": "Sub",
-      "is_starter": false
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1212179.png"
     },
     {
       "id": "11869",
@@ -427,29 +445,32 @@
       "xg": 0.0,
       "goals": 0,
       "position": "DMC",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Gustavo_Puerta_2023.jpg"
     },
     {
       "id": "7529",
       "team": "away",
-      "name": "Iv\u00e1n Mart\u00edn",
+      "name": "Iván Martín",
       "mins": 42,
       "shots": 0,
       "xg": 0.0,
       "goals": 0,
       "position": "Sub",
-      "is_starter": false
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/967871.png"
     },
     {
       "id": "8921",
       "team": "away",
-      "name": "I\u00f1igo Vicente",
+      "name": "Iñigo Vicente",
       "mins": 90,
       "shots": 1,
       "xg": 0.03,
       "goals": 0,
       "position": "AML",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/889229.png"
     },
     {
       "id": "14687",
@@ -460,7 +481,8 @@
       "xg": 0.0,
       "goals": 0,
       "position": "DL",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1670161.png"
     },
     {
       "id": "10325",
@@ -471,7 +493,8 @@
       "xg": 0.0,
       "goals": 0,
       "position": "Sub",
-      "is_starter": false
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1225417.png"
     },
     {
       "id": "9824",
@@ -482,7 +505,8 @@
       "xg": 0.0,
       "goals": 0,
       "position": "GK",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1280020.png"
     },
     {
       "id": "14689",
@@ -493,7 +517,8 @@
       "xg": 0.0,
       "goals": 0,
       "position": "Sub",
-      "is_starter": false
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1363232.png"
     },
     {
       "id": "14692",
@@ -504,18 +529,20 @@
       "xg": 0.06,
       "goals": 0,
       "position": "DC",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/863169.png"
     },
     {
       "id": "9477",
       "team": "away",
-      "name": "Pablo Ram\u00f3n",
+      "name": "Pablo Ramón",
       "mins": 90,
       "shots": 0,
       "xg": 0.0,
       "goals": 0,
       "position": "DC",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/982734.png"
     },
     {
       "id": "2571",
@@ -526,12 +553,13 @@
       "xg": 0.04,
       "goals": 0,
       "position": "AMC",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/150649.png"
     },
     {
       "id": "14688",
       "team": "away",
-      "name": "Sergio Mart\u00ednez",
+      "name": "Sergio Martínez",
       "mins": 48,
       "shots": 0,
       "xg": 0.0,
@@ -548,18 +576,20 @@
       "xg": 0.0,
       "goals": 0,
       "position": "Sub",
-      "is_starter": false
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1640985.png"
     },
     {
       "id": "14686",
       "team": "away",
-      "name": "\u00c1lvaro Mantilla",
+      "name": "Álvaro Mantilla",
       "mins": 90,
       "shots": 0,
       "xg": 0.0,
       "goals": 0,
       "position": "DR",
-      "is_starter": true
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1199649.png"
     }
   ],
   "rosters": {
@@ -585,7 +615,8 @@
         "xA": "0",
         "xGChain": "0",
         "xGBuildup": "0",
-        "positionOrder": "1"
+        "positionOrder": "1",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/581919.png"
       },
       "795849": {
         "id": "795849",
@@ -608,7 +639,8 @@
         "xA": "0",
         "xGChain": "0.14719262719154358",
         "xGBuildup": "0.14719262719154358",
-        "positionOrder": "3"
+        "positionOrder": "3",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1118199.png"
       },
       "795847": {
         "id": "795847",
@@ -631,7 +663,8 @@
         "xA": "0",
         "xGChain": "0",
         "xGBuildup": "0",
-        "positionOrder": "3"
+        "positionOrder": "3",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1179368.png"
       },
       "795848": {
         "id": "795848",
@@ -643,7 +676,7 @@
         "player_id": "6151",
         "team_id": "142",
         "position": "DC",
-        "player": "Djen\u00e9 Dakonam",
+        "player": "Djené Dakonam",
         "h_a": "h",
         "yellow_card": "0",
         "red_card": "0",
@@ -654,7 +687,8 @@
         "xA": "0",
         "xGChain": "0.08581964671611786",
         "xGBuildup": "0.08581964671611786",
-        "positionOrder": "3"
+        "positionOrder": "3",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/421365.png"
       },
       "795850": {
         "id": "795850",
@@ -666,7 +700,7 @@
         "player_id": "13392",
         "team_id": "142",
         "position": "DMR",
-        "player": "Andr\u00e9s Garc\u00eda",
+        "player": "Andrés García",
         "h_a": "h",
         "yellow_card": "0",
         "red_card": "0",
@@ -677,7 +711,8 @@
         "xA": "0",
         "xGChain": "0.08581964671611786",
         "xGBuildup": "0.0570683479309082",
-        "positionOrder": "5"
+        "positionOrder": "5",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1430406.png"
       },
       "795851": {
         "id": "795851",
@@ -700,7 +735,8 @@
         "xA": "0.09418294578790665",
         "xGChain": "0.1800025999546051",
         "xGBuildup": "0.14719262719154358",
-        "positionOrder": "6"
+        "positionOrder": "6",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/474673.png"
       },
       "795852": {
         "id": "795852",
@@ -723,7 +759,8 @@
         "xA": "0",
         "xGChain": "0.14857880771160126",
         "xGBuildup": "0.13669998943805695",
-        "positionOrder": "9"
+        "positionOrder": "9",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/765693.png"
       },
       "795853": {
         "id": "795853",
@@ -746,7 +783,8 @@
         "xA": "0",
         "xGChain": "0.07532701641321182",
         "xGBuildup": "0.07532701641321182",
-        "positionOrder": "9"
+        "positionOrder": "9",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1183650.png"
       },
       "795854": {
         "id": "795854",
@@ -758,7 +796,7 @@
         "player_id": "10947",
         "team_id": "142",
         "position": "MC",
-        "player": "Ram\u00f3n Terrats",
+        "player": "Ramón Terrats",
         "h_a": "h",
         "yellow_card": "0",
         "red_card": "0",
@@ -769,7 +807,8 @@
         "xA": "0.1556202471256256",
         "xGChain": "0.20556099712848663",
         "xGBuildup": "0",
-        "positionOrder": "9"
+        "positionOrder": "9",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1202587.png"
       },
       "795855": {
         "id": "795855",
@@ -781,7 +820,7 @@
         "player_id": "6219",
         "team_id": "142",
         "position": "FW",
-        "player": "Enes \u00dcnal",
+        "player": "Enes Ünal",
         "h_a": "h",
         "yellow_card": "0",
         "red_card": "0",
@@ -792,7 +831,8 @@
         "xA": "0",
         "xGChain": "0.7439342141151428",
         "xGBuildup": "0",
-        "positionOrder": "15"
+        "positionOrder": "15",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/464486.png"
       },
       "795856": {
         "id": "795856",
@@ -804,7 +844,7 @@
         "player_id": "9001",
         "team_id": "142",
         "position": "FW",
-        "player": "Mart\u00edn Satriano",
+        "player": "Martín Satriano",
         "h_a": "h",
         "yellow_card": "0",
         "red_card": "0",
@@ -815,7 +855,8 @@
         "xA": "0.01825866475701332",
         "xGChain": "0.051068637520074844",
         "xGBuildup": "0.01825866475701332",
-        "positionOrder": "15"
+        "positionOrder": "15",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1197039.png"
       },
       "795858": {
         "id": "795858",
@@ -838,7 +879,8 @@
         "xA": "0",
         "xGChain": "0",
         "xGBuildup": "0",
-        "positionOrder": "17"
+        "positionOrder": "17",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/635772.png"
       },
       "795859": {
         "id": "795859",
@@ -861,7 +903,8 @@
         "xA": "0",
         "xGChain": "0",
         "xGBuildup": "0",
-        "positionOrder": "17"
+        "positionOrder": "17",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1637438.png"
       },
       "795857": {
         "id": "795857",
@@ -884,7 +927,8 @@
         "xA": "0",
         "xGChain": "0",
         "xGBuildup": "0",
-        "positionOrder": "17"
+        "positionOrder": "17",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/956921.png"
       },
       "795860": {
         "id": "795860",
@@ -896,7 +940,7 @@
         "player_id": "14389",
         "team_id": "142",
         "position": "Sub",
-        "player": "Sebasti\u00e1n Boselli",
+        "player": "Sebastián Boselli",
         "h_a": "h",
         "yellow_card": "0",
         "red_card": "0",
@@ -907,7 +951,8 @@
         "xA": "0",
         "xGChain": "0",
         "xGBuildup": "0",
-        "positionOrder": "17"
+        "positionOrder": "17",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1414777.png"
       }
     },
     "a": {
@@ -932,7 +977,8 @@
         "xA": "0",
         "xGChain": "0",
         "xGBuildup": "0",
-        "positionOrder": "1"
+        "positionOrder": "1",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1280020.png"
       },
       "795862": {
         "id": "795862",
@@ -944,7 +990,7 @@
         "player_id": "14686",
         "team_id": "293",
         "position": "DR",
-        "player": "\u00c1lvaro Mantilla",
+        "player": "Álvaro Mantilla",
         "h_a": "a",
         "yellow_card": "1",
         "red_card": "0",
@@ -955,7 +1001,8 @@
         "xA": "0",
         "xGChain": "0",
         "xGBuildup": "0",
-        "positionOrder": "2"
+        "positionOrder": "2",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1199649.png"
       },
       "795864": {
         "id": "795864",
@@ -978,7 +1025,8 @@
         "xA": "0",
         "xGChain": "0",
         "xGBuildup": "0",
-        "positionOrder": "3"
+        "positionOrder": "3",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/863169.png"
       },
       "795863": {
         "id": "795863",
@@ -990,7 +1038,7 @@
         "player_id": "9477",
         "team_id": "293",
         "position": "DC",
-        "player": "Pablo Ram\u00f3n",
+        "player": "Pablo Ramón",
         "h_a": "a",
         "yellow_card": "0",
         "red_card": "0",
@@ -1001,7 +1049,8 @@
         "xA": "0",
         "xGChain": "0.039789579808712006",
         "xGBuildup": "0.039789579808712006",
-        "positionOrder": "3"
+        "positionOrder": "3",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/982734.png"
       },
       "795865": {
         "id": "795865",
@@ -1024,7 +1073,8 @@
         "xA": "0.039789579808712006",
         "xGChain": "0.039789579808712006",
         "xGBuildup": "0.039789579808712006",
-        "positionOrder": "4"
+        "positionOrder": "4",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1670161.png"
       },
       "795866": {
         "id": "795866",
@@ -1047,7 +1097,8 @@
         "xA": "0",
         "xGChain": "0.039789579808712006",
         "xGBuildup": "0.039789579808712006",
-        "positionOrder": "7"
+        "positionOrder": "7",
+        "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Gustavo_Puerta_2023.jpg"
       },
       "795867": {
         "id": "795867",
@@ -1059,7 +1110,7 @@
         "player_id": "14688",
         "team_id": "293",
         "position": "DMC",
-        "player": "Sergio Mart\u00ednez",
+        "player": "Sergio Martínez",
         "h_a": "a",
         "yellow_card": "0",
         "red_card": "0",
@@ -1082,7 +1133,7 @@
         "player_id": "9814",
         "team_id": "293",
         "position": "AMR",
-        "player": "Andr\u00e9s Mart\u00edn",
+        "player": "Andrés Martín",
         "h_a": "a",
         "yellow_card": "0",
         "red_card": "0",
@@ -1093,7 +1144,8 @@
         "xA": "0",
         "xGChain": "0.3408876359462738",
         "xGBuildup": "0.039789579808712006",
-        "positionOrder": "11"
+        "positionOrder": "11",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/899195.png"
       },
       "795869": {
         "id": "795869",
@@ -1116,7 +1168,8 @@
         "xA": "0",
         "xGChain": "0.2626975178718567",
         "xGBuildup": "0.2229079306125641",
-        "positionOrder": "12"
+        "positionOrder": "12",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/150649.png"
       },
       "795870": {
         "id": "795870",
@@ -1128,7 +1181,7 @@
         "player_id": "8921",
         "team_id": "293",
         "position": "AML",
-        "player": "I\u00f1igo Vicente",
+        "player": "Iñigo Vicente",
         "h_a": "a",
         "yellow_card": "0",
         "red_card": "0",
@@ -1139,7 +1192,8 @@
         "xA": "0.27945786714553833",
         "xGChain": "0.2500918507575989",
         "xGBuildup": "0",
-        "positionOrder": "13"
+        "positionOrder": "13",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/889229.png"
       },
       "795871": {
         "id": "795871",
@@ -1162,7 +1216,8 @@
         "xA": "0",
         "xGChain": "0.039789579808712006",
         "xGBuildup": "0.039789579808712006",
-        "positionOrder": "15"
+        "positionOrder": "15",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/670031.png"
       },
       "795872": {
         "id": "795872",
@@ -1185,7 +1240,8 @@
         "xA": "0",
         "xGChain": "0",
         "xGBuildup": "0",
-        "positionOrder": "17"
+        "positionOrder": "17",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1363232.png"
       },
       "795875": {
         "id": "795875",
@@ -1197,7 +1253,7 @@
         "player_id": "14691",
         "team_id": "293",
         "position": "Sub",
-        "player": "Facu Gonz\u00e1lez",
+        "player": "Facu González",
         "h_a": "a",
         "yellow_card": "0",
         "red_card": "0",
@@ -1208,7 +1264,8 @@
         "xA": "0",
         "xGChain": "0",
         "xGBuildup": "0",
-        "positionOrder": "17"
+        "positionOrder": "17",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1212179.png"
       },
       "795873": {
         "id": "795873",
@@ -1220,7 +1277,7 @@
         "player_id": "7529",
         "team_id": "293",
         "position": "Sub",
-        "player": "Iv\u00e1n Mart\u00edn",
+        "player": "Iván Martín",
         "h_a": "a",
         "yellow_card": "0",
         "red_card": "0",
@@ -1231,7 +1288,8 @@
         "xA": "0",
         "xGChain": "0.2229079306125641",
         "xGBuildup": "0.2229079306125641",
-        "positionOrder": "17"
+        "positionOrder": "17",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/967871.png"
       },
       "795876": {
         "id": "795876",
@@ -1254,7 +1312,8 @@
         "xA": "0",
         "xGChain": "0",
         "xGBuildup": "0",
-        "positionOrder": "17"
+        "positionOrder": "17",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1640985.png"
       },
       "795874": {
         "id": "795874",
@@ -1277,7 +1336,8 @@
         "xA": "0",
         "xGChain": "0",
         "xGBuildup": "0",
-        "positionOrder": "17"
+        "positionOrder": "17",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1225417.png"
       }
     }
   }

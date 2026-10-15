@@ -66,10 +66,11 @@ def fetch_and_aggregate_teams() -> pd.DataFrame | None:
     log.info(f"  ✅ {len(df)} partidos descargados")
     
     # ── Pivotar: cada partido genera 2 filas (una por equipo) ──
-    home = df[["home_team", "home_goals", "home_xg", "home_np_xg",
+    home = df[["home_team", "home_points", "home_goals", "home_xg", "home_np_xg",
                "away_goals", "away_xg", "home_ppda", "home_deep_completions",
                "home_expected_points"]].rename(columns={
         "home_team": "team",
+        "home_points": "pts",
         "home_goals": "goals_for",
         "home_xg": "xg_for",
         "home_np_xg": "np_xg_for",
@@ -80,10 +81,11 @@ def fetch_and_aggregate_teams() -> pd.DataFrame | None:
         "home_expected_points": "expected_points",
     })
     
-    away = df[["away_team", "away_goals", "away_xg", "away_np_xg",
+    away = df[["away_team", "away_points", "away_goals", "away_xg", "away_np_xg",
                "home_goals", "home_xg", "away_ppda", "away_deep_completions",
                "away_expected_points"]].rename(columns={
         "away_team": "team",
+        "away_points": "pts",
         "away_goals": "goals_for",
         "away_xg": "xg_for",
         "away_np_xg": "np_xg_for",
@@ -99,6 +101,7 @@ def fetch_and_aggregate_teams() -> pd.DataFrame | None:
     # ── Agregar por equipo ──
     teams = stacked.groupby("team").agg(
         matches_played=("goals_for", "size"),
+        pts=("pts", "sum"),
         goals_for=("goals_for", "sum"),
         xg_for=("xg_for", "sum"),
         np_xg_for=("np_xg_for", "sum"),
@@ -108,6 +111,8 @@ def fetch_and_aggregate_teams() -> pd.DataFrame | None:
         deep_completions=("deep_completions", "sum"),
         expected_points=("expected_points", "sum"),
     ).reset_index()
+    teams["pts"] = teams["pts"].astype(int)
+    teams["diff_pts_xpts"] = (teams["pts"] - teams["expected_points"]).round(2)
     
     # Redondear
     for col in ["xg_for", "np_xg_for", "xg_against", "ppda_avg", "expected_points"]:
