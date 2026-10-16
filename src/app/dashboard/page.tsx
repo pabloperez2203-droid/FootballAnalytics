@@ -6,10 +6,16 @@ import EfficiencyTable from "@/components/dashboard/EfficiencyTable";
 import ScatterPlot from "@/components/dashboard/ScatterPlot";
 import { useDashboardKpis } from "@/hooks/useDashboardKpis";
 import PageContainer from "@/components/layout/PageContainer";
+import { getTeamCrest } from "@/utils/crests";
+import { useCompetition } from "@/stores/filterStore";
 
 // IMPORT REAL DATA
 import laligaRealTeams from "@/data/equipos_xg.json";
 import laligaRealPlayers from "@/data/jugadores_xg.json";
+
+// IMPORT UCL DATA
+import equiposUclData from "@/data/equipos_ucl_xg.json";
+import jugadoresUclData from "@/data/jugadores_ucl_xg.json";
 
 // IMPORT SIMULATED DATA
 import laligaSimulatedTeams from "@/data/equipos_2026-27_simulado.json";
@@ -19,13 +25,17 @@ import laligaSimulatedPlayers from "@/data/jugadores_2026-27_simulado.json";
 const USE_SIMULATED_DATA = false; // Set to true to use simulated data, false for real
 
 export default function DashboardPage() {
+  const { competition, meta } = useCompetition();
   const [activeTeam, setActiveTeam] = useState<string | null>(null);
   const [plotMode, setPlotMode] = useState<"teams" | "players">("teams");
   const [filterTeam, setFilterTeam] = useState<string>("ALL");
   const [minMinutesPlayer, setMinMinutesPlayer] = useState<number>(300);
 
-  const teamsData = USE_SIMULATED_DATA ? laligaSimulatedTeams : laligaRealTeams;
-  const playersData = USE_SIMULATED_DATA ? laligaSimulatedPlayers : laligaRealPlayers;
+  const rawTeams = competition === "ucl" ? (equiposUclData as typeof laligaRealTeams) : laligaRealTeams;
+  const rawPlayers = competition === "ucl" ? (jugadoresUclData as typeof laligaRealPlayers) : laligaRealPlayers;
+
+  const teamsData = USE_SIMULATED_DATA ? laligaSimulatedTeams : rawTeams;
+  const playersData = USE_SIMULATED_DATA ? laligaSimulatedPlayers : rawPlayers;
 
   // Lista de todos los equipos para el filtro
   const allTeamNames = useMemo(() => Array.from(new Set(teamsData.map(t => t.team))).sort(), [teamsData]);
@@ -89,6 +99,30 @@ export default function DashboardPage() {
         </div>
       )}
 
+      {/* Header con Badge alineado */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+        <div>
+          <div className="inline-flex items-center gap-2 leading-none mb-2">
+            <span className={`h-6 px-2.5 flex items-center justify-center rounded-lg text-xs font-medium whitespace-nowrap bg-white/[0.04] border gap-1.5 leading-none shadow-sm ${
+              competition === 'ucl'
+                ? 'text-cyan-400 border-cyan-500/20 shadow-[0_0_12px_rgba(6,182,212,0.15)]'
+                : 'text-emerald-400 border-emerald-500/20 shadow-[0_0_12px_rgba(16,185,129,0.15)]'
+            }`}>
+              <span className={`w-1.5 h-1.5 rounded-full ${
+                competition === 'ucl' ? 'bg-cyan-400 shadow-[0_0_6px_#06b6d4]' : 'bg-emerald-400 shadow-[0_0_6px_#10b981]'
+              }`}></span>
+              <span>{meta.name}</span>
+            </span>
+            <span className="h-6 px-2.5 flex items-center justify-center rounded-lg text-xs font-mono text-slate-400 bg-white/[0.03] border border-white/5 leading-none">
+              {meta.season}
+            </span>
+          </div>
+          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
+            Centro de Mando Analítico
+          </h1>
+        </div>
+      </div>
+
       <main className="grid grid-cols-1 md:grid-cols-12 gap-4">
 
         {/* ── Scatter ── */}
@@ -126,24 +160,28 @@ export default function DashboardPage() {
         <EfficiencyTable data={tableData} activeTeam={activeTeam} onHoverTeam={setActiveTeam} />
 
         {/* ── Pichichi ── */}
-        <section className="glass-card md:col-span-4 flex flex-col p-6 rounded-2xl transition-all duration-300 hover:-translate-y-0.5">
-          <div className="flex items-center justify-between mb-2">
-            <div>
-              <div className="lbl flex items-center gap-2">
-                Pichichi
-              </div>
-              <div className="font-bold text-white text-base mt-1">
-                {kpis.pichichi ? kpis.pichichi.player_name : "N/A"}
-              </div>
-            </div>
-            {kpis.pichichi && (
-              <div className="w-12 h-12 rounded-xl bg-slate-800/80 border border-emerald-500/30 flex items-center justify-center text-xs font-mono font-bold text-emerald-400 overflow-hidden shadow-inner">
-                {kpis.pichichi.player_name.substring(0, 2).toUpperCase()}
-              </div>
-            )}
-          </div>
+        <KpiCard
+          className="md:col-span-4"
+          title="Pichichi de la Liga"
+          value={kpis.pichichi ? `${kpis.pichichi.goals} Goles` : "N/A"}
+          subtitle={kpis.pichichi ? `${kpis.pichichi.player_name} (${kpis.pichichi.team_name || kpis.pichichi.team})` : undefined}
+          delta={
+            kpis.pichichi ? (
+              <span title="Goles respecto a xG esperado">
+                {kpis.pichichi.diff_goals_xg >= 0 ? `+${Number(kpis.pichichi.diff_goals_xg).toFixed(1)}` : Number(kpis.pichichi.diff_goals_xg).toFixed(1)} G−xG
+              </span>
+            ) : undefined
+          }
+          deltaType={kpis.pichichi && kpis.pichichi.diff_goals_xg >= 0 ? "pos" : "neg"}
+          imageUrl={
+            kpis.pichichi?.player_name?.toLowerCase().includes("raphinha")
+              ? "/images/raphinha.jpg"
+              : (kpis.pichichi?.photo || "/images/raphinha.jpg")
+          }
+          crestUrl={getTeamCrest(kpis.pichichi?.team_name || kpis.pichichi?.team || "")}
+        >
           {kpis.pichichi && (
-            <div className="space-y-3 mt-4">
+            <div className="space-y-3 pt-3 border-t border-white/10">
               {/* Stats bars */}
               {[
                 { label: "Goles", value: kpis.pichichi.goals, max: 20, color: "#10b981", isDec: false },
@@ -185,7 +223,7 @@ export default function DashboardPage() {
               </div>
             </div>
           )}
-        </section>
+        </KpiCard>
 
         {/* ── Conversión ── */}
         <section className="glass-card md:col-span-4 flex flex-col justify-between p-6 rounded-2xl transition-all duration-300 hover:-translate-y-0.5 bg-gradient-to-br from-emerald-500/[0.07] to-transparent">

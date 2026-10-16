@@ -162,7 +162,7 @@ export default function CustomAnalysisSlots({
           {/* Barra tricolor divergente */}
           <div className="w-full h-3 rounded-full overflow-hidden flex bg-slate-900 border border-white/10 mb-4 shadow-inner">
             <div
-              className="h-full transition-all duration-700"
+              className="h-full spring-bar"
               style={{
                 width: `${monteCarlo.homeWinPct}%`,
                 backgroundColor: homeColor,
@@ -171,12 +171,12 @@ export default function CustomAnalysisSlots({
               title={`${homeTeam}: ${monteCarlo.homeWinPct}%`}
             />
             <div
-              className="h-full bg-slate-600/80 transition-all duration-700 border-x border-slate-800"
+              className="h-full bg-slate-600/80 spring-bar border-x border-slate-800"
               style={{ width: `${monteCarlo.drawPct}%` }}
               title={`Empate: ${monteCarlo.drawPct}%`}
             />
             <div
-              className="h-full transition-all duration-700"
+              className="h-full spring-bar"
               style={{
                 width: `${monteCarlo.awayWinPct}%`,
                 backgroundColor: awayColor,

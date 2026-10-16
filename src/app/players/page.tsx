@@ -8,10 +8,13 @@ import StatisticalClones from "@/components/players/StatisticalClones";
 import ShootingMatrix from "@/components/players/ShootingMatrix";
 import PlayerScoutingTable from "@/components/players/PlayerScoutingTable";
 import rawPlayersData from "@/data/jugadores_xg.json";
+import rawUclPlayersData from "@/data/jugadores_ucl_xg.json";
 import { RawPlayerData, PlayerComputedMetrics } from "@/components/players/types";
+import { useCompetition } from "@/stores/filterStore";
 
 export default function PlayersPage() {
-  const allRaw = rawPlayersData as RawPlayerData[];
+  const { competition, meta } = useCompetition();
+  const allRaw = (competition === "ucl" ? rawUclPlayersData : rawPlayersData) as RawPlayerData[];
 
   // 1. Transform raw players into computed metrics per 90
   const allComputedPlayers: PlayerComputedMetrics[] = useMemo(() => {
@@ -69,6 +72,15 @@ export default function PlayersPage() {
   // Reference Player for Statistical Clones
   const [referencePlayerName, setReferencePlayerName] = useState<string>("Raphinha");
 
+  // Keep reference player valid when dataset changes
+  React.useEffect(() => {
+    const exists = allComputedPlayers.some(p => p.player_name === referencePlayerName);
+    if (!exists && allComputedPlayers.length > 0) {
+      const fallback = allComputedPlayers.find(p => p.goals >= 4)?.player_name || allComputedPlayers[0].player_name;
+      setReferencePlayerName(fallback);
+    }
+  }, [allComputedPlayers, referencePlayerName]);
+
   // Reset filters
   const handleResetFilters = () => {
     setPositionFilter("ALL");
@@ -123,8 +135,10 @@ export default function PlayersPage() {
         {/* Page Header */}
         <div className="mb-8">
           <div className="flex items-center gap-2 mb-2">
-            <span className="text-xs font-mono text-emerald-400 font-semibold tracking-wider uppercase">
-              LaLiga EA Sports · Inteligencia de Jugadores
+            <span className={`text-xs font-mono font-semibold tracking-wider uppercase ${
+              competition === 'ucl' ? 'text-cyan-400' : 'text-emerald-400'
+            }`}>
+              {meta.name} · Inteligencia de Jugadores
             </span>
           </div>
 

@@ -2,13 +2,16 @@ import React from "react";
 
 interface KpiCardProps {
   title: string;
-  value: string | React.ReactNode;
+  value: string | number | React.ReactNode;
   subtitle?: string;
   delta?: string | React.ReactNode;
   deltaType?: "pos" | "neg" | "neu";
   className?: string;
   style?: React.CSSProperties;
   valueClassName?: string;
+  imageUrl?: string;
+  crestUrl?: string;
+  children?: React.ReactNode;
 }
 
 export default function KpiCard({
@@ -20,10 +23,13 @@ export default function KpiCard({
   className = "",
   style = {},
   valueClassName = "",
+  imageUrl,
+  crestUrl,
+  children,
 }: KpiCardProps) {
   return (
     <article
-      className={`glass-card rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-0.5 ${className}`}
+      className={`glass-card interactive-card rounded-2xl p-6 flex flex-col justify-between ${className}`}
       style={style}
     >
       <div className="flex items-center justify-between gap-2">
@@ -42,13 +48,43 @@ export default function KpiCard({
           </span>
         )}
       </div>
-      <div className="mt-5">
-        <div className={`text-3xl md:text-5xl font-mono font-bold tracking-tight tabular-nums ${valueClassName}`}>
-          {value}
+
+      <div className="mt-5 flex-1 flex flex-col justify-between">
+        <div className="flex items-center justify-between gap-4">
+          <div className="min-w-0 flex-1">
+            <div className={`text-3xl md:text-5xl font-mono font-bold tracking-tight tabular-nums ${valueClassName}`}>
+              {value}
+            </div>
+            {subtitle && (
+              <div className="text-sm mt-2 font-normal text-slate-400 truncate">
+                {subtitle}
+              </div>
+            )}
+          </div>
+
+          {imageUrl && (
+            <div className="relative shrink-0">
+              <img
+                src={imageUrl}
+                alt="Player avatar"
+                className="w-14 h-14 rounded-full object-cover border-2 border-white/15 shadow-lg bg-slate-800"
+              />
+              {crestUrl && (
+                <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-slate-900 border border-white/20 p-0.5 shadow-md flex items-center justify-center">
+                  <img
+                    src={crestUrl}
+                    alt="Team crest"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              )}
+            </div>
+          )}
         </div>
-        {subtitle && (
-          <div className="text-sm mt-2 font-normal text-slate-400">
-            {subtitle}
+
+        {children && (
+          <div className="mt-4">
+            {children}
           </div>
         )}
       </div>

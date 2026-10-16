@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
+import MatchTicker from "@/components/layout/MatchTicker";
 
 // ─── Tipografía ───────────────────────────────────────────────────────────────
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -41,6 +42,9 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-bg text-txt antialiased font-sans">
         {/* Navbar */}
         <Navbar />
+
+        {/* Live Match Ticker */}
+        <MatchTicker />
 
         {/* Contenido principal */}
         <main className="flex flex-col flex-1">

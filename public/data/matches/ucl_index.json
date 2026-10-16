@@ -1,0 +1,122 @@
+[
+  {
+    "id": "ucl-101",
+    "matchday": 6,
+    "date": "2026-12-10 21:00:00",
+    "home_team": "Real Madrid",
+    "away_team": "Manchester City",
+    "home_score": 3,
+    "away_score": 2,
+    "home_xg": 2.45,
+    "away_xg": 2.15,
+    "needs_review": false
+  },
+  {
+    "id": "ucl-102",
+    "matchday": 6,
+    "date": "2026-12-10 21:00:00",
+    "home_team": "Barcelona",
+    "away_team": "Bayern Munich",
+    "home_score": 4,
+    "away_score": 1,
+    "home_xg": 2.85,
+    "away_xg": 1.42,
+    "needs_review": false
+  },
+  {
+    "id": "ucl-103",
+    "matchday": 6,
+    "date": "2026-12-10 21:00:00",
+    "home_team": "Liverpool",
+    "away_team": "Bayer Leverkusen",
+    "home_score": 4,
+    "away_score": 0,
+    "home_xg": 2.65,
+    "away_xg": 0.72,
+    "needs_review": false
+  },
+  {
+    "id": "ucl-104",
+    "matchday": 6,
+    "date": "2026-12-11 21:00:00",
+    "home_team": "Arsenal",
+    "away_team": "Paris Saint-Germain",
+    "home_score": 2,
+    "away_score": 0,
+    "home_xg": 1.74,
+    "away_xg": 0.88,
+    "needs_review": false
+  },
+  {
+    "id": "ucl-105",
+    "matchday": 6,
+    "date": "2026-12-11 21:00:00",
+    "home_team": "Inter",
+    "away_team": "Arsenal",
+    "home_score": 1,
+    "away_score": 0,
+    "home_xg": 1.25,
+    "away_xg": 1.18,
+    "needs_review": false
+  },
+  {
+    "id": "ucl-106",
+    "matchday": 6,
+    "date": "2026-12-11 21:00:00",
+    "home_team": "Sporting CP",
+    "away_team": "Manchester City",
+    "home_score": 4,
+    "away_score": 1,
+    "home_xg": 2.52,
+    "away_xg": 2.05,
+    "needs_review": false
+  },
+  {
+    "id": "ucl-107",
+    "matchday": 6,
+    "date": "2026-12-11 21:00:00",
+    "home_team": "Atletico Madrid",
+    "away_team": "Lille",
+    "home_score": 1,
+    "away_score": 3,
+    "home_xg": 2.35,
+    "away_xg": 1.48,
+    "needs_review": false
+  },
+  {
+    "id": "ucl-108",
+    "matchday": 6,
+    "date": "2026-12-11 21:00:00",
+    "home_team": "Aston Villa",
+    "away_team": "Bayern Munich",
+    "home_score": 1,
+    "away_score": 0,
+    "home_xg": 0.94,
+    "away_xg": 1.78,
+    "needs_review": false
+  },
+  {
+    "id": "ucl-109",
+    "matchday": 6,
+    "date": "2026-12-11 21:00:00",
+    "home_team": "AC Milan",
+    "away_team": "Club Brugge",
+    "home_score": 3,
+    "away_score": 1,
+    "home_xg": 2.12,
+    "away_xg": 0.85,
+    "needs_review": false
+  },
+  {
+    "id": "ucl-110",
+    "matchday": 6,
+    "date": "2026-12-11 21:00:00",
+    "home_team": "Juventus",
+    "away_team": "Stuttgart",
+    "home_score": 0,
+    "away_score": 1,
+    "home_xg": 0.65,
+    "away_xg": 1.82,
+    "needs_review": false
+  }
+]

@@ -1,25 +1,36 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import equiposData from "@/data/equipos_xg.json";
+import equiposUclData from "@/data/equipos_ucl_xg.json";
 import matchesIndex from "../../public/data/matches/index.json";
+import matchesUclIndex from "../../public/data/matches/ucl_index.json";
 import { getTeamCrest, getTeamColor } from "@/utils/crests";
 import PageContainer from "@/components/layout/PageContainer";
+import HeroCanvas3D from "@/components/ui/HeroCanvas3D";
+import { useCompetition } from "@/stores/filterStore";
 
 export default function HomePage() {
+  const { competition, meta } = useCompetition();
+
+  const currentEquipos = competition === "ucl" ? equiposUclData : equiposData;
+  const currentMatches = competition === "ucl" ? matchesUclIndex : matchesIndex;
+
   // 1. Equipo más sobre-rendidor (mayor Goles - xG)
-  const bestOverperformer = [...equiposData].sort(
+  const bestOverperformer = [...currentEquipos].sort(
     (a, b) => b.diff_goals_xg - a.diff_goals_xg
-  )[0];
+  )[0] || currentEquipos[0];
 
   // 2. Equipo más generador (mayor xG total)
-  const topXgTeam = [...equiposData].sort(
+  const topXgTeam = [...currentEquipos].sort(
     (a, b) => b.xg_for - a.xg_for
-  )[0];
+  )[0] || currentEquipos[0];
 
   // 3. Partido Destacado (partido con mayor suma de xG en index.json)
-  const featuredMatch = [...matchesIndex].sort(
+  const featuredMatch = [...currentMatches].sort(
     (a, b) => (b.home_xg + b.away_xg) - (a.home_xg + a.away_xg)
-  )[0];
+  )[0] || currentMatches[0];
 
   const overperformerCrest = getTeamCrest(bestOverperformer.team);
   const overperformerColor = getTeamColor(bestOverperformer.team);
@@ -57,6 +68,11 @@ export default function HomePage() {
           </div>
         </div>
 
+        {/* Balón 3D geodésico interactivo en Canvas */}
+        <div className="absolute inset-y-0 right-0 w-full md:w-1/2 pointer-events-none -z-10 overflow-hidden flex items-center justify-center opacity-65 mix-blend-screen">
+          <HeroCanvas3D />
+        </div>
+
         <PageContainer>
           <div className="max-w-2xl">
             {/* Pill de estado */}
@@ -77,7 +93,7 @@ export default function HomePage() {
 
             {/* Subtítulo */}
             <p className="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl font-normal">
-              Plataforma analítica de última generación para LaLiga. Modelos matemáticos de
+              Plataforma analítica de última generación para <strong className="text-white font-medium">{meta.name}</strong>. Modelos matemáticos de
               <strong className="text-white font-medium"> Expected Goals (xG)</strong>, mapas de tiro,
               presión <strong className="text-white font-medium">PPDA</strong> y métricas de eficiencia real de equipos y futbolistas.
             </p>
@@ -114,7 +130,7 @@ export default function HomePage() {
             <div className="mt-10 pt-6 border-t border-white/10 flex flex-wrap items-center gap-6 sm:gap-10 text-xs text-slate-400 font-mono">
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                <span className="text-white font-bold text-sm">20</span> Equipos monitorizados
+                <span className="text-white font-bold text-sm">{currentEquipos.length}</span> Equipos monitorizados
               </div>
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
@@ -134,7 +150,7 @@ export default function HomePage() {
         <PageContainer>
           <div className="flex items-center justify-between mb-8">
             <div>
-              <div className="lbl text-emerald-400 font-semibold tracking-wider">Centro de Mando LaLiga</div>
+              <div className="lbl text-emerald-400 font-semibold tracking-wider">Centro de Mando {meta.shortName}</div>
               <h2 className="text-2xl font-bold tracking-tight text-white mt-1">
                 Destacados del Rendimiento Analítico
               </h2>
@@ -150,7 +166,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Bento Card 1: Equipo más sobre-rendidor */}
-            <div className="glass-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between group hover:-translate-y-1">
+            <div className="glass-card interactive-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between group hover:-translate-y-1">
               {/* Iluminación ambiental con color del equipo */}
               <div
                 className="absolute -right-8 -top-8 w-36 h-36 rounded-full blur-3xl opacity-20 pointer-events-none group-hover:opacity-30 transition-opacity"
@@ -212,7 +228,7 @@ export default function HomePage() {
             </div>
 
             {/* Bento Card 2: Equipo más generador */}
-            <div className="glass-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between group hover:-translate-y-1">
+            <div className="glass-card interactive-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between group hover:-translate-y-1">
               {/* Iluminación ambiental con color del equipo */}
               <div
                 className="absolute -right-8 -top-8 w-36 h-36 rounded-full blur-3xl opacity-20 pointer-events-none group-hover:opacity-30 transition-opacity"
@@ -274,7 +290,7 @@ export default function HomePage() {
             </div>
 
             {/* Bento Card 3: Partido Destacado */}
-            <div className="glass-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between group hover:-translate-y-1 border-emerald-500/20">
+            <div className="glass-card interactive-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between group hover:-translate-y-1 border-emerald-500/20">
               {/* Iluminación dual local / visitante */}
               <div
                 className="absolute -left-6 -top-6 w-32 h-32 rounded-full blur-3xl opacity-15 pointer-events-none"
@@ -355,7 +371,7 @@ export default function HomePage() {
       {/* ─── Footer sutil ─────────────────────────────────────────────────── */}
       <footer className="py-6 border-t border-white/5 text-center text-xs text-slate-500">
         <PageContainer>
-          <p>© 2026 xG Lab · Plataforma de Analítica Avanzada de LaLiga EA Sports</p>
+          <p>© 2026 xG Lab · Plataforma de Analítica Avanzada de {meta.name}</p>
         </PageContainer>
       </footer>
     </div>

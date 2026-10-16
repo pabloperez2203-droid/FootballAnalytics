@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import PageContainer from "./PageContainer";
+import CompetitionSelector from "./CompetitionSelector";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -117,24 +118,9 @@ export default function Navbar() {
         </nav>
 
         {/* Right side controls */}
-        <div className="ml-auto flex items-center gap-2.5">
-          <button
-            className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-medium whitespace-nowrap bg-white/[0.04] border border-white/10 hover:border-white/20 transition-all text-slate-300 shadow-sm"
-          >
-            <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_6px_#10b981]"></span>
-            <span>LaLiga EA Sports</span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7d878d" strokeWidth="2.5">
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </button>
-          <span
-            className="hidden sm:inline-block px-3 py-1.5 rounded-xl text-xs font-mono text-slate-400 bg-white/[0.03] border border-white/5"
-          >
-            2026-27
-          </span>
-          <div
-            className="w-9 h-9 rounded-xl grid place-items-center text-xs font-mono font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 shadow-sm"
-          >
+        <div className="ml-auto flex items-center gap-2">
+          <CompetitionSelector />
+          <div className="h-8 w-8 rounded-xl grid place-items-center text-[10px] font-mono font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 shadow-sm leading-none shrink-0">
             xG
           </div>
         </div>

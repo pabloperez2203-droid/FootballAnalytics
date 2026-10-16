@@ -6,14 +6,29 @@ import TeamComparator from "@/components/teams/TeamComparator";
 import JusticeTable from "@/components/teams/JusticeTable";
 import TacticalStyleMatrix from "@/components/teams/TacticalStyleMatrix";
 import equiposRaw from "@/data/equipos_xg.json";
+import equiposUclRaw from "@/data/equipos_ucl_xg.json";
 import { TeamXgData } from "@/components/teams/types";
+import { useCompetition } from "@/stores/filterStore";
 
 export default function TeamsPage() {
-  const teamsData: TeamXgData[] = equiposRaw as TeamXgData[];
+  const { competition, meta } = useCompetition();
+  const rawList = competition === "ucl" ? equiposUclRaw : equiposRaw;
+  const teamsData: TeamXgData[] = rawList as TeamXgData[];
 
-  // Team comparison state (defaults: Barcelona vs Real Madrid)
-  const [teamAName, setTeamAName] = useState<string>("Barcelona");
-  const [teamBName, setTeamBName] = useState<string>("Real Madrid");
+  // Team comparison state (defaults: first 2 teams or Real Madrid / Barcelona)
+  const defaultTeamA = teamsData.find(t => t.team === "Barcelona")?.team || teamsData[0]?.team || "Barcelona";
+  const defaultTeamB = teamsData.find(t => t.team === "Real Madrid")?.team || teamsData[1]?.team || "Real Madrid";
+
+  const [teamAName, setTeamAName] = useState<string>(defaultTeamA);
+  const [teamBName, setTeamBName] = useState<string>(defaultTeamB);
+
+  // Sync state if current teams don't exist in the active dataset
+  React.useEffect(() => {
+    const hasA = teamsData.some(t => t.team === teamAName);
+    const hasB = teamsData.some(t => t.team === teamBName);
+    if (!hasA) setTeamAName(teamsData[0]?.team || "Barcelona");
+    if (!hasB) setTeamBName(teamsData[1]?.team || "Real Madrid");
+  }, [teamsData, teamAName, teamBName]);
 
   // Selection callback when clicking from table or scatter matrix
   const handleQuickSelect = (teamName: string) => {
@@ -30,8 +45,8 @@ export default function TeamsPage() {
         {/* Page Header */}
         <div className="mb-8">
           <div className="flex items-center gap-2 mb-2">
-            <span className="text-xs font-mono text-emerald-400 font-semibold tracking-wider uppercase">
-              LaLiga EA Sports · Análisis Colectivo
+            <span className={`text-xs font-mono font-semibold tracking-wider uppercase ${competition === 'ucl' ? 'text-cyan-400' : 'text-emerald-400'}`}>
+              {meta.name} · Análisis Colectivo
             </span>
           </div>
 
@@ -50,7 +65,7 @@ export default function TeamsPage() {
             <div className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-slate-900/60 border border-white/10 text-xs font-mono">
               <div>
                 <span className="text-slate-400 block text-[10px]">Equipos</span>
-                <span className="text-white font-bold text-sm">20</span>
+                <span className="text-white font-bold text-sm">{teamsData.length}</span>
               </div>
               <div className="w-px h-6 bg-white/10" />
               <div>

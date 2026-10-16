@@ -129,7 +129,7 @@ export default function LeaderKpis({ players, onSelectPlayer }: LeaderKpisProps)
           <div
             key={idx}
             onClick={() => onSelectPlayer && onSelectPlayer(p.player_name)}
-            className="glass-card rounded-2xl p-4 sm:p-5 border border-white/10 hover:border-white/20 transition-all duration-300 relative overflow-hidden group cursor-pointer shadow-xl"
+            className="glass-card interactive-card rounded-2xl p-4 sm:p-5 border border-white/10 hover:border-white/20 transition-all duration-300 relative overflow-hidden group cursor-pointer shadow-xl"
           >
             {/* Ambient dynamic glow */}
             <div

@@ -1,12 +1,13 @@
 import React from 'react';
-import { getTeamCrest, getTeamColor } from '@/utils/crests';
+import { getTeamCrest, getMatchTeamColors } from '@/utils/crests';
 
-export default function MatchHeader({ matchData }: { matchData: any }) {
+export default function MatchHeader({ matchData, homeColor: propHomeColor, awayColor: propAwayColor }: { matchData: any; homeColor?: string; awayColor?: string }) {
   const { home_team, home_short, away_team, away_short, home_score, away_score, home_xg, away_xg, date, stadium } = matchData;
   const homeCrest = getTeamCrest(home_team);
   const awayCrest = getTeamCrest(away_team);
-  const homeColor = getTeamColor(home_team);
-  const awayColor = getTeamColor(away_team);
+  const colors = (propHomeColor && propAwayColor) ? { homeColor: propHomeColor, awayColor: propAwayColor } : getMatchTeamColors(home_team, away_team);
+  const homeColor = colors.homeColor;
+  const awayColor = colors.awayColor;
 
   const totalXg = (home_xg || 0) + (away_xg || 0);
   const homeXgPercent = totalXg > 0 ? (home_xg / totalXg) * 100 : 50;
@@ -24,8 +25,21 @@ export default function MatchHeader({ matchData }: { matchData: any }) {
         style={{ backgroundColor: awayColor }}
       />
 
+      {/* Badge de competición alineado */}
+      <div className="absolute top-4 left-4 hidden sm:flex items-center gap-2">
+        <div className="inline-flex items-center gap-2 leading-none">
+          <span className="h-6 px-2.5 flex items-center justify-center rounded-lg text-xs font-medium whitespace-nowrap bg-white/[0.04] border border-white/10 text-slate-300 gap-1.5 leading-none shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_#10b981]"></span>
+            <span>LaLiga EA Sports</span>
+          </span>
+          <span className="h-6 px-2.5 flex items-center justify-center rounded-lg text-xs font-mono text-slate-400 bg-white/[0.03] border border-white/5 leading-none">
+            2026-27
+          </span>
+        </div>
+      </div>
+
       <div className="absolute top-4 right-4 flex items-center gap-3">
-         <span className="text-xs text-slate-400 font-medium">{date} {stadium ? `· ${stadium}` : ''}</span>
+         <span className="h-6 px-2.5 flex items-center justify-center rounded-lg text-xs font-mono text-slate-400 bg-white/[0.02] border border-white/5 leading-none">{date} {stadium ? `· ${stadium}` : ''}</span>
       </div>
 
       <div className="flex items-center justify-center gap-6 sm:gap-10 w-full max-w-2xl mt-4">
@@ -66,7 +80,7 @@ export default function MatchHeader({ matchData }: { matchData: any }) {
           {/* Barra de acento / comparación xG con colores dinámicos */}
           <div className="w-36 sm:w-48 h-1.5 rounded-full bg-white/10 overflow-hidden flex mt-1 shadow-inner">
             <div
-              className="h-full transition-all duration-700"
+              className="h-full spring-bar"
               style={{
                 width: `${homeXgPercent}%`,
                 backgroundColor: homeColor,
@@ -74,7 +88,7 @@ export default function MatchHeader({ matchData }: { matchData: any }) {
               }}
             />
             <div
-              className="h-full transition-all duration-700"
+              className="h-full spring-bar"
               style={{
                 width: `${awayXgPercent}%`,
                 backgroundColor: awayColor,

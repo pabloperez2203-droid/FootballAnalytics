@@ -1,11 +1,50 @@
 import crestsData from '../../public/crests/crests.json';
 
+const UCL_CRESTS: Record<string, string> = {
+  "manchester city": "https://crests.football-data.org/65.png",
+  "arsenal": "https://crests.football-data.org/57.png",
+  "liverpool": "https://crests.football-data.org/64.png",
+  "bayern munich": "https://crests.football-data.org/5.png",
+  "borussia dortmund": "https://crests.football-data.org/4.png",
+  "bayer leverkusen": "https://crests.football-data.org/3.png",
+  "inter": "https://crests.football-data.org/108.png",
+  "juventus": "https://crests.football-data.org/109.png",
+  "ac milan": "https://crests.football-data.org/98.png",
+  "atalanta": "https://crests.football-data.org/102.png",
+  "paris saint-germain": "https://crests.football-data.org/524.png",
+  "monaco": "https://crests.football-data.org/548.png",
+  "lille": "https://crests.football-data.org/521.png",
+  "sporting cp": "https://crests.football-data.org/498.png",
+  "benfica": "https://crests.football-data.org/1903.png",
+  "aston villa": "https://crests.football-data.org/58.png",
+  "psv eindhoven": "https://crests.football-data.org/674.png",
+  "feyenoord": "https://crests.football-data.org/675.png",
+  "celtic": "https://crests.football-data.org/732.png",
+  "club brugge": "https://crests.football-data.org/851.png",
+  "dinamo zagreb": "https://crests.football-data.org/755.png",
+  "stuttgart": "https://crests.football-data.org/10.png",
+  "rb leipzig": "https://crests.football-data.org/721.png",
+  "shakhtar donetsk": "https://crests.football-data.org/654.png",
+  "bologna": "https://crests.football-data.org/103.png",
+  "red star belgrade": "https://crests.football-data.org/7283.png",
+  "salzburg": "https://crests.football-data.org/1877.png",
+  "sparta prague": "https://crests.football-data.org/753.png",
+  "young boys": "https://crests.football-data.org/1871.png",
+  "brest": "https://crests.football-data.org/512.png",
+  "slovan bratislava": "https://crests.football-data.org/8165.png",
+  "sturm graz": "https://crests.football-data.org/2093.png",
+};
+
 export function getTeamCrest(teamName: string): string {
-  const team = crestsData.find((c: any) => c.equipo === teamName);
-  return team ? team.archivo : '';
+  if (!teamName) return '';
+  const team = crestsData.find((c: any) => c.equipo.toLowerCase() === teamName.toLowerCase());
+  if (team) return team.archivo;
+  const normalized = teamName.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+  return UCL_CRESTS[normalized] || '';
 }
 
 const TEAM_COLORS: Record<string, string> = {
+  // LaLiga
   "barcelona": "#a50044",
   "fc barcelona": "#a50044",
   "real madrid": "#3b82f6",
@@ -44,11 +83,137 @@ const TEAM_COLORS: Record<string, string> = {
   "levante": "#1e40af",
   "elche": "#15803d",
   "deportivo la coruna": "#2563eb",
-  "malaga": "#38bdf8"
+  "malaga": "#38bdf8",
+
+  // Champions League
+  "manchester city": "#38bdf8",
+  "liverpool": "#dc2626",
+  "arsenal": "#ef4444",
+  "bayern munich": "#dc2626",
+  "borussia dortmund": "#eab308",
+  "bayer leverkusen": "#ef4444",
+  "paris saint-germain": "#1d4ed8",
+  "monaco": "#e11d48",
+  "lille": "#e11d48",
+  "inter": "#0284c7",
+  "juventus": "#94a3b8",
+  "ac milan": "#dc2626",
+  "atalanta": "#1d4ed8",
+  "sporting cp": "#10b981",
+  "benfica": "#ef4444",
+  "aston villa": "#831843",
+  "psv eindhoven": "#ef4444",
+  "feyenoord": "#ef4444",
+  "celtic": "#10b981",
+  "club brugge": "#0284c7",
+  "dinamo zagreb": "#1d4ed8",
+  "stuttgart": "#dc2626",
+  "rb leipzig": "#dc2626",
+  "shakhtar donetsk": "#f97316",
+  "bologna": "#1e3a8a",
+  "red star belgrade": "#dc2626",
+  "salzburg": "#dc2626",
+  "sparta prague": "#831843",
+  "young boys": "#eab308",
+  "brest": "#dc2626",
+  "slovan bratislava": "#38bdf8",
+  "sturm graz": "#64748b"
 };
 
 export function getTeamColor(teamName: string): string {
   if (!teamName) return "#3b82f6";
   const normalized = teamName.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
   return TEAM_COLORS[normalized] || "#3b82f6";
+}
+
+function hexToRgb(hex: string): { r: number; g: number; b: number } | null {
+  const clean = hex.replace('#', '').trim();
+  if (clean.length === 3) {
+    return {
+      r: parseInt(clean[0] + clean[0], 16),
+      g: parseInt(clean[1] + clean[1], 16),
+      b: parseInt(clean[2] + clean[2], 16),
+    };
+  }
+  if (clean.length === 6) {
+    return {
+      r: parseInt(clean.substring(0, 2), 16),
+      g: parseInt(clean.substring(2, 4), 16),
+      b: parseInt(clean.substring(4, 6), 16),
+    };
+  }
+  return null;
+}
+
+function getHue(r: number, g: number, b: number): number {
+  r /= 255;
+  g /= 255;
+  b /= 255;
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  if (max === min) return 0;
+  const d = max - min;
+  let h = 0;
+  if (max === r) {
+    h = ((g - b) / d + (g < b ? 6 : 0)) * 60;
+  } else if (max === g) {
+    h = ((b - r) / d + 2) * 60;
+  } else {
+    h = ((r - g) / d + 4) * 60;
+  }
+  return h;
+}
+
+export function getColorCategory(hex: string): 'red' | 'blue' | 'yellow' | 'green' | 'other' {
+  const rgb = hexToRgb(hex);
+  if (!rgb) return 'other';
+  const hue = getHue(rgb.r, rgb.g, rgb.b);
+  if (hue >= 320 || hue <= 35) return 'red';      // Rojos, granates, carmesí
+  if (hue >= 170 && hue <= 265) return 'blue';   // Azules, celestes, marinos
+  if (hue > 35 && hue < 75) return 'yellow';     // Amarillos / dorados
+  if (hue >= 75 && hue < 170) return 'green';    // Verdes
+  return 'other';
+}
+
+export function areColorsTooSimilar(hex1: string, hex2: string): boolean {
+  if (!hex1 || !hex2) return false;
+  if (hex1.toLowerCase() === hex2.toLowerCase()) return true;
+
+  const cat1 = getColorCategory(hex1);
+  const cat2 = getColorCategory(hex2);
+  if (cat1 === cat2 && cat1 !== 'other') return true;
+
+  const rgb1 = hexToRgb(hex1);
+  const rgb2 = hexToRgb(hex2);
+  if (!rgb1 || !rgb2) return false;
+  const dist = Math.sqrt(
+    Math.pow(rgb1.r - rgb2.r, 2) +
+    Math.pow(rgb1.g - rgb2.g, 2) +
+    Math.pow(rgb1.b - rgb2.b, 2)
+  );
+  return dist < 135;
+}
+
+export function resolveContrastingColors(homeColor: string, awayColor: string): { homeColor: string; awayColor: string } {
+  if (areColorsTooSimilar(homeColor, awayColor)) {
+    const catHome = getColorCategory(homeColor);
+    let contrastingAway = '#f59e0b';
+    if (catHome === 'red') {
+      contrastingAway = '#06b6d4'; // Cian eléctrico
+    } else if (catHome === 'blue') {
+      contrastingAway = '#f59e0b'; // Ámbar dorado brillante
+    } else if (catHome === 'green') {
+      contrastingAway = '#f43f5e'; // Rosa coral
+    } else if (catHome === 'yellow') {
+      contrastingAway = '#3b82f6'; // Azul intenso
+    }
+    return { homeColor, awayColor: contrastingAway };
+  }
+  return { homeColor, awayColor };
+}
+
+export function getMatchTeamColors(homeTeam: string, awayTeam: string): { homeColor: string; awayColor: string } {
+  const rawHome = getTeamColor(homeTeam);
+  const rawAway = getTeamColor(awayTeam);
+  return resolveContrastingColors(rawHome, rawAway);
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 
 interface TeamStat {
   rank: number;
@@ -26,8 +26,9 @@ interface EfficiencyTableProps {
 export default function EfficiencyTable({ data, activeTeam, onHoverTeam }: EfficiencyTableProps) {
   const [sortConfig, setSortConfig] = useState<{ key: keyof TeamStat; direction: "asc" | "desc" } | null>(null);
   const [showAll, setShowAll] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
-  const sortedData = React.useMemo(() => {
+  const sortedData = useMemo(() => {
     let sortableItems = [...data];
     if (sortConfig !== null) {
       sortableItems.sort((a, b) => {
@@ -39,7 +40,14 @@ export default function EfficiencyTable({ data, activeTeam, onHoverTeam }: Effic
     return sortableItems;
   }, [data, sortConfig]);
 
-  const displayedData = showAll ? sortedData : sortedData.slice(0, 5);
+  const filteredData = useMemo(() => {
+    if (!searchTerm.trim()) return sortedData;
+    const q = searchTerm.toLowerCase().trim();
+    return sortedData.filter(t => t.name.toLowerCase().includes(q));
+  }, [sortedData, searchTerm]);
+
+  // Default Top 8 or all 20 teams (or all filtered if searching)
+  const displayedData = showAll || searchTerm.trim() !== "" ? filteredData : filteredData.slice(0, 8);
 
   const requestSort = (key: keyof TeamStat) => {
     let direction: "asc" | "desc" = "desc";
@@ -55,27 +63,54 @@ export default function EfficiencyTable({ data, activeTeam, onHoverTeam }: Effic
   };
 
   return (
-    <section className="glass-card md:col-span-8 flex flex-col p-6 rounded-2xl transition-all duration-300 hover:-translate-y-0.5">
-      <div className="flex items-center justify-between mb-4">
+    <section className="glass-card md:col-span-8 flex flex-col h-[600px] p-6 rounded-2xl transition-all duration-300 hover:-translate-y-0.5">
+      {/* Fixed Card Header */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3 pb-3 border-b border-white/10 shrink-0">
         <div>
           <div className="lbl font-semibold">Clasificación analítica</div>
-          <div className="font-bold text-base text-white mt-1">Eficiencia y Desempeño Ofensivo/Defensivo</div>
+          <div className="font-bold text-base text-white mt-0.5">Eficiencia y Desempeño Ofensivo/Defensivo</div>
         </div>
-        <div className="flex items-center gap-3">
-          <span className="text-xs font-mono text-slate-400">
-            Jornada {data[0]?.pj || 0}
+        
+        <div className="flex items-center gap-2.5">
+          {/* Quick Search */}
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Buscar club..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-28 sm:w-36 bg-slate-950/70 border border-white/10 rounded-lg text-xs px-2.5 py-1.5 text-slate-200 placeholder:text-slate-500 outline-none focus:border-emerald-500/50 transition-colors"
+            />
+            {searchTerm && (
+              <button
+                onClick={() => setSearchTerm("")}
+                className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white text-xs"
+              >
+                ×
+              </button>
+            )}
+          </div>
+
+          <span className="text-xs font-mono text-slate-400 hidden sm:inline">
+            J{data[0]?.pj || 0}
           </span>
+
           <button 
-            onClick={() => setShowAll(!showAll)}
-            className="text-xs font-medium px-3 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 transition-colors text-slate-300"
+            onClick={() => {
+              setShowAll(!showAll);
+              if (searchTerm) setSearchTerm("");
+            }}
+            className="text-xs font-mono font-medium px-3 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 transition-colors text-slate-300 shrink-0"
           >
-            {showAll ? "Ver Top 5" : "Ver todos"}
+            {showAll ? "Top 8" : `Ver los ${data.length} equipos`}
           </button>
         </div>
       </div>
-      <div className="overflow-x-auto flex-1">
+
+      {/* Scrollable Table Area with Sticky Thead */}
+      <div className="overflow-x-auto overflow-y-auto flex-1 pr-1 custom-scrollbar">
         <table className="w-full text-xs lg:text-sm font-sans" id="tb">
-          <thead>
+          <thead className="sticky top-0 z-10 bg-slate-900/95 backdrop-blur-md">
             <tr className="lbl text-left border-b border-white/10 font-mono">
               <th className="py-2.5 font-normal w-6 cursor-pointer group" onClick={() => requestSort('rank')}>
                 # {getSortIcon('rank')}
@@ -177,6 +212,13 @@ export default function EfficiencyTable({ data, activeTeam, onHoverTeam }: Effic
                 </tr>
               );
             })}
+            {displayedData.length === 0 && (
+              <tr>
+                <td colSpan={10} className="py-8 text-center text-slate-500 font-mono">
+                  No se encontraron equipos que coincidan con "{searchTerm}"
+                </td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>

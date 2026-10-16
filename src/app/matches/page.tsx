@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import simulatedData from '@/data/simulado/match_intel_simulado.json';
 
 import MatchSelector from '@/components/match-intel/MatchSelector';
 import MatchHeader from '@/components/match-intel/MatchHeader';
 import XgTimelineChart from '@/components/match-intel/XgTimelineChart';
-import VerdictPanel from '@/components/match-intel/VerdictPanel';
 import ShotMap from '@/components/match-intel/ShotMap';
 import StatsComparison from '@/components/match-intel/StatsComparison';
 import ShotTimelineTable from '@/components/match-intel/ShotTimelineTable';
@@ -14,10 +14,14 @@ import MatchPlayersTable from '@/components/match-intel/MatchPlayersTable';
 import MatchLineups from '@/components/match-intel/MatchLineups';
 import CustomAnalysisSlots from '@/components/match-intel/CustomAnalysisSlots';
 import PageContainer from '@/components/layout/PageContainer';
+import { getMatchTeamColors } from '@/utils/crests';
 
 const USE_SIMULATED_DATA = false;
 
-export default function MatchIntelPage() {
+function MatchIntelContent() {
+  const searchParams = useSearchParams();
+  const queryId = searchParams.get('id');
+
   const [indexData, setIndexData] = useState<any[]>([]);
   const [selectedMatchId, setSelectedMatchId] = useState<string | null>(null);
   const [matchData, setMatchData] = useState<any>(null);
@@ -36,18 +40,27 @@ export default function MatchIntelPage() {
       .then(data => {
         setIndexData(data);
         if (data.length > 0) {
-          const urlParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
-          const paramId = urlParams?.get('id');
-          if (paramId && data.some((m: any) => m.id === paramId)) {
-            setSelectedMatchId(paramId);
+          const targetId = queryId || (typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('id') : null);
+          if (targetId && data.some((m: any) => String(m.id) === String(targetId))) {
+            setSelectedMatchId(String(targetId));
           } else {
-            // Select last match by default
-            setSelectedMatchId(data[data.length - 1].id);
+            // Select first match of the latest available matchday (e.g. Jornada 8)
+            const maxMatchday = Math.max(...data.map((m: any) => Number(m.matchday) || 1));
+            const latestMatches = data.filter((m: any) => Number(m.matchday) === maxMatchday);
+            const defaultMatch = latestMatches[0] || data[data.length - 1];
+            setSelectedMatchId(String(defaultMatch.id));
           }
         }
       })
       .catch(err => console.error("Error fetching index:", err));
-  }, []);
+  }, [queryId]);
+
+  // Sync if URL query param changes while component is already mounted
+  useEffect(() => {
+    if (queryId && indexData.length > 0 && indexData.some((m: any) => String(m.id) === String(queryId))) {
+      setSelectedMatchId(String(queryId));
+    }
+  }, [queryId, indexData]);
 
   useEffect(() => {
     if (USE_SIMULATED_DATA || !selectedMatchId) return;
@@ -86,6 +99,11 @@ export default function MatchIntelPage() {
     matches_in_matchday: matchesInMatchday.length > 0 ? matchesInMatchday : matchData.match.matches_in_matchday
   };
 
+  // Colores corporativos dinámicos con contraste garantizado
+  const homeTeam = matchData.match.home_team;
+  const awayTeam = matchData.match.away_team;
+  const { homeColor, awayColor } = getMatchTeamColors(homeTeam, awayTeam);
+
   return (
     <PageContainer className="py-6 relative">
       {matchData.is_simulated && (
@@ -100,7 +118,7 @@ export default function MatchIntelPage() {
         onSelectMatch={setSelectedMatchId}
         onSelectMatchday={(dir) => {
           // Find matchdays available
-          const matchdays = Array.from(new Set(indexData.map(m => m.matchday))).sort((a, b) => a - b);
+          const matchdays = Array.from(new Set(indexData.map(m => m.matchday))).sort((a: any, b: any) => a - b);
           const currentIndex = matchdays.indexOf(currentMatchday);
           if (dir === 'prev' && currentIndex > 0) {
             const prevMdMatches = indexData.filter(m => m.matchday === matchdays[currentIndex - 1]);
@@ -113,51 +131,57 @@ export default function MatchIntelPage() {
       />
 
       {/* 2. Cabecera */}
-      <MatchHeader matchData={matchData.match} />
+      <MatchHeader matchData={matchData.match} homeColor={homeColor} awayColor={awayColor} />
 
-      {/* 3. Fila principal */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-        <div className="md:col-span-2">
-          <XgTimelineChart
-            shots={matchData.shots}
-            matchData={matchData.match}
-            hoveredShotId={hoveredShotId}
-            onHoverShot={setHoveredShotId}
-          />
-        </div>
-        <div className="md:col-span-1">
-          <VerdictPanel verdict={matchData.verdict} />
-        </div>
+      {/* 3. Visualizadores de Tiros (xG Timeline + Shot Map) */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+        <XgTimelineChart
+          shots={matchData.shots}
+          matchData={matchData.match}
+          hoveredShotId={hoveredShotId}
+          onHoverShot={setHoveredShotId}
+          homeColor={homeColor}
+          awayColor={awayColor}
+        />
+        <ShotMap
+          shots={matchData.shots}
+          matchData={matchData.match}
+          hoveredShotId={hoveredShotId}
+          onHoverShot={setHoveredShotId}
+          homeColor={homeColor}
+          awayColor={awayColor}
+        />
       </div>
 
-      {/* 4. Fila de detalle */}
-      <div className="grid grid-cols-1 md:grid-cols-[1.3fr_1fr] gap-4 mb-4">
-        <div>
-          <ShotMap
-            shots={matchData.shots}
-            matchData={matchData.match}
-            hoveredShotId={hoveredShotId}
-            onHoverShot={setHoveredShotId}
-          />
-        </div>
-        <div>
-          <StatsComparison stats={matchData.stats} />
-        </div>
+      {/* 4. Comparativa de Estadísticas (Panel Completo / Tug-of-War) */}
+      <div className="mb-4">
+        <StatsComparison
+          stats={matchData.stats}
+          shots={matchData.shots}
+          homeTeam={homeTeam}
+          awayTeam={awayTeam}
+          homeScore={matchData.match.home_score}
+          awayScore={matchData.match.away_score}
+          homeColor={homeColor}
+          awayColor={awayColor}
+        />
       </div>
 
-      {/* 5. Fila de tablas */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      {/* 5. Alineaciones y Feed Visual de Ocasiones */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
         <div>
           <MatchLineups rosters={matchData.rosters} matchData={matchData.match} playersStats={matchData.players} />
         </div>
-        <div className="relative h-full min-h-[400px] md:min-h-0">
-          <div className="md:absolute md:inset-0 h-full">
-            <ShotTimelineTable
-              shots={matchData.shots}
-              hoveredShotId={hoveredShotId}
-              onHoverShot={setHoveredShotId}
-            />
-          </div>
+        <div>
+          <ShotTimelineTable
+            shots={matchData.shots}
+            homeTeam={homeTeam}
+            awayTeam={awayTeam}
+            hoveredShotId={hoveredShotId}
+            onHoverShot={setHoveredShotId}
+            homeColor={homeColor}
+            awayColor={awayColor}
+          />
         </div>
       </div>
 
@@ -171,5 +195,13 @@ export default function MatchIntelPage() {
         stats={matchData.stats}
       />
     </PageContainer>
+  );
+}
+
+export default function MatchIntelPage() {
+  return (
+    <Suspense fallback={<div className="p-8 text-center text-slate-400">Cargando Match Intel...</div>}>
+      <MatchIntelContent />
+    </Suspense>
   );
 }

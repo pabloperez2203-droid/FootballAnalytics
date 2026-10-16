@@ -161,7 +161,7 @@ export default function TeamComparator({
               Comparador Cara a Cara
             </h2>
             <p className="text-xs text-slate-400 mt-0.5">
-              Percentiles calculados de 0 a 100 respecto a los 20 clubes de LaLiga
+              Percentiles calculados de 0 a 100 respecto a los {teams.length} clubes de la competición
             </p>
           </div>
 
