@@ -309,8 +309,7 @@
       "xg": 0.0,
       "goals": 0,
       "position": "DC",
-      "is_starter": true,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/276738.png"
+      "is_starter": true
     },
     {
       "id": "12190",
@@ -321,8 +320,7 @@
       "xg": 0.09,
       "goals": 0,
       "position": "AMR",
-      "is_starter": true,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/1253890.png"
+      "is_starter": true
     },
     {
       "id": "6560",
@@ -333,8 +331,7 @@
       "xg": 0.02,
       "goals": 0,
       "position": "DMC",
-      "is_starter": true,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/914458.png"
+      "is_starter": true
     },
     {
       "id": "9840",
@@ -345,8 +342,7 @@
       "xg": 0.0,
       "goals": 0,
       "position": "Sub",
-      "is_starter": false,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/593118.png"
+      "is_starter": false
     },
     {
       "id": "7359",
@@ -357,8 +353,7 @@
       "xg": 0.0,
       "goals": 0,
       "position": "Sub",
-      "is_starter": false,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/1015185.png"
+      "is_starter": false
     },
     {
       "id": "6241",
@@ -369,8 +364,7 @@
       "xg": 0.0,
       "goals": 0,
       "position": "DMC",
-      "is_starter": true,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/743533.png"
+      "is_starter": true
     },
     {
       "id": "6326",
@@ -381,8 +375,7 @@
       "xg": 0.01,
       "goals": 0,
       "position": "DC",
-      "is_starter": true,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/820140.png"
+      "is_starter": true
     },
     {
       "id": "8824",
@@ -393,8 +386,7 @@
       "xg": 0.06,
       "goals": 0,
       "position": "AMC",
-      "is_starter": true,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/1077894.png"
+      "is_starter": true
     },
     {
       "id": "3423",
@@ -405,8 +397,7 @@
       "xg": 0.88,
       "goals": 0,
       "position": "FW",
-      "is_starter": true,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/701154.png"
+      "is_starter": true
     },
     {
       "id": "7134",
@@ -417,8 +408,7 @@
       "xg": 0.0,
       "goals": 0,
       "position": "Sub",
-      "is_starter": false,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/873289.png"
+      "is_starter": false
     },
     {
       "id": "680",
@@ -429,8 +419,7 @@
       "xg": 0.0,
       "goals": 0,
       "position": "GK",
-      "is_starter": true,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/170323.png"
+      "is_starter": true
     },
     {
       "id": "1791",
@@ -441,8 +430,7 @@
       "xg": 0.0,
       "goals": 0,
       "position": "DR",
-      "is_starter": true,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/760712.png"
+      "is_starter": true
     },
     {
       "id": "7008",
@@ -453,8 +441,7 @@
       "xg": 0.02,
       "goals": 0,
       "position": "Sub",
-      "is_starter": false,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/846033.png"
+      "is_starter": false
     },
     {
       "id": "13561",
@@ -465,8 +452,7 @@
       "xg": 0.33,
       "goals": 1,
       "position": "AML",
-      "is_starter": true,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/1735453.png"
+      "is_starter": true
     },
     {
       "id": "10576",
@@ -477,8 +463,7 @@
       "xg": 0.0,
       "goals": 0,
       "position": "DL",
-      "is_starter": true,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/1190025.png"
+      "is_starter": true
     },
     {
       "id": "12160",
@@ -489,8 +474,7 @@
       "xg": 0.11,
       "goals": 0,
       "position": "FWL",
-      "is_starter": true,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/1184694.png"
+      "is_starter": true
     },
     {
       "id": "14396",
@@ -501,8 +485,7 @@
       "xg": 0.0,
       "goals": 0,
       "position": "DR",
-      "is_starter": true,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/1338696.png"
+      "is_starter": true
     },
     {
       "id": "770",
@@ -513,8 +496,7 @@
       "xg": 0.04,
       "goals": 0,
       "position": "FW",
-      "is_starter": true,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/479020.png"
+      "is_starter": true
     },
     {
       "id": "11402",
@@ -525,8 +507,7 @@
       "xg": 0.08,
       "goals": 0,
       "position": "Sub",
-      "is_starter": false,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/1395964.png"
+      "is_starter": false
     },
     {
       "id": "8187",
@@ -537,8 +518,7 @@
       "xg": 0.1,
       "goals": 0,
       "position": "Sub",
-      "is_starter": false,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/1117069.png"
+      "is_starter": false
     },
     {
       "id": "2120",
@@ -549,8 +529,7 @@
       "xg": 0.02,
       "goals": 0,
       "position": "Sub",
-      "is_starter": false,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/246438.png"
+      "is_starter": false
     },
     {
       "id": "10121",
@@ -561,8 +540,7 @@
       "xg": 0.05,
       "goals": 0,
       "position": "FWR",
-      "is_starter": true,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/1311915.png"
+      "is_starter": true
     },
     {
       "id": "6306",
@@ -573,8 +551,7 @@
       "xg": 0.0,
       "goals": 0,
       "position": "MC",
-      "is_starter": true,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/833219.png"
+      "is_starter": true
     },
     {
       "id": "14936",
@@ -585,8 +562,7 @@
       "xg": 0.02,
       "goals": 0,
       "position": "Sub",
-      "is_starter": false,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/1216798.png"
+      "is_starter": false
     },
     {
       "id": "14864",
@@ -608,8 +584,7 @@
       "xg": 0.09,
       "goals": 0,
       "position": "MC",
-      "is_starter": true,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/844544.png"
+      "is_starter": true
     },
     {
       "id": "12914",
@@ -620,8 +595,7 @@
       "xg": 0.0,
       "goals": 0,
       "position": "DC",
-      "is_starter": true,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/1531887.png"
+      "is_starter": true
     },
     {
       "id": "5241",
@@ -632,8 +606,7 @@
       "xg": 0.0,
       "goals": 0,
       "position": "GK",
-      "is_starter": true,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/151001.png"
+      "is_starter": true
     },
     {
       "id": "11383",
@@ -644,8 +617,7 @@
       "xg": 0.02,
       "goals": 0,
       "position": "DC",
-      "is_starter": true,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/1343750.png"
+      "is_starter": true
     },
     {
       "id": "7070",
@@ -656,8 +628,7 @@
       "xg": 0.0,
       "goals": 0,
       "position": "MC",
-      "is_starter": true,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/671865.png"
+      "is_starter": true
     },
     {
       "id": "11744",
@@ -668,8 +639,7 @@
       "xg": 0.0,
       "goals": 0,
       "position": "DL",
-      "is_starter": true,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/1059657.png"
+      "is_starter": true
     }
   ],
   "rosters": {
@@ -695,8 +665,7 @@
         "xA": "0",
         "xGChain": "0.27946266531944275",
         "xGBuildup": "0.27946266531944275",
-        "positionOrder": "1",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/170323.png"
+        "positionOrder": "1"
       },
       "805046": {
         "id": "805046",
@@ -719,8 +688,7 @@
         "xA": "0.17093554139137268",
         "xGChain": "0.15687991678714752",
         "xGBuildup": "0",
-        "positionOrder": "2",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/760712.png"
+        "positionOrder": "2"
       },
       "805048": {
         "id": "805048",
@@ -743,8 +711,7 @@
         "xA": "0",
         "xGChain": "0.02185063622891903",
         "xGBuildup": "0.02185063622891903",
-        "positionOrder": "3",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/276738.png"
+        "positionOrder": "3"
       },
       "805047": {
         "id": "805047",
@@ -767,8 +734,7 @@
         "xA": "0",
         "xGChain": "0.039643753319978714",
         "xGBuildup": "0.039643753319978714",
-        "positionOrder": "3",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/820140.png"
+        "positionOrder": "3"
       },
       "805049": {
         "id": "805049",
@@ -791,8 +757,7 @@
         "xA": "0.4476504623889923",
         "xGChain": "0.4476504623889923",
         "xGBuildup": "0",
-        "positionOrder": "4",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/1190025.png"
+        "positionOrder": "4"
       },
       "805051": {
         "id": "805051",
@@ -815,8 +780,7 @@
         "xA": "0.6227498650550842",
         "xGChain": "0.8610904812812805",
         "xGBuildup": "0.2383406162261963",
-        "positionOrder": "7",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/743533.png"
+        "positionOrder": "7"
       },
       "805050": {
         "id": "805050",
@@ -839,8 +803,7 @@
         "xA": "0",
         "xGChain": "0.08146069198846817",
         "xGBuildup": "0.05961005762219429",
-        "positionOrder": "7",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/914458.png"
+        "positionOrder": "7"
       },
       "805052": {
         "id": "805052",
@@ -863,8 +826,7 @@
         "xA": "0",
         "xGChain": "0.8723983764648438",
         "xGBuildup": "0.7832329869270325",
-        "positionOrder": "11",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/1253890.png"
+        "positionOrder": "11"
       },
       "805053": {
         "id": "805053",
@@ -887,8 +849,7 @@
         "xA": "0",
         "xGChain": "0.6641404628753662",
         "xGBuildup": "0.604530394077301",
-        "positionOrder": "12",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/1077894.png"
+        "positionOrder": "12"
       },
       "805054": {
         "id": "805054",
@@ -911,8 +872,7 @@
         "xA": "0.08146069198846817",
         "xGChain": "1.0194135904312134",
         "xGBuildup": "0.604530394077301",
-        "positionOrder": "13",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/1735453.png"
+        "positionOrder": "13"
       },
       "805055": {
         "id": "805055",
@@ -935,8 +895,7 @@
         "xA": "0",
         "xGChain": "0.9058436751365662",
         "xGBuildup": "0.02185063622891903",
-        "positionOrder": "15",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/701154.png"
+        "positionOrder": "15"
       },
       "805057": {
         "id": "805057",
@@ -959,8 +918,7 @@
         "xA": "0",
         "xGChain": "0",
         "xGBuildup": "0",
-        "positionOrder": "17",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/1015185.png"
+        "positionOrder": "17"
       },
       "805058": {
         "id": "805058",
@@ -983,8 +941,7 @@
         "xA": "0",
         "xGChain": "0",
         "xGBuildup": "0",
-        "positionOrder": "17",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/593118.png"
+        "positionOrder": "17"
       },
       "805056": {
         "id": "805056",
@@ -1007,8 +964,7 @@
         "xA": "0",
         "xGChain": "0",
         "xGBuildup": "0",
-        "positionOrder": "17",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/846033.png"
+        "positionOrder": "17"
       },
       "805059": {
         "id": "805059",
@@ -1031,8 +987,7 @@
         "xA": "0",
         "xGChain": "0.02185063622891903",
         "xGBuildup": "0.02185063622891903",
-        "positionOrder": "17",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/873289.png"
+        "positionOrder": "17"
       }
     },
     "a": {
@@ -1057,8 +1012,7 @@
         "xA": "0",
         "xGChain": "0.07362388074398041",
         "xGBuildup": "0.07362388074398041",
-        "positionOrder": "1",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/151001.png"
+        "positionOrder": "1"
       },
       "805061": {
         "id": "805061",
@@ -1081,8 +1035,7 @@
         "xA": "0.08388299494981766",
         "xGChain": "0.13098451495170593",
         "xGBuildup": "0.057360634207725525",
-        "positionOrder": "2",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/1338696.png"
+        "positionOrder": "2"
       },
       "805063": {
         "id": "805063",
@@ -1105,8 +1058,7 @@
         "xA": "0",
         "xGChain": "0.10579808056354523",
         "xGBuildup": "0.10579808056354523",
-        "positionOrder": "3",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/1531887.png"
+        "positionOrder": "3"
       },
       "805062": {
         "id": "805062",
@@ -1129,8 +1081,7 @@
         "xA": "0",
         "xGChain": "0.17926190793514252",
         "xGBuildup": "0.16900280117988586",
-        "positionOrder": "3",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/1343750.png"
+        "positionOrder": "3"
       },
       "805064": {
         "id": "805064",
@@ -1153,8 +1104,7 @@
         "xA": "0",
         "xGChain": "0.07362388074398041",
         "xGBuildup": "0.07362388074398041",
-        "positionOrder": "4",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/1059657.png"
+        "positionOrder": "4"
       },
       "805065": {
         "id": "805065",
@@ -1177,8 +1127,7 @@
         "xA": "0",
         "xGChain": "0.03217419981956482",
         "xGBuildup": "0.03217419981956482",
-        "positionOrder": "9",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/833219.png"
+        "positionOrder": "9"
       },
       "805066": {
         "id": "805066",
@@ -1201,8 +1150,7 @@
         "xA": "0.03217419981956482",
         "xGChain": "0.2508343756198883",
         "xGBuildup": "0.17459416389465332",
-        "positionOrder": "9",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/844544.png"
+        "positionOrder": "9"
       },
       "805067": {
         "id": "805067",
@@ -1225,8 +1173,7 @@
         "xA": "0",
         "xGChain": "0",
         "xGBuildup": "0",
-        "positionOrder": "9",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/671865.png"
+        "positionOrder": "9"
       },
       "805068": {
         "id": "805068",
@@ -1249,8 +1196,7 @@
         "xA": "0.014927324838936329",
         "xGChain": "0.09246774762868881",
         "xGBuildup": "0.047101523727178574",
-        "positionOrder": "14",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/1311915.png"
+        "positionOrder": "14"
       },
       "805069": {
         "id": "805069",
@@ -1273,8 +1219,7 @@
         "xA": "0.14949262142181396",
         "xGChain": "0.09990707039833069",
         "xGBuildup": "0",
-        "positionOrder": "15",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/479020.png"
+        "positionOrder": "15"
       },
       "805070": {
         "id": "805070",
@@ -1297,8 +1242,7 @@
         "xA": "0.07136022299528122",
         "xGChain": "0.2181776911020279",
         "xGBuildup": "0.09537891298532486",
-        "positionOrder": "16",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/1184694.png"
+        "positionOrder": "16"
       },
       "805071": {
         "id": "805071",
@@ -1321,8 +1265,7 @@
         "xA": "0",
         "xGChain": "0.19692498445510864",
         "xGBuildup": "0.19692498445510864",
-        "positionOrder": "17",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/1216798.png"
+        "positionOrder": "17"
       },
       "805074": {
         "id": "805074",
@@ -1345,8 +1288,7 @@
         "xA": "0",
         "xGChain": "0.17542968690395355",
         "xGBuildup": "0.156636580824852",
-        "positionOrder": "17",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/246438.png"
+        "positionOrder": "17"
       },
       "805072": {
         "id": "805072",
@@ -1369,8 +1311,7 @@
         "xA": "0.07552260905504227",
         "xGChain": "0.19528599083423615",
         "xGBuildup": "0.018793093040585518",
-        "positionOrder": "17",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/1117069.png"
+        "positionOrder": "17"
       },
       "805075": {
         "id": "805075",
@@ -1416,8 +1357,7 @@
         "xA": "0.04160411283373833",
         "xGChain": "0.18779589235782623",
         "xGBuildup": "0.11227328330278397",
-        "positionOrder": "17",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/1395964.png"
+        "positionOrder": "17"
       }
     }
   }
