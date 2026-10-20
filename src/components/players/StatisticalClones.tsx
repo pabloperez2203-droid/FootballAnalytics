@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from "react";
 import { PlayerComputedMetrics, CloneMatch } from "./types";
 import { getTeamCrest, getTeamColor } from "@/utils/crests";
+import { useCompetition } from "@/stores/filterStore";
 
 function ClonePlayerAvatar({
   player,
@@ -15,7 +16,29 @@ function ClonePlayerAvatar({
   color: string;
   size?: "sm" | "md" | "lg";
 }) {
+  const localPhoto = useMemo(() => {
+    if (!player.photo) return "";
+    if (player.photo.startsWith("/player-photos/")) return player.photo;
+    const match = player.photo.match(/images\.fotmob\.com\/image_resources\/playerimages\/(\d+\.png)/);
+    return match ? `/player-photos/${match[1]}` : player.photo;
+  }, [player.photo]);
+
+  const [imgSrc, setImgSrc] = useState(localPhoto);
   const [imgError, setImgError] = useState(false);
+
+  React.useEffect(() => {
+    setImgSrc(localPhoto);
+    setImgError(false);
+  }, [localPhoto, player.player_name]);
+
+  const handleError = () => {
+    if (imgSrc !== player.photo && player.photo) {
+      setImgSrc(player.photo);
+    } else {
+      setImgError(true);
+    }
+  };
+
   const initials = player.player_name
     .split(" ")
     .filter(Boolean)
@@ -32,11 +55,13 @@ function ClonePlayerAvatar({
         className={`${sizeClasses} bg-slate-950 border overflow-hidden flex items-center justify-center font-bold font-mono text-xs shadow-lg`}
         style={{ borderColor: `${color}70` }}
       >
-        {player.photo && !imgError ? (
+        {imgSrc && !imgError ? (
           <img
-            src={player.photo}
+            src={imgSrc}
             alt={player.player_name}
-            onError={() => setImgError(true)}
+            onError={handleError}
+            referrerPolicy="no-referrer"
+            loading="lazy"
             className="w-full h-full object-cover object-top scale-110"
           />
         ) : crest ? (
@@ -45,7 +70,7 @@ function ClonePlayerAvatar({
           <span style={{ color }}>{initials}</span>
         )}
       </div>
-      {crest && player.photo && !imgError && (
+      {crest && imgSrc && !imgError && (
         <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-slate-950 border border-white/20 p-0.5 shadow">
           <img src={crest} alt={player.team_name} className="w-full h-full object-contain" />
         </div>
@@ -65,6 +90,8 @@ export default function StatisticalClones({
   referencePlayerName,
   onSelectReferencePlayer
 }: StatisticalClonesProps) {
+  const { competition } = useCompetition();
+
   // Reference player object
   const referencePlayer = useMemo(() => {
     return (
@@ -215,11 +242,12 @@ export default function StatisticalClones({
           const isSelected = referencePlayer?.player_name === matched.player_name;
           return (
             <button
+              type="button"
               key={name}
               onClick={() => onSelectReferencePlayer(matched.player_name)}
-              className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all ${
+              className={`px-3 py-1.5 min-h-[36px] rounded-xl text-xs font-medium transition-all cursor-pointer touch-manipulation active:scale-95 ${
                 isSelected
-                  ? "bg-cyan-500/20 text-cyan-300 border border-cyan-400/50 shadow-sm"
+                  ? "bg-cyan-500/20 text-cyan-300 border border-cyan-400/50 shadow-sm font-bold"
                   : "bg-white/[0.04] text-slate-400 hover:text-white hover:bg-white/[0.08] border border-white/5"
               }`}
             >
@@ -250,6 +278,7 @@ export default function StatisticalClones({
               {/* Player Header */}
               <div className="flex items-center gap-3 mb-5">
                 <ClonePlayerAvatar
+                  key={`${referencePlayer.player_id}-${referencePlayer.photo}`}
                   player={referencePlayer}
                   crest={refCrest}
                   color={refColor}
@@ -306,7 +335,7 @@ export default function StatisticalClones({
         {/* 3 Most Similar Clones (8 cols) */}
         <div className="lg:col-span-8 flex flex-col justify-between space-y-3.5">
           <div className="text-xs font-mono text-slate-400 uppercase tracking-wider flex items-center justify-between">
-            <span>Los 3 Clones más cercanos en LaLiga</span>
+            <span>Los 3 Clones más cercanos en {competition === 'ucl' ? 'la Champions League' : 'LaLiga'}</span>
             <span className="text-cyan-400 font-semibold">% de Similitud Vectorial</span>
           </div>
 
@@ -328,6 +357,7 @@ export default function StatisticalClones({
                       #{idx + 1}
                     </span>
                     <ClonePlayerAvatar
+                      key={`${p.player_id}-${p.photo}`}
                       player={p}
                       crest={crest}
                       color={color}

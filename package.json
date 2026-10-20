@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -H 0.0.0.0 -p 3000",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "update-data": "python3 backend/update_pipeline.py"
+    "update-data": "python3 backend/update_pipeline.py",
+    "export-csv": "python3 backend/export_json_to_csv.py"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",

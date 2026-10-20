@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
+import { useCompetition } from "@/stores/filterStore";
 
 interface TeamStat {
   rank: number;
@@ -24,6 +25,8 @@ interface EfficiencyTableProps {
 }
 
 export default function EfficiencyTable({ data, activeTeam, onHoverTeam }: EfficiencyTableProps) {
+  const { competition } = useCompetition();
+  const isUcl = competition === "ucl";
   const [sortConfig, setSortConfig] = useState<{ key: keyof TeamStat; direction: "asc" | "desc" } | null>(null);
   const [showAll, setShowAll] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
@@ -83,8 +86,9 @@ export default function EfficiencyTable({ data, activeTeam, onHoverTeam }: Effic
             />
             {searchTerm && (
               <button
+                type="button"
                 onClick={() => setSearchTerm("")}
-                className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white text-xs"
+                className="absolute right-1.5 top-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center text-slate-400 hover:text-white text-sm font-mono cursor-pointer touch-manipulation active:scale-90"
               >
                 ×
               </button>
@@ -96,11 +100,12 @@ export default function EfficiencyTable({ data, activeTeam, onHoverTeam }: Effic
           </span>
 
           <button 
+            type="button"
             onClick={() => {
               setShowAll(!showAll);
               if (searchTerm) setSearchTerm("");
             }}
-            className="text-xs font-mono font-medium px-3 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 transition-colors text-slate-300 shrink-0"
+            className="text-xs font-mono font-medium px-3 py-1.5 min-h-[36px] rounded-lg bg-white/[0.05] hover:bg-white/[0.1] active:bg-white/[0.15] border border-white/10 transition-all text-slate-300 shrink-0 cursor-pointer touch-manipulation active:scale-95 flex items-center justify-center"
           >
             {showAll ? "Top 8" : `Ver los ${data.length} equipos`}
           </button>
@@ -159,8 +164,35 @@ export default function EfficiencyTable({ data, activeTeam, onHoverTeam }: Effic
                   onMouseEnter={() => onHoverTeam(team.id)}
                   onMouseLeave={() => onHoverTeam(null)}
                 >
-                  <td className="py-2.5 font-mono text-slate-400">
-                    {team.rank}
+                  <td className="py-2.5 font-mono">
+                    <span
+                      className={`inline-flex items-center justify-center w-6 h-6 rounded-md text-xs font-bold ${
+                        isUcl
+                          ? team.rank <= 8
+                            ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-[0_0_8px_rgba(16,185,129,0.25)]"
+                            : team.rank <= 24
+                            ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 shadow-[0_0_8px_rgba(6,182,212,0.25)]"
+                            : "bg-rose-500/20 text-rose-300 border border-rose-500/40 shadow-[0_0_8px_rgba(244,63,94,0.25)]"
+                          : team.rank <= 4
+                          ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30"
+                          : team.rank <= 6
+                          ? "bg-blue-500/20 text-blue-300 border border-blue-500/30"
+                          : team.rank >= 18
+                          ? "bg-rose-500/20 text-rose-300 border border-rose-500/30"
+                          : "text-slate-400"
+                      }`}
+                      title={
+                        isUcl
+                          ? team.rank <= 8
+                            ? "Octavos directo (Puestos 1-8)"
+                            : team.rank <= 24
+                            ? "Play-off 1/16 (Puestos 9-24)"
+                            : "Eliminado (Puestos 25-36)"
+                          : undefined
+                      }
+                    >
+                      {team.rank}
+                    </span>
                   </td>
                   <td className="font-semibold text-white truncate max-w-[90px] md:max-w-[120px]">{team.name}</td>
                   <td className="text-right pr-4 font-mono text-slate-300 hidden sm:table-cell">{team.pj}</td>
@@ -221,6 +253,35 @@ export default function EfficiencyTable({ data, activeTeam, onHoverTeam }: Effic
             )}
           </tbody>
         </table>
+      </div>
+
+      {/* Legend Footer */}
+      <div className="mt-3 pt-2.5 border-t border-white/5 flex flex-wrap items-center justify-between text-[11px] font-mono text-slate-400 px-1 shrink-0">
+        {isUcl ? (
+          <div className="flex items-center gap-4">
+            <span className="flex items-center gap-1.5" title="Clasificación directa a Octavos de Final">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_6px_#10b981]" /> Octavos directo (1-8)
+            </span>
+            <span className="flex items-center gap-1.5" title="Ronda de Play-offs de dieciseisavos">
+              <span className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_6px_#06b6d4]" /> Play-off 1/16 (9-24)
+            </span>
+            <span className="flex items-center gap-1.5" title="Eliminados de competiciones europeas">
+              <span className="w-2 h-2 rounded-full bg-rose-400 shadow-[0_0_6px_#f43f5e]" /> Eliminado (25-36)
+            </span>
+          </div>
+        ) : (
+          <div className="flex items-center gap-4">
+            <span className="flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-emerald-400" /> Champions (1-4)
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-blue-400" /> Europa League (5-6)
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-rose-400" /> Descenso (18-20)
+            </span>
+          </div>
+        )}
       </div>
     </section>
   );

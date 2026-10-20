@@ -153,22 +153,24 @@ export default function ScatterPlot({ plotData, plotMode, setPlotMode, allTeamNa
         <div>
           <div className="lbl flex flex-wrap items-center gap-2">
             Gráfico principal
-            <div className="flex bg-white/[0.04] rounded-lg border border-white/10 overflow-hidden">
+            <div className="flex bg-white/[0.04] rounded-xl border border-white/10 overflow-hidden">
               <button
+                type="button"
                 onClick={() => setPlotMode("teams")}
-                className={`px-3 py-1 text-xs font-medium transition-colors ${
+                className={`px-3 py-1.5 min-h-[36px] text-xs font-medium transition-all cursor-pointer touch-manipulation active:scale-95 ${
                   plotMode === "teams"
-                    ? "bg-emerald-500/20 text-emerald-300 border-r border-white/10 font-semibold"
+                    ? "bg-emerald-500/25 text-emerald-300 border-r border-white/10 font-bold"
                     : "text-slate-400 hover:text-white"
                 }`}
               >
                 Equipos
               </button>
               <button
+                type="button"
                 onClick={() => setPlotMode("players")}
-                className={`px-3 py-1 text-xs font-medium transition-colors ${
+                className={`px-3 py-1.5 min-h-[36px] text-xs font-medium transition-all cursor-pointer touch-manipulation active:scale-95 ${
                   plotMode === "players"
-                    ? "bg-emerald-500/20 text-emerald-300 font-semibold"
+                    ? "bg-emerald-500/25 text-emerald-300 font-bold"
                     : "text-slate-400 hover:text-white"
                 }`}
               >
@@ -206,11 +208,12 @@ export default function ScatterPlot({ plotData, plotMode, setPlotMode, allTeamNa
                 const isSelected = selectedQuadrant === q.id;
                 return (
                   <button
+                    type="button"
                     key={q.id}
                     onClick={() => setSelectedQuadrant(isSelected ? null : q.id)}
-                    className={`px-2 py-0.5 rounded-md text-[11px] font-mono transition-all ${
+                    className={`px-2.5 py-1 min-h-[32px] rounded-lg text-xs font-mono transition-all cursor-pointer touch-manipulation active:scale-95 ${
                       isSelected
-                        ? "bg-white/15 text-white shadow-sm ring-1"
+                        ? "bg-white/20 text-white shadow-sm ring-1 ring-white/30 font-bold"
                         : "bg-white/[0.04] text-slate-400 hover:text-white hover:bg-white/[0.08]"
                     }`}
                     style={{ borderColor: isSelected ? q.color : undefined }}
@@ -393,8 +396,9 @@ export default function ScatterPlot({ plotData, plotMode, setPlotMode, allTeamNa
               <p className="text-xs text-slate-400 mt-1">{currentQuadrantData.description}</p>
             </div>
             <button
+              type="button"
               onClick={() => setSelectedQuadrant(null)}
-              className="text-xs font-mono px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition-colors border border-white/5"
+              className="text-xs font-mono px-3 py-1.5 min-h-[36px] rounded-xl bg-white/5 hover:bg-white/10 active:bg-white/15 text-slate-300 hover:text-white transition-all border border-white/10 cursor-pointer touch-manipulation active:scale-95 flex items-center justify-center"
             >
               ✕ Cerrar
             </button>

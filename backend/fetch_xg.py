@@ -46,7 +46,7 @@ def fetch_and_aggregate_teams() -> pd.DataFrame | None:
     """Descarga stats por partido y agrega por equipo."""
     log.info("\n🏟️  Descargando stats de equipo por partido (Understat)...")
     
-    us = sd.Understat(leagues=LEAGUE, seasons=SEASON)
+    us = sd.Understat(leagues=LEAGUE, seasons=SEASON, no_cache=True)
     
     try:
         raw = us.read_team_match_stats(force_cache=False)
@@ -146,7 +146,7 @@ def fetch_players() -> pd.DataFrame | None:
     """Descarga stats de jugador por temporada."""
     log.info("\n⭐ Descargando stats de jugador (Understat)...")
     
-    us = sd.Understat(leagues=LEAGUE, seasons=SEASON)
+    us = sd.Understat(leagues=LEAGUE, seasons=SEASON, no_cache=True)
     
     try:
         raw = us.read_player_season_stats(force_cache=False)
@@ -213,7 +213,24 @@ def save(teams: pd.DataFrame | None, players: pd.DataFrame | None):
         log.info(f"  📁 {p} ({len(players)} filas)")
         
         p2 = os.path.join(FRONTEND_DIR, "jugadores_xg.json")
-        players.to_json(p2, orient="records", force_ascii=False, indent=2)
+        if os.path.exists(p2):
+            try:
+                with open(p2, "r") as f:
+                    old_players = json.load(f)
+                photo_map_name = {p.get("player_name"): p.get("photo") for p in old_players if p.get("photo")}
+                photo_map_id = {str(p.get("player_id")): p.get("photo") for p in old_players if p.get("photo")}
+                records = json.loads(players.to_json(orient="records"))
+                for r in records:
+                    photo = photo_map_name.get(r.get("player_name")) or photo_map_id.get(str(r.get("player_id")))
+                    if photo:
+                        r["photo"] = photo
+                with open(p2, "w") as f:
+                    json.dump(records, f, indent=2, ensure_ascii=False)
+            except Exception as e:
+                log.warning(f"  ⚠️ Error preservando fotos: {e}")
+                players.to_json(p2, orient="records", force_ascii=False, indent=2)
+        else:
+            players.to_json(p2, orient="records", force_ascii=False, indent=2)
         log.info(f"  📁 {p2}")
 
 

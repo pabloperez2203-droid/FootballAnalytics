@@ -337,8 +337,9 @@ export default function TacticalStyleMatrix({
               xG: <strong className="text-white">{activeTeamData.xg.toFixed(2)}</strong>
             </span>
             <button
+              type="button"
               onClick={() => onSelectTeam && onSelectTeam(activeTeamData.team)}
-              className="px-2.5 py-1 rounded bg-white/10 hover:bg-white/20 text-white font-sans text-xs transition-colors"
+              className="px-3 py-1.5 min-h-[38px] rounded-lg bg-white/10 hover:bg-white/20 active:bg-white/30 text-white font-sans text-xs transition-all cursor-pointer touch-manipulation active:scale-95 flex items-center justify-center"
             >
               Comparar en Radar →
             </button>

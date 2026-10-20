@@ -145,56 +145,61 @@ export default function ShotTimelineTable({
           </span>
         </div>
 
-        {/* Filter Pills con altura y alineación homogénea */}
-        <div className="flex flex-wrap items-center gap-1.5 bg-white/[0.03] p-1 rounded-xl border border-white/10">
+        {/* Filter Pills con altura y alineación homogénea táctil */}
+        <div className="w-full sm:w-auto overflow-x-auto no-scrollbar flex items-center gap-1.5 bg-white/[0.03] p-1.5 rounded-xl border border-white/10">
           <button
+            type="button"
             onClick={() => setFilter('all')}
-            className={`h-7 px-3 inline-flex items-center justify-center text-xs leading-none whitespace-nowrap rounded-lg transition-colors ${
+            className={`min-h-[36px] sm:min-h-[28px] px-3 inline-flex items-center justify-center text-xs whitespace-nowrap rounded-lg transition-all cursor-pointer touch-manipulation active:scale-95 shrink-0 ${
               filter === 'all'
                 ? 'bg-slate-700 text-white font-bold shadow-sm'
-                : 'text-slate-400 hover:text-white'
+                : 'text-slate-400 hover:text-white hover:bg-white/[0.04]'
             }`}
           >
             Todos ({totalCount})
           </button>
           <button
+            type="button"
             onClick={() => setFilter('goals')}
-            className={`h-7 px-3 inline-flex items-center justify-center text-xs leading-none whitespace-nowrap rounded-lg transition-colors ${
+            className={`min-h-[36px] sm:min-h-[28px] px-3 inline-flex items-center justify-center text-xs whitespace-nowrap rounded-lg transition-all cursor-pointer touch-manipulation active:scale-95 shrink-0 ${
               filter === 'goals'
                 ? 'bg-emerald-600/30 text-emerald-300 border border-emerald-500/40 font-bold'
-                : 'text-slate-400 hover:text-emerald-300'
+                : 'text-slate-400 hover:text-emerald-300 hover:bg-white/[0.04]'
             }`}
           >
             Goles ({goalsCount})
           </button>
           <button
+            type="button"
             onClick={() => setFilter('big_chances')}
-            className={`h-7 px-3 inline-flex items-center justify-center text-xs leading-none whitespace-nowrap rounded-lg transition-colors ${
+            className={`min-h-[36px] sm:min-h-[28px] px-3 inline-flex items-center justify-center text-xs whitespace-nowrap rounded-lg transition-all cursor-pointer touch-manipulation active:scale-95 shrink-0 ${
               filter === 'big_chances'
                 ? 'bg-amber-600/30 text-amber-300 border border-amber-500/40 font-bold'
-                : 'text-slate-400 hover:text-amber-300'
+                : 'text-slate-400 hover:text-amber-300 hover:bg-white/[0.04]'
             }`}
           >
             Grandes Ocasiones ({bigChancesCount})
           </button>
           <button
+            type="button"
             onClick={() => setFilter('home')}
             style={filter === 'home' ? { backgroundColor: `${resolvedHomeColor}33`, color: resolvedHomeColor, borderColor: `${resolvedHomeColor}66` } : undefined}
-            className={`h-7 px-3 inline-flex items-center justify-center text-xs leading-none whitespace-nowrap rounded-lg border border-transparent transition-colors ${
+            className={`min-h-[36px] sm:min-h-[28px] px-3 inline-flex items-center justify-center text-xs whitespace-nowrap rounded-lg border border-transparent transition-all cursor-pointer touch-manipulation active:scale-95 shrink-0 ${
               filter === 'home'
                 ? 'font-bold'
-                : 'text-slate-400 hover:text-white'
+                : 'text-slate-400 hover:text-white hover:bg-white/[0.04]'
             }`}
           >
             {homeTeam.substring(0, 3).toUpperCase()} ({homeCount})
           </button>
           <button
+            type="button"
             onClick={() => setFilter('away')}
             style={filter === 'away' ? { backgroundColor: `${resolvedAwayColor}33`, color: resolvedAwayColor, borderColor: `${resolvedAwayColor}66` } : undefined}
-            className={`h-7 px-3 inline-flex items-center justify-center text-xs leading-none whitespace-nowrap rounded-lg border border-transparent transition-colors ${
+            className={`min-h-[36px] sm:min-h-[28px] px-3 inline-flex items-center justify-center text-xs whitespace-nowrap rounded-lg border border-transparent transition-all cursor-pointer touch-manipulation active:scale-95 shrink-0 ${
               filter === 'away'
                 ? 'font-bold'
-                : 'text-slate-400 hover:text-white'
+                : 'text-slate-400 hover:text-white hover:bg-white/[0.04]'
             }`}
           >
             {awayTeam.substring(0, 3).toUpperCase()} ({awayCount})

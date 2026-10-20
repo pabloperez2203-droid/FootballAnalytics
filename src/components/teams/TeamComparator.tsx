@@ -219,7 +219,7 @@ export default function TeamComparator({
               value={teamA.team}
               onChange={e => onSelectTeamA(e.target.value)}
               aria-label="Seleccionar Equipo A"
-              className="bg-slate-950 border border-white/15 rounded-lg px-2.5 py-1.5 text-xs text-slate-200 font-medium outline-none cursor-pointer hover:border-white/30 transition-colors shrink-0 max-w-[130px] sm:max-w-[160px]"
+              className="bg-slate-950 border border-white/15 rounded-xl px-3 py-2 text-xs sm:text-sm text-slate-200 font-medium outline-none cursor-pointer hover:border-white/30 transition-colors shrink-0 max-w-[140px] sm:max-w-[160px] min-h-[44px] touch-manipulation"
             >
               {teamListSorted.map(t => (
                 <option key={`teamA-${t.team}`} value={t.team}>
@@ -271,7 +271,7 @@ export default function TeamComparator({
               value={teamB.team}
               onChange={e => onSelectTeamB(e.target.value)}
               aria-label="Seleccionar Equipo B"
-              className="bg-slate-950 border border-white/15 rounded-lg px-2.5 py-1.5 text-xs text-slate-200 font-medium outline-none cursor-pointer hover:border-white/30 transition-colors shrink-0 max-w-[130px] sm:max-w-[160px]"
+              className="bg-slate-950 border border-white/15 rounded-xl px-3 py-2 text-xs sm:text-sm text-slate-200 font-medium outline-none cursor-pointer hover:border-white/30 transition-colors shrink-0 max-w-[140px] sm:max-w-[160px] min-h-[44px] touch-manipulation"
             >
               {teamListSorted.map(t => (
                 <option key={`teamB-${t.team}`} value={t.team}>

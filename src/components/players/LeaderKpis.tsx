@@ -5,7 +5,29 @@ import { PlayerComputedMetrics } from "./types";
 import { getTeamCrest, getTeamColor } from "@/utils/crests";
 
 function LeaderPlayerAvatar({ player, crest, color }: { player: PlayerComputedMetrics; crest?: string; color: string }) {
+  const localPhoto = useMemo(() => {
+    if (!player.photo) return "";
+    if (player.photo.startsWith("/player-photos/")) return player.photo;
+    const match = player.photo.match(/images\.fotmob\.com\/image_resources\/playerimages\/(\d+\.png)/);
+    return match ? `/player-photos/${match[1]}` : player.photo;
+  }, [player.photo]);
+
+  const [imgSrc, setImgSrc] = useState(localPhoto);
   const [imgError, setImgError] = useState(false);
+
+  React.useEffect(() => {
+    setImgSrc(localPhoto);
+    setImgError(false);
+  }, [localPhoto, player.player_name]);
+
+  const handleError = () => {
+    if (imgSrc !== player.photo && player.photo) {
+      setImgSrc(player.photo);
+    } else {
+      setImgError(true);
+    }
+  };
+
   const initials = player.player_name
     .split(" ")
     .filter(Boolean)
@@ -20,11 +42,13 @@ function LeaderPlayerAvatar({ player, crest, color }: { player: PlayerComputedMe
         className="w-12 h-12 rounded-xl bg-slate-900 border overflow-hidden flex items-center justify-center font-bold font-mono text-xs shadow-md"
         style={{ borderColor: `${color}70` }}
       >
-        {player.photo && !imgError ? (
+        {imgSrc && !imgError ? (
           <img
-            src={player.photo}
+            src={imgSrc}
             alt={player.player_name}
-            onError={() => setImgError(true)}
+            onError={handleError}
+            referrerPolicy="no-referrer"
+            loading="lazy"
             className="w-full h-full object-cover object-top scale-110"
           />
         ) : crest ? (
@@ -33,7 +57,7 @@ function LeaderPlayerAvatar({ player, crest, color }: { player: PlayerComputedMe
           <span style={{ color }}>{initials}</span>
         )}
       </div>
-      {crest && player.photo && !imgError && (
+      {crest && imgSrc && !imgError && (
         <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-slate-950 border border-white/20 p-0.5 shadow">
           <img src={crest} alt={player.team_name} className="w-full h-full object-contain" />
         </div>
@@ -164,7 +188,7 @@ export default function LeaderKpis({ players, onSelectPlayer }: LeaderKpisProps)
             {/* Player Info & Giant Metric Value */}
             <div className="flex items-end justify-between gap-3 pt-2 border-t border-white/10">
               <div className="flex items-center gap-2.5 min-w-0">
-                <LeaderPlayerAvatar player={p} crest={crest} color={color} />
+                <LeaderPlayerAvatar key={`${p.player_id}-${p.photo}`} player={p} crest={crest} color={color} />
                 <div className="min-w-0">
                   <div className="text-sm sm:text-base font-bold text-white truncate group-hover:text-emerald-400 transition-colors">
                     {p.player_name}

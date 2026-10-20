@@ -44,3 +44,14 @@ next-env.d.ts
 public/players/
 public/data/players_photos.json
 .env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+backend/data/cache/
+backend/venv/
+backend/venv_soccerdata/
+descargas_csv/

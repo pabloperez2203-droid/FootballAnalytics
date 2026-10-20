@@ -9,9 +9,30 @@
   --mut: #7d878d;
   --em: #10b981;
   --or: #f97316;
+  --ucl-cyan: #38bdf8;
+  --ucl-blue: #3b82f6;
+  --ucl-gold: #fbbf24;
   box-sizing: border-box;
   padding-top: env(safe-area-inset-top, 0px);
   padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* ── MODO UEFA CHAMPIONS LEAGUE ("Champions Starlight Night") ── */
+[data-competition="ucl"],
+html[data-competition="ucl"] {
+  --bg: #030614;
+  --panel: #070b24;
+  --panel2: #0b1136;
+  --line: rgba(56, 189, 248, 0.16);
+  --txt: #f0f6fc;
+  --mut: #8da4be;
+  --em: #38bdf8;
+  --or: #fbbf24;
+}
+
+[data-competition="ucl"] body {
+  background: radial-gradient(circle at 50% -10%, #0e1c5c 0%, #070b24 35%, #030614 70%, #02040a 100%) !important;
+  color: var(--txt);
 }
 
 @theme inline {
@@ -30,6 +51,9 @@
 html {
   scroll-padding-top: env(safe-area-inset-top, 0px);
   scrollbar-gutter: stable;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
 }
 
 body {
@@ -38,6 +62,32 @@ body {
   color: var(--txt);
   font-variant-numeric: tabular-nums;
   margin: 0;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button, a, select, input[type="button"], input[type="submit"], [role="button"] {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ── Mobile Touch & Scroll Helpers ── */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.pb-safe {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom, 1rem));
 }
 
 /* ── Bento / Glassmorphism ── */
@@ -56,8 +106,37 @@ body {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
+[data-competition="ucl"] .glass-card {
+  background-color: rgba(7, 14, 40, 0.65) !important;
+  border-color: rgba(56, 189, 248, 0.20) !important;
+  box-shadow: 0 20px 25px -5px rgba(2, 6, 23, 0.6), 0 0 30px rgba(56, 189, 248, 0.08) !important;
+}
+
+[data-competition="ucl"] .glass-card:hover {
+  border-color: rgba(56, 189, 248, 0.40) !important;
+  box-shadow: 0 20px 30px -5px rgba(2, 6, 23, 0.7), 0 0 40px rgba(56, 189, 248, 0.16) !important;
+}
+
+[data-competition="ucl"] .card:not(.kpi) {
+  background-image: linear-gradient(180deg, #0b1136, #070b24);
+  border-color: rgba(56, 189, 248, 0.16);
+}
+
 .font-mono {
   font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* ── Filtros de Imagen Spotlight ── */
+.contrast-110 {
+  filter: contrast(1.1);
+}
+
+.saturate-110 {
+  filter: saturate(1.1);
+}
+
+.contrast-110.saturate-110.brightness-95 {
+  filter: contrast(1.1) saturate(1.1) brightness(0.95);
 }
 
 /* ── Tarjetas ── */
@@ -194,17 +273,18 @@ body {
 /* ── Live Ticker Animation (Marquee) ── */
 @keyframes marquee {
   0% {
-    transform: translateX(0%);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translate3d(-100%, 0, 0);
   }
 }
 
 .animate-marquee {
   display: flex;
   width: max-content;
-  animation: marquee 35s linear infinite;
+  animation: marquee 45s linear infinite;
+  will-change: transform;
 }
 
 /* ── Interactive Holographic Glow Card ── */
@@ -268,4 +348,32 @@ body {
 .animate-scale-in {
   animation: scaleIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+/* ── UEFA Champions League Spin & Starlight ── */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 28s linear infinite;
+}
+
+/* Sutil patrón de estrellas de Champions */
+.ucl-starlight-pattern {
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 40px 70px, rgba(56, 189, 248, 0.8), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 160px 120px, rgba(125, 211, 252, 0.9), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 230px 190px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 290px 80px, rgba(56, 189, 248, 0.7), rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 350px 350px;
+}
+
 

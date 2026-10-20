@@ -9,6 +9,7 @@ import equiposRaw from "@/data/equipos_xg.json";
 import equiposUclRaw from "@/data/equipos_ucl_xg.json";
 import { TeamXgData } from "@/components/teams/types";
 import { useCompetition } from "@/stores/filterStore";
+import { CompetitionSeal } from "@/components/ui/CompetitionBranding";
 
 export default function TeamsPage() {
   const { competition, meta } = useCompetition();
@@ -50,7 +51,7 @@ export default function TeamsPage() {
             </span>
           </div>
 
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
             <div>
               <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
                 Laboratorio Táctico de Clubes
@@ -61,23 +62,26 @@ export default function TeamsPage() {
               </p>
             </div>
 
-            {/* Quick Stats Banner */}
-            <div className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-slate-900/60 border border-white/10 text-xs font-mono">
-              <div>
-                <span className="text-slate-400 block text-[10px]">Equipos</span>
-                <span className="text-white font-bold text-sm">{teamsData.length}</span>
-              </div>
-              <div className="w-px h-6 bg-white/10" />
-              <div>
-                <span className="text-slate-400 block text-[10px]">Jornadas</span>
-                <span className="text-white font-bold text-sm">
-                  {Math.max(...teamsData.map(t => t.matches_played), 1)}
-                </span>
-              </div>
-              <div className="w-px h-6 bg-white/10" />
-              <div>
-                <span className="text-slate-400 block text-[10px]">Métricas Radar</span>
-                <span className="text-emerald-400 font-bold text-sm">6 Ejes</span>
+            {/* Sello Oficial Decorativo + Quick Stats Banner */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+              <CompetitionSeal />
+              <div className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-slate-900/60 border border-white/10 text-xs font-mono">
+                <div>
+                  <span className="text-slate-400 block text-[10px]">Equipos</span>
+                  <span className="text-white font-bold text-sm">{teamsData.length}</span>
+                </div>
+                <div className="w-px h-6 bg-white/10" />
+                <div>
+                  <span className="text-slate-400 block text-[10px]">Jornadas</span>
+                  <span className="text-white font-bold text-sm">
+                    {Math.max(...teamsData.map(t => t.matches_played), 1)}
+                  </span>
+                </div>
+                <div className="w-px h-6 bg-white/10" />
+                <div>
+                  <span className="text-slate-400 block text-[10px]">Métricas Radar</span>
+                  <span className="text-emerald-400 font-bold text-sm">6 Ejes</span>
+                </div>
               </div>
             </div>
           </div>

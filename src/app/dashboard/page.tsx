@@ -8,6 +8,7 @@ import { useDashboardKpis } from "@/hooks/useDashboardKpis";
 import PageContainer from "@/components/layout/PageContainer";
 import { getTeamCrest } from "@/utils/crests";
 import { useCompetition } from "@/stores/filterStore";
+import { CompetitionSeal } from "@/components/ui/CompetitionBranding";
 
 // IMPORT REAL DATA
 import laligaRealTeams from "@/data/equipos_xg.json";
@@ -31,8 +32,8 @@ export default function DashboardPage() {
   const [filterTeam, setFilterTeam] = useState<string>("ALL");
   const [minMinutesPlayer, setMinMinutesPlayer] = useState<number>(300);
 
-  const rawTeams = competition === "ucl" ? (equiposUclData as typeof laligaRealTeams) : laligaRealTeams;
-  const rawPlayers = competition === "ucl" ? (jugadoresUclData as typeof laligaRealPlayers) : laligaRealPlayers;
+  const rawTeams = competition === "ucl" ? (equiposUclData as unknown as typeof laligaRealTeams) : laligaRealTeams;
+  const rawPlayers = competition === "ucl" ? (jugadoresUclData as unknown as typeof laligaRealPlayers) : laligaRealPlayers;
 
   const teamsData = USE_SIMULATED_DATA ? laligaSimulatedTeams : rawTeams;
   const playersData = USE_SIMULATED_DATA ? laligaSimulatedPlayers : rawPlayers;
@@ -100,7 +101,7 @@ export default function DashboardPage() {
       )}
 
       {/* Header con Badge alineado */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
         <div>
           <div className="inline-flex items-center gap-2 leading-none mb-2">
             <span className={`h-6 px-2.5 flex items-center justify-center rounded-lg text-xs font-medium whitespace-nowrap bg-white/[0.04] border gap-1.5 leading-none shadow-sm ${
@@ -121,6 +122,9 @@ export default function DashboardPage() {
             Centro de Mando Analítico
           </h1>
         </div>
+
+        {/* Sello Oficial Decorativo de Competición */}
+        <CompetitionSeal className="self-start sm:self-auto shrink-0" />
       </div>
 
       <main className="grid grid-cols-1 md:grid-cols-12 gap-4">

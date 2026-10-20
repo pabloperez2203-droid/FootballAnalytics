@@ -239,23 +239,25 @@ export default function ShotMap({
             {filter === 'Equipo' && (
               <div className="inline-flex gap-1 bg-white/[0.04] p-1 rounded-lg border border-white/10">
                 <button
+                  type="button"
                   onClick={() => setSubFilter('home')}
                   style={subFilter === 'home' ? { backgroundColor: `${resolvedHomeColor}33`, color: resolvedHomeColor, borderColor: `${resolvedHomeColor}66` } : undefined}
-                  className={`px-2 py-0.5 text-[10px] font-medium rounded border border-transparent transition-colors ${subFilter === 'home' ? 'font-bold' : 'text-slate-400 hover:text-white'}`}
+                  className={`px-2.5 py-1 text-xs font-medium rounded-md border border-transparent transition-all cursor-pointer touch-manipulation active:scale-95 ${subFilter === 'home' ? 'font-bold' : 'text-slate-400 hover:text-white'}`}
                 >
                   Local
                 </button>
                 <button
+                  type="button"
                   onClick={() => setSubFilter('away')}
                   style={subFilter === 'away' ? { backgroundColor: `${resolvedAwayColor}33`, color: resolvedAwayColor, borderColor: `${resolvedAwayColor}66` } : undefined}
-                  className={`px-2 py-0.5 text-[10px] font-medium rounded border border-transparent transition-colors ${subFilter === 'away' ? 'font-bold' : 'text-slate-400 hover:text-white'}`}
+                  className={`px-2.5 py-1 text-xs font-medium rounded-md border border-transparent transition-all cursor-pointer touch-manipulation active:scale-95 ${subFilter === 'away' ? 'font-bold' : 'text-slate-400 hover:text-white'}`}
                 >
                   Visitante
                 </button>
               </div>
             )}
             {filter === 'Jugador' && (
-              <select value={subFilter} onChange={e => setSubFilter(e.target.value)} className="bg-slate-900 text-[10px] p-1 rounded-lg text-slate-300 border border-white/10 outline-none focus:border-slate-500 w-fit">
+              <select value={subFilter} onChange={e => setSubFilter(e.target.value)} className="bg-slate-900 text-xs p-1.5 rounded-lg text-slate-300 border border-white/10 outline-none focus:border-slate-500 w-fit cursor-pointer">
                 {Array.from(new Set(shots.map(s => s.player))).sort().map(p => (
                   <option key={p as string} value={p as string}>{p as string}</option>
                 ))}
@@ -263,12 +265,12 @@ export default function ShotMap({
             )}
          </div>
 
-         <div className="flex items-center gap-2">
+         <div className="flex flex-wrap items-center gap-2">
             {/* Botón Simular Cronología (Play/Pause) */}
             <button
                type="button"
                onClick={togglePlay}
-               className={`px-2.5 py-1 text-xs font-semibold rounded-lg flex items-center gap-1.5 transition-all duration-300 border shadow-sm cursor-pointer ${
+               className={`px-3 py-1.5 text-xs font-semibold rounded-lg flex items-center gap-1.5 transition-all duration-300 border shadow-sm cursor-pointer touch-manipulation active:scale-95 min-h-[36px] ${
                  isPlaying
                    ? 'bg-rose-500/20 text-rose-300 border-rose-500/30 shadow-rose-500/20'
                    : 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30 hover:bg-emerald-500/25 hover:shadow-emerald-500/20'
@@ -295,7 +297,7 @@ export default function ShotMap({
                   key={s}
                   type="button"
                   onClick={() => setSpeed(s)}
-                  className={`px-1.5 py-0.5 text-[10px] font-mono font-semibold rounded transition-colors cursor-pointer ${
+                  className={`px-2 py-1 text-xs font-mono font-semibold rounded transition-all cursor-pointer touch-manipulation active:scale-95 min-h-[32px] ${
                     speed === s
                       ? 'bg-emerald-500/25 text-emerald-400 border border-emerald-500/35 shadow-[0_0_8px_rgba(16,185,129,0.25)]'
                       : 'text-slate-400 hover:text-white border border-transparent'
@@ -307,9 +309,16 @@ export default function ShotMap({
               ))}
             </div>
 
-            <div className="flex gap-1 bg-white/[0.04] p-1 rounded-lg border border-white/10">
+            <div className="flex gap-1 bg-white/[0.04] p-1 rounded-lg border border-white/10 overflow-x-auto no-scrollbar">
                {filters.map(f => (
-                  <button key={f} onClick={() => setFilter(f)} className={`px-2 py-1 text-[10px] font-medium rounded transition-colors cursor-pointer ${filter === f ? 'bg-slate-700 text-white font-bold' : 'text-slate-400 hover:text-white'}`}>
+                  <button
+                    key={f}
+                    type="button"
+                    onClick={() => setFilter(f)}
+                    className={`px-2.5 py-1 text-xs font-medium rounded-md transition-all cursor-pointer touch-manipulation active:scale-95 min-h-[32px] whitespace-nowrap ${
+                      filter === f ? 'bg-slate-700 text-white font-bold' : 'text-slate-400 hover:text-white hover:bg-white/[0.04]'
+                    }`}
+                  >
                      {f}
                   </button>
                ))}

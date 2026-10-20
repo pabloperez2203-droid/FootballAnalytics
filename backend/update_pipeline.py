@@ -81,12 +81,23 @@ def load_partidos_csv():
 
 # ── 1. Invalidate General Season Cache ───────────────────────────────────
 def invalidate_season_cache():
-    """Borra el archivo general de la liga para descargar partidos nuevos."""
-    league_cache = os.path.join(CACHE_DIR, "data", "Understat", "league_4_season_2026.json")
-    if os.path.exists(league_cache):
-        log.info(f"🔄 Invalidando caché general de temporada: {os.path.basename(league_cache)}")
-        os.remove(league_cache)
-    else:
+    """Borra el archivo general de la liga para descargar partidos nuevos sin bloqueo de caché."""
+    paths_to_check = [
+        os.path.join(CACHE_DIR, "data", "Understat", "league_4_season_2026.json"),
+        os.path.join(CACHE_DIR, "data", "Understat", "leagues.json"),
+        os.path.expanduser("~/soccerdata/data/Understat/league_4_season_2026.json"),
+        os.path.expanduser("~/soccerdata/data/Understat/leagues.json"),
+    ]
+    invalidated = False
+    for p in paths_to_check:
+        if os.path.exists(p):
+            log.info(f"🔄 Invalidando caché Understat: {p}")
+            try:
+                os.remove(p)
+                invalidated = True
+            except Exception as e:
+                log.warning(f"  ⚠️ No se pudo eliminar {p}: {e}")
+    if not invalidated:
         log.info("ℹ️  No existe caché de temporada previa, se descargará en directo.")
 
 
@@ -107,7 +118,7 @@ def update_teams_and_players():
 # ── 3. Incremental Match Processor ───────────────────────────────────────
 def update_matches():
     log.info("\n⚽ Procesando partidos jugados incrementalmente...")
-    us = sd.Understat(leagues=LEAGUE, seasons=SEASON)
+    us = sd.Understat(leagues=LEAGUE, seasons=SEASON, no_cache=True)
     schedule = us.read_schedule(force_cache=False)
 
     played = schedule[schedule["is_result"] == True].copy()
@@ -349,19 +360,40 @@ def update_matches():
     log.info(f"\n🎉 Partidos nuevos o actualizados en esta ejecución: {updated_or_created}")
 
 
+def update_ucl():
+    log.info("\n" + "=" * 65)
+    log.info("  ⭐ ACTUALIZANDO DATOS DE UEFA CHAMPIONS LEAGUE (FOTMOB)")
+    log.info("=" * 65)
+    try:
+        import subprocess
+        ucl_script = os.path.join(BACKEND_DIR, "fetch_ucl.py")
+        res = subprocess.run([sys.executable, ucl_script], capture_output=True, text=True)
+        if res.returncode == 0:
+            log.info("✅ Datos de UEFA Champions League actualizados con éxito.")
+            if res.stdout:
+                for line in res.stdout.strip().splitlines():
+                    if "✓" in line or "guardados" in line or "actualizado" in line:
+                        log.info(f"   {line.strip()}")
+        else:
+            log.error(f"❌ Error al actualizar Champions League:\n{res.stderr or res.stdout}")
+    except Exception as e:
+        log.error(f"❌ Excepción ejecutando fetch_ucl.py: {e}")
+
+
 # ── Main Entrypoint ──────────────────────────────────────────────────────
 def main():
     log.info("=" * 65)
-    log.info("  🚀 PIPELINE INCREMENTAL DE ACTUALIZACIÓN DE DATOS (UNDERSTAT)")
+    log.info("  🚀 PIPELINE INCREMENTAL DE ACTUALIZACIÓN DE DATOS (LALIGA + UCL)")
     log.info(f"  📅 {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     log.info("=" * 65)
 
     invalidate_season_cache()
     update_teams_and_players()
     update_matches()
+    update_ucl()
 
     log.info("\n" + "=" * 65)
-    log.info("  ✨ Pipeline completado con éxito.")
+    log.info("  ✨ Pipeline completado con éxito (LaLiga + UEFA Champions League).")
     log.info("=" * 65)
 
 

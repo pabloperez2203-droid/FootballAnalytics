@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from "react";
 import { TeamXgData, TeamJusticeStats } from "./types";
 import { getTeamCrest, getTeamColor } from "@/utils/crests";
+import { useCompetition } from "@/stores/filterStore";
 
 export const REAL_POINTS: Record<string, number> = {
   "Barcelona": 21,
@@ -40,6 +41,8 @@ export default function JusticeTable({
   selectedTeamA,
   selectedTeamB
 }: JusticeTableProps) {
+  const { competition } = useCompetition();
+  const isUcl = competition === "ucl";
   const [tableMode, setTableMode] = useState<"real" | "justice">("justice");
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -153,22 +156,24 @@ export default function JusticeTable({
         {/* Interactive Mode Toggle */}
         <div className="flex items-center gap-2 bg-slate-950/80 p-1.5 rounded-xl border border-white/10 self-stretch sm:self-auto">
           <button
+            type="button"
             onClick={() => setTableMode("real")}
-            className={`flex-1 sm:flex-none px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-200 flex items-center justify-center gap-2 ${
+            className={`flex-1 sm:flex-none px-4 py-2.5 sm:py-2 min-h-[44px] sm:min-h-[36px] rounded-lg text-xs font-semibold transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer touch-manipulation active:scale-95 ${
               tableMode === "real"
                 ? "bg-slate-800 text-white shadow-md border border-white/15"
-                : "text-slate-400 hover:text-white"
+                : "text-slate-400 hover:text-white active:bg-white/[0.04]"
             }`}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
             Clasificación Real (PTS)
           </button>
           <button
+            type="button"
             onClick={() => setTableMode("justice")}
-            className={`flex-1 sm:flex-none px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-200 flex items-center justify-center gap-2 ${
+            className={`flex-1 sm:flex-none px-4 py-2.5 sm:py-2 min-h-[44px] sm:min-h-[36px] rounded-lg text-xs font-semibold transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer touch-manipulation active:scale-95 ${
               tableMode === "justice"
                 ? "bg-emerald-500/20 text-emerald-300 shadow-md border border-emerald-500/30"
-                : "text-slate-400 hover:text-white"
+                : "text-slate-400 hover:text-white active:bg-white/[0.04]"
             }`}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
@@ -265,8 +270,14 @@ export default function JusticeTable({
                   {/* Position */}
                   <td className="py-3 px-3 text-center font-mono font-bold text-slate-300">
                     <span
-                      className={`inline-flex items-center justify-center w-6 h-6 rounded-md text-xs ${
-                        currentPos <= 4
+                      className={`inline-flex items-center justify-center w-6 h-6 rounded-md text-xs font-bold ${
+                        isUcl
+                          ? currentPos <= 8
+                            ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-[0_0_8px_rgba(16,185,129,0.25)]"
+                            : currentPos <= 24
+                            ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 shadow-[0_0_8px_rgba(6,182,212,0.25)]"
+                            : "bg-rose-500/20 text-rose-300 border border-rose-500/40 shadow-[0_0_8px_rgba(244,63,94,0.25)]"
+                          : currentPos <= 4
                           ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30"
                           : currentPos <= 6
                           ? "bg-blue-500/20 text-blue-300 border border-blue-500/30"
@@ -274,6 +285,15 @@ export default function JusticeTable({
                           ? "bg-rose-500/20 text-rose-300 border border-rose-500/30"
                           : "text-slate-400"
                       }`}
+                      title={
+                        isUcl
+                          ? currentPos <= 8
+                            ? "Octavos directo (Puestos 1-8)"
+                            : currentPos <= 24
+                            ? "Play-off 1/16 (Puestos 9-24)"
+                            : "Eliminado (Puestos 25-36)"
+                          : undefined
+                      }
                     >
                       {currentPos}
                     </span>
@@ -382,12 +402,28 @@ export default function JusticeTable({
       <div className="mt-3 flex flex-wrap items-center justify-between text-[11px] font-mono text-slate-400 px-1">
         <span>💡 Haz clic en cualquier club para seleccionarlo en el comparador táctico</span>
         <div className="flex items-center gap-4 mt-1 sm:mt-0">
-          <span className="flex items-center gap-1">
-            <span className="w-2 h-2 rounded-full bg-emerald-400" /> Zona Champions (1-4)
-          </span>
-          <span className="flex items-center gap-1">
-            <span className="w-2 h-2 rounded-full bg-rose-400" /> Descenso (18-20)
-          </span>
+          {isUcl ? (
+            <>
+              <span className="flex items-center gap-1.5" title="Clasificación directa a Octavos de Final">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_6px_#10b981]" /> Octavos directo (1-8)
+              </span>
+              <span className="flex items-center gap-1.5" title="Ronda de Play-offs de dieciseisavos">
+                <span className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_6px_#06b6d4]" /> Play-off 1/16 (9-24)
+              </span>
+              <span className="flex items-center gap-1.5" title="Eliminados de competiciones europeas">
+                <span className="w-2 h-2 rounded-full bg-rose-400 shadow-[0_0_6px_#f43f5e]" /> Eliminado (25-36)
+              </span>
+            </>
+          ) : (
+            <>
+              <span className="flex items-center gap-1">
+                <span className="w-2 h-2 rounded-full bg-emerald-400" /> Zona Champions (1-4)
+              </span>
+              <span className="flex items-center gap-1">
+                <span className="w-2 h-2 rounded-full bg-rose-400" /> Descenso (18-20)
+              </span>
+            </>
+          )}
         </div>
       </div>
     </div>

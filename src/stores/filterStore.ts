@@ -1,4 +1,4 @@
-import { useSyncExternalStore } from 'react';
+import { useSyncExternalStore, useEffect } from 'react';
 
 export type CompetitionType = 'laliga' | 'ucl';
 
@@ -66,24 +66,15 @@ function subscribe(callback: () => void) {
   };
 }
 
-// Inicialización en cliente con localStorage
-if (typeof window !== 'undefined') {
-  try {
-    const saved = localStorage.getItem('xg_competition') as CompetitionType;
-    if (saved === 'laliga' || saved === 'ucl') {
-      currentCompetition = saved;
-    }
-  } catch {
-    // Si localStorage está bloqueado
-  }
-}
+let hasHydrated = false;
 
 export function setCompetition(comp: CompetitionType) {
-  if (comp !== currentCompetition) {
-    currentCompetition = comp;
+  const validComp = comp === 'ucl' ? 'ucl' : 'laliga';
+  if (validComp !== currentCompetition) {
+    currentCompetition = validComp;
     if (typeof window !== 'undefined') {
       try {
-        localStorage.setItem('xg_competition', comp);
+        localStorage.setItem('xg_competition', validComp);
       } catch {}
     }
     listeners.forEach(cb => cb());
@@ -95,8 +86,22 @@ export function getCompetition(): CompetitionType {
 }
 
 export function useCompetition() {
-  const competition = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
-  const meta = COMPETITIONS[competition];
+  const rawComp = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  const competition = rawComp === 'ucl' ? 'ucl' : 'laliga';
+  const meta = COMPETITIONS[competition] || COMPETITIONS.laliga;
+
+  useEffect(() => {
+    if (!hasHydrated && typeof window !== 'undefined') {
+      hasHydrated = true;
+      try {
+        const saved = localStorage.getItem('xg_competition') as CompetitionType;
+        if ((saved === 'ucl' || saved === 'laliga') && saved !== currentCompetition) {
+          currentCompetition = saved;
+          listeners.forEach(cb => cb());
+        }
+      } catch {}
+    }
+  }, []);
 
   return {
     competition,

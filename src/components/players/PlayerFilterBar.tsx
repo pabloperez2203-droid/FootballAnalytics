@@ -53,9 +53,10 @@ export default function PlayerFilterBar({
         <div className="flex flex-wrap items-center gap-1.5 p-1 bg-slate-950/80 rounded-xl border border-white/10">
           {positionTabs.map(tab => (
             <button
+              type="button"
               key={tab.key}
               onClick={() => onChangePosition(tab.key)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 ${
+              className={`px-3 py-2 sm:py-1.5 min-h-[40px] sm:min-h-[32px] rounded-lg text-xs font-semibold transition-all duration-200 cursor-pointer touch-manipulation active:scale-95 ${
                 position === tab.key
                   ? "bg-slate-800 text-white shadow-md border border-white/15"
                   : "text-slate-400 hover:text-slate-200 hover:bg-white/[0.04]"
@@ -89,13 +90,14 @@ export default function PlayerFilterBar({
               value={searchQuery}
               onChange={e => onChangeSearch(e.target.value)}
               placeholder="Buscar por jugador..."
-              className="w-full bg-slate-950/80 border border-white/15 rounded-xl pl-9 pr-8 py-2 text-xs text-white placeholder-slate-500 outline-none focus:border-emerald-500/50 transition-colors"
+              className="w-full bg-slate-950/80 border border-white/15 rounded-xl pl-9 pr-9 py-2.5 sm:py-2 text-xs text-white placeholder-slate-500 outline-none focus:border-emerald-500/50 transition-colors"
             />
             {searchQuery && (
               <button
+                type="button"
                 onClick={() => onChangeSearch("")}
                 aria-label="Limpiar búsqueda"
-                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white text-xs font-mono"
+                className="absolute right-1.5 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center text-slate-400 hover:text-white text-base font-mono cursor-pointer touch-manipulation active:scale-90"
               >
                 ×
               </button>
@@ -107,7 +109,7 @@ export default function PlayerFilterBar({
             value={selectedTeam}
             onChange={e => onChangeTeam(e.target.value)}
             aria-label="Filtrar por equipo"
-            className="bg-slate-950/80 border border-white/15 rounded-xl px-3 py-2 text-xs text-slate-200 outline-none focus:border-emerald-500/50 cursor-pointer min-w-[150px]"
+            className="bg-slate-950/80 border border-white/15 rounded-xl px-3 py-2.5 sm:py-2 text-xs text-slate-200 outline-none focus:border-emerald-500/50 cursor-pointer min-w-[150px] min-h-[40px] sm:min-h-[34px]"
           >
             <option value="ALL">Todos los clubes</option>
             {teamsList.map(t => (
@@ -133,7 +135,7 @@ export default function PlayerFilterBar({
             step={30}
             value={minMinutes}
             onChange={e => onChangeMinMinutes(Number(e.target.value))}
-            className="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-400"
+            className="w-full h-2 sm:h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-400 touch-manipulation"
           />
           <span className="font-mono font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 shrink-0 min-w-[64px] text-center">
             ≥ {minMinutes}m
@@ -148,8 +150,9 @@ export default function PlayerFilterBar({
 
           {hasActiveFilters && (
             <button
+              type="button"
               onClick={onResetFilters}
-              className="text-slate-400 hover:text-rose-400 font-mono text-[11px] transition-colors underline underline-offset-4"
+              className="min-h-[36px] sm:min-h-0 px-2.5 py-1 rounded-lg bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 font-mono text-[11px] transition-all border border-rose-500/20 cursor-pointer touch-manipulation active:scale-95"
             >
               Reiniciar filtros
             </button>

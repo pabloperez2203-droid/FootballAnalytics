@@ -63,8 +63,9 @@ const PlayerAvatar = ({
 
   return (
     <button 
+      type="button"
       onClick={onToggle}
-      className={`flex flex-col items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 p-0.5 relative transition-all duration-300 ${isDimmed ? 'opacity-20 grayscale-[50%]' : 'opacity-100'}`}
+      className={`flex flex-col items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 p-0.5 relative transition-all duration-300 cursor-pointer touch-manipulation active:scale-95 ${isDimmed ? 'opacity-20 grayscale-[50%]' : 'opacity-100'}`}
       aria-label={`${player.player}, ${player.position}`}
       style={{ minHeight: 0 }}
     >
@@ -412,7 +413,14 @@ export default function MatchLineups({ rosters, matchData, playersStats }: { ros
                           </div>
                        </div>
                     </div>
-                    <button onClick={() => setOpenPlayerId(null)} className="text-slate-500 hover:text-white absolute top-3 right-3 text-lg leading-none z-20">×</button>
+                    <button
+                      type="button"
+                      onClick={() => setOpenPlayerId(null)}
+                      className="w-8 h-8 flex items-center justify-center rounded-lg bg-white/5 hover:bg-white/10 active:bg-white/20 text-slate-400 hover:text-white absolute top-2.5 right-2.5 text-xl leading-none z-20 cursor-pointer touch-manipulation active:scale-90"
+                      aria-label="Cerrar detalles del jugador"
+                    >
+                      ×
+                    </button>
                  </div>
 
                {/* Top Stats */}

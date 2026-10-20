@@ -2,8 +2,12 @@ name: Update Football Data (Understat)
 
 on:
   schedule:
-    # Runs automatically every Monday and Friday at 06:00 UTC
-    - cron: '0 6 * * 1,5'
+    # Domingos por la noche (23:30 UTC): tras finalizar el grueso de partidos del fin de semana
+    - cron: '30 23 * * 0'
+    # Lunes por la noche (23:00 UTC): tras el partido de cierre de jornada de LaLiga
+    - cron: '0 23 * * 1'
+    # Martes y Miércoles por la noche (23:00 UTC): tras jornadas de Champions League e intersemanales
+    - cron: '0 23 * * 2,3'
   workflow_dispatch:
 
 permissions:

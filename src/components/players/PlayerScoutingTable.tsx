@@ -21,8 +21,38 @@ type SortColumn =
   | "xa"
   | "xgChain90";
 
-function PlayerTableAvatar({ player, color }: { player: PlayerComputedMetrics; color: string }) {
+function PlayerTableAvatar({
+  player,
+  color,
+  crest
+}: {
+  player: PlayerComputedMetrics;
+  color: string;
+  crest?: string;
+}) {
+  const localPhoto = useMemo(() => {
+    if (!player.photo) return "";
+    if (player.photo.startsWith("/player-photos/")) return player.photo;
+    const match = player.photo.match(/images\.fotmob\.com\/image_resources\/playerimages\/(\d+\.png)/);
+    return match ? `/player-photos/${match[1]}` : player.photo;
+  }, [player.photo]);
+
+  const [imgSrc, setImgSrc] = useState(localPhoto);
   const [imgError, setImgError] = useState(false);
+
+  React.useEffect(() => {
+    setImgSrc(localPhoto);
+    setImgError(false);
+  }, [localPhoto, player.player_name]);
+
+  const handleError = () => {
+    if (imgSrc !== player.photo && player.photo) {
+      setImgSrc(player.photo);
+    } else {
+      setImgError(true);
+    }
+  };
+
   const initials = player.player_name
     .split(" ")
     .filter(Boolean)
@@ -33,15 +63,23 @@ function PlayerTableAvatar({ player, color }: { player: PlayerComputedMetrics; c
 
   return (
     <div
-      className="w-7 h-7 rounded-full overflow-hidden flex items-center justify-center font-bold font-mono text-[9px] bg-slate-900 border shrink-0 shadow-sm"
+      className="w-8 h-8 rounded-full overflow-hidden flex items-center justify-center font-bold font-mono text-[9px] bg-slate-900 border shrink-0 shadow-sm"
       style={{ borderColor: `${color}80` }}
     >
-      {player.photo && !imgError ? (
+      {imgSrc && !imgError ? (
         <img
-          src={player.photo}
+          src={imgSrc}
           alt={player.player_name}
-          onError={() => setImgError(true)}
+          onError={handleError}
+          referrerPolicy="no-referrer"
+          loading="lazy"
           className="w-full h-full object-cover object-top scale-110"
+        />
+      ) : crest ? (
+        <img
+          src={crest}
+          alt={player.team_name}
+          className="w-5 h-5 object-contain"
         />
       ) : (
         <span style={{ color }}>{initials}</span>
@@ -243,7 +281,12 @@ export default function PlayerScoutingTable({
                   {/* Player Name */}
                   <td className="py-2.5 px-3">
                     <div className="flex items-center gap-2.5">
-                      <PlayerTableAvatar player={p} color={color} />
+                      <PlayerTableAvatar
+                        key={`${p.player_id}-${p.photo}`}
+                        player={p}
+                        color={color}
+                        crest={crest}
+                      />
                       <div className="min-w-0">
                         <div className="flex items-center gap-1.5">
                           <span className="font-bold text-white hover:text-emerald-400 transition-colors truncate">
@@ -334,23 +377,25 @@ export default function PlayerScoutingTable({
           {Math.min(currentPage * pageSize, sortedPlayers.length)} de {sortedPlayers.length} futbolistas
         </span>
 
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-2">
           <button
+            type="button"
             onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
             disabled={currentPage === 1}
-            className="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/10 text-slate-300 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-slate-800 transition-colors"
+            className="px-3.5 py-2 min-h-[40px] rounded-xl bg-slate-900 border border-white/10 text-slate-300 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-slate-800 active:bg-slate-700 transition-all cursor-pointer touch-manipulation active:scale-95 flex items-center justify-center font-semibold"
           >
             ← Anterior
           </button>
 
-          <span className="px-3 py-1.5 rounded-lg bg-slate-950 border border-white/10 text-white font-bold">
+          <span className="px-3.5 py-2 min-h-[40px] rounded-xl bg-slate-950 border border-white/10 text-white font-bold flex items-center justify-center">
             {currentPage} / {totalPages}
           </span>
 
           <button
+            type="button"
             onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
             disabled={currentPage === totalPages}
-            className="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/10 text-slate-300 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-slate-800 transition-colors"
+            className="px-3.5 py-2 min-h-[40px] rounded-xl bg-slate-900 border border-white/10 text-slate-300 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-slate-800 active:bg-slate-700 transition-all cursor-pointer touch-manipulation active:scale-95 flex items-center justify-center font-semibold"
           >
             Siguiente →
           </button>
