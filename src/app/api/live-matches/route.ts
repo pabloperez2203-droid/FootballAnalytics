@@ -65,20 +65,6 @@ export async function GET(req: NextRequest) {
     const parsed = JSON.parse(fileContent);
     let matches: LiveMatchData[] = parsed.matches || [];
 
-    // Dinamismo del reloj para partidos en vivo
-    const nowEpoch = Math.floor(Date.now() / 1000);
-    matches = matches.map((m) => {
-      if (m.status === "LIVE" && !m.is_real_live) {
-        // Avance sutil del reloj en minutos simulados (55 a 89)
-        const dynamicMin = 55 + (Math.floor(nowEpoch / 45) % 34);
-        return {
-          ...m,
-          minute: `${dynamicMin}'`,
-        };
-      }
-      return m;
-    });
-
     if (comp === "laliga" || comp === "ucl") {
       matches = matches.filter((m) => m.competition === comp);
     }

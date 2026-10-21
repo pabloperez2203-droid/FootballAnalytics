@@ -141,73 +141,6 @@ def process_events(raw_data: Dict[str, Any], comp_id: str) -> List[Dict[str, Any
     return parsed_matches
 
 
-def generate_fallback_live_match(comp: str) -> Dict[str, Any]:
-    """Genera un duelo en vivo telemetrizado cuando no hay partidos activos en ESPN."""
-    now = datetime.now(timezone.utc)
-    # Minuto dinámico según el segundo actual para mostrar movimiento continuo
-    curr_min = 55 + (int(time.time() // 45) % 35)
-
-    if comp == "ucl":
-        return {
-            "id": "live_ucl_arsenal_psg",
-            "competition": "ucl",
-            "status": "LIVE",
-            "minute": f"{curr_min}'",
-            "date": now.isoformat(),
-            "home_team": "Paris Saint-Germain",
-            "away_team": "Barcelona",
-            "home_score": 2,
-            "away_score": 1,
-            "home_xg": 2.14,
-            "away_xg": 1.68,
-            "home_shots": 14,
-            "away_shots": 11,
-            "home_shots_on_target": 6,
-            "away_shots_on_target": 4,
-            "home_possession": 56.4,
-            "away_possession": 43.6,
-            "home_corners": 6,
-            "away_corners": 4,
-            "is_real_live": False,
-            "events": [
-                {"minute": 18, "type": "goal", "text": "⚽ Gol de Ousmane Dembélé (PSG) tras asistencia filtrada (xG: 0.42)", "team": "home"},
-                {"minute": 34, "type": "goal", "text": "⚽ Gol de Raphinha (Barcelona) con disparo ajustado al poste (xG: 0.38)", "team": "away"},
-                {"minute": 51, "type": "goal", "text": "⚽ Gol de Bradley Barcola (PSG) en contragolpe fulgurante (xG: 0.65)", "team": "home"},
-                {"minute": 62, "type": "card", "text": "🟨 Tarjeta amarilla para Jules Koundé por cortar avance", "team": "away"}
-            ]
-        }
-    else:
-        return {
-            "id": "live_laliga_madrid_barca",
-            "competition": "laliga",
-            "status": "LIVE",
-            "minute": f"{curr_min}'",
-            "date": now.isoformat(),
-            "home_team": "Real Madrid",
-            "away_team": "Barcelona",
-            "home_score": 2,
-            "away_score": 2,
-            "home_xg": 2.35,
-            "away_xg": 2.18,
-            "home_shots": 16,
-            "away_shots": 13,
-            "home_shots_on_target": 7,
-            "away_shots_on_target": 6,
-            "home_possession": 49.2,
-            "away_possession": 50.8,
-            "home_corners": 7,
-            "away_corners": 5,
-            "is_real_live": False,
-            "events": [
-                {"minute": 12, "type": "goal", "text": "⚽ Gol de Kylian Mbappé (Real Madrid) remate cruzado (xG: 0.48)", "team": "home"},
-                {"minute": 27, "type": "goal", "text": "⚽ Gol de Lamine Yamal (Barcelona) rosca perfecta a la escuadra (xG: 0.31)", "team": "away"},
-                {"minute": 44, "type": "goal", "text": "⚽ Gol de Vinicius Jr (Real Madrid) en acción individual de 40m (xG: 0.39)", "team": "home"},
-                {"minute": 58, "type": "goal", "text": "⚽ Gol de Robert Lewandowski (Barcelona) tras pase de la muerte (xG: 0.72)", "team": "away"},
-                {"minute": 66, "type": "chance", "text": "⚡ ¡Ocasión Clave! Disparo al larguero de Jude Bellingham (xG: 0.45)", "team": "home"}
-            ]
-        }
-
-
 def main():
     print("📡 Consultando ESPN Live Scoreboard...")
     all_matches = []
@@ -218,16 +151,13 @@ def main():
         print(f"   -> {comp_id.upper()}: {len(matches)} partidos obtenidos.")
         all_matches.extend(matches)
 
-    # Si ningún partido está LIVE en tiempo real en ESPN, inyectamos los partidos demostración
+    # Solo marcamos has_live como True si REALMENTE hay algún partido en juego en este instante
     has_live = any(m.get("status") in ["LIVE", "HT"] for m in all_matches)
 
-    if not has_live:
-        print("💡 No hay partidos en juego en ESPN en este instante. Añadiendo partidos demo en vivo para telemetría continua...")
-        laliga_live = generate_fallback_live_match("laliga")
-        ucl_live = generate_fallback_live_match("ucl")
-        all_matches.insert(0, laliga_live)
-        all_matches.insert(1, ucl_live)
-        has_live = True
+    if has_live:
+        print("⚽ ¡Hay partidos EN DIRECTO en juego en este momento!")
+    else:
+        print("ℹ️ No hay partidos en juego en este instante. Mostrando partidos oficiales programados/finalizados.")
 
     payload = {
         "last_updated": datetime.now(timezone.utc).isoformat(),
@@ -241,7 +171,7 @@ def main():
         with open(out_path, "w", encoding="utf-8") as f:
             json.dump(payload, f, ensure_ascii=False, indent=2)
 
-    print(f"✅ Centro de Partidos en Directo actualizado con {len(all_matches)} partidos.")
+    print(f"✅ Centro de Partidos actualizado con {len(all_matches)} partidos 100% oficiales.")
 
 
 if __name__ == "__main__":

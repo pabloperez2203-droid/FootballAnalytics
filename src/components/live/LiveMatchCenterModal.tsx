@@ -251,10 +251,20 @@ export default function LiveMatchCenterModal({
 
                 {/* Marcador Central & Minuto */}
                 <div className="flex flex-col items-center justify-center shrink-0">
-                  <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-300 text-xs font-mono font-bold tracking-wider mb-2">
-                    <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
-                    <span>{activeMatch.status === "HT" ? "DESCANSO" : activeMatch.minute}</span>
-                  </div>
+                  {activeMatch.status === "LIVE" || activeMatch.status === "HT" ? (
+                    <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-300 text-xs font-mono font-bold tracking-wider mb-2">
+                      <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
+                      <span>{activeMatch.status === "HT" ? "DESCANSO" : activeMatch.minute}</span>
+                    </div>
+                  ) : activeMatch.status === "FT" ? (
+                    <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800 border border-white/10 text-slate-300 text-xs font-mono font-bold tracking-wider mb-2">
+                      <span>FINALIZADO</span>
+                    </div>
+                  ) : (
+                    <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/15 border border-blue-500/30 text-blue-300 text-xs font-mono font-bold tracking-wider mb-2">
+                      <span>{activeMatch.minute || "PROGRAMADO"}</span>
+                    </div>
+                  )}
 
                   <div className="font-mono font-black text-4xl sm:text-6xl text-white tracking-tight tabular-nums flex items-center gap-3">
                     <span>{activeMatch.home_score}</span>
@@ -263,7 +273,11 @@ export default function LiveMatchCenterModal({
                   </div>
 
                   <div className="text-[11px] font-mono text-slate-400 mt-2">
-                    {activeMatch.status === "FT" ? "Partido Concluido" : "En Juego · Directo"}
+                    {activeMatch.status === "FT"
+                      ? "Partido Concluido"
+                      : activeMatch.status === "NS"
+                      ? "Próximo Enfrentamiento Oficial"
+                      : "En Juego · En Directo"}
                   </div>
                 </div>
 

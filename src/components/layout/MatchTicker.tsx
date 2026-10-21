@@ -17,7 +17,7 @@ export interface MatchItem {
   home_xg: number;
   away_xg: number;
   date?: string;
-  status?: "LIVE" | "HT" | "FT" | "NS";
+  status?: "LIVE" | "HT" | "FT" | "NS" | "scheduled";
   minute?: string;
 }
 
@@ -35,15 +35,26 @@ const DEFAULT_LALIGA_MATCHES: MatchItem[] = [
 ];
 
 const DEFAULT_UCL_MATCHES: MatchItem[] = [
-  { id: "ucl_6106234", matchday: 3, home_team: "Paris Saint-Germain", away_team: "Barcelona", home_score: 4, away_score: 2, home_xg: 3.70, away_xg: 2.47 },
-  { id: "ucl_6106248", matchday: 3, home_team: "Liverpool", away_team: "Villarreal", home_score: 4, away_score: 3, home_xg: 2.37, away_xg: 1.58 },
-  { id: "ucl_6106397", matchday: 3, home_team: "Stuttgart", away_team: "Atletico Madrid", home_score: 1, away_score: 1, home_xg: 1.59, away_xg: 0.89 },
-  { id: "ucl_6106257", matchday: 3, home_team: "Manchester City", away_team: "AEK Athens", home_score: 5, away_score: 1, home_xg: 2.83, away_xg: 1.17 },
-  { id: "ucl_6106277", matchday: 3, home_team: "Roma", away_team: "Slovan Bratislava", home_score: 4, away_score: 0, home_xg: 3.17, away_xg: 0.03 },
-  { id: "ucl_6106422", matchday: 3, home_team: "Sabah FK", away_team: "Borussia Dortmund", home_score: 1, away_score: 2, home_xg: 1.49, away_xg: 3.78 },
-  { id: "ucl_6106320", matchday: 3, home_team: "Napoli", away_team: "Bodo Glimt", home_score: 4, away_score: 3, home_xg: 1.53, away_xg: 2.92 },
-  { id: "ucl_6106333", matchday: 3, home_team: "Fenerbahce", away_team: "Slavia Prague", home_score: 2, away_score: 2, home_xg: 1.07, away_xg: 1.48 },
-  { id: "ucl_6106287", matchday: 3, home_team: "FC Porto", away_team: "PSV Eindhoven", home_score: 0, away_score: 1, home_xg: 1.58, away_xg: 1.91 },
+  // ── Partidos Completados (Jornada 3 - Martes 20 Oct) ──
+  { id: "ucl_6106234", matchday: 3, home_team: "Paris Saint-Germain", away_team: "Barcelona", home_score: 4, away_score: 2, home_xg: 3.70, away_xg: 2.47, status: "FT", minute: "FT" },
+  { id: "ucl_6106248", matchday: 3, home_team: "Liverpool", away_team: "Villarreal", home_score: 4, away_score: 3, home_xg: 2.37, away_xg: 1.58, status: "FT", minute: "FT" },
+  { id: "ucl_6106397", matchday: 3, home_team: "Stuttgart", away_team: "Atletico Madrid", home_score: 1, away_score: 1, home_xg: 1.59, away_xg: 0.89, status: "FT", minute: "FT" },
+  { id: "ucl_6106257", matchday: 3, home_team: "Manchester City", away_team: "AEK Athens", home_score: 5, away_score: 1, home_xg: 2.83, away_xg: 1.17, status: "FT", minute: "FT" },
+  { id: "ucl_6106277", matchday: 3, home_team: "Roma", away_team: "Slovan Bratislava", home_score: 4, away_score: 0, home_xg: 3.17, away_xg: 0.03, status: "FT", minute: "FT" },
+  { id: "ucl_6106422", matchday: 3, home_team: "Sabah FK", away_team: "Borussia Dortmund", home_score: 1, away_score: 2, home_xg: 1.49, away_xg: 3.78, status: "FT", minute: "FT" },
+  { id: "ucl_6106320", matchday: 3, home_team: "Napoli", away_team: "Bodo Glimt", home_score: 4, away_score: 3, home_xg: 1.53, away_xg: 2.92, status: "FT", minute: "FT" },
+  { id: "ucl_6106333", matchday: 3, home_team: "Fenerbahce", away_team: "Slavia Prague", home_score: 2, away_score: 2, home_xg: 1.07, away_xg: 1.48, status: "FT", minute: "FT" },
+  { id: "ucl_6106287", matchday: 3, home_team: "FC Porto", away_team: "PSV Eindhoven", home_score: 0, away_score: 1, home_xg: 1.58, away_xg: 1.91, status: "FT", minute: "FT" },
+  // ── Partidos de Hoy a punto de jugar (Jornada 3 - Miércoles 21 Oct) ──
+  { id: "ucl_401915395", matchday: 3, home_team: "Como", away_team: "Manchester United", home_score: 0, away_score: 0, home_xg: 0, away_xg: 0, status: "scheduled", minute: "18:45", date: "2026-10-21T18:45:00+02:00" },
+  { id: "ucl_401915396", matchday: 3, home_team: "Lille", away_team: "Galatasaray", home_score: 0, away_score: 0, home_xg: 0, away_xg: 0, status: "scheduled", minute: "18:45", date: "2026-10-21T18:45:00+02:00" },
+  { id: "ucl_401915313", matchday: 3, home_team: "Real Madrid", away_team: "RB Leipzig", home_score: 0, away_score: 0, home_xg: 0, away_xg: 0, status: "scheduled", minute: "21:00", date: "2026-10-21T21:00:00+02:00" },
+  { id: "ucl_401915312", matchday: 3, home_team: "Bayern Munich", away_team: "Arsenal", home_score: 0, away_score: 0, home_xg: 0, away_xg: 0, status: "scheduled", minute: "21:00", date: "2026-10-21T21:00:00+02:00" },
+  { id: "ucl_401915390", matchday: 3, home_team: "Inter", away_team: "Shakhtar Donetsk", home_score: 0, away_score: 0, home_xg: 0, away_xg: 0, status: "scheduled", minute: "21:00", date: "2026-10-21T21:00:00+02:00" },
+  { id: "ucl_401915389", matchday: 3, home_team: "Real Betis", away_team: "Feyenoord", home_score: 0, away_score: 0, home_xg: 0, away_xg: 0, status: "scheduled", minute: "21:00", date: "2026-10-21T21:00:00+02:00" },
+  { id: "ucl_401915394", matchday: 3, home_team: "Aston Villa", away_team: "Viking", home_score: 0, away_score: 0, home_xg: 0, away_xg: 0, status: "scheduled", minute: "21:00", date: "2026-10-21T21:00:00+02:00" },
+  { id: "ucl_401915388", matchday: 3, home_team: "Club Brugge", away_team: "Lens", home_score: 0, away_score: 0, home_xg: 0, away_xg: 0, status: "scheduled", minute: "21:00", date: "2026-10-21T21:00:00+02:00" },
+  { id: "ucl_401915391", matchday: 3, home_team: "Sporting CP", away_team: "LASK", home_score: 0, away_score: 0, home_xg: 0, away_xg: 0, status: "scheduled", minute: "21:00", date: "2026-10-21T21:00:00+02:00" },
 ];
 
 // Caché en memoria para transiciones instantáneas sin recarga
@@ -108,31 +119,43 @@ export default function MatchTicker() {
         if (Array.isArray(data) && data.length > 0) {
           const validMatches: MatchItem[] = data
             .filter((m: any) => m && (m.home_team || m.homeTeam) && (m.away_team || m.awayTeam))
-            .map((m: any) => ({
-              id: String(m.id || `m-${Math.random()}`),
-              matchday: safeNumber(m.matchday ?? m.matchweek, 1),
-              home_team: String(m.home_team || m.homeTeam || 'Local'),
-              away_team: String(m.away_team || m.awayTeam || 'Visitante'),
-              home_score: safeNumber(m.home_score ?? m.homeGoals, 0),
-              away_score: safeNumber(m.away_score ?? m.awayGoals, 0),
-              home_xg: safeNumber(m.home_xg ?? m.homeXG, 0),
-              away_xg: safeNumber(m.away_xg ?? m.awayXG, 0),
-              date: m.date ? String(m.date) : undefined,
-              status: m.status || "FT",
-              minute: m.minute || "FT",
-            }));
+            .map((m: any) => {
+              const homeScore = safeNumber(m.home_score ?? m.homeGoals, 0);
+              const awayScore = safeNumber(m.away_score ?? m.awayGoals, 0);
+              const homeXg = safeNumber(m.home_xg ?? m.homeXG, 0);
+              const awayXg = safeNumber(m.away_xg ?? m.awayXG, 0);
+              let timeStr = "";
+              if (m.date) {
+                const matchTime = String(m.date).match(/(\d{2}:\d{2})/);
+                if (matchTime) timeStr = matchTime[1];
+              }
+              const isScheduled = m.status === 'scheduled' || m.status === 'NS' || (m.status !== 'FT' && homeScore === 0 && awayScore === 0 && homeXg === 0 && awayXg === 0);
+              return {
+                id: String(m.id || `m-${Math.random()}`),
+                matchday: safeNumber(m.matchday ?? m.matchweek, 1),
+                home_team: String(m.home_team || m.homeTeam || 'Local'),
+                away_team: String(m.away_team || m.awayTeam || 'Visitante'),
+                home_score: homeScore,
+                away_score: awayScore,
+                home_xg: homeXg,
+                away_xg: awayXg,
+                date: m.date ? String(m.date) : undefined,
+                status: isScheduled ? "scheduled" : (m.status || "FT"),
+                minute: isScheduled ? (timeStr || m.minute || "21:00") : (m.minute || "FT"),
+              };
+            });
 
           if (validMatches.length > 0) {
-            const maxMd = Math.max(...validMatches.map((m) => m.matchday));
-            const latest = validMatches.filter((m) => m.matchday === maxMd);
+            const targetMd = currentComp === 'ucl' ? 3 : Math.max(...validMatches.map((m) => m.matchday));
+            const latest = validMatches.filter((m) => m.matchday === targetMd);
             const chosen = latest.length > 0 ? latest : validMatches.slice(-10);
 
             memoryCache[currentComp] = {
               matches: chosen,
-              matchday: maxMd,
+              matchday: targetMd,
             };
 
-            setMatchday(maxMd);
+            setMatchday(targetMd);
             setMatches(chosen);
           }
         }
@@ -262,6 +285,8 @@ export default function MatchTicker() {
     const homeXgStr = safeXg(m.home_xg);
     const awayXgStr = safeXg(m.away_xg);
     const isLive = m.status === 'LIVE' || m.status === 'HT';
+    const isScheduled = m.status === 'scheduled' || m.status === 'NS';
+    const kickoffTime = m.minute && m.minute !== 'FT' ? m.minute : (m.date?.match(/(\d{2}:\d{2})/)?.[1] || '21:00');
 
     return (
       <Link
@@ -272,14 +297,22 @@ export default function MatchTicker() {
         className={`flex items-center gap-2.5 px-3 py-1 rounded-lg border transition-all duration-150 group/item whitespace-nowrap cursor-pointer shadow-sm shrink-0 select-none ${
           isLive
             ? "bg-rose-500/[0.08] border-rose-500/40 hover:bg-rose-500/[0.14] hover:border-rose-500/70"
+            : isScheduled
+            ? "bg-sky-500/[0.04] hover:bg-sky-500/[0.10] border-sky-500/20 hover:border-sky-500/40"
             : "bg-white/[0.03] hover:bg-white/[0.08] border-white/5 hover:border-white/20"
         }`}
       >
-        {/* Badge "LIVE" si está en juego */}
+        {/* Badge "LIVE" o "HOY" */}
         {isLive && (
           <div className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-rose-500/25 border border-rose-500/50 text-rose-300 text-[10px] font-mono font-black animate-pulse shrink-0">
             <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_8px_#ef4444]" />
             <span>{m.minute || "LIVE"}</span>
+          </div>
+        )}
+
+        {isScheduled && (
+          <div className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-sky-500/15 border border-sky-400/30 text-sky-300 text-[10px] font-mono font-bold shrink-0">
+            <span>HOY</span>
           </div>
         )}
 
@@ -301,17 +334,19 @@ export default function MatchTicker() {
           </span>
         </div>
 
-        {/* Marcador */}
+        {/* Marcador o Hora de Inicio */}
         <div
-          className={`px-1.5 py-0.5 rounded bg-black/60 border font-mono font-bold text-xs tabular-nums shrink-0 ${
+          className={`px-1.5 py-0.5 rounded font-mono font-bold text-xs tabular-nums shrink-0 border ${
             isLive
-              ? 'text-rose-400 border-rose-500/40 font-black'
+              ? 'bg-black/60 text-rose-400 border-rose-500/40 font-black'
+              : isScheduled
+              ? 'bg-sky-950/40 text-sky-300 border-sky-400/30 group-hover/item:border-sky-400/60'
               : isUcl
-              ? 'text-cyan-300 border-cyan-400/25 group-hover/item:border-cyan-400/50'
-              : 'text-emerald-400 border-emerald-500/25 group-hover/item:border-emerald-500/50'
+              ? 'bg-black/60 text-cyan-300 border-cyan-400/25 group-hover/item:border-cyan-400/50'
+              : 'bg-black/60 text-emerald-400 border-emerald-500/25 group-hover/item:border-emerald-500/50'
           }`}
         >
-          {homeScore} - {awayScore}
+          {isScheduled ? kickoffTime : `${homeScore} - ${awayScore}`}
         </div>
 
         {/* Visitante */}
@@ -332,13 +367,23 @@ export default function MatchTicker() {
           ) : null}
         </div>
 
-        {/* Separador y Telemetría xG */}
-        <div className="flex items-center gap-1 text-[11px] font-mono text-slate-400 border-l border-white/10 pl-2 shrink-0">
-          <span className="text-slate-500 text-[10px]">xG</span>
-          <span className="text-slate-300 font-semibold">{homeXgStr}</span>
-          <span className="text-slate-500">-</span>
-          <span className="text-slate-300 font-semibold">{awayXgStr}</span>
-        </div>
+        {/* Separador y Telemetría xG o Previa */}
+        {isScheduled ? (
+          <div className="flex items-center gap-1.5 text-[11px] font-mono text-slate-400 border-l border-white/10 pl-2 shrink-0">
+            <span className="text-sky-400/80 text-[10px] font-semibold">PREVIA</span>
+            <span className="text-slate-400 text-[10px]">{kickoffTime} h</span>
+          </div>
+        ) : (
+          <div className="flex items-center gap-1 text-[11px] font-mono text-slate-400 border-l border-white/10 pl-2 shrink-0">
+            <span className="text-slate-500 text-[10px]">xG</span>
+            <span className="text-slate-300 font-semibold">{homeXgStr}</span>
+            <span className="text-slate-500">-</span>
+            <span className="text-slate-300 font-semibold">{awayXgStr}</span>
+            {!isLive && (
+              <span className="ml-1 text-[9px] px-1 py-0.2 rounded bg-white/5 text-slate-400 font-sans">FT</span>
+            )}
+          </div>
+        )}
       </Link>
     );
   }, [isUcl]);
