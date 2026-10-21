@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import PageContainer from "@/components/layout/PageContainer";
@@ -11,21 +12,44 @@ export default function Navbar() {
   const pathname = usePathname();
   const { competition, isUcl, meta, setCompetition } = useCompetition();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Cerrar el menú móvil automáticamente al cambiar de ruta
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [pathname]);
 
-  // Bloquear scroll del body al abrir el drawer móvil
+  // Cerrar con la tecla Escape
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsMobileMenuOpen(false);
+      }
+    };
+    if (isMobileMenuOpen) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isMobileMenuOpen]);
+
+  // Bloquear scroll del body al abrir el drawer móvil en iOS y Android
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden";
+      document.body.style.touchAction = "none";
     } else {
       document.body.style.overflow = "";
+      document.body.style.touchAction = "";
     }
     return () => {
       document.body.style.overflow = "";
+      document.body.style.touchAction = "";
     };
   }, [isMobileMenuOpen]);
 
@@ -92,7 +116,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b backdrop-blur-md transition-all duration-300 ${
+      className={`sticky top-0 z-[100] border-b backdrop-blur-md transition-all duration-300 ${
         isUcl
           ? "bg-[#030614]/90 border-cyan-500/20 shadow-[0_4px_30px_rgba(56,189,248,0.06)]"
           : "bg-slate-950/85 border-white/10"
@@ -188,56 +212,52 @@ export default function Navbar() {
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <CompetitionSelector />
 
-          {/* Botón Hamburguesa Móvil (< md) */}
+          {/* Botón Hamburguesa Móvil (< md) con icono nítido e interactivo */}
           <button
             type="button"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`md:hidden flex items-center justify-center w-11 h-11 rounded-xl border transition-all duration-200 cursor-pointer touch-manipulation active:scale-95 ${
+            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+            className={`md:hidden flex items-center justify-center w-11 h-11 rounded-xl border transition-all duration-200 cursor-pointer select-none touch-manipulation active:scale-95 ${
               isMobileMenuOpen
                 ? isUcl
-                  ? "bg-cyan-500/20 border-cyan-400/50 text-cyan-300"
-                  : "bg-emerald-500/20 border-emerald-500/50 text-emerald-400"
+                  ? "bg-cyan-500/20 border-cyan-400/50 text-cyan-300 shadow-[0_0_15px_rgba(56,189,248,0.25)]"
+                  : "bg-emerald-500/20 border-emerald-500/50 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.25)]"
                 : "bg-white/[0.06] border-white/10 text-slate-300 hover:bg-white/[0.1] active:bg-white/[0.15]"
             }`}
-            aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-label={isMobileMenuOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
             aria-expanded={isMobileMenuOpen}
           >
-            <div className="w-5 h-4 flex flex-col justify-between items-center relative pointer-events-none">
-              <span
-                className={`block h-0.5 w-5 rounded-full bg-current transform transition-all duration-300 origin-center ${
-                  isMobileMenuOpen ? "rotate-45 translate-y-[7px]" : ""
-                }`}
-              />
-              <span
-                className={`block h-0.5 w-5 rounded-full bg-current transition-all duration-200 ${
-                  isMobileMenuOpen ? "opacity-0 scale-x-0" : ""
-                }`}
-              />
-              <span
-                className={`block h-0.5 w-5 rounded-full bg-current transform transition-all duration-300 origin-center ${
-                  isMobileMenuOpen ? "-rotate-45 -translate-y-[7px]" : ""
-                }`}
-              />
-            </div>
+            {isMobileMenuOpen ? (
+              <svg className="w-5 h-5 text-current" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            ) : (
+              <svg className="w-5 h-5 text-current" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="4" y1="6" x2="20" y2="6" />
+                <line x1="4" y1="12" x2="20" y2="12" />
+                <line x1="4" y1="18" x2="20" y2="18" />
+              </svg>
+            )}
           </button>
         </div>
       </PageContainer>
 
-      {/* ─── Mobile Drawer Overlay & Sheet (< md) ─── */}
-      {isMobileMenuOpen && (
-        <div className="fixed inset-0 top-16 z-50 md:hidden flex flex-col">
-          {/* Backdrop con desenfoque (z-10, solo intercepta clics fuera del sheet) */}
+      {/* ─── Mobile Drawer Overlay & Sheet (< md) renderizado en Portal para evitar contención de CSS ─── */}
+      {mounted && isMobileMenuOpen && typeof document !== "undefined" && createPortal(
+        <div className="fixed inset-0 top-16 z-[95] md:hidden flex flex-col pointer-events-auto">
+          {/* Backdrop con desenfoque */}
           <div
-            className="absolute inset-0 bg-black/80 backdrop-blur-md animate-fade-in cursor-pointer z-10 touch-manipulation"
+            className="fixed inset-0 top-16 bg-black/80 backdrop-blur-md animate-fade-in cursor-pointer z-10 touch-manipulation"
             onClick={() => setIsMobileMenuOpen(false)}
+            aria-hidden="true"
           />
 
           {/* Sheet / Menú Desplegable (z-20 por encima del backdrop) */}
           <div
-            className={`relative z-20 w-full max-h-[calc(100vh-4rem)] overflow-y-auto border-b p-5 shadow-2xl flex flex-col gap-5 animate-slide-down pb-safe ${
+            className={`relative z-20 w-full max-h-[calc(100dvh-4rem)] overflow-y-auto border-b p-5 shadow-2xl flex flex-col gap-5 animate-slide-down pb-safe ${
               isUcl
-                ? "bg-[#060b24]/98 border-cyan-500/30 shadow-[0_20px_50px_rgba(56,189,248,0.15)]"
-                : "bg-slate-950/98 border-emerald-500/30 shadow-[0_20px_50px_rgba(16,185,129,0.15)]"
+                ? "bg-[#04081c]/98 border-cyan-500/30 shadow-[0_25px_60px_rgba(56,189,248,0.2)]"
+                : "bg-[#050b14]/98 border-emerald-500/30 shadow-[0_25px_60px_rgba(16,185,129,0.2)]"
             }`}
           >
             {/* Selector Rápido de Competición en Móvil */}
@@ -250,7 +270,7 @@ export default function Navbar() {
                 <button
                   type="button"
                   onClick={() => handleMobileCompetition("laliga")}
-                  className={`flex items-center justify-center gap-2 py-3 px-3 rounded-xl text-xs font-bold transition-all min-h-[46px] cursor-pointer touch-manipulation active:scale-[0.98] ${
+                  className={`flex items-center justify-center gap-2 py-3 px-3 rounded-xl text-xs font-bold transition-all min-h-[48px] cursor-pointer touch-manipulation active:scale-[0.98] ${
                     competition === "laliga"
                       ? "bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/25 ring-2 ring-emerald-400/40"
                       : "bg-white/[0.06] text-slate-300 hover:bg-white/10 active:bg-white/15"
@@ -263,7 +283,7 @@ export default function Navbar() {
                 <button
                   type="button"
                   onClick={() => handleMobileCompetition("ucl")}
-                  className={`flex items-center justify-center gap-2 py-3 px-3 rounded-xl text-xs font-bold transition-all min-h-[46px] cursor-pointer touch-manipulation active:scale-[0.98] ${
+                  className={`flex items-center justify-center gap-2 py-3 px-3 rounded-xl text-xs font-bold transition-all min-h-[48px] cursor-pointer touch-manipulation active:scale-[0.98] ${
                     competition === "ucl"
                       ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-md shadow-cyan-500/25 ring-2 ring-cyan-400/40"
                       : "bg-white/[0.06] text-slate-300 hover:bg-white/10 active:bg-white/15"
@@ -286,17 +306,17 @@ export default function Navbar() {
                         href={item.href}
                         prefetch={true}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className={`w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-sm font-semibold transition-all min-h-[50px] cursor-pointer touch-manipulation active:scale-[0.98] ${
+                        className={`w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-sm font-semibold transition-all min-h-[52px] cursor-pointer touch-manipulation active:scale-[0.98] ${
                           isActive
                             ? isUcl
                               ? "bg-cyan-500/20 text-cyan-200 border border-cyan-400/40 shadow-sm"
                               : "bg-emerald-500/15 text-emerald-300 border border-emerald-500/35 shadow-sm"
-                            : "text-slate-200 bg-white/[0.02] hover:bg-white/[0.06] active:bg-white/[0.1] border border-white/5"
+                            : "text-slate-200 bg-white/[0.03] hover:bg-white/[0.07] active:bg-white/[0.12] border border-white/5"
                         }`}
                       >
                         <div className="flex items-center gap-3">
                           <span
-                            className={`p-2 rounded-lg ${
+                            className={`p-2.5 rounded-xl ${
                               isActive
                                 ? isUcl
                                   ? "bg-cyan-400/20 text-cyan-300"
@@ -306,7 +326,7 @@ export default function Navbar() {
                           >
                             {item.icon}
                           </span>
-                          <span className="text-base text-left">{item.label}</span>
+                          <span className="text-base text-left font-medium">{item.label}</span>
                         </div>
 
                         <div className="flex items-center gap-2">
@@ -339,7 +359,8 @@ export default function Navbar() {
               <span className="text-[11px] text-slate-500">v2.0 Mobile Ready</span>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </header>
   );
