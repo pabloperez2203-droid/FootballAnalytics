@@ -174,39 +174,39 @@ export default function StatsComparison({
   };
 
   return (
-    <div className="glass-card rounded-2xl p-4 sm:p-5 h-full flex flex-col transition-all duration-300 hover:-translate-y-0.5">
+    <div className="glass-card rounded-2xl p-3.5 sm:p-5 h-full flex flex-col transition-all duration-300 hover:-translate-y-0.5">
       {/* Header Compacto con Equipos y Colores con contraste garantizado */}
       <div className="flex items-center justify-between pb-3 border-b border-white/10 mb-3.5">
-        <div className="flex items-center gap-2.5">
+        <div className="flex items-center gap-2 sm:gap-2.5 min-w-0">
           {homeCrest ? (
-            <img src={homeCrest} alt={homeTeam} className="w-7 h-7 object-contain drop-shadow" />
+            <img src={homeCrest} alt={homeTeam} className="w-6 h-6 sm:w-7 sm:h-7 object-contain drop-shadow shrink-0" />
           ) : (
-            <div className="w-6 h-6 rounded-full flex items-center justify-center font-bold text-[10px] text-white" style={{ backgroundColor: homeColor }}>
+            <div className="w-6 h-6 rounded-full flex items-center justify-center font-bold text-[10px] text-white shrink-0" style={{ backgroundColor: homeColor }}>
               {homeTeam.substring(0, 2)}
             </div>
           )}
-          <div>
-            <h3 className="font-bold text-xs sm:text-sm text-white leading-tight">{homeTeam}</h3>
+          <div className="min-w-0">
+            <h3 className="font-bold text-xs sm:text-sm text-white leading-tight max-w-[85px] sm:max-w-none truncate">{homeTeam}</h3>
             <span className="text-[10px] font-mono text-slate-400">Local</span>
           </div>
         </div>
 
-        <div className="text-center px-2">
-          <span className="text-[10px] uppercase tracking-wider font-mono text-slate-400 font-semibold px-2 py-0.5 rounded-md bg-white/5 border border-white/10">
-            Comparativa de Métricas
+        <div className="text-center px-1 sm:px-2 shrink-0">
+          <span className="text-[9px] sm:text-[10px] uppercase tracking-wider font-mono text-slate-400 font-semibold px-1.5 sm:px-2 py-0.5 rounded-md bg-white/5 border border-white/10 whitespace-nowrap">
+            Comparativa
           </span>
         </div>
 
-        <div className="flex items-center gap-2.5 flex-row-reverse text-right">
+        <div className="flex items-center gap-2 sm:gap-2.5 flex-row-reverse text-right min-w-0">
           {awayCrest ? (
-            <img src={awayCrest} alt={awayTeam} className="w-7 h-7 object-contain drop-shadow" />
+            <img src={awayCrest} alt={awayTeam} className="w-6 h-6 sm:w-7 sm:h-7 object-contain drop-shadow shrink-0" />
           ) : (
-            <div className="w-6 h-6 rounded-full flex items-center justify-center font-bold text-[10px] text-white" style={{ backgroundColor: awayColor }}>
+            <div className="w-6 h-6 rounded-full flex items-center justify-center font-bold text-[10px] text-white shrink-0" style={{ backgroundColor: awayColor }}>
               {awayTeam.substring(0, 2)}
             </div>
           )}
-          <div>
-            <h3 className="font-bold text-xs sm:text-sm text-white leading-tight">{awayTeam}</h3>
+          <div className="min-w-0">
+            <h3 className="font-bold text-xs sm:text-sm text-white leading-tight max-w-[85px] sm:max-w-none truncate">{awayTeam}</h3>
             <span className="text-[10px] font-mono text-slate-400">Visitante</span>
           </div>
         </div>

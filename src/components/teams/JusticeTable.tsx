@@ -154,74 +154,74 @@ export default function JusticeTable({
         </div>
 
         {/* Interactive Mode Toggle */}
-        <div className="flex items-center gap-2 bg-slate-950/80 p-1.5 rounded-xl border border-white/10 self-stretch sm:self-auto">
+        <div className="flex items-center gap-1.5 sm:gap-2 bg-slate-950/80 p-1 sm:p-1.5 rounded-xl border border-white/10 self-stretch sm:self-auto">
           <button
             type="button"
             onClick={() => setTableMode("real")}
-            className={`flex-1 sm:flex-none px-4 py-2.5 sm:py-2 min-h-[44px] sm:min-h-[36px] rounded-lg text-xs font-semibold transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer touch-manipulation active:scale-95 ${
+            className={`flex-1 sm:flex-none px-2.5 sm:px-4 py-2 sm:py-2 min-h-[42px] sm:min-h-[36px] rounded-lg text-[11px] sm:text-xs font-semibold transition-all duration-200 flex items-center justify-center gap-1.5 sm:gap-2 cursor-pointer touch-manipulation active:scale-95 ${
               tableMode === "real"
                 ? "bg-slate-800 text-white shadow-md border border-white/15"
                 : "text-slate-400 hover:text-white active:bg-white/[0.04]"
             }`}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
-            Clasificación Real (PTS)
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0" />
+            <span>Real (PTS)</span>
           </button>
           <button
             type="button"
             onClick={() => setTableMode("justice")}
-            className={`flex-1 sm:flex-none px-4 py-2.5 sm:py-2 min-h-[44px] sm:min-h-[36px] rounded-lg text-xs font-semibold transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer touch-manipulation active:scale-95 ${
+            className={`flex-1 sm:flex-none px-2.5 sm:px-4 py-2 sm:py-2 min-h-[42px] sm:min-h-[36px] rounded-lg text-[11px] sm:text-xs font-semibold transition-all duration-200 flex items-center justify-center gap-1.5 sm:gap-2 cursor-pointer touch-manipulation active:scale-95 ${
               tableMode === "justice"
-                ? "bg-emerald-500/20 text-emerald-300 shadow-md border border-emerald-500/30"
+                ? "bg-emerald-500/20 text-emerald-300 shadow-md border border-emerald-500/30 font-bold"
                 : "text-slate-400 hover:text-white active:bg-white/[0.04]"
             }`}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-            Clasificación Justicia (xPTS)
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
+            <span>Justicia (xPTS)</span>
           </button>
         </div>
       </div>
 
       {/* Summary KPI Badges */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 my-4">
-        <div className="p-3 rounded-xl bg-slate-900/40 border border-white/5 flex items-center justify-between">
-          <div>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 my-4">
+        <div className="p-3 rounded-xl bg-slate-900/40 border border-white/5 flex items-center justify-between gap-2">
+          <div className="min-w-0">
             <div className="text-[10px] uppercase font-mono tracking-wider text-slate-400">
               Mayor Sobrerendimiento
             </div>
-            <div className="text-sm font-bold text-emerald-400 mt-0.5">
-              {topOverperformer ? `${topOverperformer.team} (+${topOverperformer.diffPts.toFixed(2)} pts)` : "—"}
+            <div className="text-xs sm:text-sm font-bold text-emerald-400 mt-0.5 truncate max-w-[190px] sm:max-w-none">
+              {topOverperformer ? topOverperformer.team : "—"}
             </div>
           </div>
-          <span className="text-xs px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono font-bold">
+          <span className="text-xs px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono font-bold shrink-0">
             {topOverperformer ? `+${topOverperformer.diffPts.toFixed(2)}` : "+0.00"}
           </span>
         </div>
 
-        <div className="p-3 rounded-xl bg-slate-900/40 border border-white/5 flex items-center justify-between">
-          <div>
+        <div className="p-3 rounded-xl bg-slate-900/40 border border-white/5 flex items-center justify-between gap-2">
+          <div className="min-w-0">
             <div className="text-[10px] uppercase font-mono tracking-wider text-slate-400">
               Mayor Castigo del Azar
             </div>
-            <div className="text-sm font-bold text-rose-400 mt-0.5">
-              {topUnderperformer ? `${topUnderperformer.team} (${topUnderperformer.diffPts.toFixed(2)} pts)` : "—"}
+            <div className="text-xs sm:text-sm font-bold text-rose-400 mt-0.5 truncate max-w-[190px] sm:max-w-none">
+              {topUnderperformer ? topUnderperformer.team : "—"}
             </div>
           </div>
-          <span className="text-xs px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-300 font-mono font-bold">
+          <span className="text-xs px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-300 font-mono font-bold shrink-0">
             {topUnderperformer ? topUnderperformer.diffPts.toFixed(2) : "-0.00"}
           </span>
         </div>
 
-        <div className="p-3 rounded-xl bg-slate-900/40 border border-white/5 flex items-center justify-between">
-          <div>
+        <div className="p-3 rounded-xl bg-slate-900/40 border border-white/5 flex items-center justify-between gap-2">
+          <div className="min-w-0">
             <div className="text-[10px] uppercase font-mono tracking-wider text-slate-400">
               Líder Justo de LaLiga
             </div>
-            <div className="text-sm font-bold text-white mt-0.5">
-              {leaderJustice ? `${leaderJustice.team} (${leaderJustice.expected_points.toFixed(2)} xPTS)` : "—"}
+            <div className="text-xs sm:text-sm font-bold text-white mt-0.5 truncate max-w-[190px] sm:max-w-none">
+              {leaderJustice ? `${leaderJustice.team} (${leaderJustice.expected_points.toFixed(1)} xPTS)` : "—"}
             </div>
           </div>
-          <span className="text-xs px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 font-mono font-bold">
+          <span className="text-xs px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 font-mono font-bold shrink-0">
             P1
           </span>
         </div>

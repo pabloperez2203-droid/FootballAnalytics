@@ -261,7 +261,7 @@ export default function ShotLabSimulator() {
   const shotsNeeded = Math.max(1, Math.round(1 / metrics.xg));
 
   return (
-    <div className="glass-card interactive-card rounded-2xl p-6 sm:p-8 flex flex-col gap-8 transition-all duration-300">
+    <div className="glass-card interactive-card rounded-2xl p-4 sm:p-8 flex flex-col gap-6 sm:gap-8 transition-all duration-300">
       {/* ─── Encabezado del Módulo ─── */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/10">
         <div>
@@ -586,7 +586,7 @@ export default function ShotLabSimulator() {
         {/* Columna Derecha: Velocímetro de xG + Contexto + Tiros Gemelos */}
         <div className="lg:col-span-5 flex flex-col gap-5">
           {/* ── 1. Tacómetro / Velocímetro de xG ── */}
-          <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-between gap-4">
+          <div className="p-3.5 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-between gap-3 sm:gap-4">
             <div>
               <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider font-semibold">
                 Probabilidad Calculada
@@ -774,11 +774,11 @@ export default function ShotLabSimulator() {
               </p>
             ) : (
               <div>
-                <div className="text-xs text-slate-300 mb-3 flex items-center gap-3">
+                <div className="text-xs text-slate-300 mb-3 flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 gap-y-1">
                   <span>
                     Disparos registrados: <strong className="text-white font-mono">{twinShots.count}</strong>
                   </span>
-                  <span>·</span>
+                  <span className="hidden sm:inline">·</span>
                   <span>
                     Goles reales: <strong className="text-amber-400 font-mono">{twinShots.goals}</strong> (
                     {Math.round((twinShots.goals / twinShots.count) * 100)}% efectividad)
@@ -797,25 +797,25 @@ export default function ShotLabSimulator() {
                         key={idx}
                         className="p-2.5 rounded-xl bg-white/[0.03] border border-white/5 flex items-center justify-between text-xs hover:border-white/20 transition-colors"
                       >
-                        <div className="flex items-center gap-2.5">
+                        <div className="flex items-center gap-2.5 min-w-0">
                           {crest && (
                             <img
                               src={crest}
                               alt={shot.teamName}
-                              className="w-5 h-5 object-contain"
+                              className="w-5 h-5 object-contain shrink-0"
                             />
                           )}
-                          <div>
-                            <div className="font-semibold text-white">
+                          <div className="min-w-0">
+                            <div className="font-semibold text-white truncate max-w-[130px] sm:max-w-[200px]">
                               {shot.player}
                             </div>
-                            <div className="text-[10px] text-slate-400 font-mono">
+                            <div className="text-[10px] text-slate-400 font-mono truncate max-w-[130px] sm:max-w-[200px]">
                               {shot.teamName} · Min {shot.min}&apos;
                             </div>
                           </div>
                         </div>
 
-                        <div className="text-right">
+                        <div className="text-right shrink-0">
                           <span
                             className={`px-2 py-0.5 rounded text-[10px] font-mono font-bold ${
                               isGoal

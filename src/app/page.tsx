@@ -159,7 +159,7 @@ export default function HomePage() {
               {/* Pill de estado */}
               <Link
                 href="/xg-engine"
-                className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border text-xs mb-6 backdrop-blur-md shadow-sm transition-all duration-300 hover:scale-[1.02] group cursor-pointer ${
+                className={`inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full border text-[11px] sm:text-xs mb-6 backdrop-blur-md shadow-sm transition-all duration-300 hover:scale-[1.02] group cursor-pointer max-w-full overflow-hidden ${
                   isUcl
                     ? "bg-[#070e2b]/80 border-cyan-400/35 text-cyan-200 shadow-[0_0_15px_rgba(56,189,248,0.2)] hover:border-cyan-400/70"
                     : "bg-white/[0.04] border-white/10 text-slate-300 hover:border-emerald-500/50 hover:text-emerald-300"
@@ -167,19 +167,19 @@ export default function HomePage() {
               >
                 {isUcl ? (
                   <>
-                    <UclStarball className="w-3.5 h-3.5" animate glow={false} />
-                    <span className="font-semibold text-cyan-400">MOTOR xG & SIMULADOR</span>
+                    <UclStarball className="w-3.5 h-3.5 shrink-0" animate glow={false} />
+                    <span className="font-semibold text-cyan-400 shrink-0">MOTOR xG</span>
                     <span className="text-slate-500">|</span>
-                    <span className="text-amber-300 font-mono font-medium">FASE DE LIGA (36 CLUBES)</span>
-                    <span className="text-cyan-400 text-[10px] ml-1 group-hover:translate-x-0.5 transition-transform">→</span>
+                    <span className="text-amber-300 font-mono font-medium truncate">FASE DE LIGA (36 CLUBES)</span>
+                    <span className="text-cyan-400 text-[10px] ml-1 group-hover:translate-x-0.5 transition-transform shrink-0">→</span>
                   </>
                 ) : (
                   <>
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#10b981]" />
-                    <span className="font-semibold text-emerald-400">Motor xG 2.0</span>
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#10b981] shrink-0" />
+                    <span className="font-semibold text-emerald-400 shrink-0">Motor xG 2.0</span>
                     <span className="text-slate-500">|</span>
-                    <span>Inteligencia Táctica & Expected Goals</span>
-                    <span className="text-emerald-400 text-[10px] ml-1 group-hover:translate-x-0.5 transition-transform">→</span>
+                    <span className="truncate">Inteligencia Táctica & xG</span>
+                    <span className="text-emerald-400 text-[10px] ml-1 group-hover:translate-x-0.5 transition-transform shrink-0">→</span>
                   </>
                 )}
               </Link>
@@ -282,7 +282,7 @@ export default function HomePage() {
             {/* Columna Derecha: Tarjeta Flotante de Estadísticas centrada en móvil */}
             <div className="lg:col-span-5 flex justify-center items-center w-full mt-4 lg:mt-0">
               <div
-                className={`w-full max-w-[420px] mx-auto rounded-2xl border backdrop-blur-xl p-5 sm:p-6 shadow-2xl transition-all duration-700 pointer-events-auto hover:-translate-y-1 group ${
+                className={`w-full max-w-[420px] mx-auto rounded-2xl border backdrop-blur-xl p-4 sm:p-6 shadow-2xl transition-all duration-700 pointer-events-auto hover:-translate-y-1 group ${
                   isUcl
                     ? "bg-[#070e2b]/85 border-cyan-400/35 shadow-[0_20px_50px_rgba(56,189,248,0.22)]"
                     : "bg-slate-950/85 border-emerald-500/30 shadow-[0_20px_50px_rgba(16,185,129,0.18)]"
@@ -637,11 +637,11 @@ export default function HomePage() {
           </div>
 
           {/* Banner Estrella: Motor xG Interactivo */}
-          <div className="mt-12 rounded-3xl p-8 relative overflow-hidden border border-white/10 bg-gradient-to-r from-slate-900/90 via-slate-950/90 to-slate-900/90 shadow-2xl backdrop-blur-xl">
+          <div className="mt-8 sm:mt-12 rounded-2xl sm:rounded-3xl p-5 sm:p-8 relative overflow-hidden border border-white/10 bg-gradient-to-r from-slate-900/90 via-slate-950/90 to-slate-900/90 shadow-2xl backdrop-blur-xl">
             <div className={`absolute -right-16 -top-16 w-72 h-72 rounded-full blur-3xl opacity-20 pointer-events-none ${isUcl ? "bg-cyan-500" : "bg-emerald-500"}`} />
             <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6">
-              <div className="max-w-2xl">
-                <div className="flex items-center gap-2 mb-2">
+              <div className="max-w-2xl text-center lg:text-left">
+                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 mb-2">
                   <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider border ${
                     isUcl ? "bg-cyan-500/10 border-cyan-400/30 text-cyan-300" : "bg-emerald-500/10 border-emerald-500/30 text-emerald-400"
                   }`}>
@@ -649,23 +649,23 @@ export default function HomePage() {
                   </span>
                   <span className="text-xs text-slate-400 font-mono">Nuevo Motor xG 2026</span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                <h3 className="text-xl sm:text-3xl font-extrabold text-white tracking-tight">
                   Simula disparos, duelos con 10.000 partidos y detecta espejismos
                 </h3>
-                <p className="mt-2 text-sm text-slate-300 leading-relaxed">
+                <p className="mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
                   Accede al <strong>Laboratorio de Tiro 3D</strong> con cálculo de ángulo trigonométrico y tiros gemelos reales, al <strong>Simulador Poisson de Duelos</strong> con matriz de calor 4x4 y al <strong>Detector de Espejismos & Regresión a la Media</strong>.
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0 w-full sm:w-auto">
                 <Link
                   href="/xg-engine"
-                  className={`px-6 py-3.5 rounded-xl font-bold text-sm shadow-lg flex items-center gap-2 transition-all duration-300 hover:scale-105 ${
+                  className={`w-full sm:w-auto px-6 py-3.5 rounded-xl font-bold text-sm shadow-lg flex items-center justify-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95 ${
                     isUcl
                       ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-cyan-500/25"
                       : "bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-emerald-500/25"
                   }`}
                 >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                   <span>Explorar Motor xG</span>

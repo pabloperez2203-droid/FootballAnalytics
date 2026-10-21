@@ -36,7 +36,7 @@ export default function MatchHeader({ matchData, homeColor: propHomeColor, awayC
   }, [date]);
 
   return (
-    <div className="glass-card mb-4 px-6 py-6 flex flex-col items-center justify-center relative min-h-[160px] overflow-hidden rounded-2xl">
+    <div className="glass-card mb-4 px-3 sm:px-6 py-4 sm:py-6 flex flex-col items-center justify-center relative min-h-[140px] sm:min-h-[160px] overflow-hidden rounded-2xl">
       {/* Luces ambientales en los extremos de la tarjeta */}
       <div
         className="absolute -left-12 -top-12 w-48 h-48 rounded-full blur-3xl opacity-15 pointer-events-none"
@@ -48,7 +48,7 @@ export default function MatchHeader({ matchData, homeColor: propHomeColor, awayC
       />
 
       {/* Badge de competición alineado */}
-      <div className="absolute top-4 left-4 hidden sm:flex items-center gap-2">
+      <div className="absolute top-3 sm:top-4 left-3 sm:left-4 hidden sm:flex items-center gap-2">
         <div className="inline-flex items-center gap-2 leading-none">
           <span className="h-6 px-2.5 flex items-center justify-center rounded-lg text-xs font-medium whitespace-nowrap bg-white/[0.04] border border-white/10 text-slate-300 gap-1.5 leading-none shadow-sm">
             <span className={`w-1.5 h-1.5 rounded-full ${isUcl ? 'bg-cyan-400 shadow-[0_0_6px_#22d3ee]' : 'bg-emerald-400 shadow-[0_0_6px_#10b981]'}`}></span>
@@ -60,50 +60,52 @@ export default function MatchHeader({ matchData, homeColor: propHomeColor, awayC
         </div>
       </div>
 
-      <div className="absolute top-4 right-4 flex items-center gap-3">
-        <span className="h-6 px-2.5 flex items-center justify-center rounded-lg text-xs font-mono text-slate-400 bg-white/[0.02] border border-white/5 leading-none">
+      <div className="absolute top-2.5 sm:top-4 right-2.5 sm:right-4 flex items-center gap-2 sm:gap-3">
+        <span className="h-5 sm:h-6 px-2 sm:px-2.5 flex items-center justify-center rounded-lg text-[10px] sm:text-xs font-mono text-slate-400 bg-white/[0.02] border border-white/5 leading-none max-w-[170px] sm:max-w-none truncate">
           {formattedDate} {stadium ? `· ${stadium}` : ''}
         </span>
       </div>
 
-      <div className="flex items-center justify-center gap-6 sm:gap-10 w-full max-w-2xl mt-4">
+      <div className="flex items-center justify-center gap-2 sm:gap-6 md:gap-10 w-full max-w-2xl mt-5 sm:mt-4">
         {/* Local */}
-        <div className="flex flex-col items-center gap-3 flex-1">
-          <div className="relative group">
+        <div className="flex flex-col items-center gap-2 sm:gap-3 flex-1 min-w-0">
+          <div className="relative group shrink-0">
             <div
               className="absolute -inset-3 rounded-full blur-3xl opacity-20 pointer-events-none transition-opacity duration-300 group-hover:opacity-35"
               style={{ backgroundColor: homeColor }}
             />
             <div
-              className="relative w-20 h-20 rounded-full flex items-center justify-center border border-white/10 shadow-lg text-xl font-bold bg-white/5 p-2 backdrop-blur-sm transition-transform duration-300 group-hover:scale-105"
+              className="relative w-14 h-14 sm:w-20 sm:h-20 rounded-full flex items-center justify-center border border-white/10 shadow-lg text-base sm:text-xl font-bold bg-white/5 p-2 backdrop-blur-sm transition-transform duration-300 group-hover:scale-105"
               style={{ boxShadow: `0 0 24px -6px ${homeColor}40` }}
             >
               {homeCrest ? <img src={homeCrest} alt={home_team} loading="lazy" className="w-full h-full object-contain drop-shadow-md" /> : home_short}
             </div>
           </div>
-          <span className="font-semibold text-lg text-center tracking-tight">{home_team}</span>
+          <span className="font-semibold text-xs sm:text-base md:text-lg text-center tracking-tight line-clamp-2 max-w-[110px] sm:max-w-[200px] leading-tight sm:leading-normal">
+            {home_team}
+          </span>
         </div>
 
         {/* Marcador y analítica xG */}
         {isUpcoming ? (
-          <div className="flex flex-col items-center gap-1.5 px-3 py-1">
-            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/25 animate-pulse">
+          <div className="flex flex-col items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1 shrink-0">
+            <span className="px-2 sm:px-2.5 py-0.5 rounded-full text-[9px] sm:text-[10px] font-mono font-semibold uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/25 animate-pulse">
               Por Disputar
             </span>
-            <div className="text-4xl md:text-5xl font-black font-mono tracking-wider text-slate-200">
+            <div className="text-2xl sm:text-4xl md:text-5xl font-black font-mono tracking-wider text-slate-200">
               VS
             </div>
-            <span className="text-xs font-mono text-slate-400">
+            <span className="text-[10px] sm:text-xs font-mono text-slate-400 text-center max-w-[120px] sm:max-w-none truncate">
               {formattedDate}
             </span>
           </div>
         ) : (
-          <div className="flex flex-col items-center gap-1.5 px-2">
-            <div className="text-5xl md:text-6xl font-black font-mono tabular-nums tracking-tighter">
+          <div className="flex flex-col items-center gap-1 sm:gap-1.5 px-1 sm:px-2 shrink-0">
+            <div className="text-3xl sm:text-5xl md:text-6xl font-black font-mono tabular-nums tracking-tighter">
               {home_score} - {away_score}
             </div>
 
-            <div className="text-xs sm:text-sm text-slate-400 font-mono mt-1 flex items-center gap-2">
+            <div className="text-[11px] sm:text-xs md:text-sm text-slate-400 font-mono mt-0.5 sm:mt-1 flex items-center gap-1.5 sm:gap-2">
               <span>xG</span>
               <span className="font-semibold text-slate-200" style={{ color: home_xg > away_xg ? homeColor : undefined }}>
                 {Number(home_xg).toFixed(2)}
@@ -115,7 +117,7 @@ export default function MatchHeader({ matchData, homeColor: propHomeColor, awayC
             </div>
 
             {/* Barra de acento / comparación xG con colores dinámicos */}
-            <div className="w-36 sm:w-48 h-1.5 rounded-full bg-white/10 overflow-hidden flex mt-1 shadow-inner">
+            <div className="w-24 sm:w-48 h-1.5 rounded-full bg-white/10 overflow-hidden flex mt-1 shadow-inner">
               <div
                 className="h-full spring-bar"
                 style={{
@@ -137,20 +139,22 @@ export default function MatchHeader({ matchData, homeColor: propHomeColor, awayC
         )}
 
         {/* Visitante */}
-        <div className="flex flex-col items-center gap-3 flex-1">
-          <div className="relative group">
+        <div className="flex flex-col items-center gap-2 sm:gap-3 flex-1 min-w-0">
+          <div className="relative group shrink-0">
             <div
               className="absolute -inset-3 rounded-full blur-3xl opacity-20 pointer-events-none transition-opacity duration-300 group-hover:opacity-35"
               style={{ backgroundColor: awayColor }}
             />
             <div
-              className="relative w-20 h-20 rounded-full flex items-center justify-center border border-white/10 shadow-lg text-xl font-bold bg-white/5 p-2 backdrop-blur-sm transition-transform duration-300 group-hover:scale-105"
+              className="relative w-14 h-14 sm:w-20 sm:h-20 rounded-full flex items-center justify-center border border-white/10 shadow-lg text-base sm:text-xl font-bold bg-white/5 p-2 backdrop-blur-sm transition-transform duration-300 group-hover:scale-105"
               style={{ boxShadow: `0 0 24px -6px ${awayColor}40` }}
             >
               {awayCrest ? <img src={awayCrest} alt={away_team} loading="lazy" className="w-full h-full object-contain drop-shadow-md" /> : away_short}
             </div>
           </div>
-          <span className="font-semibold text-lg text-center tracking-tight">{away_team}</span>
+          <span className="font-semibold text-xs sm:text-base md:text-lg text-center tracking-tight line-clamp-2 max-w-[110px] sm:max-w-[200px] leading-tight sm:leading-normal">
+            {away_team}
+          </span>
         </div>
       </div>
     </div>

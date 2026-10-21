@@ -29,14 +29,14 @@ export default function KpiCard({
 }: KpiCardProps) {
   return (
     <article
-      className={`glass-card interactive-card rounded-2xl p-6 flex flex-col justify-between ${className}`}
+      className={`glass-card interactive-card rounded-2xl p-4 sm:p-6 flex flex-col justify-between ${className}`}
       style={style}
     >
       <div className="flex items-center justify-between gap-2">
         <span className="lbl font-semibold">{title}</span>
         {delta && (
           <span
-            className={`text-xs font-mono px-2.5 py-0.5 rounded-full font-semibold border ${
+            className={`text-xs font-mono px-2 sm:px-2.5 py-0.5 rounded-full font-semibold border ${
               deltaType === "pos"
                 ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/25"
                 : deltaType === "neg"
@@ -49,14 +49,14 @@ export default function KpiCard({
         )}
       </div>
 
-      <div className="mt-5 flex-1 flex flex-col justify-between">
-        <div className="flex items-center justify-between gap-4">
+      <div className="mt-3.5 sm:mt-5 flex-1 flex flex-col justify-between">
+        <div className="flex items-center justify-between gap-3 sm:gap-4">
           <div className="min-w-0 flex-1">
-            <div className={`text-3xl md:text-5xl font-mono font-bold tracking-tight tabular-nums ${valueClassName}`}>
+            <div className={`text-2xl sm:text-3xl md:text-5xl font-mono font-bold tracking-tight tabular-nums ${valueClassName}`}>
               {value}
             </div>
             {subtitle && (
-              <div className="text-sm mt-2 font-normal text-slate-400 truncate">
+              <div className="text-xs sm:text-sm mt-1 sm:mt-2 font-normal text-slate-400 truncate">
                 {subtitle}
               </div>
             )}

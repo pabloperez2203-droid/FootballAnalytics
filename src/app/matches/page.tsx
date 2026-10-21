@@ -272,8 +272,8 @@ function MatchIntelContent() {
 
       {isUpcoming ? (
         /* Vista de partido programado / por disputar */
-        <div className="my-8 max-w-4xl mx-auto">
-          <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-b from-slate-900/90 to-slate-950/90 border border-white/10 shadow-2xl backdrop-blur-xl relative overflow-hidden text-center">
+        <div className="my-4 sm:my-8 max-w-4xl mx-auto">
+          <div className="p-5 sm:p-10 rounded-2xl sm:rounded-3xl bg-gradient-to-b from-slate-900/90 to-slate-950/90 border border-white/10 shadow-2xl backdrop-blur-xl relative overflow-hidden text-center">
             {/* Ambient glows */}
             <div
               className="absolute -top-24 -left-24 w-72 h-72 rounded-full blur-3xl opacity-20 pointer-events-none"
@@ -285,24 +285,24 @@ function MatchIntelContent() {
             />
 
             <div className="relative z-10 flex flex-col items-center">
-              <span className="px-3.5 py-1 rounded-full text-xs font-mono font-semibold tracking-wider uppercase bg-amber-500/10 text-amber-400 border border-amber-500/25 mb-4 inline-flex items-center gap-2 shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+              <span className="px-3 sm:px-3.5 py-0.5 sm:py-1 rounded-full text-[11px] sm:text-xs font-mono font-semibold tracking-wider uppercase bg-amber-500/10 text-amber-400 border border-amber-500/25 mb-3 sm:mb-4 inline-flex items-center gap-1.5 sm:gap-2 shadow-sm">
+                <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-amber-400 animate-pulse" />
                 Partido Programado · Jornada {currentMatchday}
               </span>
 
-              <h2 className="text-2xl sm:text-3xl font-black text-white mb-3 tracking-tight">
+              <h2 className="text-xl sm:text-3xl font-black text-white mb-2 sm:mb-3 tracking-tight">
                 Telemetría en Espera
               </h2>
 
-              <p className="text-sm sm:text-base text-slate-300 max-w-xl leading-relaxed mb-8">
+              <p className="text-xs sm:text-base text-slate-300 max-w-xl leading-relaxed mb-6 sm:mb-8">
                 Este enfrentamiento entre <strong className="text-white font-semibold">{homeTeam}</strong> y <strong className="text-white font-semibold">{awayTeam}</strong> aún no se ha jugado. Los mapas de tiro en 3D, modelos de xG acumulado y alineaciones se activarán automáticamente una vez comience el encuentro.
               </p>
 
               {/* Call to action cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-2xl mb-8 text-left">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full max-w-2xl mb-6 sm:mb-8 text-left">
                 <Link
                   href={`/xg-engine?tool=oracle&local=${encodeURIComponent(homeTeam)}&visitante=${encodeURIComponent(awayTeam)}`}
-                  className="group p-5 rounded-2xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-emerald-500/40 transition-all flex flex-col justify-between"
+                  className="group p-4 sm:p-5 rounded-2xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-emerald-500/40 transition-all flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center gap-2 text-emerald-400 text-xs font-mono font-semibold mb-2">

@@ -122,7 +122,7 @@ export default function RegressionRadar() {
   }, [currentJugadores, isUcl, totalSeasonMatches]);
 
   return (
-    <div className="glass-card interactive-card rounded-2xl p-6 sm:p-8 flex flex-col gap-8 transition-all duration-300">
+    <div className="glass-card interactive-card rounded-2xl p-4 sm:p-8 flex flex-col gap-6 sm:gap-8 transition-all duration-300">
       {/* ─── Encabezado ─── */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/10">
         <div>
@@ -232,7 +232,7 @@ export default function RegressionRadar() {
                   key={idx}
                   className="p-3.5 rounded-xl bg-slate-950/60 border border-white/5 hover:border-rose-500/30 transition-all flex items-center justify-between text-xs"
                 >
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
                     <div className="w-8 h-8 rounded-lg bg-white/5 p-1 shrink-0 flex items-center justify-center">
                       {t.crest ? (
                         <img src={t.crest} alt={t.team} className="w-full h-full object-contain" />
@@ -240,16 +240,16 @@ export default function RegressionRadar() {
                         <span className="font-bold text-xs">{t.team.slice(0, 3)}</span>
                       )}
                     </div>
-                    <div>
-                      <div className="font-bold text-white text-sm">{t.team}</div>
-                      <div className="text-[10px] text-slate-400 font-mono mt-0.5">
-                        {t.goalsFor} Goles reales vs {t.xgFor.toFixed(1)} xG
+                    <div className="min-w-0">
+                      <div className="font-bold text-white text-xs sm:text-sm truncate max-w-[120px] sm:max-w-none">{t.team}</div>
+                      <div className="text-[10px] text-slate-400 font-mono mt-0.5 truncate max-w-[120px] sm:max-w-none">
+                        {t.goalsFor} Goles vs {t.xgFor.toFixed(1)} xG
                       </div>
                     </div>
                   </div>
 
-                  <div className="text-right">
-                    <div className="font-mono font-black text-rose-400 text-sm">
+                  <div className="text-right shrink-0">
+                    <div className="font-mono font-black text-rose-400 text-xs sm:text-sm">
                       +{t.diffGoals.toFixed(2)} Goles
                     </div>
                     <div className="text-[10px] text-slate-500 font-mono mt-0.5">
@@ -289,7 +289,7 @@ export default function RegressionRadar() {
                   key={idx}
                   className="p-3.5 rounded-xl bg-slate-950/60 border border-white/5 hover:border-emerald-500/30 transition-all flex items-center justify-between text-xs"
                 >
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
                     <div className="w-8 h-8 rounded-lg bg-white/5 p-1 shrink-0 flex items-center justify-center">
                       {t.crest ? (
                         <img src={t.crest} alt={t.team} className="w-full h-full object-contain" />
@@ -297,17 +297,17 @@ export default function RegressionRadar() {
                         <span className="font-bold text-xs">{t.team.slice(0, 3)}</span>
                       )}
                     </div>
-                    <div>
-                      <div className="font-bold text-white text-sm">{t.team}</div>
-                      <div className="text-[10px] text-slate-400 font-mono mt-0.5">
-                        {t.goalsFor} Goles vs {t.xgFor.toFixed(1)} xG generados
+                    <div className="min-w-0">
+                      <div className="font-bold text-white text-xs sm:text-sm truncate max-w-[120px] sm:max-w-none">{t.team}</div>
+                      <div className="text-[10px] text-slate-400 font-mono mt-0.5 truncate max-w-[120px] sm:max-w-none">
+                        {t.goalsFor} Goles vs {t.xgFor.toFixed(1)} xG
                       </div>
                     </div>
                   </div>
 
-                  <div className="text-right">
-                    <div className="font-mono font-black text-emerald-400 text-sm">
-                      {t.diffGoals <= 0 ? `${t.diffGoals.toFixed(2)}` : `-${t.diffGoals.toFixed(2)}`} xG deficit
+                  <div className="text-right shrink-0">
+                    <div className="font-mono font-black text-emerald-400 text-xs sm:text-sm">
+                      {t.diffGoals <= 0 ? `${t.diffGoals.toFixed(2)}` : `-${t.diffGoals.toFixed(2)}`} xG
                     </div>
                     <div className="text-[10px] text-slate-500 font-mono mt-0.5">
                       Subida: <strong className="text-emerald-300">INMINENTE</strong>
@@ -334,11 +334,11 @@ export default function RegressionRadar() {
           </div>
 
           {/* Toggle de Pestaña de Jugadores */}
-          <div className="flex flex-wrap sm:flex-nowrap items-center p-1 rounded-xl bg-white/5 border border-white/10 self-start sm:self-auto font-mono text-xs w-full sm:w-auto gap-1">
+          <div className="flex flex-wrap sm:flex-nowrap items-center p-1 rounded-xl bg-white/5 border border-white/10 self-start sm:self-auto font-mono text-[11px] sm:text-xs w-full sm:w-auto gap-1">
             <button
               type="button"
               onClick={() => setPlayerTab("cazagoles")}
-              className={`flex-1 sm:flex-none px-3.5 py-2 min-h-[40px] rounded-lg transition-all cursor-pointer font-bold text-center touch-manipulation active:scale-95 flex items-center justify-center ${
+              className={`flex-1 sm:flex-none px-2.5 sm:px-3.5 py-2 min-h-[40px] rounded-lg transition-all cursor-pointer font-bold text-center touch-manipulation active:scale-95 flex items-center justify-center ${
                 playerTab === "cazagoles"
                   ? isUcl
                     ? "bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 shadow-sm"
@@ -346,12 +346,12 @@ export default function RegressionRadar() {
                   : "text-slate-400 hover:text-white"
               }`}
             >
-              Cazagoles de Área (Calidad xG/Tiro)
+              Cazagoles (Calidad xG/Tiro)
             </button>
             <button
               type="button"
               onClick={() => setPlayerTab("francotiradores")}
-              className={`flex-1 sm:flex-none px-3.5 py-2 min-h-[40px] rounded-lg transition-all cursor-pointer font-bold text-center touch-manipulation active:scale-95 flex items-center justify-center ${
+              className={`flex-1 sm:flex-none px-2.5 sm:px-3.5 py-2 min-h-[40px] rounded-lg transition-all cursor-pointer font-bold text-center touch-manipulation active:scale-95 flex items-center justify-center ${
                 playerTab === "francotiradores"
                   ? isUcl
                     ? "bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 shadow-sm"
@@ -359,7 +359,7 @@ export default function RegressionRadar() {
                   : "text-slate-400 hover:text-white"
               }`}
             >
-              Francotiradores (Pegada G − xG)
+              Francotiradores (G − xG)
             </button>
           </div>
         </div>
@@ -373,11 +373,11 @@ export default function RegressionRadar() {
                 className="p-3.5 rounded-xl bg-slate-950/60 border border-white/5 hover:border-white/20 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs"
               >
                 {/* Info Jugador */}
-                <div className="flex items-center gap-3">
-                  <span className="font-mono font-bold text-slate-500 w-4 text-center">
+                <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                  <span className="font-mono font-bold text-slate-500 w-4 text-center shrink-0">
                     {idx + 1}
                   </span>
-                  <div className="relative w-10 h-10 rounded-full bg-slate-800 border border-white/10 overflow-hidden flex items-center justify-center shrink-0 shadow-md">
+                  <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-800 border border-white/10 overflow-hidden flex items-center justify-center shrink-0 shadow-md">
                     {player.photo ? (
                       <img src={player.photo} alt={player.name} className="w-full h-full object-cover" />
                     ) : (
@@ -389,21 +389,21 @@ export default function RegressionRadar() {
                       <img
                         src={player.crest}
                         alt={player.team}
-                        className="absolute bottom-0 right-0 w-4 h-4 object-contain bg-slate-950 rounded-full p-0.5 border border-white/20"
+                        className="absolute bottom-0 right-0 w-3.5 h-3.5 sm:w-4 sm:h-4 object-contain bg-slate-950 rounded-full p-0.5 border border-white/20"
                       />
                     )}
                   </div>
 
-                  <div>
-                    <div className="font-bold text-white text-sm">{player.name}</div>
-                    <div className="text-[10px] text-slate-400 font-mono mt-0.5">
+                  <div className="min-w-0">
+                    <div className="font-bold text-white text-xs sm:text-sm truncate max-w-[130px] sm:max-w-none">{player.name}</div>
+                    <div className="text-[10px] text-slate-400 font-mono mt-0.5 truncate max-w-[130px] sm:max-w-none">
                       {player.team} · {player.position}
                     </div>
                   </div>
                 </div>
 
                 {/* Métricas clave */}
-                <div className="flex items-center gap-4 sm:gap-8 justify-between sm:justify-end text-right font-mono">
+                <div className="flex items-center gap-2.5 sm:gap-8 justify-between sm:justify-end text-right font-mono">
                   <div>
                     <div className="text-[10px] text-slate-500 uppercase">Goles / Tiros</div>
                     <div className="font-bold text-white text-sm">
