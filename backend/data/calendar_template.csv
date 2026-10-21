@@ -1,0 +1,10 @@
+match_id,competition,matchday,home_team,away_team,date,confirmed,notes
+,laliga,10,Real Madrid,Barcelona,2026-10-25 21:00:00,true,El Clasico (Confirmado)
+,laliga,10,Real Betis,Atletico Madrid,2026-10-26 18:30:00,true,Confirmado
+,laliga,10,Athletic Club,Espanyol,2026-10-24 21:00:00,true,Viernes 21:00
+,laliga,10,Getafe,Valencia,2026-10-26 16:15:00,true,Domingo 16:15
+,laliga,11,Valencia,Real Madrid,2026-11-01 00:00:00,false,Jornada 11 - Horario por confirmar
+,ucl,4,Liverpool,Real Madrid,2026-11-04 21:00:00,true,Champions League J4
+,ucl,4,Paris Saint-Germain,Atletico Madrid,2026-11-04 21:00:00,true,Champions League J4
+,ucl,4,Inter,Arsenal,2026-11-05 21:00:00,true,Champions League J4
+,ucl,4,Bayern Munich,Barcelona,2026-11-05 21:00:00,true,Champions League J4

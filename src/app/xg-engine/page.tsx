@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import PageContainer from "@/components/layout/PageContainer";
 import ShotLabSimulator from "@/components/xg-engine/ShotLabSimulator";
 import MatchupOracle from "@/components/xg-engine/MatchupOracle";
@@ -10,9 +11,25 @@ import { CompetitionSeal } from "@/components/ui/CompetitionBranding";
 
 type TabMode = "all" | "shotlab" | "oracle" | "regression";
 
-export default function XgEnginePage() {
+function XgEngineContent() {
   const { competition, isUcl } = useCompetition();
+  const searchParams = useSearchParams();
+
   const [activeTab, setActiveTab] = useState<TabMode>("all");
+
+  // Si la URL trae ?tool=oracle o ?local=... cambiar automáticamente a la pestaña de simulador
+  useEffect(() => {
+    if (!searchParams) return;
+    const tool = searchParams.get("tool") || searchParams.get("tab");
+    const hasMatch = searchParams.get("local") || searchParams.get("home");
+    if (tool === "oracle" || hasMatch) {
+      setActiveTab("oracle");
+    } else if (tool === "shotlab") {
+      setActiveTab("shotlab");
+    } else if (tool === "regression") {
+      setActiveTab("regression");
+    }
+  }, [searchParams]);
 
   const tabs: { id: TabMode; label: string; icon: string; count?: string }[] = [
     { id: "all", label: "Vista Completa (Bento)", icon: "grid" },
@@ -164,5 +181,21 @@ export default function XgEnginePage() {
         </div>
       </PageContainer>
     </div>
+  );
+}
+
+export default function XgEnginePage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen py-8 sm:py-10">
+          <PageContainer>
+            <div className="h-96 rounded-2xl bg-white/[0.02] border border-white/5 animate-pulse" />
+          </PageContainer>
+        </div>
+      }
+    >
+      <XgEngineContent />
+    </Suspense>
   );
 }

@@ -1,15 +1,19 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import equiposData from "@/data/equipos_xg.json";
 import equiposUclData from "@/data/equipos_ucl_xg.json";
 import jugadoresData from "@/data/jugadores_xg.json";
 import jugadoresUclData from "@/data/jugadores_ucl_xg.json";
-import { useCompetition } from "@/stores/filterStore";
+import { useCompetition, setCompetition } from "@/stores/filterStore";
 import { getTeamCrest, getTeamColor } from "@/utils/crests";
+import { FeaturedMatch, getSuggestedMatchChips } from "@/config/featuredMatches";
+import { parseMatchDate } from "@/utils/dateFormatter";
 
 export default function MatchupOracle() {
   const { competition, isUcl } = useCompetition();
+  const searchParams = useSearchParams();
 
   const currentEquipos = isUcl ? equiposUclData : equiposData;
   const currentJugadores = isUcl ? jugadoresUclData : jugadoresData;
@@ -21,6 +25,37 @@ export default function MatchupOracle() {
   const [awayTeamName, setAwayTeamName] = useState<string>(
     () => currentEquipos[1]?.team || "Barcelona"
   );
+
+  // Escuchar parámetros de URL para carga automática de partidos (?local=...&visitante=...)
+  useEffect(() => {
+    if (!searchParams) return;
+    const urlHome = searchParams.get("local") || searchParams.get("home");
+    const urlAway = searchParams.get("visitante") || searchParams.get("away");
+    const urlComp = searchParams.get("comp") || searchParams.get("competition");
+
+    if (urlComp && (urlComp === "laliga" || urlComp === "ucl") && urlComp !== competition) {
+      setCompetition(urlComp);
+    }
+    if (urlHome) {
+      setHomeTeamName(urlHome);
+    }
+    if (urlAway) {
+      setAwayTeamName(urlAway);
+    }
+  }, [searchParams, competition]);
+
+  // Lista de chips sugeridos según competición activa
+  const suggestedChips = useMemo(() => {
+    return getSuggestedMatchChips(competition);
+  }, [competition]);
+
+  const handleSelectSuggestedMatch = (match: FeaturedMatch) => {
+    if (match.competition !== competition) {
+      setCompetition(match.competition);
+    }
+    setHomeTeamName(match.homeTeam);
+    setAwayTeamName(match.awayTeam);
+  };
 
   // Aseguramos que los equipos existan en la competición activa
   const validHomeTeam = useMemo(() => {
@@ -193,14 +228,12 @@ export default function MatchupOracle() {
         <div>
           <div className="flex items-center gap-2.5 mb-1.5">
             <span
-              className={`w-2.5 h-2.5 rounded-full animate-pulse shadow-md ${
-                isUcl ? "bg-cyan-400 shadow-cyan-400/50" : "bg-emerald-400 shadow-emerald-400/50"
-              }`}
+              className={`w-2.5 h-2.5 rounded-full animate-pulse shadow-md ${isUcl ? "bg-cyan-400 shadow-cyan-400/50" : "bg-emerald-400 shadow-emerald-400/50"
+                }`}
             />
             <span
-              className={`text-xs font-mono font-bold tracking-wider uppercase ${
-                isUcl ? "text-cyan-400" : "text-emerald-400"
-              }`}
+              className={`text-xs font-mono font-bold tracking-wider uppercase ${isUcl ? "text-cyan-400" : "text-emerald-400"
+                }`}
             >
               MÓDULO 2 · ORÁCULO DE DUELOS & MONTE CARLO
             </span>
@@ -217,6 +250,62 @@ export default function MatchupOracle() {
         <div className="self-start sm:self-auto px-3.5 py-1.5 rounded-xl bg-white/[0.04] border border-white/10 text-xs font-mono font-bold text-slate-300 flex items-center gap-2">
           <span>⚙️</span>
           <span>10.000 simulaciones / s</span>
+        </div>
+      </div>
+
+      {/* ─── Píldoras / Chips Rápidos de Duelos Sugeridos ─── */}
+      <div className="flex flex-col gap-2.5 p-3.5 sm:p-4 rounded-2xl bg-white/[0.03] border border-white/10 shadow-inner">
+        <div className="flex items-center justify-between text-xs font-mono">
+          <div className="flex items-center gap-2 text-amber-400 font-bold uppercase tracking-wider text-[11px] sm:text-xs">
+            <span className="text-sm animate-pulse">⚡</span>
+            <span>Próximos Partidos (Jornada que viene):</span>
+          </div>
+          <span className="text-[10px] text-slate-400 hidden sm:inline">
+            Toca un duelo inminente para simularlo al instante
+          </span>
+        </div>
+
+        <div className="flex overflow-x-auto no-scrollbar gap-2 py-1 items-center">
+          {suggestedChips.map((m) => {
+            const isSelected =
+              (validHomeTeam.team === m.homeTeam && validAwayTeam.team === m.awayTeam) ||
+              (validHomeTeam.team === m.awayTeam && validAwayTeam.team === m.homeTeam);
+            const isMatchUcl = m.competition === "ucl";
+
+            const parsed = parseMatchDate(m.dateStr, m.confirmed);
+
+            return (
+              <button
+                type="button"
+                key={m.id}
+                onClick={() => handleSelectSuggestedMatch(m)}
+                className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer shrink-0 border touch-manipulation active:scale-95 ${isSelected
+                    ? isMatchUcl
+                      ? "bg-cyan-500/20 border-cyan-400/60 text-cyan-200 shadow-[0_0_15px_rgba(56,189,248,0.25)] ring-1 ring-cyan-400/40"
+                      : "bg-emerald-500/20 border-emerald-500/60 text-emerald-200 shadow-[0_0_15px_rgba(16,185,129,0.25)] ring-1 ring-emerald-400/40"
+                    : "bg-white/[0.04] border-white/10 text-slate-300 hover:text-white hover:bg-white/[0.08] hover:border-white/20"
+                  }`}
+                title={`Cargar ${m.homeTeam} vs ${m.awayTeam} (${parsed.formattedFull})`}
+              >
+                <span className="text-amber-400 text-xs">⚡</span>
+                <span className="font-bold text-white">{m.homeTeam}</span>
+                <span className="text-slate-500 text-[10px] font-mono">vs</span>
+                <span className="font-bold text-white">{m.awayTeam}</span>
+                <span className="text-[10px] font-mono text-amber-300/90 font-normal">
+                  ({parsed.isConfirmed ? parsed.formattedDate : "Por confirmar"})
+                </span>
+                <span
+                  className={`text-[9px] px-1.5 py-0.5 rounded font-mono font-bold uppercase ${isMatchUcl ? "bg-cyan-500/20 text-cyan-300 border border-cyan-400/30" : "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30"
+                    }`}
+                >
+                  {m.tag || (isMatchUcl ? "J4 UCL" : "J10 LaLiga")}
+                </span>
+                {isSelected && (
+                  <span className={`w-1.5 h-1.5 rounded-full animate-ping ${isMatchUcl ? "bg-cyan-400" : "bg-emerald-400"}`} />
+                )}
+              </button>
+            );
+          })}
         </div>
       </div>
 
@@ -406,11 +495,10 @@ export default function MatchupOracle() {
                     return (
                       <div
                         key={`${h}-${a}`}
-                        className={`p-2.5 rounded-xl border flex flex-col items-center justify-center transition-all ${
-                          isTop
+                        className={`p-2.5 rounded-xl border flex flex-col items-center justify-center transition-all ${isTop
                             ? "border-amber-400 bg-amber-500/20 shadow-[0_0_15px_rgba(251,191,36,0.3)] ring-1 ring-amber-400/50"
                             : "border-white/5"
-                        }`}
+                          }`}
                         style={{
                           backgroundColor: isTop
                             ? undefined
@@ -421,9 +509,8 @@ export default function MatchupOracle() {
                           {h} - {a}
                         </span>
                         <span
-                          className={`text-[10px] font-mono mt-0.5 ${
-                            isTop ? "text-amber-300 font-extrabold" : "text-slate-300"
-                          }`}
+                          className={`text-[10px] font-mono mt-0.5 ${isTop ? "text-amber-300 font-extrabold" : "text-slate-300"
+                            }`}
                         >
                           {percent}%
                         </span>

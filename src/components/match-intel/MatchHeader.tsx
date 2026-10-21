@@ -39,7 +39,7 @@ export default function MatchHeader({ matchData, homeColor: propHomeColor, awayC
       </div>
 
       <div className="absolute top-4 right-4 flex items-center gap-3">
-         <span className="h-6 px-2.5 flex items-center justify-center rounded-lg text-xs font-mono text-slate-400 bg-white/[0.02] border border-white/5 leading-none">{date} {stadium ? `· ${stadium}` : ''}</span>
+        <span className="h-6 px-2.5 flex items-center justify-center rounded-lg text-xs font-mono text-slate-400 bg-white/[0.02] border border-white/5 leading-none">{date} {stadium ? `· ${stadium}` : ''}</span>
       </div>
 
       <div className="flex items-center justify-center gap-6 sm:gap-10 w-full max-w-2xl mt-4">
@@ -63,18 +63,18 @@ export default function MatchHeader({ matchData, homeColor: propHomeColor, awayC
         {/* Marcador y analítica xG */}
         <div className="flex flex-col items-center gap-1.5 px-2">
           <div className="text-5xl md:text-6xl font-black font-mono tabular-nums tracking-tighter">
-             {home_score} - {away_score}
+            {home_score} - {away_score}
           </div>
-          
+
           <div className="text-xs sm:text-sm text-slate-400 font-mono mt-1 flex items-center gap-2">
-             <span>xG</span>
-             <span className="font-semibold text-slate-200" style={{ color: home_xg > away_xg ? homeColor : undefined }}>
-               {Number(home_xg).toFixed(2)}
-             </span>
-             <span className="text-slate-500">–</span>
-             <span className="font-semibold text-slate-200" style={{ color: away_xg > home_xg ? awayColor : undefined }}>
-               {Number(away_xg).toFixed(2)}
-             </span>
+            <span>xG</span>
+            <span className="font-semibold text-slate-200" style={{ color: home_xg > away_xg ? homeColor : undefined }}>
+              {Number(home_xg).toFixed(2)}
+            </span>
+            <span className="text-slate-500">–</span>
+            <span className="font-semibold text-slate-200" style={{ color: away_xg > home_xg ? awayColor : undefined }}>
+              {Number(away_xg).toFixed(2)}
+            </span>
           </div>
 
           {/* Barra de acento / comparación xG con colores dinámicos */}

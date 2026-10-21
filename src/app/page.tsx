@@ -13,6 +13,7 @@ import PageContainer from "@/components/layout/PageContainer";
 import HeroCanvas3D from "@/components/ui/HeroCanvas3D";
 import { useCompetition } from "@/stores/filterStore";
 import { UclStarball } from "@/components/ui/CompetitionBranding";
+import FeaturedMatchups from "@/components/home/FeaturedMatchups";
 
 export default function HomePage() {
   const { competition, meta, isUcl } = useCompetition();
@@ -410,6 +411,9 @@ export default function HomePage() {
           </div>
         </PageContainer>
       </section>
+
+      {/* ─── Duelos de la Jornada (Featured Matchups Recommender) ─────────── */}
+      <FeaturedMatchups />
 
       {/* ─── Bento Grid de Destacados ─────────────────────────────────────── */}
       <section className="py-12 md:py-16">

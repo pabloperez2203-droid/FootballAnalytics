@@ -6,8 +6,8 @@
   "awayTeam": "Atletico Madrid",
   "homeGoals": 1,
   "awayGoals": 1,
-  "homeXG": 1.5,
-  "awayXG": 0.87,
+  "homeXG": 1.59,
+  "awayXG": 0.89,
   "is_simulated": false,
   "match": {
     "id": "ucl_6106397",
@@ -17,8 +17,8 @@
     "away_short": "ATL",
     "home_score": 1,
     "away_score": 1,
-    "home_xg": 1.5,
-    "away_xg": 0.87,
+    "home_xg": 1.59,
+    "away_xg": 0.89,
     "date": "2026-10-20 19:00:00",
     "stadium": "Estadio Europeo",
     "matchday": 3,
@@ -30,20 +30,20 @@
       "draw": 25,
       "away": 20
     },
-    "best_chance": "Min 1' - Bilal El Khannouss (0.096 xG)",
+    "best_chance": "Min 1' - Bilal El Khannouss (0.08 xG)",
     "most_dangerous": "Stuttgart",
     "biggest_surprise": "Fase de Liga UEFA Champions League"
   },
   "stats": {
     "home": {
       "shots": 18,
-      "xg": 1.5,
-      "xg_per_shot": 0.08,
+      "xg": 1.59,
+      "xg_per_shot": 0.09,
       "possession": 53
     },
     "away": {
       "shots": 10,
-      "xg": 0.87,
+      "xg": 0.89,
       "xg_per_shot": 0.09,
       "possession": 47
     }
@@ -54,10 +54,10 @@
       "min": 1,
       "team": "home",
       "player": "Bilal El Khannouss",
-      "xg": 0.096,
+      "xg": 0.08,
       "result": "Parada",
-      "x": 91.5,
-      "y": 65.2
+      "x": 90.4,
+      "y": 66.6
     },
     {
       "id": "2985036865",
@@ -74,27 +74,27 @@
       "min": 3,
       "team": "home",
       "player": "Chris Führich",
-      "xg": 0.032,
+      "xg": 0.04,
       "result": "Missed Shot",
-      "x": 91.4,
-      "y": 77.0
+      "x": 92.7,
+      "y": 73.6
     },
     {
       "id": "2985045947",
       "min": 7,
       "team": "home",
       "player": "Bilal El Khannouss",
-      "xg": 0.036,
+      "xg": 0.019,
       "result": "Parada",
       "x": 77.6,
-      "y": 34.2
+      "y": 28.8
     },
     {
       "id": "2985051753",
       "min": 11,
       "team": "home",
       "player": "Angelo Stiller",
-      "xg": 0.058,
+      "xg": 0.06,
       "result": "Parada",
       "x": 83.4,
       "y": 50.6
@@ -104,10 +104,10 @@
       "min": 11,
       "team": "home",
       "player": "Jamie Leweling",
-      "xg": 0.049,
+      "xg": 0.065,
       "result": "Missed Shot",
-      "x": 95.8,
-      "y": 30.5
+      "x": 95.6,
+      "y": 31.3
     },
     {
       "id": "2985056719",
@@ -144,17 +144,17 @@
       "min": 31,
       "team": "away",
       "player": "Julián Álvarez",
-      "xg": 0.046,
+      "xg": 0.044,
       "result": "Parada",
-      "x": 23.2,
-      "y": 45.3
+      "x": 20.9,
+      "y": 46.0
     },
     {
       "id": "2985088369",
       "min": 36,
       "team": "home",
       "player": "Jamie Leweling",
-      "xg": 0.086,
+      "xg": 0.08,
       "result": "Gol",
       "x": 83.4,
       "y": 55.5
@@ -164,7 +164,7 @@
       "min": 40,
       "team": "away",
       "player": "Dávid Hancko",
-      "xg": 0.037,
+      "xg": 0.031,
       "result": "Missed Shot",
       "x": 4.1,
       "y": 62.6
@@ -194,7 +194,7 @@
       "min": 44,
       "team": "away",
       "player": "Julián Álvarez",
-      "xg": 0.027,
+      "xg": 0.037,
       "result": "Missed Shot",
       "x": 11.3,
       "y": 57.3
@@ -204,97 +204,97 @@
       "min": 47,
       "team": "away",
       "player": "Julián Álvarez",
-      "xg": 0.198,
+      "xg": 0.192,
       "result": "Gol",
-      "x": 8.2,
-      "y": 46.0
+      "x": 8.6,
+      "y": 47.9
     },
     {
       "id": "2985115287",
       "min": 50,
       "team": "away",
       "player": "Ademola Lookman",
-      "xg": 0.084,
+      "xg": 0.118,
       "result": "Parada",
-      "x": 15.3,
-      "y": 37.7
+      "x": 15.0,
+      "y": 39.9
     },
     {
       "id": "2985119987",
       "min": 54,
       "team": "home",
       "player": "Chris Führich",
-      "xg": 0.03,
+      "xg": 0.029,
       "result": "Parada",
-      "x": 89.9,
-      "y": 72.5
+      "x": 90.3,
+      "y": 72.7
     },
     {
       "id": "2985128653",
       "min": 61,
       "team": "away",
       "player": "Pablo Barrios",
-      "xg": 0.079,
+      "xg": 0.062,
       "result": "Parada",
-      "x": 5.5,
-      "y": 67.9
+      "x": 4.2,
+      "y": 68.1
     },
     {
       "id": "2985128719",
       "min": 61,
       "team": "away",
       "player": "Alejandro Grimaldo",
-      "xg": 0.185,
+      "xg": 0.193,
       "result": "Missed Shot",
-      "x": 6.3,
-      "y": 34.8
+      "x": 7.2,
+      "y": 34.7
     },
     {
       "id": "2985134231",
       "min": 66,
       "team": "home",
       "player": "Grischa Prömel",
-      "xg": 0.207,
+      "xg": 0.22,
       "result": "Missed Shot",
-      "x": 93.7,
-      "y": 45.0
+      "x": 92.7,
+      "y": 45.7
     },
     {
       "id": "2985144853",
       "min": 75,
       "team": "home",
       "player": "Grischa Prömel",
-      "xg": 0.104,
+      "xg": 0.089,
       "result": "Missed Shot",
-      "x": 93.3,
-      "y": 48.8
+      "x": 92.8,
+      "y": 50.3
     },
     {
       "id": "2985148031",
       "min": 78,
       "team": "home",
       "player": "Chris Führich",
-      "xg": 0.034,
+      "xg": 0.026,
       "result": "Missed Shot",
-      "x": 83.5,
-      "y": 72.0
+      "x": 80.5,
+      "y": 73.2
     },
     {
       "id": "2985150835",
       "min": 80,
       "team": "home",
       "player": "Angelo Stiller",
-      "xg": 0.074,
+      "xg": 0.118,
       "result": "Parada",
-      "x": 86.7,
-      "y": 41.2
+      "x": 86.4,
+      "y": 43.2
     },
     {
       "id": "2985150851",
       "min": 80,
       "team": "home",
       "player": "Bilal El Khannouss",
-      "xg": 0.031,
+      "xg": 0.048,
       "result": "Parada",
       "x": 89.7,
       "y": 31.7
@@ -304,30 +304,30 @@
       "min": 81,
       "team": "home",
       "player": "Jeff Chabot",
-      "xg": 0.223,
+      "xg": 0.226,
       "result": "Missed Shot",
-      "x": 94.3,
-      "y": 49.9
+      "x": 94.9,
+      "y": 51.5
     },
     {
       "id": "2985156403",
       "min": 89,
       "team": "home",
       "player": "Grischa Prömel",
-      "xg": 0.16,
+      "xg": 0.117,
       "result": "Parada",
-      "x": 85.4,
-      "y": 49.9
+      "x": 86.1,
+      "y": 49.2
     },
     {
       "id": "2985159021",
       "min": 90,
       "team": "home",
       "player": "Dženan Pejčinović",
-      "xg": 0.179,
+      "xg": 0.273,
       "result": "Missed Shot",
-      "x": 93.5,
-      "y": 44.1
+      "x": 92.7,
+      "y": 44.6
     }
   ],
   "players": [
@@ -373,7 +373,7 @@
       "name": "Jeff Chabot",
       "mins": 90,
       "shots": 1,
-      "xg": 0.22,
+      "xg": 0.23,
       "goals": 0,
       "position": "DC",
       "is_starter": true,
@@ -397,7 +397,7 @@
       "name": "Grischa Prömel",
       "mins": 90,
       "shots": 3,
-      "xg": 0.47,
+      "xg": 0.43,
       "goals": 0,
       "position": "MC",
       "is_starter": true,
@@ -409,7 +409,7 @@
       "name": "Angelo Stiller",
       "mins": 90,
       "shots": 3,
-      "xg": 0.17,
+      "xg": 0.21,
       "goals": 0,
       "position": "MC",
       "is_starter": true,
@@ -421,7 +421,7 @@
       "name": "Jamie Leweling",
       "mins": 90,
       "shots": 2,
-      "xg": 0.14,
+      "xg": 0.15,
       "goals": 1,
       "position": "MC",
       "is_starter": true,
@@ -433,7 +433,7 @@
       "name": "Bilal El Khannouss",
       "mins": 90,
       "shots": 3,
-      "xg": 0.16,
+      "xg": 0.15,
       "goals": 0,
       "position": "AMR",
       "is_starter": true,
@@ -493,7 +493,7 @@
       "name": "Dženan Pejčinović",
       "mins": 25,
       "shots": 1,
-      "xg": 0.18,
+      "xg": 0.27,
       "goals": 0,
       "position": "Sub",
       "is_starter": false,
@@ -649,7 +649,7 @@
       "name": "Alejandro Grimaldo",
       "mins": 90,
       "shots": 1,
-      "xg": 0.18,
+      "xg": 0.19,
       "goals": 0,
       "position": "DL",
       "is_starter": true,
@@ -685,7 +685,7 @@
       "name": "Pablo Barrios",
       "mins": 90,
       "shots": 1,
-      "xg": 0.08,
+      "xg": 0.06,
       "goals": 0,
       "position": "MC",
       "is_starter": true,
@@ -733,7 +733,7 @@
       "name": "Ademola Lookman",
       "mins": 25,
       "shots": 1,
-      "xg": 0.08,
+      "xg": 0.12,
       "goals": 0,
       "position": "Sub",
       "is_starter": false,
@@ -951,7 +951,7 @@
         "goals": "0",
         "own_goals": "0",
         "shots": "1",
-        "xG": "0.22",
+        "xG": "0.23",
         "time": "90",
         "player_id": "867080",
         "team_id": "10269",
@@ -999,7 +999,7 @@
         "goals": "0",
         "own_goals": "0",
         "shots": "3",
-        "xG": "0.47",
+        "xG": "0.43",
         "time": "90",
         "player_id": "625175",
         "team_id": "10269",
@@ -1023,7 +1023,7 @@
         "goals": "0",
         "own_goals": "0",
         "shots": "3",
-        "xG": "0.17",
+        "xG": "0.21",
         "time": "90",
         "player_id": "1071186",
         "team_id": "10269",
@@ -1047,7 +1047,7 @@
         "goals": "1",
         "own_goals": "0",
         "shots": "2",
-        "xG": "0.14",
+        "xG": "0.15",
         "time": "90",
         "player_id": "1074968",
         "team_id": "10269",
@@ -1071,7 +1071,7 @@
         "goals": "0",
         "own_goals": "0",
         "shots": "3",
-        "xG": "0.16",
+        "xG": "0.15",
         "time": "90",
         "player_id": "1340895",
         "team_id": "10269",
@@ -1191,7 +1191,7 @@
         "goals": "0",
         "own_goals": "0",
         "shots": "1",
-        "xG": "0.18",
+        "xG": "0.27",
         "time": "25",
         "player_id": "1366602",
         "team_id": "10269",
@@ -1505,7 +1505,7 @@
         "goals": "0",
         "own_goals": "0",
         "shots": "1",
-        "xG": "0.18",
+        "xG": "0.19",
         "time": "90",
         "player_id": "288406",
         "team_id": "9906",
@@ -1577,7 +1577,7 @@
         "goals": "0",
         "own_goals": "0",
         "shots": "1",
-        "xG": "0.08",
+        "xG": "0.06",
         "time": "90",
         "player_id": "1338192",
         "team_id": "9906",
@@ -1673,7 +1673,7 @@
         "goals": "0",
         "own_goals": "0",
         "shots": "1",
-        "xG": "0.08",
+        "xG": "0.12",
         "time": "25",
         "player_id": "690516",
         "team_id": "9906",

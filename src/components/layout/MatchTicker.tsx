@@ -32,20 +32,21 @@ const DEFAULT_LALIGA_MATCHES: MatchItem[] = [
 ];
 
 const DEFAULT_UCL_MATCHES: MatchItem[] = [
-  { id: "ucl_6106280", matchday: 1, home_team: "Sporting CP", away_team: "Galatasaray", home_score: 3, away_score: 1, home_xg: 1.80, away_xg: 1.33 },
-  { id: "ucl_6106274", matchday: 2, home_team: "Roma", away_team: "Real Madrid", home_score: 3, away_score: 4, home_xg: 1.41, away_xg: 1.45 },
-  { id: "ucl_6106299", matchday: 2, home_team: "Real Betis", away_team: "FC Porto", home_score: 3, away_score: 2, home_xg: 1.69, away_xg: 0.97 },
-  { id: "ucl_6106284", matchday: 2, home_team: "Paris Saint-Germain", away_team: "Liverpool", home_score: 1, away_score: 1, home_xg: 1.55, away_xg: 1.48 },
-  { id: "ucl_6106318", matchday: 1, home_team: "Napoli", away_team: "Arsenal", home_score: 0, away_score: 1, home_xg: 0.22, away_xg: 4.05 },
-  { id: "ucl_6106396", matchday: 2, home_team: "Slovan Bratislava", away_team: "Stuttgart", home_score: 0, away_score: 3, home_xg: 0.83, away_xg: 2.25 },
-  { id: "ucl_6106337", matchday: 2, home_team: "Shakhtar Donetsk", away_team: "AEK Athens", home_score: 3, away_score: 1, home_xg: 1.36, away_xg: 1.35 },
-  { id: "ucl_6106295", matchday: 1, home_team: "Club Brugge", away_team: "Aston Villa", home_score: 2, away_score: 3, home_xg: 1.52, away_xg: 3.22 },
+  { id: "ucl_6106234", matchday: 3, home_team: "Paris Saint-Germain", away_team: "Barcelona", home_score: 4, away_score: 2, home_xg: 3.70, away_xg: 2.47 },
+  { id: "ucl_6106248", matchday: 3, home_team: "Liverpool", away_team: "Villarreal", home_score: 4, away_score: 3, home_xg: 2.37, away_xg: 1.58 },
+  { id: "ucl_6106397", matchday: 3, home_team: "Stuttgart", away_team: "Atletico Madrid", home_score: 1, away_score: 1, home_xg: 1.59, away_xg: 0.89 },
+  { id: "ucl_6106257", matchday: 3, home_team: "Manchester City", away_team: "AEK Athens", home_score: 5, away_score: 1, home_xg: 2.83, away_xg: 1.17 },
+  { id: "ucl_6106277", matchday: 3, home_team: "Roma", away_team: "Slovan Bratislava", home_score: 4, away_score: 0, home_xg: 3.17, away_xg: 0.03 },
+  { id: "ucl_6106422", matchday: 3, home_team: "Sabah FK", away_team: "Borussia Dortmund", home_score: 1, away_score: 2, home_xg: 1.49, away_xg: 3.78 },
+  { id: "ucl_6106320", matchday: 3, home_team: "Napoli", away_team: "Bodo Glimt", home_score: 4, away_score: 3, home_xg: 1.53, away_xg: 2.92 },
+  { id: "ucl_6106333", matchday: 3, home_team: "Fenerbahce", away_team: "Slavia Prague", home_score: 2, away_score: 2, home_xg: 1.07, away_xg: 1.48 },
+  { id: "ucl_6106287", matchday: 3, home_team: "FC Porto", away_team: "PSV Eindhoven", home_score: 0, away_score: 1, home_xg: 1.58, away_xg: 1.91 },
 ];
 
 // Caché en memoria para transiciones instantáneas sin recarga
 const memoryCache: Record<CompetitionType, { matches: MatchItem[]; matchday: number }> = {
   laliga: { matches: DEFAULT_LALIGA_MATCHES, matchday: 9 },
-  ucl: { matches: DEFAULT_UCL_MATCHES, matchday: 2 },
+  ucl: { matches: DEFAULT_UCL_MATCHES, matchday: 3 },
 };
 
 // ─── Utilidades de Safe Data Access ──────────────────────────────────────────
@@ -236,11 +237,10 @@ export default function MatchTicker() {
 
         {/* Marcador */}
         <div
-          className={`px-1.5 py-0.5 rounded bg-black/60 border font-mono font-bold text-xs tabular-nums shrink-0 ${
-            isUcl
+          className={`px-1.5 py-0.5 rounded bg-black/60 border font-mono font-bold text-xs tabular-nums shrink-0 ${isUcl
               ? 'text-cyan-300 border-cyan-400/25 group-hover/item:border-cyan-400/50'
               : 'text-emerald-400 border-emerald-500/25 group-hover/item:border-emerald-500/50'
-          }`}
+            }`}
         >
           {homeScore} - {awayScore}
         </div>
@@ -282,11 +282,10 @@ export default function MatchTicker() {
       <div className="flex items-center w-full h-full">
         {/* Etiqueta fija izquierda tipo broadcast con insignia de la competición */}
         <div
-          className={`shrink-0 flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 h-full border-r font-mono text-[10px] sm:text-[11px] font-bold tracking-wider uppercase z-20 shadow-md ${
-            isUcl
+          className={`shrink-0 flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 h-full border-r font-mono text-[10px] sm:text-[11px] font-bold tracking-wider uppercase z-20 shadow-md ${isUcl
               ? 'bg-[#0a1535] border-cyan-500/25 text-cyan-300'
               : 'bg-[#061814] border-emerald-500/25 text-emerald-400'
-          }`}
+            }`}
         >
           <span
             className="w-2 h-2 rounded-full animate-pulse shrink-0"
