@@ -1,8 +1,13 @@
 import React from 'react';
 import { getTeamCrest, getMatchTeamColors } from '@/utils/crests';
+import { useCompetition } from '@/stores/filterStore';
 
 export default function MatchHeader({ matchData, homeColor: propHomeColor, awayColor: propAwayColor }: { matchData: any; homeColor?: string; awayColor?: string }) {
-  const { home_team, home_short, away_team, away_short, home_score, away_score, home_xg, away_xg, date, stadium } = matchData;
+  const { competition } = useCompetition();
+  const isUcl = competition === 'ucl';
+  const { home_team, home_short, away_team, away_short, home_score, away_score, home_xg, away_xg, date, stadium, status, is_upcoming } = matchData;
+  const isUpcoming = status === 'scheduled' || is_upcoming;
+
   const homeCrest = getTeamCrest(home_team);
   const awayCrest = getTeamCrest(away_team);
   const colors = (propHomeColor && propAwayColor) ? { homeColor: propHomeColor, awayColor: propAwayColor } : getMatchTeamColors(home_team, away_team);
@@ -12,6 +17,23 @@ export default function MatchHeader({ matchData, homeColor: propHomeColor, awayC
   const totalXg = (home_xg || 0) + (away_xg || 0);
   const homeXgPercent = totalXg > 0 ? (home_xg / totalXg) * 100 : 50;
   const awayXgPercent = 100 - homeXgPercent;
+
+  const formattedDate = React.useMemo(() => {
+    if (!date) return '';
+    try {
+      const d = new Date(date);
+      if (!isNaN(d.getTime())) {
+        return d.toLocaleDateString('es-ES', {
+          weekday: 'short',
+          day: 'numeric',
+          month: 'short',
+          hour: '2-digit',
+          minute: '2-digit'
+        }).replace('.', '');
+      }
+    } catch {}
+    return date;
+  }, [date]);
 
   return (
     <div className="glass-card mb-4 px-6 py-6 flex flex-col items-center justify-center relative min-h-[160px] overflow-hidden rounded-2xl">
@@ -29,8 +51,8 @@ export default function MatchHeader({ matchData, homeColor: propHomeColor, awayC
       <div className="absolute top-4 left-4 hidden sm:flex items-center gap-2">
         <div className="inline-flex items-center gap-2 leading-none">
           <span className="h-6 px-2.5 flex items-center justify-center rounded-lg text-xs font-medium whitespace-nowrap bg-white/[0.04] border border-white/10 text-slate-300 gap-1.5 leading-none shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_#10b981]"></span>
-            <span>LaLiga EA Sports</span>
+            <span className={`w-1.5 h-1.5 rounded-full ${isUcl ? 'bg-cyan-400 shadow-[0_0_6px_#22d3ee]' : 'bg-emerald-400 shadow-[0_0_6px_#10b981]'}`}></span>
+            <span>{isUcl ? 'UEFA Champions League' : 'LaLiga EA Sports'}</span>
           </span>
           <span className="h-6 px-2.5 flex items-center justify-center rounded-lg text-xs font-mono text-slate-400 bg-white/[0.03] border border-white/5 leading-none">
             2026-27
@@ -39,7 +61,9 @@ export default function MatchHeader({ matchData, homeColor: propHomeColor, awayC
       </div>
 
       <div className="absolute top-4 right-4 flex items-center gap-3">
-        <span className="h-6 px-2.5 flex items-center justify-center rounded-lg text-xs font-mono text-slate-400 bg-white/[0.02] border border-white/5 leading-none">{date} {stadium ? `· ${stadium}` : ''}</span>
+        <span className="h-6 px-2.5 flex items-center justify-center rounded-lg text-xs font-mono text-slate-400 bg-white/[0.02] border border-white/5 leading-none">
+          {formattedDate} {stadium ? `· ${stadium}` : ''}
+        </span>
       </div>
 
       <div className="flex items-center justify-center gap-6 sm:gap-10 w-full max-w-2xl mt-4">
@@ -61,42 +85,56 @@ export default function MatchHeader({ matchData, homeColor: propHomeColor, awayC
         </div>
 
         {/* Marcador y analítica xG */}
-        <div className="flex flex-col items-center gap-1.5 px-2">
-          <div className="text-5xl md:text-6xl font-black font-mono tabular-nums tracking-tighter">
-            {home_score} - {away_score}
-          </div>
-
-          <div className="text-xs sm:text-sm text-slate-400 font-mono mt-1 flex items-center gap-2">
-            <span>xG</span>
-            <span className="font-semibold text-slate-200" style={{ color: home_xg > away_xg ? homeColor : undefined }}>
-              {Number(home_xg).toFixed(2)}
+        {isUpcoming ? (
+          <div className="flex flex-col items-center gap-1.5 px-3 py-1">
+            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/25 animate-pulse">
+              Por Disputar
             </span>
-            <span className="text-slate-500">–</span>
-            <span className="font-semibold text-slate-200" style={{ color: away_xg > home_xg ? awayColor : undefined }}>
-              {Number(away_xg).toFixed(2)}
+            <div className="text-4xl md:text-5xl font-black font-mono tracking-wider text-slate-200">
+              VS
+            </div>
+            <span className="text-xs font-mono text-slate-400">
+              {formattedDate}
             </span>
           </div>
+        ) : (
+          <div className="flex flex-col items-center gap-1.5 px-2">
+            <div className="text-5xl md:text-6xl font-black font-mono tabular-nums tracking-tighter">
+              {home_score} - {away_score}
+            </div>
 
-          {/* Barra de acento / comparación xG con colores dinámicos */}
-          <div className="w-36 sm:w-48 h-1.5 rounded-full bg-white/10 overflow-hidden flex mt-1 shadow-inner">
-            <div
-              className="h-full spring-bar"
-              style={{
-                width: `${homeXgPercent}%`,
-                backgroundColor: homeColor,
-                boxShadow: `0 0 8px ${homeColor}aa`,
-              }}
-            />
-            <div
-              className="h-full spring-bar"
-              style={{
-                width: `${awayXgPercent}%`,
-                backgroundColor: awayColor,
-                boxShadow: `0 0 8px ${awayColor}aa`,
-              }}
-            />
+            <div className="text-xs sm:text-sm text-slate-400 font-mono mt-1 flex items-center gap-2">
+              <span>xG</span>
+              <span className="font-semibold text-slate-200" style={{ color: home_xg > away_xg ? homeColor : undefined }}>
+                {Number(home_xg).toFixed(2)}
+              </span>
+              <span className="text-slate-500">–</span>
+              <span className="font-semibold text-slate-200" style={{ color: away_xg > home_xg ? awayColor : undefined }}>
+                {Number(away_xg).toFixed(2)}
+              </span>
+            </div>
+
+            {/* Barra de acento / comparación xG con colores dinámicos */}
+            <div className="w-36 sm:w-48 h-1.5 rounded-full bg-white/10 overflow-hidden flex mt-1 shadow-inner">
+              <div
+                className="h-full spring-bar"
+                style={{
+                  width: `${homeXgPercent}%`,
+                  backgroundColor: homeColor,
+                  boxShadow: `0 0 8px ${homeColor}aa`,
+                }}
+              />
+              <div
+                className="h-full spring-bar"
+                style={{
+                  width: `${awayXgPercent}%`,
+                  backgroundColor: awayColor,
+                  boxShadow: `0 0 8px ${awayColor}aa`,
+                }}
+              />
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Visitante */}
         <div className="flex flex-col items-center gap-3 flex-1">

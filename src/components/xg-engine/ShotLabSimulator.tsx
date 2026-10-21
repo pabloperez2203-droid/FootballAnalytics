@@ -69,8 +69,9 @@ export default function ShotLabSimulator() {
           return;
         }
 
-        // Cargamos los últimos 20 partidos para tener un catálogo rico de tiros reales
-        const recentMatches = matches.slice(-20);
+        // Cargamos los últimos 20 partidos disputados para tener un catálogo rico de tiros reales
+        const playedMatches = matches.filter((m: any) => m.status !== 'scheduled');
+        const recentMatches = (playedMatches.length > 0 ? playedMatches : matches).slice(-20);
         const shotPromises = recentMatches.map((m) =>
           fetch(`/data/matches/${m.id}.json`)
             .then((r) => (r.ok ? r.json() : null))
