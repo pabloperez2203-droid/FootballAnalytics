@@ -9,8 +9,8 @@ ctx = ssl.create_default_context()
 ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 
-API_KEY = '33656f524ab04b98b4acbc52865f71c7'
-HEADERS = { 'X-Auth-Token': API_KEY }
+API_KEY = os.environ.get('FOOTBALL_DATA_API_KEY', '')
+HEADERS = { 'X-Auth-Token': API_KEY } if API_KEY else {}
 
 TEAMS_CSV = [
     "Alaves", "Athletic Club", "Atletico Madrid", "Barcelona", "Celta Vigo", 

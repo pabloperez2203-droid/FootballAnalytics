@@ -83,13 +83,13 @@ export default function MatchSelector({
             >
               <div className="flex items-center justify-center gap-1 sm:gap-1.5 w-full pointer-events-none">
                 {homeCrest ? (
-                  <img src={homeCrest} alt={m.home_team} className="w-5 h-5 sm:w-6 sm:h-6 object-contain" />
+                  <img src={homeCrest} alt={m.home_team} loading="lazy" className="w-5 h-5 sm:w-6 sm:h-6 object-contain" />
                 ) : (
                   <span className="text-[10px] font-bold">{m.home_team.substring(0,3).toUpperCase()}</span>
                 )}
                 <span className="text-[9px] text-slate-500 font-medium">vs</span>
                 {awayCrest ? (
-                  <img src={awayCrest} alt={m.away_team} className="w-5 h-5 sm:w-6 sm:h-6 object-contain" />
+                  <img src={awayCrest} alt={m.away_team} loading="lazy" className="w-5 h-5 sm:w-6 sm:h-6 object-contain" />
                 ) : (
                   <span className="text-[10px] font-bold">{m.away_team.substring(0,3).toUpperCase()}</span>
                 )}

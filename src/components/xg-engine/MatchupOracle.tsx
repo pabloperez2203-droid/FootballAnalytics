@@ -37,12 +37,22 @@ export default function MatchupOracle() {
       setCompetition(urlComp);
     }
     if (urlHome) {
-      setHomeTeamName(urlHome);
+      const foundHome = currentEquipos.find(
+        (t) => t.team.toLowerCase() === urlHome.trim().toLowerCase()
+      );
+      if (foundHome) {
+        setHomeTeamName(foundHome.team);
+      }
     }
     if (urlAway) {
-      setAwayTeamName(urlAway);
+      const foundAway = currentEquipos.find(
+        (t) => t.team.toLowerCase() === urlAway.trim().toLowerCase()
+      );
+      if (foundAway) {
+        setAwayTeamName(foundAway.team);
+      }
     }
-  }, [searchParams, competition]);
+  }, [searchParams, competition, currentEquipos]);
 
   // Lista de chips sugeridos según competición activa
   const suggestedChips = useMemo(() => {
@@ -327,7 +337,7 @@ export default function MatchupOracle() {
           <div className="flex items-center gap-3.5">
             <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 p-2 shrink-0 flex items-center justify-center">
               {homeCrest ? (
-                <img src={homeCrest} alt={validHomeTeam.team} className="w-full h-full object-contain" />
+                <img src={homeCrest} alt={validHomeTeam.team} loading="lazy" className="w-full h-full object-contain" />
               ) : (
                 <span className="font-bold text-sm">{validHomeTeam.team.slice(0, 3)}</span>
               )}
@@ -378,7 +388,7 @@ export default function MatchupOracle() {
           <div className="flex items-center gap-3.5">
             <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 p-2 shrink-0 flex items-center justify-center">
               {awayCrest ? (
-                <img src={awayCrest} alt={validAwayTeam.team} className="w-full h-full object-contain" />
+                <img src={awayCrest} alt={validAwayTeam.team} loading="lazy" className="w-full h-full object-contain" />
               ) : (
                 <span className="font-bold text-sm">{validAwayTeam.team.slice(0, 3)}</span>
               )}
@@ -547,7 +557,7 @@ export default function MatchupOracle() {
                 <div className="flex items-center gap-2.5">
                   <div className="w-8 h-8 rounded-full bg-slate-800 border border-white/10 overflow-hidden flex items-center justify-center shrink-0">
                     {player.photo ? (
-                      <img src={player.photo} alt={player.name} className="w-full h-full object-cover" />
+                      <img src={player.photo} alt={player.name} loading="lazy" className="w-full h-full object-cover" />
                     ) : (
                       <span className="text-[10px] font-bold text-slate-400">
                         {player.name.slice(0, 2).toUpperCase()}
@@ -589,7 +599,7 @@ export default function MatchupOracle() {
                 <div className="flex items-center gap-2.5">
                   <div className="w-8 h-8 rounded-full bg-slate-800 border border-white/10 overflow-hidden flex items-center justify-center shrink-0">
                     {player.photo ? (
-                      <img src={player.photo} alt={player.name} className="w-full h-full object-cover" />
+                      <img src={player.photo} alt={player.name} loading="lazy" className="w-full h-full object-cover" />
                     ) : (
                       <span className="text-[10px] font-bold text-slate-400">
                         {player.name.slice(0, 2).toUpperCase()}

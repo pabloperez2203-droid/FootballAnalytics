@@ -54,7 +54,7 @@ export default function MatchHeader({ matchData, homeColor: propHomeColor, awayC
               className="relative w-20 h-20 rounded-full flex items-center justify-center border border-white/10 shadow-lg text-xl font-bold bg-white/5 p-2 backdrop-blur-sm transition-transform duration-300 group-hover:scale-105"
               style={{ boxShadow: `0 0 24px -6px ${homeColor}40` }}
             >
-              {homeCrest ? <img src={homeCrest} alt={home_team} className="w-full h-full object-contain drop-shadow-md" /> : home_short}
+              {homeCrest ? <img src={homeCrest} alt={home_team} loading="lazy" className="w-full h-full object-contain drop-shadow-md" /> : home_short}
             </div>
           </div>
           <span className="font-semibold text-lg text-center tracking-tight">{home_team}</span>
@@ -109,7 +109,7 @@ export default function MatchHeader({ matchData, homeColor: propHomeColor, awayC
               className="relative w-20 h-20 rounded-full flex items-center justify-center border border-white/10 shadow-lg text-xl font-bold bg-white/5 p-2 backdrop-blur-sm transition-transform duration-300 group-hover:scale-105"
               style={{ boxShadow: `0 0 24px -6px ${awayColor}40` }}
             >
-              {awayCrest ? <img src={awayCrest} alt={away_team} className="w-full h-full object-contain drop-shadow-md" /> : away_short}
+              {awayCrest ? <img src={awayCrest} alt={away_team} loading="lazy" className="w-full h-full object-contain drop-shadow-md" /> : away_short}
             </div>
           </div>
           <span className="font-semibold text-lg text-center tracking-tight">{away_team}</span>

@@ -1,8 +1,9 @@
+import os
 import urllib.request
 import json
 
-API_KEY = '33656f524ab04b98b4acbc52865f71c7'
-headers = { 'X-Auth-Token': API_KEY }
+API_KEY = os.environ.get('FOOTBALL_DATA_API_KEY', '')
+headers = { 'X-Auth-Token': API_KEY } if API_KEY else {}
 
 teams_data = []
 

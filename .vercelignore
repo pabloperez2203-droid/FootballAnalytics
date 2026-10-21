@@ -1,0 +1,16 @@
+# ─── Vercel Ignore ─────────────────────────────────────────────────────────────
+# Evita que Vercel suba, analice o procese directorios pesados del backend en Python
+# y exports temporales durante el build de producción en la nube.
+
+# Backend Python scripts, venvs and cache
+backend/
+
+# Data exports and CSVs
+exports/
+descargas_csv/
+
+# OS and temporary files
+.DS_Store
+*.numbers
+*.log
+*.lock

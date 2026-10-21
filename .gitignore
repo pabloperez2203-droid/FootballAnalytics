@@ -20,18 +20,25 @@
 # production
 /build
 
-# misc
+# misc & OS
 .DS_Store
 *.pem
+*.numbers
 
-# debug
+# logs & locks
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+*.lock
+!package-lock.json
+!yarn.lock
+!pnpm-lock.yaml
 
-# env files (can opt-in for committing if needed)
+# env files (strictly block all env files except .env.example)
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -43,15 +50,16 @@ next-env.d.ts
 # Local Players Photos
 public/players/
 public/data/players_photos.json
-.env
 
-# Python
+# Python & Backend Cache
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
+backend/downloaded_files/
 backend/data/cache/
+backend/data/cache/logs/
 backend/venv/
 backend/venv_soccerdata/
 descargas_csv/
