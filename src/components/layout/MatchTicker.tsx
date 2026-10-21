@@ -4,6 +4,8 @@ import React, { useEffect, useState, useMemo, useRef, useCallback } from 'react'
 import Link from 'next/link';
 import { getTeamCrest } from '@/utils/crests';
 import { useCompetition, CompetitionType } from '@/stores/filterStore';
+import LiveMatchCenterModal from '@/components/live/LiveMatchCenterModal';
+import { LiveMatchData } from '@/app/api/live-matches/route';
 
 export interface MatchItem {
   id: string;
@@ -15,10 +17,11 @@ export interface MatchItem {
   home_xg: number;
   away_xg: number;
   date?: string;
+  status?: "LIVE" | "HT" | "FT" | "NS";
+  minute?: string;
 }
 
 // ─── Datos de respaldo estáticos garantizados ──────────────────────────────
-// Aseguran que el componente NUNCA colapse ni retorne null bajo ninguna circunstancia
 const DEFAULT_LALIGA_MATCHES: MatchItem[] = [
   { id: "30854", matchday: 9, home_team: "Getafe", away_team: "Rayo Vallecano", home_score: 1, away_score: 1, home_xg: 0.90, away_xg: 2.29 },
   { id: "30857", matchday: 9, home_team: "Real Madrid", away_team: "Sevilla", home_score: 4, away_score: 1, home_xg: 2.13, away_xg: 1.32 },
@@ -49,7 +52,6 @@ const memoryCache: Record<CompetitionType, { matches: MatchItem[]; matchday: num
   ucl: { matches: DEFAULT_UCL_MATCHES, matchday: 3 },
 };
 
-// ─── Utilidades de Safe Data Access ──────────────────────────────────────────
 function safeNumber(val: any, fallback = 0): number {
   if (val === null || val === undefined || val === '') return fallback;
   const n = typeof val === 'number' ? val : Number(val);
@@ -65,39 +67,38 @@ function safeXg(val: any): string {
 export default function MatchTicker() {
   const { competition, meta } = useCompetition();
 
-  // Estado montado para evitar mismatch de hidratación entre SSR y cliente
   const [mounted, setMounted] = useState(false);
   const [matches, setMatches] = useState<MatchItem[]>(() => DEFAULT_LALIGA_MATCHES);
   const [matchday, setMatchday] = useState<number>(9);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [hasLiveGames, setHasLiveGames] = useState<boolean>(false);
 
-  // Referencias para el control de scroll horizontal fluido
+  // Modal de Centro de Partidos en Directo
+  const [isLiveModalOpen, setIsLiveModalOpen] = useState<boolean>(false);
+  const [selectedLiveMatchId, setSelectedLiveMatchId] = useState<string | undefined>(undefined);
+
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
   const isInteractingRef = useRef<boolean>(false);
 
-  // 1. Sincronizar montaje cliente
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // 2. Cargar partidos según la competición activa
+  // 1. Cargar partidos base según competición
   useEffect(() => {
     const currentComp = competition === 'ucl' ? 'ucl' : 'laliga';
     const cached = memoryCache[currentComp];
 
-    // Aplicar de inmediato datos de caché si existen
     if (cached && cached.matches && cached.matches.length > 0) {
       setMatches(cached.matches);
       setMatchday(cached.matchday);
     } else {
       setMatches(currentComp === 'ucl' ? DEFAULT_UCL_MATCHES : DEFAULT_LALIGA_MATCHES);
-      setMatchday(currentComp === 'ucl' ? 2 : 9);
+      setMatchday(currentComp === 'ucl' ? 3 : 9);
     }
 
     const dataUrl = currentComp === 'ucl' ? '/data/matches/ucl_index.json' : '/data/matches/index.json';
     const controller = new AbortController();
 
-    setIsLoading(true);
     fetch(dataUrl, { signal: controller.signal })
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -105,7 +106,6 @@ export default function MatchTicker() {
       })
       .then((data: any) => {
         if (Array.isArray(data) && data.length > 0) {
-          // Filtrar items válidos
           const validMatches: MatchItem[] = data
             .filter((m: any) => m && (m.home_team || m.homeTeam) && (m.away_team || m.awayTeam))
             .map((m: any) => ({
@@ -118,6 +118,8 @@ export default function MatchTicker() {
               home_xg: safeNumber(m.home_xg ?? m.homeXG, 0),
               away_xg: safeNumber(m.away_xg ?? m.awayXG, 0),
               date: m.date ? String(m.date) : undefined,
+              status: m.status || "FT",
+              minute: m.minute || "FT",
             }));
 
           if (validMatches.length > 0) {
@@ -137,13 +139,9 @@ export default function MatchTicker() {
       })
       .catch((err) => {
         if (err.name !== 'AbortError') {
-          // En caso de fallo de red, usamos los datos de respaldo garantizados
           const fallback = currentComp === 'ucl' ? DEFAULT_UCL_MATCHES : DEFAULT_LALIGA_MATCHES;
           setMatches(fallback);
         }
-      })
-      .finally(() => {
-        setIsLoading(false);
       });
 
     return () => {
@@ -151,15 +149,63 @@ export default function MatchTicker() {
     };
   }, [competition]);
 
+  // 2. Polling Inteligente de Partidos en Directo (/api/live-matches) cada 60s
+  const pollLiveScores = useCallback(async () => {
+    try {
+      const res = await fetch(`/api/live-matches?comp=${competition}`, { cache: "no-store" });
+      if (!res.ok) return;
+      const data = await res.json();
+
+      if (data && Array.isArray(data.matches)) {
+        const liveItems: LiveMatchData[] = data.matches.filter(
+          (m: LiveMatchData) => m.status === "LIVE" || m.status === "HT"
+        );
+
+        if (liveItems.length > 0) {
+          setHasLiveGames(true);
+
+          // Convertir a MatchItem y fusionar al inicio del carrusel
+          const mappedLive: MatchItem[] = liveItems.map((lm) => ({
+            id: lm.id,
+            matchday: 9,
+            home_team: lm.home_team,
+            away_team: lm.away_team,
+            home_score: lm.home_score,
+            away_score: lm.away_score,
+            home_xg: lm.home_xg,
+            away_xg: lm.away_xg,
+            status: lm.status,
+            minute: lm.minute,
+            date: lm.date,
+          }));
+
+          setMatches((prev) => {
+            // Evitar duplicados si ya estaban agregados
+            const filteredPrev = prev.filter((p) => !mappedLive.some((lm) => lm.id === p.id));
+            return [...mappedLive, ...filteredPrev];
+          });
+        } else {
+          setHasLiveGames(false);
+        }
+      }
+    } catch {
+      // Ignorar silenciosamente si hay error de red temporal
+    }
+  }, [competition]);
+
+  useEffect(() => {
+    pollLiveScores();
+    const interval = setInterval(pollLiveScores, 60000); // 60 segundos
+    return () => clearInterval(interval);
+  }, [pollLiveScores]);
+
   // 3. Duplicación para scroll infinito continuo sin saltos visuales
   const displayItems = useMemo(() => {
     const list = matches.length > 0 ? matches : (competition === 'ucl' ? DEFAULT_UCL_MATCHES : DEFAULT_LALIGA_MATCHES);
-    // Asegurar mínimo de elementos para cubrir pantallas panorámicas
     let extended = [...list];
     while (extended.length < 10) {
       extended = [...extended, ...list];
     }
-    // Duplicamos una sola vez para permitir un bucle circular perfecto de scrollLeft
     return [...extended, ...extended];
   }, [matches, competition]);
 
@@ -175,12 +221,9 @@ export default function MatchTicker() {
       const delta = currentTime - lastTime;
       lastTime = currentTime;
 
-      // Solo avanzar automáticamente si el usuario no está interactuando (hover / touch / drag)
       if (!isInteractingRef.current && el) {
-        // Velocidad controlada (~25px/segundo para legibilidad óptima)
         el.scrollLeft += (delta * 0.025);
 
-        // Cuando llega a la mitad exacta (primer bloque duplicado), regresa a 0 de forma invisible
         const halfWidth = el.scrollWidth / 2;
         if (halfWidth > 0 && el.scrollLeft >= halfWidth) {
           el.scrollLeft -= halfWidth;
@@ -199,7 +242,16 @@ export default function MatchTicker() {
 
   const isUcl = competition === 'ucl';
 
-  // Renderizador protegido para cada tarjeta de partido
+  // Al hacer clic en un partido del ticker:
+  const handleMatchClick = (m: MatchItem, e: React.MouseEvent) => {
+    if (m.status === "LIVE" || m.status === "HT" || m.id.startsWith("live_") || m.id.startsWith("espn_")) {
+      e.preventDefault();
+      setSelectedLiveMatchId(m.id);
+      setIsLiveModalOpen(true);
+    }
+  };
+
+  // Renderizador para cada tarjeta de partido
   const renderMatchCard = useCallback((m: MatchItem, idx: number) => {
     const homeTeam = m.home_team || 'Local';
     const awayTeam = m.away_team || 'Visitante';
@@ -209,14 +261,28 @@ export default function MatchTicker() {
     const awayScore = safeNumber(m.away_score, 0);
     const homeXgStr = safeXg(m.home_xg);
     const awayXgStr = safeXg(m.away_xg);
+    const isLive = m.status === 'LIVE' || m.status === 'HT';
 
     return (
       <Link
         key={`ticker-card-${m.id}-${idx}`}
-        href={`/matches?id=${m.id}`}
+        href={isLive ? "#" : `/matches?id=${m.id}`}
         prefetch={false}
-        className="flex items-center gap-2.5 px-3 py-1 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/5 hover:border-white/20 transition-all duration-150 group/item whitespace-nowrap cursor-pointer shadow-sm shrink-0 select-none"
+        onClick={(e) => handleMatchClick(m, e)}
+        className={`flex items-center gap-2.5 px-3 py-1 rounded-lg border transition-all duration-150 group/item whitespace-nowrap cursor-pointer shadow-sm shrink-0 select-none ${
+          isLive
+            ? "bg-rose-500/[0.08] border-rose-500/40 hover:bg-rose-500/[0.14] hover:border-rose-500/70"
+            : "bg-white/[0.03] hover:bg-white/[0.08] border-white/5 hover:border-white/20"
+        }`}
       >
+        {/* Badge "LIVE" si está en juego */}
+        {isLive && (
+          <div className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-rose-500/25 border border-rose-500/50 text-rose-300 text-[10px] font-mono font-black animate-pulse shrink-0">
+            <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_8px_#ef4444]" />
+            <span>{m.minute || "LIVE"}</span>
+          </div>
+        )}
+
         {/* Local */}
         <div className="flex items-center gap-1.5 shrink-0">
           {homeCrest ? (
@@ -237,10 +303,13 @@ export default function MatchTicker() {
 
         {/* Marcador */}
         <div
-          className={`px-1.5 py-0.5 rounded bg-black/60 border font-mono font-bold text-xs tabular-nums shrink-0 ${isUcl
+          className={`px-1.5 py-0.5 rounded bg-black/60 border font-mono font-bold text-xs tabular-nums shrink-0 ${
+            isLive
+              ? 'text-rose-400 border-rose-500/40 font-black'
+              : isUcl
               ? 'text-cyan-300 border-cyan-400/25 group-hover/item:border-cyan-400/50'
               : 'text-emerald-400 border-emerald-500/25 group-hover/item:border-emerald-500/50'
-            }`}
+          }`}
         >
           {homeScore} - {awayScore}
         </div>
@@ -275,74 +344,88 @@ export default function MatchTicker() {
   }, [isUcl]);
 
   return (
-    <div
-      aria-label="Resultados en directo y Expected Goals"
-      className="w-full overflow-hidden bg-[#080b11]/95 border-b border-white/10 backdrop-blur-md select-none relative z-30 h-10 flex items-center"
-    >
-      <div className="flex items-center w-full h-full">
-        {/* Etiqueta fija izquierda tipo broadcast con insignia de la competición */}
-        <div
-          className={`shrink-0 flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 h-full border-r font-mono text-[10px] sm:text-[11px] font-bold tracking-wider uppercase z-20 shadow-md ${isUcl
-              ? 'bg-[#0a1535] border-cyan-500/25 text-cyan-300'
-              : 'bg-[#061814] border-emerald-500/25 text-emerald-400'
+    <>
+      <div
+        aria-label="Resultados en directo y Expected Goals"
+        className="w-full overflow-hidden bg-[#080b11]/95 border-b border-white/10 backdrop-blur-md select-none relative z-30 h-10 flex items-center"
+      >
+        <div className="flex items-center w-full h-full">
+          {/* Etiqueta fija izquierda tipo broadcast interactiva */}
+          <button
+            type="button"
+            onClick={() => setIsLiveModalOpen(true)}
+            title="Abrir Centro de Partidos en Directo"
+            className={`shrink-0 flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 h-full border-r font-mono text-[10px] sm:text-[11px] font-bold tracking-wider uppercase z-20 shadow-md transition-all cursor-pointer hover:brightness-125 touch-manipulation active:scale-95 ${
+              hasLiveGames
+                ? 'bg-rose-950/80 border-rose-500/40 text-rose-300 shadow-[0_0_15px_rgba(239,68,68,0.2)]'
+                : isUcl
+                ? 'bg-[#0a1535] border-cyan-500/25 text-cyan-300'
+                : 'bg-[#061814] border-emerald-500/25 text-emerald-400'
             }`}
-        >
-          <span
-            className="w-2 h-2 rounded-full animate-pulse shrink-0"
-            style={{
-              backgroundColor: meta.dotColor,
-              boxShadow: `0 0 8px ${meta.dotColor}`,
-            }}
-          />
-          <span className="tracking-widest whitespace-nowrap">
-            {isUcl ? 'UCL' : 'LaLiga'} J{matchday}
-          </span>
-        </div>
-
-        {/* Contenedor wrapper con overflow-hidden para prevenir cualquier desborde */}
-        <div className="flex-1 overflow-hidden relative h-full flex items-center min-w-0">
-          {/* Degradados sutiles laterales para suavizado visual */}
-          <div className="absolute left-0 top-0 bottom-0 w-6 z-10 pointer-events-none bg-gradient-to-r from-[#080b11] to-transparent" />
-          <div className="absolute right-0 top-0 bottom-0 w-8 z-10 pointer-events-none bg-gradient-to-l from-[#080b11] to-transparent" />
-
-          {/* Estado de carga estable (Skeleton) si está vacío o cargando inicialmente */}
-          {!mounted && (
-            <div className="flex items-center gap-3 overflow-x-auto whitespace-nowrap no-scrollbar py-2 px-4 w-full">
-              {[1, 2, 3, 4, 5, 6].map((i) => (
-                <div
-                  key={`skeleton-init-${i}`}
-                  className="h-7 w-44 rounded-lg bg-white/[0.04] border border-white/5 shrink-0 animate-pulse"
-                />
-              ))}
-            </div>
-          )}
-
-          {/* Contenedor flex horizontal con scroll nativo y auto-avance */}
-          {mounted && (
-            <div
-              ref={scrollContainerRef}
-              onMouseEnter={() => {
-                isInteractingRef.current = true;
+          >
+            <span
+              className={`w-2 h-2 rounded-full shrink-0 ${hasLiveGames ? "bg-rose-500 animate-ping shadow-[0_0_8px_#ef4444]" : "animate-pulse"}`}
+              style={hasLiveGames ? {} : {
+                backgroundColor: meta.dotColor,
+                boxShadow: `0 0 8px ${meta.dotColor}`,
               }}
-              onMouseLeave={() => {
-                isInteractingRef.current = false;
-              }}
-              onTouchStart={() => {
-                isInteractingRef.current = true;
-              }}
-              onTouchEnd={() => {
-                // Pequeño retardo tras toque antes de reanudar el auto-avance
-                setTimeout(() => {
+            />
+            <span className="tracking-widest whitespace-nowrap">
+              {hasLiveGames ? "🔴 DIRECTO" : `${isUcl ? 'UCL' : 'LaLiga'} J${matchday}`}
+            </span>
+          </button>
+
+          {/* Contenedor wrapper con overflow-hidden */}
+          <div className="flex-1 overflow-hidden relative h-full flex items-center min-w-0">
+            <div className="absolute left-0 top-0 bottom-0 w-6 z-10 pointer-events-none bg-gradient-to-r from-[#080b11] to-transparent" />
+            <div className="absolute right-0 top-0 bottom-0 w-8 z-10 pointer-events-none bg-gradient-to-l from-[#080b11] to-transparent" />
+
+            {!mounted && (
+              <div className="flex items-center gap-3 overflow-x-auto whitespace-nowrap no-scrollbar py-2 px-4 w-full">
+                {[1, 2, 3, 4, 5, 6].map((i) => (
+                  <div
+                    key={`skeleton-init-${i}`}
+                    className="h-7 w-44 rounded-lg bg-white/[0.04] border border-white/5 shrink-0 animate-pulse"
+                  />
+                ))}
+              </div>
+            )}
+
+            {mounted && (
+              <div
+                ref={scrollContainerRef}
+                onMouseEnter={() => {
+                  isInteractingRef.current = true;
+                }}
+                onMouseLeave={() => {
                   isInteractingRef.current = false;
-                }, 1200);
-              }}
-              className="flex items-center gap-3 overflow-x-auto whitespace-nowrap no-scrollbar py-2 px-4 w-full h-full"
-            >
-              {displayItems.map((m, idx) => renderMatchCard(m, idx))}
-            </div>
-          )}
+                }}
+                onTouchStart={() => {
+                  isInteractingRef.current = true;
+                }}
+                onTouchEnd={() => {
+                  setTimeout(() => {
+                    isInteractingRef.current = false;
+                  }, 1200);
+                }}
+                className="flex items-center gap-3 overflow-x-auto whitespace-nowrap no-scrollbar py-2 px-4 w-full h-full"
+              >
+                {displayItems.map((m, idx) => renderMatchCard(m, idx))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+
+      {/* Modal Interactivo del Live Match Center */}
+      <LiveMatchCenterModal
+        isOpen={isLiveModalOpen}
+        onClose={() => {
+          setIsLiveModalOpen(false);
+          setSelectedLiveMatchId(undefined);
+        }}
+        initialMatchId={selectedLiveMatchId}
+      />
+    </>
   );
 }

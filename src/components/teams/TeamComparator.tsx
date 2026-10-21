@@ -445,6 +445,127 @@ export default function TeamComparator({
           })}
         </div>
       </div>
+
+      {/* ─── Advanced Tactical Breakdown (Métricas Avanzadas 2026) ─── */}
+      <div className="mt-8 pt-6 border-t border-white/10 relative z-10">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-cyan-400" />
+            <h3 className="text-sm font-mono uppercase tracking-wider font-bold text-white">
+              Desglose Táctico Avanzado
+            </h3>
+          </div>
+          <span className="text-[11px] font-mono text-slate-400">
+            Open Play · Balón Parado · PPDA / OPPDA · Eficiencia
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+          {/* Card 1: xG Open Play vs Set Piece */}
+          <div className="p-3.5 rounded-xl bg-slate-900/60 border border-white/5 space-y-2">
+            <div className="text-[10px] uppercase font-mono tracking-wider text-slate-400 font-semibold">
+              Génesis del Peligro (xG)
+            </div>
+            <div className="space-y-1.5 text-xs font-mono">
+              <div className="flex justify-between items-center">
+                <span className="text-slate-300 truncate max-w-[100px]">{teamA.team}</span>
+                <span className="text-white">
+                  <strong>{teamA.xg_open_play ?? (teamA.xg_for * 0.76).toFixed(1)}</strong> jg ·{" "}
+                  <span className="text-amber-400">{teamA.xg_set_piece ?? (teamA.xg_for * 0.24).toFixed(1)}</span> bp
+                </span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-slate-300 truncate max-w-[100px]">{teamB.team}</span>
+                <span className="text-white">
+                  <strong>{teamB.xg_open_play ?? (teamB.xg_for * 0.76).toFixed(1)}</strong> jg ·{" "}
+                  <span className="text-amber-400">{teamB.xg_set_piece ?? (teamB.xg_for * 0.24).toFixed(1)}</span> bp
+                </span>
+              </div>
+            </div>
+            <div className="text-[10px] text-slate-500 pt-1 border-t border-white/5">
+              jg: Jugada combinada · bp: Balón parado
+            </div>
+          </div>
+
+          {/* Card 2: PPDA vs OPPDA */}
+          <div className="p-3.5 rounded-xl bg-slate-900/60 border border-white/5 space-y-2">
+            <div className="text-[10px] uppercase font-mono tracking-wider text-slate-400 font-semibold">
+              Presión (PPDA) vs Salida (OPPDA)
+            </div>
+            <div className="space-y-1.5 text-xs font-mono">
+              <div className="flex justify-between items-center">
+                <span className="text-slate-300 truncate max-w-[100px]">{teamA.team}</span>
+                <span className="text-white">
+                  <strong className="text-emerald-400">{teamA.ppda_avg.toFixed(1)}</strong> pr ·{" "}
+                  <span className="text-cyan-400">{(teamA.oppda ?? 10.5).toFixed(1)}</span> op
+                </span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-slate-300 truncate max-w-[100px]">{teamB.team}</span>
+                <span className="text-white">
+                  <strong className="text-emerald-400">{teamB.ppda_avg.toFixed(1)}</strong> pr ·{" "}
+                  <span className="text-cyan-400">{(teamB.oppda ?? 10.5).toFixed(1)}</span> op
+                </span>
+              </div>
+            </div>
+            <div className="text-[10px] text-slate-500 pt-1 border-t border-white/5">
+              pr: PPDA (menor = más presión) · op: OPPDA (salida limpia)
+            </div>
+          </div>
+
+          {/* Card 3: Deep Completions */}
+          <div className="p-3.5 rounded-xl bg-slate-900/60 border border-white/5 space-y-2">
+            <div className="text-[10px] uppercase font-mono tracking-wider text-slate-400 font-semibold">
+              Pases al Área Rival / 90
+            </div>
+            <div className="space-y-1.5 text-xs font-mono">
+              <div className="flex justify-between items-center">
+                <span className="text-slate-300 truncate max-w-[100px]">{teamA.team}</span>
+                <span className="text-white font-bold">
+                  {(teamA.deep_completions_per_90 ?? (teamA.deep_completions / teamA.matches_played)).toFixed(1)}{" "}
+                  <span className="text-slate-400 font-normal">p/90 ({teamA.deep_completions})</span>
+                </span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-slate-300 truncate max-w-[100px]">{teamB.team}</span>
+                <span className="text-white font-bold">
+                  {(teamB.deep_completions_per_90 ?? (teamB.deep_completions / teamB.matches_played)).toFixed(1)}{" "}
+                  <span className="text-slate-400 font-normal">p/90 ({teamB.deep_completions})</span>
+                </span>
+              </div>
+            </div>
+            <div className="text-[10px] text-slate-500 pt-1 border-t border-white/5">
+              Pases completados a menos de 20m de portería
+            </div>
+          </div>
+
+          {/* Card 4: Finishing Efficiency */}
+          <div className="p-3.5 rounded-xl bg-slate-900/60 border border-white/5 space-y-2">
+            <div className="text-[10px] uppercase font-mono tracking-wider text-slate-400 font-semibold">
+              Efectividad Remate (% xG)
+            </div>
+            <div className="space-y-1.5 text-xs font-mono">
+              <div className="flex justify-between items-center">
+                <span className="text-slate-300 truncate max-w-[100px]">{teamA.team}</span>
+                <span className={`font-bold ${teamA.diff_goals_xg >= 0 ? "text-emerald-400" : "text-rose-400"}`}>
+                  {(teamA.finishing_efficiency_pct ?? ((teamA.goals_for / Math.max(0.1, teamA.xg_for)) * 100)).toFixed(1)}%{" "}
+                  <span className="text-slate-400 text-[10px]">({teamA.diff_goals_xg >= 0 ? `+${teamA.diff_goals_xg.toFixed(1)}` : teamA.diff_goals_xg.toFixed(1)})</span>
+                </span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-slate-300 truncate max-w-[100px]">{teamB.team}</span>
+                <span className={`font-bold ${teamB.diff_goals_xg >= 0 ? "text-emerald-400" : "text-rose-400"}`}>
+                  {(teamB.finishing_efficiency_pct ?? ((teamB.goals_for / Math.max(0.1, teamB.xg_for)) * 100)).toFixed(1)}%{" "}
+                  <span className="text-slate-400 text-[10px]">({teamB.diff_goals_xg >= 0 ? `+${teamB.diff_goals_xg.toFixed(1)}` : teamB.diff_goals_xg.toFixed(1)})</span>
+                </span>
+              </div>
+            </div>
+            <div className="text-[10px] text-slate-500 pt-1 border-t border-white/5">
+              100% = Conversión esperada según xG
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -10,16 +10,32 @@ interface PlayerScoutingTableProps {
   selectedPlayerName?: string;
 }
 
+type MetricPerspective = "standard" | "creation" | "press";
+
 type SortColumn =
   | "player_name"
   | "team_name"
   | "minutes"
+  // Standard
   | "goals"
   | "xg"
   | "finishingDelta"
   | "assists"
   | "xa"
-  | "xgChain90";
+  | "xgChain90"
+  // Creation & Progression
+  | "npxg90"
+  | "xa90"
+  | "progPasses"
+  | "progCarries"
+  | "sca"
+  | "gca"
+  // Pressure & Recovery
+  | "pressures"
+  | "pressures90"
+  | "recoveries"
+  | "recoveries90"
+  | "xgBuildup90";
 
 function PlayerTableAvatar({
   player,
@@ -93,10 +109,11 @@ export default function PlayerScoutingTable({
   onSelectPlayer,
   selectedPlayerName
 }: PlayerScoutingTableProps) {
+  const [perspective, setPerspective] = useState<MetricPerspective>("standard");
   const [sortCol, setSortCol] = useState<SortColumn>("finishingDelta");
   const [sortAsc, setSortAsc] = useState<boolean>(false);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const pageSize = 25; // As explicitly specified: máximo 25 filas visibles a la vez
+  const pageSize = 25; // Máximo 25 filas visibles a la vez para rendimiento óptimo
 
   // Handle header sort click
   const handleSort = (col: SortColumn) => {
@@ -104,8 +121,23 @@ export default function PlayerScoutingTable({
       setSortAsc(!sortAsc);
     } else {
       setSortCol(col);
-      // For string columns, default to asc; for numeric, default to desc
       setSortAsc(col === "player_name" || col === "team_name");
+    }
+    setCurrentPage(1);
+  };
+
+  // Handle perspective change
+  const handlePerspectiveChange = (tab: MetricPerspective) => {
+    setPerspective(tab);
+    if (tab === "creation") {
+      setSortCol("sca");
+      setSortAsc(false);
+    } else if (tab === "press") {
+      setSortCol("pressures90");
+      setSortAsc(false);
+    } else {
+      setSortCol("finishingDelta");
+      setSortAsc(false);
     }
     setCurrentPage(1);
   };
@@ -130,6 +162,7 @@ export default function PlayerScoutingTable({
           valA = a.minutes;
           valB = b.minutes;
           break;
+        // Standard
         case "goals":
           valA = a.goals;
           valB = b.goals;
@@ -153,6 +186,52 @@ export default function PlayerScoutingTable({
         case "xgChain90":
           valA = a.p90.xgChain;
           valB = b.p90.xgChain;
+          break;
+        // Creation
+        case "npxg90":
+          valA = a.p90.npxg;
+          valB = b.p90.npxg;
+          break;
+        case "xa90":
+          valA = a.p90.xa;
+          valB = b.p90.xa;
+          break;
+        case "progPasses":
+          valA = a.progressive_passes ?? 0;
+          valB = b.progressive_passes ?? 0;
+          break;
+        case "progCarries":
+          valA = a.progressive_carries ?? 0;
+          valB = b.progressive_carries ?? 0;
+          break;
+        case "sca":
+          valA = a.sca ?? 0;
+          valB = b.sca ?? 0;
+          break;
+        case "gca":
+          valA = a.gca ?? 0;
+          valB = b.gca ?? 0;
+          break;
+        // Pressure
+        case "pressures":
+          valA = a.successful_pressures ?? 0;
+          valB = b.successful_pressures ?? 0;
+          break;
+        case "pressures90":
+          valA = a.p90.pressures ?? a.successful_pressures_per_90 ?? 0;
+          valB = b.p90.pressures ?? b.successful_pressures_per_90 ?? 0;
+          break;
+        case "recoveries":
+          valA = a.final_third_recoveries ?? 0;
+          valB = b.final_third_recoveries ?? 0;
+          break;
+        case "recoveries90":
+          valA = a.p90.finalThirdRecoveries ?? a.final_third_recoveries_per_90 ?? 0;
+          valB = b.p90.finalThirdRecoveries ?? b.final_third_recoveries_per_90 ?? 0;
+          break;
+        case "xgBuildup90":
+          valA = a.p90.xgBuildup;
+          valB = b.p90.xgBuildup;
           break;
       }
 
@@ -179,7 +258,7 @@ export default function PlayerScoutingTable({
   return (
     <div className="glass-card rounded-2xl p-4 sm:p-6 border border-white/10 shadow-2xl relative">
       {/* Table Header */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-white/10">
+      <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 pb-4 border-b border-white/10">
         <div>
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-blue-400" />
@@ -191,19 +270,56 @@ export default function PlayerScoutingTable({
             Tabla de Scouting & Rendimiento
           </h2>
           <p className="text-xs text-slate-400 mt-0.5">
-            Haz clic en cualquier columna para ordenar · Máximo 25 filas por página para máximo rendimiento
+            Haz clic en cualquier columna para ordenar · Máximo 25 filas por página
           </p>
         </div>
 
+        {/* Metric Perspectives Toggle */}
+        <div className="flex flex-wrap items-center gap-1.5 p-1 rounded-xl bg-slate-950/80 border border-white/10 text-xs font-mono">
+          <button
+            type="button"
+            onClick={() => handlePerspectiveChange("standard")}
+            className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer font-semibold ${
+              perspective === "standard"
+                ? "bg-blue-600 text-white shadow-md"
+                : "text-slate-400 hover:text-white"
+            }`}
+          >
+            🎯 Goles & xG
+          </button>
+          <button
+            type="button"
+            onClick={() => handlePerspectiveChange("creation")}
+            className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer font-semibold ${
+              perspective === "creation"
+                ? "bg-emerald-600 text-white shadow-md"
+                : "text-slate-400 hover:text-white"
+            }`}
+          >
+            ⚡ Creación & Progresión
+          </button>
+          <button
+            type="button"
+            onClick={() => handlePerspectiveChange("press")}
+            className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer font-semibold ${
+              perspective === "press"
+                ? "bg-purple-600 text-white shadow-md"
+                : "text-slate-400 hover:text-white"
+            }`}
+          >
+            🛡️ Presión & Robo
+          </button>
+        </div>
+
         {/* Results summary tag */}
-        <div className="text-xs font-mono text-slate-400 bg-slate-950/80 px-3 py-1.5 rounded-xl border border-white/10">
-          Página <strong className="text-white">{currentPage}</strong> de {totalPages} ({sortedPlayers.length} registros)
+        <div className="text-xs font-mono text-slate-400 bg-slate-950/80 px-3 py-1.5 rounded-xl border border-white/10 shrink-0">
+          Pág <strong className="text-white">{currentPage}</strong> / {totalPages} ({sortedPlayers.length})
         </div>
       </div>
 
       {/* Table Container */}
       <div className="overflow-x-auto rounded-xl border border-white/10 mt-4">
-        <table className="w-full text-left border-collapse min-w-[750px]">
+        <table className="w-full text-left border-collapse min-w-[780px]">
           <thead>
             <tr className="border-b border-white/10 bg-slate-950/80 text-[11px] font-mono uppercase tracking-wider text-slate-400 select-none">
               <th
@@ -224,42 +340,124 @@ export default function PlayerScoutingTable({
               >
                 Min {renderSortIndicator("minutes")}
               </th>
-              <th
-                onClick={() => handleSort("goals")}
-                className="py-3 px-3 text-center cursor-pointer hover:text-white transition-colors"
-              >
-                Goles {renderSortIndicator("goals")}
-              </th>
-              <th
-                onClick={() => handleSort("xg")}
-                className="py-3 px-3 text-center cursor-pointer hover:text-white transition-colors"
-              >
-                xG {renderSortIndicator("xg")}
-              </th>
-              <th
-                onClick={() => handleSort("finishingDelta")}
-                className="py-3 px-3 text-center cursor-pointer hover:text-white transition-colors"
-              >
-                Delta (G-xG) {renderSortIndicator("finishingDelta")}
-              </th>
-              <th
-                onClick={() => handleSort("assists")}
-                className="py-3 px-3 text-center cursor-pointer hover:text-white transition-colors"
-              >
-                Asist {renderSortIndicator("assists")}
-              </th>
-              <th
-                onClick={() => handleSort("xa")}
-                className="py-3 px-3 text-center cursor-pointer hover:text-white transition-colors"
-              >
-                xA {renderSortIndicator("xa")}
-              </th>
-              <th
-                onClick={() => handleSort("xgChain90")}
-                className="py-3 px-3 text-right cursor-pointer hover:text-white transition-colors"
-              >
-                xGChain/90 {renderSortIndicator("xgChain90")}
-              </th>
+
+              {/* Dynamic Headers based on perspective */}
+              {perspective === "standard" && (
+                <>
+                  <th
+                    onClick={() => handleSort("goals")}
+                    className="py-3 px-3 text-center cursor-pointer hover:text-white transition-colors"
+                  >
+                    Goles {renderSortIndicator("goals")}
+                  </th>
+                  <th
+                    onClick={() => handleSort("xg")}
+                    className="py-3 px-3 text-center cursor-pointer hover:text-white transition-colors"
+                  >
+                    xG {renderSortIndicator("xg")}
+                  </th>
+                  <th
+                    onClick={() => handleSort("finishingDelta")}
+                    className="py-3 px-3 text-center cursor-pointer hover:text-white transition-colors"
+                  >
+                    Delta (G-xG) {renderSortIndicator("finishingDelta")}
+                  </th>
+                  <th
+                    onClick={() => handleSort("assists")}
+                    className="py-3 px-3 text-center cursor-pointer hover:text-white transition-colors"
+                  >
+                    Asist {renderSortIndicator("assists")}
+                  </th>
+                  <th
+                    onClick={() => handleSort("xa")}
+                    className="py-3 px-3 text-center cursor-pointer hover:text-white transition-colors"
+                  >
+                    xA {renderSortIndicator("xa")}
+                  </th>
+                  <th
+                    onClick={() => handleSort("xgChain90")}
+                    className="py-3 px-3 text-right cursor-pointer hover:text-white transition-colors"
+                  >
+                    xGChain/90 {renderSortIndicator("xgChain90")}
+                  </th>
+                </>
+              )}
+
+              {perspective === "creation" && (
+                <>
+                  <th
+                    onClick={() => handleSort("npxg90")}
+                    className="py-3 px-3 text-center cursor-pointer hover:text-white transition-colors"
+                  >
+                    npxG/90 {renderSortIndicator("npxg90")}
+                  </th>
+                  <th
+                    onClick={() => handleSort("xa90")}
+                    className="py-3 px-3 text-center cursor-pointer hover:text-white transition-colors"
+                  >
+                    xA/90 {renderSortIndicator("xa90")}
+                  </th>
+                  <th
+                    onClick={() => handleSort("progPasses")}
+                    className="py-3 px-3 text-center cursor-pointer hover:text-white transition-colors"
+                  >
+                    Pases Prog {renderSortIndicator("progPasses")}
+                  </th>
+                  <th
+                    onClick={() => handleSort("progCarries")}
+                    className="py-3 px-3 text-center cursor-pointer hover:text-white transition-colors"
+                  >
+                    Conduc Prog {renderSortIndicator("progCarries")}
+                  </th>
+                  <th
+                    onClick={() => handleSort("sca")}
+                    className="py-3 px-3 text-center cursor-pointer hover:text-white transition-colors"
+                  >
+                    SCA (Tiros Creados) {renderSortIndicator("sca")}
+                  </th>
+                  <th
+                    onClick={() => handleSort("gca")}
+                    className="py-3 px-3 text-right cursor-pointer hover:text-white transition-colors"
+                  >
+                    GCA (Goles Creados) {renderSortIndicator("gca")}
+                  </th>
+                </>
+              )}
+
+              {perspective === "press" && (
+                <>
+                  <th
+                    onClick={() => handleSort("pressures")}
+                    className="py-3 px-3 text-center cursor-pointer hover:text-white transition-colors"
+                  >
+                    Presiones Éxito {renderSortIndicator("pressures")}
+                  </th>
+                  <th
+                    onClick={() => handleSort("pressures90")}
+                    className="py-3 px-3 text-center cursor-pointer hover:text-white transition-colors"
+                  >
+                    Presiones/90 {renderSortIndicator("pressures90")}
+                  </th>
+                  <th
+                    onClick={() => handleSort("recoveries")}
+                    className="py-3 px-3 text-center cursor-pointer hover:text-white transition-colors"
+                  >
+                    Recup. 3er Tercio {renderSortIndicator("recoveries")}
+                  </th>
+                  <th
+                    onClick={() => handleSort("recoveries90")}
+                    className="py-3 px-3 text-center cursor-pointer hover:text-white transition-colors"
+                  >
+                    Recup/90 {renderSortIndicator("recoveries90")}
+                  </th>
+                  <th
+                    onClick={() => handleSort("xgBuildup90")}
+                    className="py-3 px-3 text-right cursor-pointer hover:text-white transition-colors"
+                  >
+                    xGBuildup/90 {renderSortIndicator("xgBuildup90")}
+                  </th>
+                </>
+              )}
             </tr>
           </thead>
 
@@ -289,10 +487,10 @@ export default function PlayerScoutingTable({
                       />
                       <div className="min-w-0">
                         <div className="flex items-center gap-1.5">
-                          <span className="font-bold text-white hover:text-emerald-400 transition-colors truncate">
+                          <span className="font-bold text-white hover:text-emerald-400 transition-colors truncate max-w-[130px] sm:max-w-[190px]">
                             {p.player_name}
                           </span>
-                          <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-white/10 text-slate-300">
+                          <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-white/10 text-slate-300 shrink-0">
                             {p.position}
                           </span>
                         </div>
@@ -313,7 +511,7 @@ export default function PlayerScoutingTable({
                           <span className="text-[8px] font-bold font-mono">{p.team_name.substring(0, 2)}</span>
                         )}
                       </div>
-                      <span className="text-slate-300 font-mono text-[11px] truncate max-w-[130px]">
+                      <span className="text-slate-300 font-mono text-[11px] truncate max-w-[120px]">
                         {p.team_name}
                       </span>
                     </div>
@@ -324,45 +522,84 @@ export default function PlayerScoutingTable({
                     {p.minutes}
                   </td>
 
-                  {/* Goals */}
-                  <td className="py-2.5 px-3 text-center font-mono font-bold text-white">
-                    {p.goals}
-                  </td>
+                  {/* Perspective: Standard */}
+                  {perspective === "standard" && (
+                    <>
+                      <td className="py-2.5 px-3 text-center font-mono font-bold text-white">
+                        {p.goals}
+                      </td>
+                      <td className="py-2.5 px-3 text-center font-mono text-slate-300">
+                        {p.xg.toFixed(2)}
+                      </td>
+                      <td className="py-2.5 px-3 text-center">
+                        <span
+                          className={`inline-block font-mono font-semibold px-2 py-0.5 rounded-full text-[11px] ${
+                            delta > 0.4
+                              ? "bg-emerald-500/15 text-emerald-400 border border-emerald-500/30"
+                              : delta < -0.4
+                              ? "bg-rose-500/15 text-rose-400 border border-rose-500/30"
+                              : "bg-slate-800 text-slate-400 border border-white/5"
+                          }`}
+                        >
+                          {delta >= 0 ? `+${delta.toFixed(2)}` : delta.toFixed(2)}
+                        </span>
+                      </td>
+                      <td className="py-2.5 px-3 text-center font-mono text-slate-300">
+                        {p.assists}
+                      </td>
+                      <td className="py-2.5 px-3 text-center font-mono text-slate-300">
+                        {p.xa.toFixed(2)}
+                      </td>
+                      <td className="py-2.5 px-3 text-right font-mono font-bold text-purple-300">
+                        {p.p90.xgChain.toFixed(2)}
+                      </td>
+                    </>
+                  )}
 
-                  {/* xG */}
-                  <td className="py-2.5 px-3 text-center font-mono text-slate-300">
-                    {p.xg.toFixed(2)}
-                  </td>
+                  {/* Perspective: Creation & Progression */}
+                  {perspective === "creation" && (
+                    <>
+                      <td className="py-2.5 px-3 text-center font-mono font-bold text-cyan-300">
+                        {p.p90.npxg.toFixed(2)}
+                      </td>
+                      <td className="py-2.5 px-3 text-center font-mono text-emerald-300">
+                        {p.p90.xa.toFixed(2)}
+                      </td>
+                      <td className="py-2.5 px-3 text-center font-mono font-bold text-white">
+                        {p.progressive_passes ?? Math.round((p.p90.progressivePasses ?? 0) * (p.minutes / 90))}
+                      </td>
+                      <td className="py-2.5 px-3 text-center font-mono font-bold text-amber-300">
+                        {p.progressive_carries ?? Math.round((p.p90.progressiveCarries ?? 0) * (p.minutes / 90))}
+                      </td>
+                      <td className="py-2.5 px-3 text-center font-mono font-black text-emerald-400">
+                        {p.sca ?? Math.round((p.p90.sca ?? 0) * (p.minutes / 90))}
+                      </td>
+                      <td className="py-2.5 px-3 text-right font-mono font-black text-cyan-400">
+                        {p.gca ?? Math.round((p.p90.gca ?? 0) * (p.minutes / 90))}
+                      </td>
+                    </>
+                  )}
 
-                  {/* Delta (G-xG) */}
-                  <td className="py-2.5 px-3 text-center">
-                    <span
-                      className={`inline-block font-mono font-semibold px-2 py-0.5 rounded-full text-[11px] ${
-                        delta > 0.4
-                          ? "bg-emerald-500/15 text-emerald-400 border border-emerald-500/30"
-                          : delta < -0.4
-                          ? "bg-rose-500/15 text-rose-400 border border-rose-500/30"
-                          : "bg-slate-800 text-slate-400 border border-white/5"
-                      }`}
-                    >
-                      {delta >= 0 ? `+${delta.toFixed(2)}` : delta.toFixed(2)}
-                    </span>
-                  </td>
-
-                  {/* Assists */}
-                  <td className="py-2.5 px-3 text-center font-mono text-slate-300">
-                    {p.assists}
-                  </td>
-
-                  {/* xA */}
-                  <td className="py-2.5 px-3 text-center font-mono text-slate-300">
-                    {p.xa.toFixed(2)}
-                  </td>
-
-                  {/* xGChain / 90 */}
-                  <td className="py-2.5 px-3 text-right font-mono font-bold text-purple-300">
-                    {p.p90.xgChain.toFixed(2)}
-                  </td>
+                  {/* Perspective: Pressure & Recovery */}
+                  {perspective === "press" && (
+                    <>
+                      <td className="py-2.5 px-3 text-center font-mono font-bold text-white">
+                        {p.successful_pressures ?? Math.round((p.p90.pressures ?? 0) * (p.minutes / 90))}
+                      </td>
+                      <td className="py-2.5 px-3 text-center font-mono font-bold text-emerald-300">
+                        {(p.p90.pressures ?? p.successful_pressures_per_90 ?? 0).toFixed(2)}
+                      </td>
+                      <td className="py-2.5 px-3 text-center font-mono font-bold text-amber-300">
+                        {p.final_third_recoveries ?? Math.round((p.p90.finalThirdRecoveries ?? 0) * (p.minutes / 90))}
+                      </td>
+                      <td className="py-2.5 px-3 text-center font-mono font-bold text-cyan-300">
+                        {(p.p90.finalThirdRecoveries ?? p.final_third_recoveries_per_90 ?? 0).toFixed(2)}
+                      </td>
+                      <td className="py-2.5 px-3 text-right font-mono font-bold text-purple-300">
+                        {p.p90.xgBuildup.toFixed(2)}
+                      </td>
+                    </>
+                  )}
                 </tr>
               );
             })}

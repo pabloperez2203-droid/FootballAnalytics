@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import equiposData from "@/data/equipos_xg.json";
@@ -14,9 +15,11 @@ import HeroCanvas3D from "@/components/ui/HeroCanvas3D";
 import { useCompetition } from "@/stores/filterStore";
 import { UclStarball } from "@/components/ui/CompetitionBranding";
 import FeaturedMatchups from "@/components/home/FeaturedMatchups";
+import LiveMatchCenterModal from "@/components/live/LiveMatchCenterModal";
 
 export default function HomePage() {
   const { competition, meta, isUcl } = useCompetition();
+  const [isLiveCenterOpen, setIsLiveCenterOpen] = useState(false);
 
   const currentEquipos = competition === "ucl" ? equiposUclData : equiposData;
   const currentMatches = competition === "ucl" ? matchesUclIndex : matchesIndex;
@@ -257,6 +260,15 @@ export default function HomePage() {
                   </svg>
                   <span>Match Intel</span>
                 </Link>
+
+                <button
+                  type="button"
+                  onClick={() => setIsLiveCenterOpen(true)}
+                  className="glass-card w-full sm:w-auto min-h-[48px] px-5 py-3.5 rounded-xl text-white font-semibold text-sm hover:bg-rose-500/20 hover:border-rose-500/40 border border-rose-500/25 transition-all duration-300 flex items-center justify-center gap-2 hover:-translate-y-0.5 active:scale-[0.98] cursor-pointer"
+                >
+                  <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse shadow-[0_0_8px_#ef4444]" />
+                  <span>Directo LIVE</span>
+                </button>
               </div>
 
               {/* Métricas destacadas en píldoras */}
@@ -683,6 +695,12 @@ export default function HomePage() {
           <p>© 2026 xG Nexus · Plataforma de Analítica Avanzada & Telemetría de {meta.name}</p>
         </PageContainer>
       </footer>
+
+      {/* Modal Centro de Partidos en Directo */}
+      <LiveMatchCenterModal
+        isOpen={isLiveCenterOpen}
+        onClose={() => setIsLiveCenterOpen(false)}
+      />
     </div>
   );
 }

@@ -61,7 +61,13 @@ export default function PlayersPage() {
             xgBuildup: Number(xgBuildup90.toFixed(2)),
             shots: Number(shots90.toFixed(2)),
             keyPasses: Number(keyPasses90.toFixed(2)),
-            goals: Number(goals90.toFixed(2))
+            goals: Number(goals90.toFixed(2)),
+            progressivePasses: p.progressive_passes_per_90 ?? Number((p.progressive_passes ? p.progressive_passes * p90Factor : 0).toFixed(2)),
+            progressiveCarries: p.progressive_carries_per_90 ?? Number((p.progressive_carries ? p.progressive_carries * p90Factor : 0).toFixed(2)),
+            sca: p.sca_per_90 ?? Number((p.sca ? p.sca * p90Factor : 0).toFixed(2)),
+            gca: p.gca_per_90 ?? Number((p.gca ? p.gca * p90Factor : 0).toFixed(2)),
+            pressures: p.successful_pressures_per_90 ?? Number((p.successful_pressures ? p.successful_pressures * p90Factor : 0).toFixed(2)),
+            finalThirdRecoveries: p.final_third_recoveries_per_90 ?? Number((p.final_third_recoveries ? p.final_third_recoveries * p90Factor : 0).toFixed(2)),
           },
           npxgPerShot: Number(npxgPerShot.toFixed(3)),
           finishingDelta: Number(finishingDelta.toFixed(2))

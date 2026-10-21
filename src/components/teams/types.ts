@@ -16,6 +16,19 @@ export interface TeamXgData {
   diff_goals_xg_against: number;
   xg_per_match: number;
   goals_per_match: number;
+  // Métricas avanzadas 2026
+  xg_per_90?: number;
+  xga_per_90?: number;
+  xg_open_play?: number;
+  xg_set_piece?: number;
+  xga_open_play?: number;
+  xga_set_piece?: number;
+  ppda?: number;
+  oppda?: number;
+  deep_completions_per_90?: number;
+  deep_allowed?: number;
+  finishing_delta?: number;
+  finishing_efficiency_pct?: number;
   source?: string;
   fetched_at?: string;
   season?: string;
