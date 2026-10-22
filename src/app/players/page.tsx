@@ -23,10 +23,10 @@ export default function PlayersPage() {
     const pPhotos = playerPhotosMap as Record<string, any>;
 
     return allRaw
-      .filter(p => p.minutes > 0)
+      .filter(p => p && (p.minutes ?? 0) >= 0)
       .map(p => {
-        const m = p.minutes;
-        const p90Factor = 90 / m;
+        const m = p.minutes || 0;
+        const p90Factor = m > 0 ? 90 / m : 0;
 
         const npxg90 = p.np_xg * p90Factor;
         const xa90 = p.xa * p90Factor;
@@ -84,15 +84,15 @@ export default function PlayersPage() {
     return Array.from(set).sort((a, b) => a.localeCompare(b));
   }, [allComputedPlayers]);
 
-  // Filters State: dynamic minMinutes (90 for UCL, 450 for LaLiga)
+  // Filters State: default minMinutes set to 0 to show ALL players from 0 min
   const [positionFilter, setPositionFilter] = useState<PositionFilter>("ALL");
   const [selectedTeam, setSelectedTeam] = useState<string>("ALL");
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const [minMinutes, setMinMinutes] = useState<number>(competition === "ucl" ? 90 : 450);
+  const [minMinutes, setMinMinutes] = useState<number>(0);
 
-  // Sync minMinutes when competition changes
+  // Sync minMinutes when competition changes (default to 0 to show all players)
   React.useEffect(() => {
-    setMinMinutes(competition === "ucl" ? 90 : 450);
+    setMinMinutes(0);
   }, [competition]);
 
   // Reference Player for Statistical Clones
@@ -109,19 +109,19 @@ export default function PlayersPage() {
     }
   }, [allComputedPlayers, referencePlayerName]);
 
-  // Reset filters
+  // Reset filters: restore minMinutes to 0
   const handleResetFilters = () => {
     setPositionFilter("ALL");
     setSelectedTeam("ALL");
     setSearchQuery("");
-    setMinMinutes(competition === "ucl" ? 90 : 450);
+    setMinMinutes(0);
   };
 
   // 2. Filtered players list
   const filteredPlayers = useMemo(() => {
     return allComputedPlayers.filter(p => {
-      // Min minutes check
-      if (p.minutes < minMinutes) return false;
+      // Min minutes check (>= minMinutes, allowing 0 to max)
+      if ((p.minutes ?? 0) < minMinutes) return false;
 
       // Position filter
       if (positionFilter !== "ALL") {
@@ -145,19 +145,19 @@ export default function PlayersPage() {
     });
   }, [allComputedPlayers, minMinutes, positionFilter, selectedTeam, searchQuery]);
 
-  // Dynamic max minutes across all players (adapted to competition matchdays)
+  // Dynamic max minutes across all players (exact ceiling of actual minutes played in competition)
   const maxMinutesLimit = useMemo(() => {
-    if (!allComputedPlayers.length) return competition === "ucl" ? 180 : 720;
-    const maxM = Math.max(...allComputedPlayers.map(p => p.minutes));
-    const rounded = Math.ceil(maxM / 90) * 90;
-    return competition === "ucl" ? Math.max(rounded, 180) : Math.max(rounded, 720);
+    if (!allComputedPlayers.length) return competition === "ucl" ? 270 : 900;
+    const maxM = Math.max(...allComputedPlayers.map(p => p.minutes || 0));
+    return Math.max(90, maxM);
   }, [allComputedPlayers, competition]);
 
   // Pool for Clones Engine: eligible players
   const clonesEligiblePool = useMemo(() => {
-    const threshold = competition === "ucl" ? Math.min(minMinutes, 90) : Math.min(minMinutes, 300);
-    return allComputedPlayers.filter(p => p.minutes >= threshold);
-  }, [allComputedPlayers, minMinutes, competition]);
+    const minThreshold = competition === "ucl" ? 45 : 90;
+    const pool = allComputedPlayers.filter(p => (p.minutes || 0) >= minThreshold);
+    return pool.length >= 10 ? pool : allComputedPlayers.filter(p => (p.minutes || 0) > 0);
+  }, [allComputedPlayers, competition]);
 
   return (
     <div className="min-h-screen bg-[#07090e] text-slate-100 py-6 sm:py-10">
@@ -199,7 +199,9 @@ export default function PlayersPage() {
                 <div className="w-px h-6 bg-white/10" />
                 <div>
                   <span className="text-slate-400 block text-[10px]">Corte Minutos</span>
-                  <span className="text-cyan-400 font-bold text-sm">≥{minMinutes}m</span>
+                  <span className="text-cyan-400 font-bold text-sm">
+                    {minMinutes === 0 ? "0m (Todos)" : `≥${minMinutes}m`}
+                  </span>
                 </div>
               </div>
             </div>

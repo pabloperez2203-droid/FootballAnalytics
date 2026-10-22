@@ -43,7 +43,7 @@ export default function PlayerFilterBar({
   ];
 
   const hasActiveFilters =
-    position !== "ALL" || selectedTeam !== "ALL" || searchQuery.trim() !== "" || minMinutes !== 450;
+    position !== "ALL" || selectedTeam !== "ALL" || searchQuery.trim() !== "" || minMinutes > 0;
 
   return (
     <div className="glass-card rounded-2xl p-4 sm:p-5 border border-white/10 shadow-xl space-y-4">
@@ -123,23 +123,81 @@ export default function PlayerFilterBar({
 
       {/* Bottom row: Min Minutes Slider + Results Count & Reset */}
       <div className="pt-3 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
-        {/* Minutes Slider */}
-        <div className="flex items-center gap-3 flex-1 max-w-md">
-          <span className="text-slate-400 font-mono text-[11px] shrink-0">
-            Minutos mínimos:
-          </span>
-          <input
-            type="range"
-            min={90}
-            max={maxMinutesLimit}
-            step={30}
-            value={minMinutes}
-            onChange={e => onChangeMinMinutes(Number(e.target.value))}
-            className="w-full h-2 sm:h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-400 touch-manipulation"
-          />
-          <span className="font-mono font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 shrink-0 min-w-[64px] text-center">
-            ≥ {minMinutes}m
-          </span>
+        {/* Minutes Slider + Presets */}
+        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 flex-1 max-w-xl">
+          <div className="flex items-center justify-between sm:justify-start gap-2 shrink-0">
+            <span className="text-slate-400 font-mono text-[11px] shrink-0">
+              Minutos mínimos:
+            </span>
+            <span className="font-mono font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 text-center text-xs shrink-0">
+              {minMinutes === 0 ? "0m (Todos)" : `≥ ${minMinutes}m`}
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2 flex-1 w-full">
+            <input
+              type="range"
+              min={0}
+              max={maxMinutesLimit}
+              step={10}
+              value={minMinutes}
+              onChange={e => onChangeMinMinutes(Number(e.target.value))}
+              aria-label="Filtro de minutos mínimos"
+              className="w-full h-2 sm:h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-400 touch-manipulation"
+            />
+          </div>
+
+          {/* Quick Presets */}
+          <div className="flex items-center gap-1.5 shrink-0 pt-1 sm:pt-0">
+            <button
+              type="button"
+              onClick={() => onChangeMinMinutes(0)}
+              className={`px-2 py-1 sm:py-0.5 rounded text-[10px] font-mono font-semibold transition-all cursor-pointer touch-manipulation ${
+                minMinutes === 0
+                  ? "bg-emerald-500/25 text-emerald-300 border border-emerald-500/40 font-bold"
+                  : "bg-white/[0.04] hover:bg-white/[0.08] text-slate-400 border border-white/5"
+              }`}
+            >
+              Todos (0m)
+            </button>
+            <button
+              type="button"
+              onClick={() => onChangeMinMinutes(Math.min(90, maxMinutesLimit))}
+              className={`px-2 py-1 sm:py-0.5 rounded text-[10px] font-mono font-semibold transition-all cursor-pointer touch-manipulation ${
+                minMinutes === 90
+                  ? "bg-emerald-500/25 text-emerald-300 border border-emerald-500/40 font-bold"
+                  : "bg-white/[0.04] hover:bg-white/[0.08] text-slate-400 border border-white/5"
+              }`}
+            >
+              ≥ 90m
+            </button>
+            {maxMinutesLimit >= 180 && (
+              <button
+                type="button"
+                onClick={() => onChangeMinMinutes(180)}
+                className={`px-2 py-1 sm:py-0.5 rounded text-[10px] font-mono font-semibold transition-all cursor-pointer touch-manipulation ${
+                  minMinutes === 180
+                    ? "bg-emerald-500/25 text-emerald-300 border border-emerald-500/40 font-bold"
+                    : "bg-white/[0.04] hover:bg-white/[0.08] text-slate-400 border border-white/5"
+                }`}
+              >
+                ≥ 180m
+              </button>
+            )}
+            {maxMinutesLimit >= 450 && (
+              <button
+                type="button"
+                onClick={() => onChangeMinMinutes(450)}
+                className={`px-2 py-1 sm:py-0.5 rounded text-[10px] font-mono font-semibold transition-all cursor-pointer touch-manipulation ${
+                  minMinutes === 450
+                    ? "bg-emerald-500/25 text-emerald-300 border border-emerald-500/40 font-bold"
+                    : "bg-white/[0.04] hover:bg-white/[0.08] text-slate-400 border border-white/5"
+                }`}
+              >
+                ≥ 450m
+              </button>
+            )}
+          </div>
         </div>
 
         {/* Counter and Reset */}
