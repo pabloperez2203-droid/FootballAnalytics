@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { getTeamCrest } from '@/utils/crests';
 import { useCompetition, CompetitionType } from '@/stores/filterStore';
 import LiveMatchCenterModal from '@/components/live/LiveMatchCenterModal';
-import { LiveMatchData } from '@/app/api/live-matches/route';
+import { useLiveMatches } from '@/hooks/useLiveMatches';
 
 export interface MatchItem {
   id: string;
@@ -19,6 +19,7 @@ export interface MatchItem {
   date?: string;
   status?: "LIVE" | "HT" | "FT" | "NS" | "scheduled";
   minute?: string;
+  is_live_source?: boolean;
 }
 
 // ─── Datos de respaldo estáticos garantizados ──────────────────────────────
@@ -45,16 +46,16 @@ const DEFAULT_UCL_MATCHES: MatchItem[] = [
   { id: "ucl_6106320", matchday: 3, home_team: "Napoli", away_team: "Bodo Glimt", home_score: 4, away_score: 3, home_xg: 1.53, away_xg: 2.92, status: "FT", minute: "FT" },
   { id: "ucl_6106333", matchday: 3, home_team: "Fenerbahce", away_team: "Slavia Prague", home_score: 2, away_score: 2, home_xg: 1.07, away_xg: 1.48, status: "FT", minute: "FT" },
   { id: "ucl_6106287", matchday: 3, home_team: "FC Porto", away_team: "PSV Eindhoven", home_score: 0, away_score: 1, home_xg: 1.58, away_xg: 1.91, status: "FT", minute: "FT" },
-  // ── Partidos de Hoy a punto de jugar (Jornada 3 - Miércoles 21 Oct) ──
-  { id: "ucl_401915395", matchday: 3, home_team: "Como", away_team: "Manchester United", home_score: 0, away_score: 0, home_xg: 0, away_xg: 0, status: "scheduled", minute: "18:45", date: "2026-10-21T18:45:00+02:00" },
-  { id: "ucl_401915396", matchday: 3, home_team: "Lille", away_team: "Galatasaray", home_score: 0, away_score: 0, home_xg: 0, away_xg: 0, status: "scheduled", minute: "18:45", date: "2026-10-21T18:45:00+02:00" },
-  { id: "ucl_401915313", matchday: 3, home_team: "Real Madrid", away_team: "RB Leipzig", home_score: 0, away_score: 0, home_xg: 0, away_xg: 0, status: "scheduled", minute: "21:00", date: "2026-10-21T21:00:00+02:00" },
-  { id: "ucl_401915312", matchday: 3, home_team: "Bayern Munich", away_team: "Arsenal", home_score: 0, away_score: 0, home_xg: 0, away_xg: 0, status: "scheduled", minute: "21:00", date: "2026-10-21T21:00:00+02:00" },
-  { id: "ucl_401915390", matchday: 3, home_team: "Inter", away_team: "Shakhtar Donetsk", home_score: 0, away_score: 0, home_xg: 0, away_xg: 0, status: "scheduled", minute: "21:00", date: "2026-10-21T21:00:00+02:00" },
-  { id: "ucl_401915389", matchday: 3, home_team: "Real Betis", away_team: "Feyenoord", home_score: 0, away_score: 0, home_xg: 0, away_xg: 0, status: "scheduled", minute: "21:00", date: "2026-10-21T21:00:00+02:00" },
-  { id: "ucl_401915394", matchday: 3, home_team: "Aston Villa", away_team: "Viking", home_score: 0, away_score: 0, home_xg: 0, away_xg: 0, status: "scheduled", minute: "21:00", date: "2026-10-21T21:00:00+02:00" },
-  { id: "ucl_401915388", matchday: 3, home_team: "Club Brugge", away_team: "Lens", home_score: 0, away_score: 0, home_xg: 0, away_xg: 0, status: "scheduled", minute: "21:00", date: "2026-10-21T21:00:00+02:00" },
-  { id: "ucl_401915391", matchday: 3, home_team: "Sporting CP", away_team: "LASK", home_score: 0, away_score: 0, home_xg: 0, away_xg: 0, status: "scheduled", minute: "21:00", date: "2026-10-21T21:00:00+02:00" },
+  // ── Partidos Completados (Jornada 3 - Miércoles 21 Oct) ──
+  { id: "ucl_401915395", matchday: 3, home_team: "Como", away_team: "Manchester United", home_score: 4, away_score: 1, home_xg: 2.11, away_xg: 0.99, status: "FT", minute: "FT" },
+  { id: "ucl_401915396", matchday: 3, home_team: "Lille", away_team: "Galatasaray", home_score: 2, away_score: 4, home_xg: 2.12, away_xg: 1.39, status: "FT", minute: "FT" },
+  { id: "ucl_401915313", matchday: 3, home_team: "Real Madrid", away_team: "RB Leipzig", home_score: 4, away_score: 1, home_xg: 3.53, away_xg: 1.50, status: "FT", minute: "FT" },
+  { id: "ucl_401915312", matchday: 3, home_team: "Bayern Munich", away_team: "Arsenal", home_score: 2, away_score: 2, home_xg: 2.33, away_xg: 1.58, status: "FT", minute: "FT" },
+  { id: "ucl_401915390", matchday: 3, home_team: "Inter", away_team: "Shakhtar Donetsk", home_score: 1, away_score: 0, home_xg: 1.05, away_xg: 0.60, status: "FT", minute: "FT" },
+  { id: "ucl_401915389", matchday: 3, home_team: "Real Betis", away_team: "Feyenoord", home_score: 1, away_score: 0, home_xg: 2.14, away_xg: 0.78, status: "FT", minute: "FT" },
+  { id: "ucl_401915394", matchday: 3, home_team: "Aston Villa", away_team: "Viking", home_score: 3, away_score: 1, home_xg: 2.71, away_xg: 0.79, status: "FT", minute: "FT" },
+  { id: "ucl_401915388", matchday: 3, home_team: "Club Brugge", away_team: "Lens", home_score: 3, away_score: 0, home_xg: 3.16, away_xg: 2.04, status: "FT", minute: "FT" },
+  { id: "ucl_401915391", matchday: 3, home_team: "Sporting CP", away_team: "LASK", home_score: 2, away_score: 3, home_xg: 3.24, away_xg: 1.12, status: "FT", minute: "FT" },
 ];
 
 // Caché en memoria para transiciones instantáneas sin recarga
@@ -77,11 +78,14 @@ function safeXg(val: any): string {
 
 export default function MatchTicker() {
   const { competition, meta } = useCompetition();
+  const currentComp = competition === 'ucl' ? 'ucl' : 'laliga';
 
   const [mounted, setMounted] = useState(false);
-  const [matches, setMatches] = useState<MatchItem[]>(() => DEFAULT_LALIGA_MATCHES);
+  const [baseMatches, setBaseMatches] = useState<MatchItem[]>(() => DEFAULT_LALIGA_MATCHES);
   const [matchday, setMatchday] = useState<number>(9);
-  const [hasLiveGames, setHasLiveGames] = useState<boolean>(false);
+
+  // Hook SWR con polling automático (30s en LIVE, 5min en descanso)
+  const { matches: liveApiMatches, hasLive: hasLiveGames } = useLiveMatches(currentComp);
 
   // Modal de Centro de Partidos en Directo
   const [isLiveModalOpen, setIsLiveModalOpen] = useState<boolean>(false);
@@ -94,16 +98,15 @@ export default function MatchTicker() {
     setMounted(true);
   }, []);
 
-  // 1. Cargar partidos base según competición
+  // 1. Cargar datos base desde JSON local generado por Python (Prioridad B)
   useEffect(() => {
-    const currentComp = competition === 'ucl' ? 'ucl' : 'laliga';
     const cached = memoryCache[currentComp];
 
     if (cached && cached.matches && cached.matches.length > 0) {
-      setMatches(cached.matches);
+      setBaseMatches(cached.matches);
       setMatchday(cached.matchday);
     } else {
-      setMatches(currentComp === 'ucl' ? DEFAULT_UCL_MATCHES : DEFAULT_LALIGA_MATCHES);
+      setBaseMatches(currentComp === 'ucl' ? DEFAULT_UCL_MATCHES : DEFAULT_LALIGA_MATCHES);
       setMatchday(currentComp === 'ucl' ? 3 : 9);
     }
 
@@ -156,71 +159,87 @@ export default function MatchTicker() {
             };
 
             setMatchday(targetMd);
-            setMatches(chosen);
+            setBaseMatches(chosen);
           }
         }
       })
       .catch((err) => {
         if (err.name !== 'AbortError') {
           const fallback = currentComp === 'ucl' ? DEFAULT_UCL_MATCHES : DEFAULT_LALIGA_MATCHES;
-          setMatches(fallback);
+          setBaseMatches(fallback);
         }
       });
 
     return () => {
       controller.abort();
     };
-  }, [competition]);
+  }, [competition, currentComp]);
 
-  // 2. Polling Inteligente de Partidos en Directo (/api/live-matches) cada 60s
-  const pollLiveScores = useCallback(async () => {
-    try {
-      const res = await fetch(`/api/live-matches?comp=${competition}`, { cache: "no-store" });
-      if (!res.ok) return;
-      const data = await res.json();
+  // 2. Fusión y Prioridad: Prioridad A (Hook SWR en Vivo) > Prioridad B (JSON local)
+  const matches = useMemo(() => {
+    const normalize = (s: string) =>
+      (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]/g, "");
 
-      if (data && Array.isArray(data.matches)) {
-        const liveItems: LiveMatchData[] = data.matches.filter(
-          (m: LiveMatchData) => m.status === "LIVE" || m.status === "HT"
-        );
+    const baseList = baseMatches.length > 0 ? baseMatches : (currentComp === 'ucl' ? DEFAULT_UCL_MATCHES : DEFAULT_LALIGA_MATCHES);
 
-        if (liveItems.length > 0) {
-          setHasLiveGames(true);
+    const mappedLive: MatchItem[] = (liveApiMatches || []).map((lm) => ({
+      id: lm.id,
+      matchday: currentComp === 'ucl' ? 3 : 9,
+      home_team: lm.home_team,
+      away_team: lm.away_team,
+      home_score: lm.home_score,
+      away_score: lm.away_score,
+      home_xg: lm.home_xg,
+      away_xg: lm.away_xg,
+      status: lm.status,
+      minute: lm.minute,
+      date: lm.date,
+      is_live_source: lm.status === "LIVE" || lm.status === "HT",
+    }));
 
-          // Convertir a MatchItem y fusionar al inicio del carrusel
-          const mappedLive: MatchItem[] = liveItems.map((lm) => ({
-            id: lm.id,
-            matchday: 9,
-            home_team: lm.home_team,
-            away_team: lm.away_team,
-            home_score: lm.home_score,
-            away_score: lm.away_score,
-            home_xg: lm.home_xg,
-            away_xg: lm.away_xg,
-            status: lm.status,
-            minute: lm.minute,
-            date: lm.date,
-          }));
+    const activeLive = mappedLive.filter((m) => m.status === "LIVE" || m.status === "HT");
 
-          setMatches((prev) => {
-            // Evitar duplicados si ya estaban agregados
-            const filteredPrev = prev.filter((p) => !mappedLive.some((lm) => lm.id === p.id));
-            return [...mappedLive, ...filteredPrev];
-          });
-        } else {
-          setHasLiveGames(false);
+    const updatedBase = baseList.map((bm) => {
+      const bmIdNum = bm.id.replace(/^(ucl_|espn_|m-)/, "");
+      const bmHome = normalize(bm.home_team);
+      const bmAway = normalize(bm.away_team);
+
+      const matchedLive = mappedLive.find((lm) => {
+        const lmIdNum = lm.id.replace(/^(ucl_|espn_|m-)/, "");
+        const lmHome = normalize(lm.home_team);
+        const lmAway = normalize(lm.away_team);
+        return (bmIdNum && lmIdNum && bmIdNum === lmIdNum) || (bmHome === lmHome && bmAway === lmAway);
+      });
+
+      if (matchedLive) {
+        // Prioridad A: Partido en juego en vivo
+        if (matchedLive.status === "LIVE" || matchedLive.status === "HT") {
+          return matchedLive;
+        }
+        // Si ya finalizó en la API oficial en vivo
+        if (matchedLive.status === "FT") {
+          return {
+            ...bm,
+            home_score: matchedLive.home_score,
+            away_score: matchedLive.away_score,
+            home_xg: matchedLive.home_xg > 0 ? matchedLive.home_xg : bm.home_xg,
+            away_xg: matchedLive.away_xg > 0 ? matchedLive.away_xg : bm.away_xg,
+            status: "FT" as const,
+            minute: "FT",
+          };
         }
       }
-    } catch {
-      // Ignorar silenciosamente si hay error de red temporal
-    }
-  }, [competition]);
+      // Prioridad B: Histórico o programado local
+      return bm;
+    });
 
-  useEffect(() => {
-    pollLiveScores();
-    const interval = setInterval(pollLiveScores, 60000); // 60 segundos
-    return () => clearInterval(interval);
-  }, [pollLiveScores]);
+    // Colocar partidos en directo al principio para máxima visibilidad (móvil y escritorio)
+    const nonLive = updatedBase.filter(
+      (m) => !activeLive.some((al) => al.id === m.id || (normalize(al.home_team) === normalize(m.home_team) && normalize(al.away_team) === normalize(m.away_team)))
+    );
+
+    return [...activeLive, ...nonLive];
+  }, [baseMatches, liveApiMatches, currentComp]);
 
   // 3. Duplicación para scroll infinito continuo sin saltos visuales
   const displayItems = useMemo(() => {
@@ -302,11 +321,14 @@ export default function MatchTicker() {
             : "bg-white/[0.03] hover:bg-white/[0.08] border-white/5 hover:border-white/20"
         }`}
       >
-        {/* Badge "LIVE" o "HOY" */}
+        {/* Badge "LIVE" con indicador parpadeante para móvil y escritorio */}
         {isLive && (
-          <div className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-rose-500/25 border border-rose-500/50 text-rose-300 text-[10px] font-mono font-black animate-pulse shrink-0">
-            <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_8px_#ef4444]" />
-            <span>{m.minute || "LIVE"}</span>
+          <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-rose-500/20 border border-rose-500/50 text-rose-300 text-[10px] font-mono font-black shrink-0 shadow-[0_0_8px_rgba(244,63,94,0.25)]">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-rose-500 shadow-[0_0_8px_#ef4444]"></span>
+            </span>
+            <span className="animate-pulse">{m.minute || "LIVE"}</span>
           </div>
         )}
 
@@ -338,7 +360,7 @@ export default function MatchTicker() {
         <div
           className={`px-1.5 py-0.5 rounded font-mono font-bold text-xs tabular-nums shrink-0 border ${
             isLive
-              ? 'bg-black/60 text-rose-400 border-rose-500/40 font-black'
+              ? 'bg-rose-950/60 text-rose-300 border-rose-500/50 font-black shadow-[0_0_10px_rgba(244,63,94,0.2)]'
               : isScheduled
               ? 'bg-sky-950/40 text-sky-300 border-sky-400/30 group-hover/item:border-sky-400/60'
               : isUcl
@@ -374,12 +396,16 @@ export default function MatchTicker() {
             <span className="text-slate-400 text-[10px]">{kickoffTime} h</span>
           </div>
         ) : (
-          <div className="flex items-center gap-1 text-[11px] font-mono text-slate-400 border-l border-white/10 pl-2 shrink-0">
+          <div className="flex items-center gap-1.5 text-[11px] font-mono text-slate-400 border-l border-white/10 pl-2 shrink-0">
             <span className="text-slate-500 text-[10px]">xG</span>
-            <span className="text-slate-300 font-semibold">{homeXgStr}</span>
+            <span className={isLive ? "text-rose-300 font-bold" : "text-slate-300 font-semibold"}>{homeXgStr}</span>
             <span className="text-slate-500">-</span>
-            <span className="text-slate-300 font-semibold">{awayXgStr}</span>
-            {!isLive && (
+            <span className={isLive ? "text-rose-300 font-bold" : "text-slate-300 font-semibold"}>{awayXgStr}</span>
+            {isLive ? (
+              <span className="ml-1 text-[9px] px-1 py-0.2 rounded bg-rose-500/20 text-rose-300 border border-rose-500/30 font-sans font-bold animate-pulse">
+                EN VIVO
+              </span>
+            ) : (
               <span className="ml-1 text-[9px] px-1 py-0.2 rounded bg-white/5 text-slate-400 font-sans">FT</span>
             )}
           </div>
@@ -395,7 +421,7 @@ export default function MatchTicker() {
         className="w-full overflow-hidden bg-[#080b11]/95 border-b border-white/10 backdrop-blur-md select-none relative z-30 h-10 flex items-center"
       >
         <div className="flex items-center w-full h-full">
-          {/* Etiqueta fija izquierda tipo broadcast interactiva */}
+          {/* Etiqueta fija izquierda tipo broadcast interactiva (móvil y desktop) */}
           <button
             type="button"
             onClick={() => setIsLiveModalOpen(true)}
@@ -408,13 +434,20 @@ export default function MatchTicker() {
                 : 'bg-[#061814] border-emerald-500/25 text-emerald-400'
             }`}
           >
-            <span
-              className={`w-2 h-2 rounded-full shrink-0 ${hasLiveGames ? "bg-rose-500 animate-ping shadow-[0_0_8px_#ef4444]" : "animate-pulse"}`}
-              style={hasLiveGames ? {} : {
-                backgroundColor: meta.dotColor,
-                boxShadow: `0 0 8px ${meta.dotColor}`,
-              }}
-            />
+            {hasLiveGames ? (
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-rose-500 shadow-[0_0_10px_#ef4444]"></span>
+              </span>
+            ) : (
+              <span
+                className="w-2 h-2 rounded-full shrink-0 animate-pulse"
+                style={{
+                  backgroundColor: meta.dotColor,
+                  boxShadow: `0 0 8px ${meta.dotColor}`,
+                }}
+              />
+            )}
             <span className="tracking-widest whitespace-nowrap">
               {hasLiveGames ? "🔴 DIRECTO" : `${isUcl ? 'UCL' : 'LaLiga'} J${matchday}`}
             </span>

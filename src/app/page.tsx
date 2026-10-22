@@ -16,24 +16,15 @@ import { useCompetition } from "@/stores/filterStore";
 import { UclStarball } from "@/components/ui/CompetitionBranding";
 import FeaturedMatchups from "@/components/home/FeaturedMatchups";
 import LiveMatchCenterModal from "@/components/live/LiveMatchCenterModal";
+import { useLiveMatches } from "@/hooks/useLiveMatches";
 
 export default function HomePage() {
   const { competition, meta, isUcl } = useCompetition();
   const [isLiveCenterOpen, setIsLiveCenterOpen] = useState(false);
-  const [hasRealLiveGames, setHasRealLiveGames] = useState(false);
 
-  React.useEffect(() => {
-    fetch(`/api/live-matches?comp=${competition}`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data && data.has_live) {
-          setHasRealLiveGames(true);
-        } else {
-          setHasRealLiveGames(false);
-        }
-      })
-      .catch(() => {});
-  }, [competition]);
+  // Hook SWR automático para detectar partidos en juego en tiempo real
+  const currentComp = competition === "ucl" ? "ucl" : "laliga";
+  const { hasLive: hasRealLiveGames } = useLiveMatches(currentComp);
 
   const currentEquipos = competition === "ucl" ? equiposUclData : equiposData;
   const currentMatches = competition === "ucl" ? matchesUclIndex : matchesIndex;

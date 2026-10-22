@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState, useEffect, useMemo, useCallback } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { getTeamCrest, getTeamColor } from "@/utils/crests";
-import { LiveMatchData } from "@/app/api/live-matches/route";
+import { useLiveMatches } from "@/hooks/useLiveMatches";
 
 interface LiveMatchCenterModalProps {
   isOpen: boolean;
@@ -15,60 +15,18 @@ export default function LiveMatchCenterModal({
   onClose,
   initialMatchId,
 }: LiveMatchCenterModalProps) {
-  const [matches, setMatches] = useState<LiveMatchData[]>([]);
+  const { matches, isLoading, isValidating, refresh, hasLive } = useLiveMatches("all");
   const [selectedId, setSelectedId] = useState<string>("");
-  const [loading, setLoading] = useState<boolean>(false);
-  const [lastRefreshed, setLastRefreshed] = useState<Date>(new Date());
-  const [countdown, setCountdown] = useState<number>(60);
 
-  // Fetch live matches from our API endpoint
-  const fetchLiveMatches = useCallback(async () => {
-    setLoading(true);
-    try {
-      const res = await fetch("/api/live-matches", { cache: "no-store" });
-      if (!res.ok) throw new Error("HTTP error");
-      const data = await res.json();
-      if (data && Array.isArray(data.matches) && data.matches.length > 0) {
-        setMatches(data.matches);
-        setLastRefreshed(new Date());
-        setCountdown(60);
-
-        // Si no hay seleccionado o el seleccionado ya no existe
-        if (!selectedId || !data.matches.some((m: LiveMatchData) => m.id === selectedId)) {
-          const liveMatch = data.matches.find((m: LiveMatchData) => m.status === "LIVE" || m.status === "HT");
-          setSelectedId(initialMatchId || (liveMatch ? liveMatch.id : data.matches[0].id));
-        }
+  // Seleccionar automáticamente el partido inicial o el primer partido en directo
+  useEffect(() => {
+    if (matches.length > 0) {
+      if (!selectedId || !matches.some((m) => m.id === selectedId)) {
+        const liveMatch = matches.find((m) => m.status === "LIVE" || m.status === "HT");
+        setSelectedId(initialMatchId || (liveMatch ? liveMatch.id : matches[0].id));
       }
-    } catch (e) {
-      console.error("Error fetching live matches:", e);
-    } finally {
-      setLoading(false);
     }
-  }, [initialMatchId, selectedId]);
-
-  // Initial load when modal opens
-  useEffect(() => {
-    if (isOpen) {
-      fetchLiveMatches();
-    }
-  }, [isOpen]);
-
-  // Smart polling every 60 seconds when modal is open
-  useEffect(() => {
-    if (!isOpen) return;
-
-    const timer = setInterval(() => {
-      setCountdown((prev) => {
-        if (prev <= 1) {
-          fetchLiveMatches();
-          return 60;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, [isOpen, fetchLiveMatches]);
+  }, [matches, initialMatchId, selectedId]);
 
   // Handle ESC key to close
   useEffect(() => {
@@ -145,9 +103,12 @@ export default function LiveMatchCenterModal({
                 </span>
               </div>
               <div className="text-[11px] text-slate-400 font-mono mt-0.5 flex items-center gap-2">
-                <span>Telemetría en tiempo real</span>
+                <span>Telemetría oficial en tiempo real</span>
                 <span>•</span>
-                <span>Auto-refresco: {countdown}s</span>
+                <span className="text-emerald-400/90 font-semibold flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  Auto-refresh {hasLive ? "30s" : "5m"}
+                </span>
               </div>
             </div>
           </div>
@@ -156,20 +117,20 @@ export default function LiveMatchCenterModal({
             {/* Botón de Refresco Manual */}
             <button
               type="button"
-              onClick={fetchLiveMatches}
-              disabled={loading}
+              onClick={() => refresh()}
+              disabled={isLoading || isValidating}
               title="Actualizar datos ahora"
               className="p-2 sm:px-3 sm:py-1.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] active:bg-white/[0.15] border border-white/10 text-xs text-slate-300 flex items-center gap-1.5 transition-all cursor-pointer font-mono touch-manipulation active:scale-95"
             >
               <svg
-                className={`w-3.5 h-3.5 ${loading ? "animate-spin text-cyan-400" : ""}`}
+                className={`w-3.5 h-3.5 ${isValidating ? "animate-spin text-cyan-400" : ""}`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
               </svg>
-              <span className="hidden sm:inline">{loading ? "Actualizando..." : "Actualizar"}</span>
+              <span className="hidden sm:inline">{isValidating ? "Actualizando..." : "Actualizar"}</span>
             </button>
 
             {/* Botón Cerrar */}
