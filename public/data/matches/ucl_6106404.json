@@ -546,18 +546,6 @@
       "photo": "https://images.fotmob.com/image_resources/playerimages/115180.png"
     },
     {
-      "id": "300916",
-      "team": "home",
-      "name": "Joao Mário",
-      "mins": 25,
-      "shots": 0,
-      "xg": 0,
-      "goals": 0,
-      "position": "Sub",
-      "is_starter": false,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/300916.png"
-    },
-    {
       "id": "547454",
       "team": "home",
       "name": "Kaan Kairinen",
@@ -580,6 +568,18 @@
       "position": "Sub",
       "is_starter": false,
       "photo": "https://images.fotmob.com/image_resources/playerimages/184639.png"
+    },
+    {
+      "id": "300916",
+      "team": "home",
+      "name": "Joao Mário",
+      "mins": 25,
+      "shots": 0,
+      "xg": 0,
+      "goals": 0,
+      "position": "Sub",
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/300916.png"
     },
     {
       "id": "655636",
@@ -1268,30 +1268,6 @@
         "positionOrder": "17",
         "photo": "https://images.fotmob.com/image_resources/playerimages/115180.png"
       },
-      "300916": {
-        "id": "300916",
-        "goals": "0",
-        "own_goals": "0",
-        "shots": "0",
-        "xG": "0",
-        "time": "25",
-        "player_id": "300916",
-        "team_id": "8563",
-        "position": "Sub",
-        "player": "Joao Mário",
-        "h_a": "h",
-        "yellow_card": "0",
-        "red_card": "0",
-        "roster_in": "0",
-        "roster_out": "0",
-        "key_passes": "1",
-        "assists": "0",
-        "xA": "0.10",
-        "xGChain": "0.20",
-        "xGBuildup": "0.10",
-        "positionOrder": "18",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/300916.png"
-      },
       "547454": {
         "id": "547454",
         "goals": "0",
@@ -1313,7 +1289,7 @@
         "xA": "0.10",
         "xGChain": "0.20",
         "xGBuildup": "0.10",
-        "positionOrder": "19",
+        "positionOrder": "18",
         "photo": "https://images.fotmob.com/image_resources/playerimages/547454.png"
       },
       "184639": {
@@ -1337,8 +1313,32 @@
         "xA": "0.10",
         "xGChain": "0.20",
         "xGBuildup": "0.10",
-        "positionOrder": "20",
+        "positionOrder": "19",
         "photo": "https://images.fotmob.com/image_resources/playerimages/184639.png"
+      },
+      "300916": {
+        "id": "300916",
+        "goals": "0",
+        "own_goals": "0",
+        "shots": "0",
+        "xG": "0",
+        "time": "25",
+        "player_id": "300916",
+        "team_id": "8563",
+        "position": "Sub",
+        "player": "Joao Mário",
+        "h_a": "h",
+        "yellow_card": "0",
+        "red_card": "0",
+        "roster_in": "0",
+        "roster_out": "0",
+        "key_passes": "1",
+        "assists": "0",
+        "xA": "0.10",
+        "xGChain": "0.20",
+        "xGBuildup": "0.10",
+        "positionOrder": "20",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/300916.png"
       },
       "655636": {
         "id": "655636",

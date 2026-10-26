@@ -724,18 +724,6 @@
       "photo": "https://images.fotmob.com/image_resources/playerimages/510843.png"
     },
     {
-      "id": "1637478",
-      "team": "away",
-      "name": "Gabriel Carvalho",
-      "mins": 25,
-      "shots": 0,
-      "xg": 0,
-      "goals": 0,
-      "position": "Sub",
-      "is_starter": false,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/1637478.png"
-    },
-    {
       "id": "1612225",
       "team": "away",
       "name": "Viktor Tsukanov",
@@ -758,6 +746,18 @@
       "position": "Sub",
       "is_starter": false,
       "photo": "https://images.fotmob.com/image_resources/playerimages/728941.png"
+    },
+    {
+      "id": "1637478",
+      "team": "away",
+      "name": "Gabriel Carvalho",
+      "mins": 25,
+      "shots": 0,
+      "xg": 0,
+      "goals": 0,
+      "position": "Sub",
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1637478.png"
     },
     {
       "id": "1694887",
@@ -1760,30 +1760,6 @@
         "positionOrder": "19",
         "photo": "https://images.fotmob.com/image_resources/playerimages/510843.png"
       },
-      "1637478": {
-        "id": "1637478",
-        "goals": "0",
-        "own_goals": "0",
-        "shots": "0",
-        "xG": "0",
-        "time": "25",
-        "player_id": "1637478",
-        "team_id": "9728",
-        "position": "Sub",
-        "player": "Gabriel Carvalho",
-        "h_a": "a",
-        "yellow_card": "0",
-        "red_card": "0",
-        "roster_in": "0",
-        "roster_out": "0",
-        "key_passes": "1",
-        "assists": "0",
-        "xA": "0.10",
-        "xGChain": "0.20",
-        "xGBuildup": "0.10",
-        "positionOrder": "20",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/1637478.png"
-      },
       "1612225": {
         "id": "1612225",
         "goals": "0",
@@ -1805,7 +1781,7 @@
         "xA": "0.10",
         "xGChain": "0.20",
         "xGBuildup": "0.10",
-        "positionOrder": "21",
+        "positionOrder": "20",
         "photo": "https://images.fotmob.com/image_resources/playerimages/1612225.png"
       },
       "728941": {
@@ -1829,8 +1805,32 @@
         "xA": "0.10",
         "xGChain": "0.20",
         "xGBuildup": "0.10",
-        "positionOrder": "22",
+        "positionOrder": "21",
         "photo": "https://images.fotmob.com/image_resources/playerimages/728941.png"
+      },
+      "1637478": {
+        "id": "1637478",
+        "goals": "0",
+        "own_goals": "0",
+        "shots": "0",
+        "xG": "0",
+        "time": "25",
+        "player_id": "1637478",
+        "team_id": "9728",
+        "position": "Sub",
+        "player": "Gabriel Carvalho",
+        "h_a": "a",
+        "yellow_card": "0",
+        "red_card": "0",
+        "roster_in": "0",
+        "roster_out": "0",
+        "key_passes": "1",
+        "assists": "0",
+        "xA": "0.10",
+        "xGChain": "0.20",
+        "xGBuildup": "0.10",
+        "positionOrder": "22",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1637478.png"
       },
       "1694887": {
         "id": "1694887",

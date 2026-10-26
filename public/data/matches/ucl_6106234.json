@@ -884,18 +884,6 @@
       "photo": "https://images.fotmob.com/image_resources/playerimages/1279040.png"
     },
     {
-      "id": "959594",
-      "team": "away",
-      "name": "Karim Adeyemi",
-      "mins": 25,
-      "shots": 2,
-      "xg": 0.09,
-      "goals": 0,
-      "position": "Sub",
-      "is_starter": false,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/959594.png"
-    },
-    {
       "id": "675088",
       "team": "away",
       "name": "Rodri",
@@ -906,6 +894,18 @@
       "position": "Sub",
       "is_starter": false,
       "photo": "https://images.fotmob.com/image_resources/playerimages/675088.png"
+    },
+    {
+      "id": "959594",
+      "team": "away",
+      "name": "Karim Adeyemi",
+      "mins": 25,
+      "shots": 2,
+      "xg": 0.09,
+      "goals": 0,
+      "position": "Sub",
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/959594.png"
     },
     {
       "id": "1254166",
@@ -1872,30 +1872,6 @@
         "positionOrder": "13",
         "photo": "https://images.fotmob.com/image_resources/playerimages/1279040.png"
       },
-      "959594": {
-        "id": "959594",
-        "goals": "0",
-        "own_goals": "0",
-        "shots": "2",
-        "xG": "0.09",
-        "time": "25",
-        "player_id": "959594",
-        "team_id": "8634",
-        "position": "Sub",
-        "player": "Karim Adeyemi",
-        "h_a": "a",
-        "yellow_card": "0",
-        "red_card": "0",
-        "roster_in": "0",
-        "roster_out": "0",
-        "key_passes": "1",
-        "assists": "0",
-        "xA": "0.10",
-        "xGChain": "0.20",
-        "xGBuildup": "0.10",
-        "positionOrder": "14",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/959594.png"
-      },
       "675088": {
         "id": "675088",
         "goals": "0",
@@ -1917,8 +1893,32 @@
         "xA": "0.10",
         "xGChain": "0.20",
         "xGBuildup": "0.10",
-        "positionOrder": "15",
+        "positionOrder": "14",
         "photo": "https://images.fotmob.com/image_resources/playerimages/675088.png"
+      },
+      "959594": {
+        "id": "959594",
+        "goals": "0",
+        "own_goals": "0",
+        "shots": "2",
+        "xG": "0.09",
+        "time": "25",
+        "player_id": "959594",
+        "team_id": "8634",
+        "position": "Sub",
+        "player": "Karim Adeyemi",
+        "h_a": "a",
+        "yellow_card": "0",
+        "red_card": "0",
+        "roster_in": "0",
+        "roster_out": "0",
+        "key_passes": "1",
+        "assists": "0",
+        "xA": "0.10",
+        "xGChain": "0.20",
+        "xGBuildup": "0.10",
+        "positionOrder": "15",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/959594.png"
       },
       "1254166": {
         "id": "1254166",

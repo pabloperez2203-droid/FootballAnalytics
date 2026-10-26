@@ -780,18 +780,6 @@
       "photo": "https://images.fotmob.com/image_resources/playerimages/1376699.png"
     },
     {
-      "id": "1636179",
-      "team": "away",
-      "name": "Ola Visted",
-      "mins": 25,
-      "shots": 0,
-      "xg": 0,
-      "goals": 0,
-      "position": "Sub",
-      "is_starter": false,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/1636179.png"
-    },
-    {
       "id": "1751162",
       "team": "away",
       "name": "Amin Cosic",
@@ -814,6 +802,18 @@
       "position": "Sub",
       "is_starter": false,
       "photo": "https://images.fotmob.com/image_resources/playerimages/1636186.png"
+    },
+    {
+      "id": "1636179",
+      "team": "away",
+      "name": "Ola Visted",
+      "mins": 25,
+      "shots": 0,
+      "xg": 0,
+      "goals": 0,
+      "position": "Sub",
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1636179.png"
     },
     {
       "id": "1069826",
@@ -1768,30 +1768,6 @@
         "positionOrder": "19",
         "photo": "https://images.fotmob.com/image_resources/playerimages/1376699.png"
       },
-      "1636179": {
-        "id": "1636179",
-        "goals": "0",
-        "own_goals": "0",
-        "shots": "0",
-        "xG": "0",
-        "time": "25",
-        "player_id": "1636179",
-        "team_id": "8478",
-        "position": "Sub",
-        "player": "Ola Visted",
-        "h_a": "a",
-        "yellow_card": "0",
-        "red_card": "0",
-        "roster_in": "0",
-        "roster_out": "0",
-        "key_passes": "1",
-        "assists": "0",
-        "xA": "0.10",
-        "xGChain": "0.20",
-        "xGBuildup": "0.10",
-        "positionOrder": "20",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/1636179.png"
-      },
       "1751162": {
         "id": "1751162",
         "goals": "0",
@@ -1813,7 +1789,7 @@
         "xA": "0.10",
         "xGChain": "0.20",
         "xGBuildup": "0.10",
-        "positionOrder": "21",
+        "positionOrder": "20",
         "photo": "https://images.fotmob.com/image_resources/playerimages/1751162.png"
       },
       "1636186": {
@@ -1837,8 +1813,32 @@
         "xA": "0.10",
         "xGChain": "0.20",
         "xGBuildup": "0.10",
-        "positionOrder": "22",
+        "positionOrder": "21",
         "photo": "https://images.fotmob.com/image_resources/playerimages/1636186.png"
+      },
+      "1636179": {
+        "id": "1636179",
+        "goals": "0",
+        "own_goals": "0",
+        "shots": "0",
+        "xG": "0",
+        "time": "25",
+        "player_id": "1636179",
+        "team_id": "8478",
+        "position": "Sub",
+        "player": "Ola Visted",
+        "h_a": "a",
+        "yellow_card": "0",
+        "red_card": "0",
+        "roster_in": "0",
+        "roster_out": "0",
+        "key_passes": "1",
+        "assists": "0",
+        "xA": "0.10",
+        "xGChain": "0.20",
+        "xGBuildup": "0.10",
+        "positionOrder": "22",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1636179.png"
       },
       "1069826": {
         "id": "1069826",

@@ -348,6 +348,18 @@
       "photo": "https://images.fotmob.com/image_resources/playerimages/540975.png"
     },
     {
+      "id": "741397",
+      "team": "home",
+      "name": "Jens Petter Hauge",
+      "mins": 90,
+      "shots": 3,
+      "xg": 0.22,
+      "goals": 0,
+      "position": "AMR",
+      "is_starter": true,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/741397.png"
+    },
+    {
       "id": "1086551",
       "team": "home",
       "name": "Ole Blomberg",
@@ -355,7 +367,7 @@
       "shots": 1,
       "xg": 0.03,
       "goals": 0,
-      "position": "AMR",
+      "position": "FW",
       "is_starter": true,
       "photo": "https://images.fotmob.com/image_resources/playerimages/1086551.png"
     },
@@ -367,21 +379,9 @@
       "shots": 2,
       "xg": 0.5,
       "goals": 0,
-      "position": "FW",
-      "is_starter": true,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/615292.png"
-    },
-    {
-      "id": "741397",
-      "team": "home",
-      "name": "Jens Petter Hauge",
-      "mins": 90,
-      "shots": 3,
-      "xg": 0.22,
-      "goals": 0,
       "position": "AML",
       "is_starter": true,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/741397.png"
+      "photo": "https://images.fotmob.com/image_resources/playerimages/615292.png"
     },
     {
       "id": "837066",
@@ -420,6 +420,18 @@
       "photo": "https://images.fotmob.com/image_resources/playerimages/1037037.png"
     },
     {
+      "id": "1436937",
+      "team": "home",
+      "name": "Villads Nielsen",
+      "mins": 25,
+      "shots": 0,
+      "xg": 0,
+      "goals": 0,
+      "position": "Sub",
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1436937.png"
+    },
+    {
       "id": "1641114",
       "team": "home",
       "name": "Kasper Johansen Solhaug",
@@ -432,16 +444,16 @@
       "photo": "https://images.fotmob.com/image_resources/playerimages/1641114.png"
     },
     {
-      "id": "1436937",
+      "id": "310763",
       "team": "home",
-      "name": "Villads Nielsen",
+      "name": "Ulrik Saltnes",
       "mins": 25,
       "shots": 0,
       "xg": 0,
       "goals": 0,
       "position": "Sub",
       "is_starter": false,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/1436937.png"
+      "photo": "https://images.fotmob.com/image_resources/playerimages/310763.png"
     },
     {
       "id": "2189218",
@@ -466,18 +478,6 @@
       "position": "Sub",
       "is_starter": false,
       "photo": "https://images.fotmob.com/image_resources/playerimages/1049665.png"
-    },
-    {
-      "id": "310763",
-      "team": "home",
-      "name": "Ulrik Saltnes",
-      "mins": 25,
-      "shots": 0,
-      "xg": 0,
-      "goals": 0,
-      "position": "Sub",
-      "is_starter": false,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/310763.png"
     },
     {
       "id": "764018",
@@ -612,6 +612,18 @@
       "photo": "https://images.fotmob.com/image_resources/playerimages/1050158.png"
     },
     {
+      "id": "659272",
+      "team": "away",
+      "name": "Julian Ryerson",
+      "mins": 25,
+      "shots": 0,
+      "xg": 0,
+      "goals": 0,
+      "position": "Sub",
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/659272.png"
+    },
+    {
       "id": "1254234",
       "team": "away",
       "name": "Ethan Nwaneri",
@@ -634,18 +646,6 @@
       "position": "Sub",
       "is_starter": false,
       "photo": "https://images.fotmob.com/image_resources/playerimages/966019.png"
-    },
-    {
-      "id": "659272",
-      "team": "away",
-      "name": "Julian Ryerson",
-      "mins": 25,
-      "shots": 0,
-      "xg": 0,
-      "goals": 0,
-      "position": "Sub",
-      "is_starter": false,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/659272.png"
     },
     {
       "id": "448540",
@@ -696,16 +696,16 @@
       "photo": "https://images.fotmob.com/image_resources/playerimages/359203.png"
     },
     {
-      "id": "1663094",
+      "id": "1845173",
       "team": "away",
-      "name": "Filippo Mane",
+      "name": "Luca Reggiani",
       "mins": 25,
       "shots": 0,
       "xg": 0,
       "goals": 0,
       "position": "Sub",
       "is_starter": false,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/1663094.png"
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1845173.png"
     },
     {
       "id": "1750565",
@@ -720,16 +720,16 @@
       "photo": "https://images.fotmob.com/image_resources/playerimages/1750565.png"
     },
     {
-      "id": "1845173",
+      "id": "1663094",
       "team": "away",
-      "name": "Luca Reggiani",
+      "name": "Filippo Mane",
       "mins": 25,
       "shots": 0,
       "xg": 0,
       "goals": 0,
       "position": "Sub",
       "is_starter": false,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/1845173.png"
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1663094.png"
     },
     {
       "id": "215151",
@@ -950,54 +950,6 @@
         "positionOrder": "8",
         "photo": "https://images.fotmob.com/image_resources/playerimages/540975.png"
       },
-      "1086551": {
-        "id": "1086551",
-        "goals": "0",
-        "own_goals": "0",
-        "shots": "1",
-        "xG": "0.03",
-        "time": "90",
-        "player_id": "1086551",
-        "team_id": "8402",
-        "position": "AMR",
-        "player": "Ole Blomberg",
-        "h_a": "h",
-        "yellow_card": "0",
-        "red_card": "0",
-        "roster_in": "0",
-        "roster_out": "0",
-        "key_passes": "1",
-        "assists": "0",
-        "xA": "0.10",
-        "xGChain": "0.20",
-        "xGBuildup": "0.10",
-        "positionOrder": "9",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/1086551.png"
-      },
-      "615292": {
-        "id": "615292",
-        "goals": "0",
-        "own_goals": "0",
-        "shots": "2",
-        "xG": "0.5",
-        "time": "90",
-        "player_id": "615292",
-        "team_id": "8402",
-        "position": "FW",
-        "player": "Andreas Helmersen",
-        "h_a": "h",
-        "yellow_card": "0",
-        "red_card": "0",
-        "roster_in": "0",
-        "roster_out": "0",
-        "key_passes": "1",
-        "assists": "0",
-        "xA": "0.10",
-        "xGChain": "0.20",
-        "xGBuildup": "0.10",
-        "positionOrder": "10",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/615292.png"
-      },
       "741397": {
         "id": "741397",
         "goals": "0",
@@ -1007,7 +959,7 @@
         "time": "90",
         "player_id": "741397",
         "team_id": "8402",
-        "position": "AML",
+        "position": "AMR",
         "player": "Jens Petter Hauge",
         "h_a": "h",
         "yellow_card": "0",
@@ -1019,8 +971,56 @@
         "xA": "0.10",
         "xGChain": "0.20",
         "xGBuildup": "0.10",
-        "positionOrder": "11",
+        "positionOrder": "9",
         "photo": "https://images.fotmob.com/image_resources/playerimages/741397.png"
+      },
+      "1086551": {
+        "id": "1086551",
+        "goals": "0",
+        "own_goals": "0",
+        "shots": "1",
+        "xG": "0.03",
+        "time": "90",
+        "player_id": "1086551",
+        "team_id": "8402",
+        "position": "FW",
+        "player": "Ole Blomberg",
+        "h_a": "h",
+        "yellow_card": "0",
+        "red_card": "0",
+        "roster_in": "0",
+        "roster_out": "0",
+        "key_passes": "1",
+        "assists": "0",
+        "xA": "0.10",
+        "xGChain": "0.20",
+        "xGBuildup": "0.10",
+        "positionOrder": "10",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1086551.png"
+      },
+      "615292": {
+        "id": "615292",
+        "goals": "0",
+        "own_goals": "0",
+        "shots": "2",
+        "xG": "0.5",
+        "time": "90",
+        "player_id": "615292",
+        "team_id": "8402",
+        "position": "AML",
+        "player": "Andreas Helmersen",
+        "h_a": "h",
+        "yellow_card": "0",
+        "red_card": "0",
+        "roster_in": "0",
+        "roster_out": "0",
+        "key_passes": "1",
+        "assists": "0",
+        "xA": "0.10",
+        "xGChain": "0.20",
+        "xGBuildup": "0.10",
+        "positionOrder": "11",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/615292.png"
       },
       "837066": {
         "id": "837066",
@@ -1094,30 +1094,6 @@
         "positionOrder": "14",
         "photo": "https://images.fotmob.com/image_resources/playerimages/1037037.png"
       },
-      "1641114": {
-        "id": "1641114",
-        "goals": "0",
-        "own_goals": "0",
-        "shots": "0",
-        "xG": "0",
-        "time": "25",
-        "player_id": "1641114",
-        "team_id": "8402",
-        "position": "Sub",
-        "player": "Kasper Johansen Solhaug",
-        "h_a": "h",
-        "yellow_card": "0",
-        "red_card": "0",
-        "roster_in": "0",
-        "roster_out": "0",
-        "key_passes": "1",
-        "assists": "0",
-        "xA": "0.10",
-        "xGChain": "0.20",
-        "xGBuildup": "0.10",
-        "positionOrder": "15",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/1641114.png"
-      },
       "1436937": {
         "id": "1436937",
         "goals": "0",
@@ -1139,8 +1115,56 @@
         "xA": "0.10",
         "xGChain": "0.20",
         "xGBuildup": "0.10",
-        "positionOrder": "16",
+        "positionOrder": "15",
         "photo": "https://images.fotmob.com/image_resources/playerimages/1436937.png"
+      },
+      "1641114": {
+        "id": "1641114",
+        "goals": "0",
+        "own_goals": "0",
+        "shots": "0",
+        "xG": "0",
+        "time": "25",
+        "player_id": "1641114",
+        "team_id": "8402",
+        "position": "Sub",
+        "player": "Kasper Johansen Solhaug",
+        "h_a": "h",
+        "yellow_card": "0",
+        "red_card": "0",
+        "roster_in": "0",
+        "roster_out": "0",
+        "key_passes": "1",
+        "assists": "0",
+        "xA": "0.10",
+        "xGChain": "0.20",
+        "xGBuildup": "0.10",
+        "positionOrder": "16",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1641114.png"
+      },
+      "310763": {
+        "id": "310763",
+        "goals": "0",
+        "own_goals": "0",
+        "shots": "0",
+        "xG": "0",
+        "time": "25",
+        "player_id": "310763",
+        "team_id": "8402",
+        "position": "Sub",
+        "player": "Ulrik Saltnes",
+        "h_a": "h",
+        "yellow_card": "0",
+        "red_card": "0",
+        "roster_in": "0",
+        "roster_out": "0",
+        "key_passes": "1",
+        "assists": "0",
+        "xA": "0.10",
+        "xGChain": "0.20",
+        "xGBuildup": "0.10",
+        "positionOrder": "17",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/310763.png"
       },
       "2189218": {
         "id": "2189218",
@@ -1163,7 +1187,7 @@
         "xA": "0.10",
         "xGChain": "0.20",
         "xGBuildup": "0.10",
-        "positionOrder": "17",
+        "positionOrder": "18",
         "photo": "https://images.fotmob.com/image_resources/playerimages/2189218.png"
       },
       "1049665": {
@@ -1187,32 +1211,8 @@
         "xA": "0.10",
         "xGChain": "0.20",
         "xGBuildup": "0.10",
-        "positionOrder": "18",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/1049665.png"
-      },
-      "310763": {
-        "id": "310763",
-        "goals": "0",
-        "own_goals": "0",
-        "shots": "0",
-        "xG": "0",
-        "time": "25",
-        "player_id": "310763",
-        "team_id": "8402",
-        "position": "Sub",
-        "player": "Ulrik Saltnes",
-        "h_a": "h",
-        "yellow_card": "0",
-        "red_card": "0",
-        "roster_in": "0",
-        "roster_out": "0",
-        "key_passes": "1",
-        "assists": "0",
-        "xA": "0.10",
-        "xGChain": "0.20",
-        "xGBuildup": "0.10",
         "positionOrder": "19",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/310763.png"
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1049665.png"
       }
     },
     "a": {
@@ -1480,6 +1480,30 @@
         "positionOrder": "11",
         "photo": "https://images.fotmob.com/image_resources/playerimages/1050158.png"
       },
+      "659272": {
+        "id": "659272",
+        "goals": "0",
+        "own_goals": "0",
+        "shots": "0",
+        "xG": "0",
+        "time": "25",
+        "player_id": "659272",
+        "team_id": "9789",
+        "position": "Sub",
+        "player": "Julian Ryerson",
+        "h_a": "a",
+        "yellow_card": "0",
+        "red_card": "0",
+        "roster_in": "0",
+        "roster_out": "0",
+        "key_passes": "1",
+        "assists": "0",
+        "xA": "0.10",
+        "xGChain": "0.20",
+        "xGBuildup": "0.10",
+        "positionOrder": "12",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/659272.png"
+      },
       "1254234": {
         "id": "1254234",
         "goals": "0",
@@ -1501,7 +1525,7 @@
         "xA": "0.10",
         "xGChain": "0.20",
         "xGBuildup": "0.10",
-        "positionOrder": "12",
+        "positionOrder": "13",
         "photo": "https://images.fotmob.com/image_resources/playerimages/1254234.png"
       },
       "966019": {
@@ -1525,32 +1549,8 @@
         "xA": "0.10",
         "xGChain": "0.20",
         "xGBuildup": "0.10",
-        "positionOrder": "13",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/966019.png"
-      },
-      "659272": {
-        "id": "659272",
-        "goals": "0",
-        "own_goals": "0",
-        "shots": "0",
-        "xG": "0",
-        "time": "25",
-        "player_id": "659272",
-        "team_id": "9789",
-        "position": "Sub",
-        "player": "Julian Ryerson",
-        "h_a": "a",
-        "yellow_card": "0",
-        "red_card": "0",
-        "roster_in": "0",
-        "roster_out": "0",
-        "key_passes": "1",
-        "assists": "0",
-        "xA": "0.10",
-        "xGChain": "0.20",
-        "xGBuildup": "0.10",
         "positionOrder": "14",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/659272.png"
+        "photo": "https://images.fotmob.com/image_resources/playerimages/966019.png"
       },
       "448540": {
         "id": "448540",
@@ -1648,17 +1648,17 @@
         "positionOrder": "18",
         "photo": "https://images.fotmob.com/image_resources/playerimages/359203.png"
       },
-      "1663094": {
-        "id": "1663094",
+      "1845173": {
+        "id": "1845173",
         "goals": "0",
         "own_goals": "0",
         "shots": "0",
         "xG": "0",
         "time": "25",
-        "player_id": "1663094",
+        "player_id": "1845173",
         "team_id": "9789",
         "position": "Sub",
-        "player": "Filippo Mane",
+        "player": "Luca Reggiani",
         "h_a": "a",
         "yellow_card": "0",
         "red_card": "0",
@@ -1670,7 +1670,7 @@
         "xGChain": "0.20",
         "xGBuildup": "0.10",
         "positionOrder": "19",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/1663094.png"
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1845173.png"
       },
       "1750565": {
         "id": "1750565",
@@ -1696,17 +1696,17 @@
         "positionOrder": "20",
         "photo": "https://images.fotmob.com/image_resources/playerimages/1750565.png"
       },
-      "1845173": {
-        "id": "1845173",
+      "1663094": {
+        "id": "1663094",
         "goals": "0",
         "own_goals": "0",
         "shots": "0",
         "xG": "0",
         "time": "25",
-        "player_id": "1845173",
+        "player_id": "1663094",
         "team_id": "9789",
         "position": "Sub",
-        "player": "Luca Reggiani",
+        "player": "Filippo Mane",
         "h_a": "a",
         "yellow_card": "0",
         "red_card": "0",
@@ -1718,7 +1718,7 @@
         "xGChain": "0.20",
         "xGBuildup": "0.10",
         "positionOrder": "21",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/1845173.png"
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1663094.png"
       },
       "215151": {
         "id": "215151",
