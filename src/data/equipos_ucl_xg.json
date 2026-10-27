@@ -19,7 +19,7 @@
     "xg_per_match": 3.37,
     "goals_per_match": 4.67,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -43,7 +43,7 @@
     "xg_per_match": 3.01,
     "goals_per_match": 4.0,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -67,7 +67,7 @@
     "xg_per_match": 2.41,
     "goals_per_match": 4.0,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -91,7 +91,7 @@
     "xg_per_match": 2.42,
     "goals_per_match": 3.33,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -115,7 +115,7 @@
     "xg_per_match": 1.87,
     "goals_per_match": 2.33,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -139,7 +139,7 @@
     "xg_per_match": 1.99,
     "goals_per_match": 2.33,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -153,17 +153,17 @@
     "xg_for": 7.44,
     "np_xg_for": 6.84,
     "goals_against": 2,
-    "xg_against": 2.98,
-    "ppda_avg": 10.35,
+    "xg_against": 2.85,
+    "ppda_avg": 10.23,
     "deep_completions": 130,
-    "expected_points": 6.34,
-    "diff_pts_xpts": 0.66,
+    "expected_points": 6.42,
+    "diff_pts_xpts": 0.58,
     "diff_goals_xg": -1.44,
-    "diff_goals_xg_against": -0.98,
+    "diff_goals_xg_against": -0.85,
     "xg_per_match": 2.48,
     "goals_per_match": 2.0,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -187,7 +187,7 @@
     "xg_per_match": 2.35,
     "goals_per_match": 3.67,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -211,7 +211,7 @@
     "xg_per_match": 2.12,
     "goals_per_match": 3.33,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -235,7 +235,7 @@
     "xg_per_match": 2.56,
     "goals_per_match": 3.0,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -259,7 +259,7 @@
     "xg_per_match": 2.8,
     "goals_per_match": 3.0,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -283,7 +283,7 @@
     "xg_per_match": 2.22,
     "goals_per_match": 2.33,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -307,7 +307,7 @@
     "xg_per_match": 2.45,
     "goals_per_match": 1.67,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -318,20 +318,20 @@
     "matches_played": 3,
     "pts": 5,
     "goals_for": 10,
-    "xg_for": 8.37,
-    "np_xg_for": 7.7,
+    "xg_for": 8.24,
+    "np_xg_for": 7.58,
     "goals_against": 5,
     "xg_against": 2.72,
-    "ppda_avg": 9.31,
-    "deep_completions": 143,
-    "expected_points": 7.56,
-    "diff_pts_xpts": -2.56,
-    "diff_goals_xg": 1.63,
+    "ppda_avg": 9.42,
+    "deep_completions": 141,
+    "expected_points": 7.48,
+    "diff_pts_xpts": -2.48,
+    "diff_goals_xg": 1.76,
     "diff_goals_xg_against": 2.28,
-    "xg_per_match": 2.79,
+    "xg_per_match": 2.75,
     "goals_per_match": 3.33,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -355,7 +355,7 @@
     "xg_per_match": 1.68,
     "goals_per_match": 2.67,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -379,7 +379,7 @@
     "xg_per_match": 1.09,
     "goals_per_match": 1.33,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -403,7 +403,7 @@
     "xg_per_match": 0.86,
     "goals_per_match": 1.33,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -427,7 +427,7 @@
     "xg_per_match": 1.27,
     "goals_per_match": 0.67,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -451,7 +451,7 @@
     "xg_per_match": 1.44,
     "goals_per_match": 2.67,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -475,7 +475,7 @@
     "xg_per_match": 2.4,
     "goals_per_match": 1.67,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -499,7 +499,7 @@
     "xg_per_match": 1.84,
     "goals_per_match": 1.67,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -523,7 +523,7 @@
     "xg_per_match": 1.15,
     "goals_per_match": 1.67,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -547,7 +547,7 @@
     "xg_per_match": 1.01,
     "goals_per_match": 2.0,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -571,7 +571,7 @@
     "xg_per_match": 1.29,
     "goals_per_match": 2.0,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -595,7 +595,7 @@
     "xg_per_match": 1.22,
     "goals_per_match": 1.0,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -619,7 +619,7 @@
     "xg_per_match": 0.63,
     "goals_per_match": 1.33,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -643,7 +643,7 @@
     "xg_per_match": 1.78,
     "goals_per_match": 1.0,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -667,7 +667,7 @@
     "xg_per_match": 1.36,
     "goals_per_match": 1.33,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -691,7 +691,7 @@
     "xg_per_match": 1.41,
     "goals_per_match": 1.0,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -715,7 +715,7 @@
     "xg_per_match": 1.54,
     "goals_per_match": 1.0,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -739,7 +739,7 @@
     "xg_per_match": 1.46,
     "goals_per_match": 1.0,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -763,7 +763,7 @@
     "xg_per_match": 1.74,
     "goals_per_match": 1.33,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -787,7 +787,7 @@
     "xg_per_match": 0.7,
     "goals_per_match": 1.67,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -811,7 +811,7 @@
     "xg_per_match": 0.89,
     "goals_per_match": 0.67,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -835,7 +835,7 @@
     "xg_per_match": 1.07,
     "goals_per_match": 1.33,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   },
@@ -859,7 +859,7 @@
     "xg_per_match": 0.52,
     "goals_per_match": 0.33,
     "source": "fotmob",
-    "fetched_at": "2026-10-26T01:27:51.585922+00:00",
+    "fetched_at": "2026-10-27T01:46:42.723607+00:00",
     "season": "2026-27",
     "is_simulated": false
   }

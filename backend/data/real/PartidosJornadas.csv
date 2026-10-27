@@ -98,7 +98,7 @@ match_id;jornada;fecha;local;visitante;goles_local;goles_visitante;xg_local;xg_v
 30863;10;2026-10-25 15:15:00;Celta Vigo;Real Betis;0.0;0.0;0.80399;1.07303;jugado;;False;
 30867;10;2026-10-25 17:30:00;Real Sociedad;Levante;2.0;1.0;2.92365;0.754338;jugado;;False;
 30864;10;2026-10-25 20:00:00;Barcelona;Real Madrid;1.0;2.0;1.64098;1.94936;jugado;;False;
-30868;10;2026-10-26 20:00:00;Sevilla;Osasuna;;;;;pendiente;;False;
+30868;10;2026-10-26 20:00:00;Sevilla;Osasuna;2.0;0.0;0.873541;0.757546;jugado;;False;
 30879;11;2026-10-30 20:00:00;Villarreal;Espanyol;;;;;pendiente;;False;
 30876;11;2026-10-31 13:00:00;Levante;Atletico Madrid;;;;;pendiente;;False;
 30878;11;2026-10-31 15:15:00;Rayo Vallecano;Celta Vigo;;;;;pendiente;;False;

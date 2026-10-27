@@ -432,18 +432,6 @@
     "needs_review": false
   },
   {
-    "id": "30806",
-    "matchday": 4,
-    "date": "2026-09-06 16:30:00",
-    "home_team": "Malaga",
-    "away_team": "Levante",
-    "home_score": 0,
-    "away_score": 0,
-    "home_xg": 1.72661,
-    "away_xg": 1.19172,
-    "needs_review": false
-  },
-  {
     "id": "30807",
     "matchday": 4,
     "date": "2026-09-06 16:30:00",
@@ -453,6 +441,18 @@
     "away_score": 2,
     "home_xg": 1.60188,
     "away_xg": 1.64406,
+    "needs_review": false
+  },
+  {
+    "id": "30806",
+    "matchday": 4,
+    "date": "2026-09-06 16:30:00",
+    "home_team": "Malaga",
+    "away_team": "Levante",
+    "home_score": 0,
+    "away_score": 0,
+    "home_xg": 1.72661,
+    "away_xg": 1.19172,
     "needs_review": false
   },
   {
@@ -1173,6 +1173,18 @@
     "away_score": 2,
     "home_xg": 1.64098,
     "away_xg": 1.94936,
+    "needs_review": false
+  },
+  {
+    "id": "30868",
+    "matchday": 10,
+    "date": "2026-10-26 20:00:00",
+    "home_team": "Sevilla",
+    "away_team": "Osasuna",
+    "home_score": 2,
+    "away_score": 0,
+    "home_xg": 0.873541,
+    "away_xg": 0.757546,
     "needs_review": false
   }
 ]
