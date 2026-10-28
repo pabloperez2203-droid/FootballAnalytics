@@ -842,18 +842,6 @@
       "photo": "https://images.fotmob.com/image_resources/playerimages/1105912.png"
     },
     {
-      "id": "1635773",
-      "team": "away",
-      "name": "Max Dowman",
-      "mins": 25,
-      "shots": 0,
-      "xg": 0,
-      "goals": 0,
-      "position": "Sub",
-      "is_starter": false,
-      "photo": "https://images.fotmob.com/image_resources/playerimages/1635773.png"
-    },
-    {
       "id": "1406436",
       "team": "away",
       "name": "Myles Lewis-Skelly",
@@ -864,6 +852,18 @@
       "position": "Sub",
       "is_starter": false,
       "photo": "https://images.fotmob.com/image_resources/playerimages/1406436.png"
+    },
+    {
+      "id": "1635773",
+      "team": "away",
+      "name": "Max Dowman",
+      "mins": 25,
+      "shots": 0,
+      "xg": 0,
+      "goals": 0,
+      "position": "Sub",
+      "is_starter": false,
+      "photo": "https://images.fotmob.com/image_resources/playerimages/1635773.png"
     }
   ],
   "rosters": {
@@ -1830,30 +1830,6 @@
         "positionOrder": "20",
         "photo": "https://images.fotmob.com/image_resources/playerimages/1105912.png"
       },
-      "1635773": {
-        "id": "1635773",
-        "goals": "0",
-        "own_goals": "0",
-        "shots": "0",
-        "xG": "0",
-        "time": "25",
-        "player_id": "1635773",
-        "team_id": "9825",
-        "position": "Sub",
-        "player": "Max Dowman",
-        "h_a": "a",
-        "yellow_card": "0",
-        "red_card": "0",
-        "roster_in": "0",
-        "roster_out": "0",
-        "key_passes": "1",
-        "assists": "0",
-        "xA": "0.10",
-        "xGChain": "0.20",
-        "xGBuildup": "0.10",
-        "positionOrder": "21",
-        "photo": "https://images.fotmob.com/image_resources/playerimages/1635773.png"
-      },
       "1406436": {
         "id": "1406436",
         "goals": "0",
@@ -1875,8 +1851,32 @@
         "xA": "0.10",
         "xGChain": "0.20",
         "xGBuildup": "0.10",
-        "positionOrder": "22",
+        "positionOrder": "21",
         "photo": "https://images.fotmob.com/image_resources/playerimages/1406436.png"
+      },
+      "1635773": {
+        "id": "1635773",
+        "goals": "0",
+        "own_goals": "0",
+        "shots": "0",
+        "xG": "0",
+        "time": "25",
+        "player_id": "1635773",
+        "team_id": "9825",
+        "position": "Sub",
+        "player": "Max Dowman",
+        "h_a": "a",
+        "yellow_card": "0",
+        "red_card": "0",
+        "roster_in": "0",
+        "roster_out": "0",
+        "key_passes": "1",
+        "assists": "0",
+        "xA": "0.10",
+        "xGChain": "0.20",
+        "xGBuildup": "0.10",
+        "positionOrder": "22",
+        "photo": "https://images.fotmob.com/image_resources/playerimages/1635773.png"
       }
     }
   }
